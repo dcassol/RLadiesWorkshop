@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta http-equiv="last-modified" content="2020-02-13 10:05:23 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -494,12 +494,12 @@ To do this you’ll use the R functions <code class="highlighter-rouge">boxplot<
 </span><span class="n">plot_dist</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">     </span><span class="c1"># day (column) 10</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><img src="../fig/rmd-04-cond-using-conditions-01-1.png" title="plot of chunk using-conditions-01" alt="plot of chunk using-conditions-01" width="612" style="display: block; margin: auto;" /></p>
+  <p><img src="../fig/rmd-04-cond-using-conditions-01-1.svg" title="plot of chunk using-conditions-01" alt="plot of chunk using-conditions-01" width="612" style="display: block; margin: auto;" /></p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_dist</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">  </span><span class="c1"># samples (rows) 1-5 on day (column) 10</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><img src="../fig/rmd-04-cond-using-conditions-01-2.png" title="plot of chunk using-conditions-01" alt="plot of chunk using-conditions-01" width="612" style="display: block; margin: auto;" /></p>
+  <p><img src="../fig/rmd-04-cond-using-conditions-01-2.svg" title="plot of chunk using-conditions-01" alt="plot of chunk using-conditions-01" width="612" style="display: block; margin: auto;" /></p>
 
   <blockquote class="solution">
     <h2 id="solution">Solution</h2>
@@ -533,17 +533,17 @@ A histogram is made with the <code class="highlighter-rouge">hist</code> command
 </span><span class="n">plot_dist</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">use_boxplot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">   </span><span class="c1"># day (column) 10 - create boxplot</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-1.png" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
+  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-1.svg" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_dist</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">use_boxplot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">  </span><span class="c1"># day (column) 10 - create histogram</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-2.png" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
+  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-2.svg" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot_dist</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">                    </span><span class="c1"># samples (rows) 1-5 on day (column) 10</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-3.png" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
+  <p><img src="../fig/rmd-04-cond-conditional-challenge-hist-3.svg" title="plot of chunk conditional-challenge-hist" alt="plot of chunk conditional-challenge-hist" width="612" style="display: block; margin: auto;" /></p>
 
   <blockquote class="solution">
     <h2 id="solution-1">Solution</h2>
@@ -655,7 +655,7 @@ Therefore the line in the <code class="highlighter-rouge">if</code> block is onl
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">analyze</span><span class="p">(</span><span class="s2">"data/inflammation-01.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p><img src="../fig/rmd-04-cond-inflammation-01-1.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-04-cond-inflammation-01-2.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-04-cond-inflammation-01-3.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /></p>
+<p><img src="../fig/rmd-04-cond-inflammation-01-1.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-04-cond-inflammation-01-2.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-04-cond-inflammation-01-3.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /></p>
 
 <p>but also use it to save plots,</p>
 

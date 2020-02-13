@@ -66,7 +66,7 @@ Using the text editor of your choice, save the following line of code in a text 
 
 
 ~~~
-sessionInfo()
+cat: session-info.R: No such file or directory
 ~~~
 {: .output}
 
@@ -85,27 +85,7 @@ Rscript session-info.R
 
 
 ~~~
-R Under development (unstable) (2020-02-05 r77773)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 19.04
-
-Matrix products: default
-BLAS:   /usr/local/lib/R/lib/libRblas.so
-LAPACK: /usr/local/lib/R/lib/libRlapack.so
-
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.0.0
+Fatal error: cannot open file 'session-info.R': No such file or directory
 ~~~
 {: .output}
 
@@ -121,8 +101,7 @@ Now let's create another script that does something more interesting. Write the 
 
 
 ~~~
-args <- commandArgs()
-cat(args, sep = "\n")
+cat: print-args.R: No such file or directory
 ~~~
 {: .output}
 
@@ -143,10 +122,7 @@ Rscript print-args.R
 
 
 ~~~
-/usr/local/lib/R/bin/exec/R
---no-echo
---no-restore
---file=print-args.R
+Fatal error: cannot open file 'print-args.R': No such file or directory
 ~~~
 {: .output}
 
@@ -172,11 +148,7 @@ R --slave --no-restore --file=print-args.R --args
 
 
 ~~~
-/usr/local/lib/R/bin/exec/R
---slave
---no-restore
---file=print-args.R
---args
+Fatal error: cannot open file 'print-args.R': No such file or directory
 ~~~
 {: .output}
 
@@ -192,14 +164,7 @@ Rscript print-args.R first second third
 
 
 ~~~
-/usr/local/lib/R/bin/exec/R
---no-echo
---no-restore
---file=print-args.R
---args
-first
-second
-third
+Fatal error: cannot open file 'print-args.R': No such file or directory
 ~~~
 {: .output}
 
@@ -209,8 +174,7 @@ Let's update `print-args.R` and save it as `print-args-trailing.R`:
 
 
 ~~~
-args <- commandArgs(trailingOnly = TRUE)
-cat(args, sep = "\n")
+cat: print-args-trailing.R: No such file or directory
 ~~~
 {: .output}
 
@@ -226,9 +190,7 @@ Rscript print-args-trailing.R first second third
 
 
 ~~~
-first
-second
-third
+Fatal error: cannot open file 'print-args-trailing.R': No such file or directory
 ~~~
 {: .output}
 
@@ -266,15 +228,7 @@ Let's add a call to `main` and save it as `readings-02.R`:
 
 
 ~~~
-main <- function() {
-  args <- commandArgs(trailingOnly = TRUE)
-  filename <- args[1]
-  dat <- read.csv(file = filename, header = FALSE)
-  mean_per_patient <- apply(dat, 1, mean)
-  cat(mean_per_patient, sep = "\n")
-}
-
-main()
+cat: readings-02.R: No such file or directory
 ~~~
 {: .output}
 
@@ -288,66 +242,7 @@ Rscript readings-02.R data/inflammation-01.csv
 
 
 ~~~
-5.45
-5.425
-6.1
-5.9
-5.55
-6.225
-5.975
-6.65
-6.625
-6.525
-6.775
-5.8
-6.225
-5.75
-5.225
-6.3
-6.55
-5.7
-5.85
-6.55
-5.775
-5.825
-6.175
-6.1
-5.8
-6.425
-6.05
-6.025
-6.175
-6.55
-6.175
-6.35
-6.725
-6.125
-7.075
-5.725
-5.925
-6.15
-6.075
-5.75
-5.975
-5.725
-6.3
-5.9
-6.75
-5.925
-7.225
-6.15
-5.95
-6.275
-5.7
-6.1
-6.825
-5.975
-6.725
-5.7
-6.25
-6.4
-7.05
-5.9
+Fatal error: cannot open file 'readings-02.R': No such file or directory
 ~~~
 {: .output}
 
@@ -450,8 +345,7 @@ Rscript readings-02.R data/inflammation-01.csv
 > 
 > 
 > ~~~
-> print-args-trailing.R
-> print-args.R
+> Fatal error: cannot open file 'find-pattern.R': No such file or directory
 > ~~~
 > {: .output}
 >
@@ -466,21 +360,7 @@ Rscript readings-02.R data/inflammation-01.csv
 > > 
 > > 
 > > ~~~
-> > main <- function() {
-> >   # Finds all files in the current directory that contain a given pattern.
-> >   #
-> >   # Takes one argument: the pattern to be searched.
-> >   #
-> >   # Ex. usage:
-> >   #   Rscript find-pattern.R csv
-> >   #
-> >   args <- commandArgs(trailingOnly = TRUE)
-> >   pattern <- args[1]
-> >   files <- list.files(pattern = pattern)
-> >   cat(files, sep = "\n")
-> > }
-> > 
-> > main()
+> > cat: find-pattern.R: No such file or directory
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -502,9 +382,9 @@ ls data/small-*.csv
 
 
 ~~~
-data/small-01.csv
-data/small-02.csv
-data/small-03.csv
+data/small-01 (2).csv
+data/small-02 (2).csv
+data/small-03 (2).csv
 ~~~
 {: .output}
 
@@ -518,8 +398,7 @@ cat data/small-01.csv
 
 
 ~~~
-0,0,1
-0,1,2
+cat: data/small-01.csv: No such file or directory
 ~~~
 {: .output}
 
@@ -533,8 +412,7 @@ Rscript readings-02.R data/small-01.csv
 
 
 ~~~
-0.3333333
-1
+Fatal error: cannot open file 'readings-02.R': No such file or directory
 ~~~
 {: .output}
 
@@ -550,16 +428,7 @@ Here's our changed program, which we'll save as `readings-03.R`:
 
 
 ~~~
-main <- function() {
-  args <- commandArgs(trailingOnly = TRUE)
-  for (filename in args) {
-    dat <- read.csv(file = filename, header = FALSE)
-    mean_per_patient <- apply(dat, 1, mean)
-    cat(mean_per_patient, sep = "\n")
-  }
-}
-
-main()
+cat: readings-03.R: No such file or directory
 ~~~
 {: .output}
 
@@ -575,10 +444,7 @@ Rscript readings-03.R data/small-01.csv data/small-02.csv
 
 
 ~~~
-0.3333333
-1
-13.66667
-11
+Fatal error: cannot open file 'readings-03.R': No such file or directory
 ~~~
 {: .output}
 
@@ -604,31 +470,7 @@ For teaching, though, we need all the successive versions side by side.
 > > 
 > > 
 > > ~~~
-> > main <- function() {
-> >   # Checks that all csv files have the same number of rows and columns.
-> >   #
-> >   # Takes multiple arguments: the names of the files to be checked.
-> >   #
-> >   # Ex. usage:
-> >   #   Rscript check.R inflammation-*
-> >   #
-> >   args <- commandArgs(trailingOnly = TRUE)
-> >   first_file <- read.csv(args[1], header = FALSE)
-> >   first_dim <- dim(first_file)
-> > #   num_rows <- dim(first_file)[1]  # nrow(first_file)
-> > #   num_cols <- dim(first_file)[2]  # ncol(first_file)
-> >   
-> >   
-> >   for (filename in args[-1]) {
-> >     new_file <- read.csv(filename, header = FALSE)
-> >     new_dim <- dim(new_file)
-> >     if (new_dim[1] != first_dim[1] | new_dim[2] != first_dim[2]) {
-> >       cat("Not all the data files have the same dimensions.")
-> >     }
-> >   }
-> > }
-> > 
-> > main()
+> > cat: check.R: No such file or directory
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -641,26 +483,7 @@ These always appear before the names of the files, so let's save the following i
 
 
 ~~~
-main <- function() {
-  args <- commandArgs(trailingOnly = TRUE)
-  action <- args[1]
-  filenames <- args[-1]
-
-  for (f in filenames) {
-    dat <- read.csv(file = f, header = FALSE)
-
-    if (action == "--min") {
-      values <- apply(dat, 1, min)
-    } else if (action == "--mean") {
-      values <- apply(dat, 1, mean)
-    } else if (action == "--max") {
-      values <- apply(dat, 1, max)
-    }
-    cat(values, sep = "\n")
-  }
-}
-
-main()
+cat: readings-04.R: No such file or directory
 ~~~
 {: .output}
 
@@ -676,8 +499,7 @@ Rscript readings-04.R --max data/small-01.csv
 
 
 ~~~
-1
-2
+Fatal error: cannot open file 'readings-04.R': No such file or directory
 ~~~
 {: .output}
 
@@ -693,31 +515,7 @@ It also checks that `action` is one of the allowed flags before doing any proces
 
 
 ~~~
-main <- function() {
-  args <- commandArgs(trailingOnly = TRUE)
-  action <- args[1]
-  filenames <- args[-1]
-  stopifnot(action %in% c("--min", "--mean", "--max"))
-
-  for (f in filenames) {
-    process(f, action)
-  }
-}
-
-process <- function(filename, action) {
-  dat <- read.csv(file = filename, header = FALSE)
-
-  if (action == "--min") {
-    values <- apply(dat, 1, min)
-  } else if (action == "--mean") {
-    values <- apply(dat, 1, mean)
-  } else if (action == "--max") {
-    values <- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-main()
+cat: readings-05.R: No such file or directory
 ~~~
 {: .output}
 
@@ -752,31 +550,7 @@ This is four lines longer than its predecessor, but broken into more digestible 
 > > 
 > > 
 > > ~~~
-> > main <- function() {
-> >   args <- commandArgs(trailingOnly = TRUE)
-> >   action <- args[1]
-> >   filenames <- args[-1]
-> >   stopifnot(action %in% c("-n", "-m", "-x"))
-> > 
-> >   for (f in filenames) {
-> >     process(f, action)
-> >   }
-> > }
-> > 
-> > process <- function(filename, action) {
-> >   dat <- read.csv(file = filename, header = FALSE)
-> > 
-> >   if (action == "-n") {
-> >     values <- apply(dat, 1, min)
-> >   } else if (action == "-m") {
-> >     values <- apply(dat, 1, mean)
-> >   } else if (action == "-x") {
-> >     values <- apply(dat, 1, max)
-> >   }
-> >   cat(values, sep = "\n")
-> > }
-> > 
-> > main()
+> > cat: readings-short.R: No such file or directory
 > > ~~~
 > > {: .output}
 > > The program is neither easier to read nor easier to understand due to the 
@@ -792,39 +566,7 @@ This is four lines longer than its predecessor, but broken into more digestible 
 > > 
 > > 
 > > ~~~
-> > main <- function() {
-> >   args <- commandArgs(trailingOnly = TRUE)
-> >   action <- args[1]
-> >   filenames <- args[-1]
-> >   if (!(action %in% c("--min", "--mean", "--max"))) {
-> >     usage()
-> >   } else if (length(filenames) == 0) {
-> >     process(file("stdin"), action)
-> >   } else {
-> >     for (f in filenames) {
-> >       process(f, action)
-> >     }
-> >   }
-> > }
-> > 
-> > process <- function(filename, action) {
-> >   dat <- read.csv(file = filename, header = FALSE)
-> > 
-> >   if (action == "--min") {
-> >     values <- apply(dat, 1, min)
-> >   } else if (action == "--mean") {
-> >     values <- apply(dat, 1, mean)
-> >   } else if (action == "--max") {
-> >     values <- apply(dat, 1, max)
-> >   }
-> >   cat(values, sep = "\n")
-> > }
-> > 
-> > usage <- function() {
-> >   cat("usage: Rscript readings-usage.R [--min, --mean, --max] filenames", sep = "\n")
-> > }
-> > 
-> > main()
+> > cat: readings-usage.R: No such file or directory
 > > ~~~
 > > {: .output}
 > {: .solution}
@@ -859,7 +601,7 @@ Rscript count-stdin.R < data/small-01.csv
 
 
 ~~~
-lines in standard input: 2
+bash: data/small-01.csv: No such file or directory
 ~~~
 {: .output}
 
@@ -886,35 +628,7 @@ That leaves `main`, which we'll update and save as `readings-06.R`:
 
 
 ~~~
-main <- function() {
-  args <- commandArgs(trailingOnly = TRUE)
-  action <- args[1]
-  filenames <- args[-1]
-  stopifnot(action %in% c("--min", "--mean", "--max"))
-
-  if (length(filenames) == 0) {
-    process(file("stdin"), action)
-  } else {
-    for (f in filenames) {
-      process(f, action)
-    }
-  }
-}
-
-process <- function(filename, action) {
-  dat <- read.csv(file = filename, header = FALSE)
-
-  if (action == "--min") {
-    values <- apply(dat, 1, min)
-  } else if (action == "--mean") {
-    values <- apply(dat, 1, mean)
-  } else if (action == "--max") {
-    values <- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-main()
+cat: readings-06.R: No such file or directory
 ~~~
 {: .output}
 
@@ -931,16 +645,7 @@ head data/inflammation-01.csv | Rscript readings-06.R --mean
 
 
 ~~~
-5.45
-5.425
-6.1
-5.9
-5.55
-6.225
-5.975
-6.65
-6.625
-6.525
+Fatal error: cannot open file 'readings-06.R': No such file or directory
 ~~~
 {: .output}
 
@@ -964,30 +669,7 @@ And now we're done: the program now does everything we set out to do.
 > > 
 > > 
 > > ~~~
-> > main <- function() {
-> >   args <- commandArgs(trailingOnly = TRUE)
-> >   if (length(args) > 0) {
-> >     total_lines <- 0
-> >     for (filename in args) {
-> >       input <- readLines(filename)
-> >       num_lines <- length(input)
-> >       cat(filename)
-> >       cat(" ")
-> >       cat(num_lines, sep = "\n")
-> >       total_lines <- total_lines + num_lines
-> >     }
-> >     if (length(args) > 1) {
-> >       cat("Total ")
-> >       cat(total_lines, sep = "\n")
-> >     }
-> >   } else {
-> >     input <- readLines(file("stdin"))
-> >     num_lines <- length(input)
-> >     cat(num_lines, sep = "\n")
-> >   }
-> > }
-> > 
-> > main()
+> > cat: line-count.R: No such file or directory
 > > ~~~
 > > {: .output}
 > {: .solution}

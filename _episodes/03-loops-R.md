@@ -44,7 +44,7 @@ analyze("data/inflammation-01.csv")
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-loops-R-inflammation-01-1.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-01-2.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-01-3.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-loops-R-inflammation-01-1.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-01-2.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-01-3.svg" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" width="612" style="display: block; margin: auto;" />
 
 We can use it to analyze other data sets one by one:
 
@@ -54,7 +54,7 @@ analyze("data/inflammation-02.csv")
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-loops-R-inflammation-02-1.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-02-2.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-02-3.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-loops-R-inflammation-02-1.svg" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-02-2.svg" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-inflammation-02-3.svg" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" width="612" style="display: block; margin: auto;" />
 
 but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
@@ -438,12 +438,15 @@ list.files(path = "data", pattern = "csv")
 
 
 ~~~
- [1] "car-speeds-cleaned.csv" "car-speeds.csv"         "inflammation-01.csv"   
- [4] "inflammation-02.csv"    "inflammation-03.csv"    "inflammation-04.csv"   
- [7] "inflammation-05.csv"    "inflammation-06.csv"    "inflammation-07.csv"   
-[10] "inflammation-08.csv"    "inflammation-09.csv"    "inflammation-10.csv"   
-[13] "inflammation-11.csv"    "inflammation-12.csv"    "sample.csv"            
-[16] "small-01.csv"           "small-02.csv"           "small-03.csv"          
+ [1] "car-speeds-cleaned.csv"  "car-speeds.csv"         
+ [3] "inflammation-01.csv"     "inflammation-02.csv"    
+ [5] "inflammation-03.csv"     "inflammation-04.csv"    
+ [7] "inflammation-05.csv"     "inflammation-06.csv"    
+ [9] "inflammation-07.csv"     "inflammation-08.csv"    
+[11] "inflammation-09.csv"     "inflammation-10.csv"    
+[13] "inflammation-11 (2).csv" "inflammation-12.csv"    
+[15] "sample (2).csv"          "small-01 (2).csv"       
+[17] "small-02 (2).csv"        "small-03 (2).csv"       
 ~~~
 {: .output}
 
@@ -457,10 +460,12 @@ list.files(path = "data", pattern = "inflammation")
 
 
 ~~~
- [1] "inflammation-01.csv" "inflammation-02.csv" "inflammation-03.csv"
- [4] "inflammation-04.csv" "inflammation-05.csv" "inflammation-06.csv"
- [7] "inflammation-07.csv" "inflammation-08.csv" "inflammation-09.csv"
-[10] "inflammation-10.csv" "inflammation-11.csv" "inflammation-12.csv"
+ [1] "inflammation-01.csv"     "inflammation-02.csv"    
+ [3] "inflammation-03.csv"     "inflammation-04.csv"    
+ [5] "inflammation-05.csv"     "inflammation-06.csv"    
+ [7] "inflammation-07.csv"     "inflammation-08.csv"    
+ [9] "inflammation-09.csv"     "inflammation-10.csv"    
+[11] "inflammation-11 (2).csv" "inflammation-12.csv"    
 ~~~
 {: .output}
 
@@ -493,15 +498,15 @@ list.files(path = "data", pattern = "csv", full.names = TRUE)
 
 
 ~~~
- [1] "data/car-speeds-cleaned.csv" "data/car-speeds.csv"        
- [3] "data/inflammation-01.csv"    "data/inflammation-02.csv"   
- [5] "data/inflammation-03.csv"    "data/inflammation-04.csv"   
- [7] "data/inflammation-05.csv"    "data/inflammation-06.csv"   
- [9] "data/inflammation-07.csv"    "data/inflammation-08.csv"   
-[11] "data/inflammation-09.csv"    "data/inflammation-10.csv"   
-[13] "data/inflammation-11.csv"    "data/inflammation-12.csv"   
-[15] "data/sample.csv"             "data/small-01.csv"          
-[17] "data/small-02.csv"           "data/small-03.csv"          
+ [1] "data/car-speeds-cleaned.csv"  "data/car-speeds.csv"         
+ [3] "data/inflammation-01.csv"     "data/inflammation-02.csv"    
+ [5] "data/inflammation-03.csv"     "data/inflammation-04.csv"    
+ [7] "data/inflammation-05.csv"     "data/inflammation-06.csv"    
+ [9] "data/inflammation-07.csv"     "data/inflammation-08.csv"    
+[11] "data/inflammation-09.csv"     "data/inflammation-10.csv"    
+[13] "data/inflammation-11 (2).csv" "data/inflammation-12.csv"    
+[15] "data/sample (2).csv"          "data/small-01 (2).csv"       
+[17] "data/small-02 (2).csv"        "data/small-03 (2).csv"       
 ~~~
 {: .output}
 
@@ -515,12 +520,12 @@ list.files(path = "data", pattern = "inflammation", full.names = TRUE)
 
 
 ~~~
- [1] "data/inflammation-01.csv" "data/inflammation-02.csv"
- [3] "data/inflammation-03.csv" "data/inflammation-04.csv"
- [5] "data/inflammation-05.csv" "data/inflammation-06.csv"
- [7] "data/inflammation-07.csv" "data/inflammation-08.csv"
- [9] "data/inflammation-09.csv" "data/inflammation-10.csv"
-[11] "data/inflammation-11.csv" "data/inflammation-12.csv"
+ [1] "data/inflammation-01.csv"     "data/inflammation-02.csv"    
+ [3] "data/inflammation-03.csv"     "data/inflammation-04.csv"    
+ [5] "data/inflammation-05.csv"     "data/inflammation-06.csv"    
+ [7] "data/inflammation-07.csv"     "data/inflammation-08.csv"    
+ [9] "data/inflammation-09.csv"     "data/inflammation-10.csv"    
+[11] "data/inflammation-11 (2).csv" "data/inflammation-12.csv"    
 ~~~
 {: .output}
 
@@ -552,21 +557,21 @@ for (f in filenames) {
 ~~~
 {: .output}
 
-<img src="../fig/rmd-03-loops-R-loop-analyze-1.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-2.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-3.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-loops-R-loop-analyze-1.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-2.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-3.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
 
 ~~~
 [1] "data/inflammation-02.csv"
 ~~~
 {: .output}
 
-<img src="../fig/rmd-03-loops-R-loop-analyze-4.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-5.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-6.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-loops-R-loop-analyze-4.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-5.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-6.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
 
 ~~~
 [1] "data/inflammation-03.csv"
 ~~~
 {: .output}
 
-<img src="../fig/rmd-03-loops-R-loop-analyze-7.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-8.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-9.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-loops-R-loop-analyze-7.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-8.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" /><img src="../fig/rmd-03-loops-R-loop-analyze-9.svg" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" width="612" style="display: block; margin: auto;" />
 
 Sure enough, the maxima of these data sets show exactly the same ramp as the first, and their minima show the same staircase structure.
 

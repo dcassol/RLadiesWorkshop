@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta http-equiv="last-modified" content="2020-02-13 10:05:23 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -319,7 +319,7 @@ We’ll tackle these questions in turn below.</p>
 
 <p>Using the text editor of your choice, save the following line of code in a text file called <code class="highlighter-rouge">session-info.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sessionInfo()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: session-info.R: No such file or directory
 </code></pre></div></div>
 
 <p>The function, <code class="highlighter-rouge">sessionInfo</code>, outputs the version of R you are running as well as the type of computer you are using (as well as the versions of the packages that have been loaded).
@@ -330,27 +330,7 @@ This is very useful information to include when asking others for help with your
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">session</span><span class="o">-</span><span class="n">info.R</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R Under development (unstable) (2020-02-05 r77773)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 19.04
-
-Matrix products: default
-BLAS:   /usr/local/lib/R/lib/libRblas.so
-LAPACK: /usr/local/lib/R/lib/libRlapack.so
-
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.0.0
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'session-info.R': No such file or directory
 </code></pre></div></div>
 
 <blockquote class="callout">
@@ -364,8 +344,7 @@ For a review, see this <a href="https://swcarpentry.github.io/shell-novice/02-fi
 
 <p>Now let’s create another script that does something more interesting. Write the following lines in a file named <code class="highlighter-rouge">print-args.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs()
-cat(args, sep = "\n")
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: print-args.R: No such file or directory
 </code></pre></div></div>
 
 <p>The function <code class="highlighter-rouge">commandArgs</code> extracts all the command line arguments and returns them as a vector.
@@ -378,10 +357,7 @@ Let’s see what happens when we run this program in the Unix Shell:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
---no-echo
---no-restore
---file=print-args.R
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'print-args.R': No such file or directory
 </code></pre></div></div>
 
 <p>From this output, we learn that <code class="highlighter-rouge">Rscript</code> is just a convenience command for running R scripts.
@@ -401,11 +377,7 @@ From the R help file:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">R</span><span class="w"> </span><span class="o">--</span><span class="n">slave</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">restore</span><span class="w"> </span><span class="o">--</span><span class="n">file</span><span class="o">=</span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w"> </span><span class="o">--</span><span class="n">args</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
---slave
---no-restore
---file=print-args.R
---args
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'print-args.R': No such file or directory
 </code></pre></div></div>
 
 <p>If we run it with a few arguments, however:</p>
@@ -413,22 +385,14 @@ From the R help file:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">third</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
---no-echo
---no-restore
---file=print-args.R
---args
-first
-second
-third
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'print-args.R': No such file or directory
 </code></pre></div></div>
 
 <p>then <code class="highlighter-rouge">commandArgs</code> adds each of those arguments to the vector it returns.
 Since the first elements of the vector are always the same, we can tell <code class="highlighter-rouge">commandArgs</code> to only return the arguments that come after <code class="highlighter-rouge">--args</code>.
 Let’s update <code class="highlighter-rouge">print-args.R</code> and save it as <code class="highlighter-rouge">print-args-trailing.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs(trailingOnly = TRUE)
-cat(args, sep = "\n")
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: print-args-trailing.R: No such file or directory
 </code></pre></div></div>
 
 <p>And then run <code class="highlighter-rouge">print-args-trailing</code> from the Unix Shell:</p>
@@ -436,9 +400,7 @@ cat(args, sep = "\n")
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args</span><span class="o">-</span><span class="n">trailing.R</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">third</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first
-second
-third
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'print-args-trailing.R': No such file or directory
 </code></pre></div></div>
 
 <p>Now <code class="highlighter-rouge">commandArgs</code> returns only the arguments that we listed after <code class="highlighter-rouge">print-args-trailing.R</code>.</p>
@@ -466,80 +428,13 @@ Here’s a simple test to run from the Unix Shell:</p>
 <p>There is no output because we have defined a function, but haven’t actually called it.
 Let’s add a call to <code class="highlighter-rouge">main</code> and save it as <code class="highlighter-rouge">readings-02.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  filename &lt;- args[1]
-  dat &lt;- read.csv(file = filename, header = FALSE)
-  mean_per_patient &lt;- apply(dat, 1, mean)
-  cat(mean_per_patient, sep = "\n")
-}
-
-main()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-02.R: No such file or directory
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-02</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">inflammation</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
-5.425
-6.1
-5.9
-5.55
-6.225
-5.975
-6.65
-6.625
-6.525
-6.775
-5.8
-6.225
-5.75
-5.225
-6.3
-6.55
-5.7
-5.85
-6.55
-5.775
-5.825
-6.175
-6.1
-5.8
-6.425
-6.05
-6.025
-6.175
-6.55
-6.175
-6.35
-6.725
-6.125
-7.075
-5.725
-5.925
-6.15
-6.075
-5.75
-5.975
-5.725
-6.3
-5.9
-6.75
-5.925
-7.225
-6.15
-5.95
-6.275
-5.7
-6.1
-6.825
-5.975
-6.725
-5.7
-6.25
-6.4
-7.05
-5.9
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'readings-02.R': No such file or directory
 </code></pre></div></div>
 
 <blockquote class="challenge">
@@ -622,8 +517,7 @@ that lists all the files in the current directory that contain a specific patter
 </span><span class="n">Rscript</span><span class="w"> </span><span class="n">find</span><span class="o">-</span><span class="n">pattern.R</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print-args-trailing.R
-print-args.R
+  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'find-pattern.R': No such file or directory
 </code></pre></div>  </div>
 
   <blockquote class="solution">
@@ -632,21 +526,7 @@ print-args.R
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">find</span><span class="o">-</span><span class="n">pattern.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  # Finds all files in the current directory that contain a given pattern.
-  #
-  # Takes one argument: the pattern to be searched.
-  #
-  # Ex. usage:
-  #   Rscript find-pattern.R csv
-  #
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  pattern &lt;- args[1]
-  files &lt;- list.files(pattern = pattern)
-  cat(files, sep = "\n")
-}
-
-main()
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: find-pattern.R: No such file or directory
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -660,23 +540,21 @@ Let’s investigate them from the Unix Shell:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="o">-*</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data/small-01.csv
-data/small-02.csv
-data/small-03.csv
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data/small-01 (2).csv
+data/small-02 (2).csv
+data/small-03 (2).csv
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0,0,1
-0,1,2
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: data/small-01.csv: No such file or directory
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-02</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
-1
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'readings-02.R': No such file or directory
 </code></pre></div></div>
 
 <p>Using small data files as input also allows us to check our results more easily: here, for example, we can see that our program is calculating the mean correctly for each line, whereas we were really taking it on faith before.
@@ -689,16 +567,7 @@ We’ll need to handle an unknown number of filenames, since our program could b
 <p>The solution is to loop over the vector returned by <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code>.
 Here’s our changed program, which we’ll save as <code class="highlighter-rouge">readings-03.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  for (filename in args) {
-    dat &lt;- read.csv(file = filename, header = FALSE)
-    mean_per_patient &lt;- apply(dat, 1, mean)
-    cat(mean_per_patient, sep = "\n")
-  }
-}
-
-main()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-03.R: No such file or directory
 </code></pre></div></div>
 
 <p>and here it is in action:</p>
@@ -706,10 +575,7 @@ main()
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-03</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-02</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
-1
-13.66667
-11
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'readings-03.R': No such file or directory
 </code></pre></div></div>
 
 <p><strong>Note</strong>: at this point, we have created three versions of our script called <code class="highlighter-rouge">readings-01.R</code>, <code class="highlighter-rouge">readings-02.R</code>, and <code class="highlighter-rouge">readings-03.R</code>.
@@ -730,31 +596,7 @@ What is the best way to test your program?</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">check.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  # Checks that all csv files have the same number of rows and columns.
-  #
-  # Takes multiple arguments: the names of the files to be checked.
-  #
-  # Ex. usage:
-  #   Rscript check.R inflammation-*
-  #
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  first_file &lt;- read.csv(args[1], header = FALSE)
-  first_dim &lt;- dim(first_file)
-#   num_rows &lt;- dim(first_file)[1]  # nrow(first_file)
-#   num_cols &lt;- dim(first_file)[2]  # ncol(first_file)
-  
-  
-  for (filename in args[-1]) {
-    new_file &lt;- read.csv(filename, header = FALSE)
-    new_dim &lt;- dim(new_file)
-    if (new_dim[1] != first_dim[1] | new_dim[2] != first_dim[2]) {
-      cat("Not all the data files have the same dimensions.")
-    }
-  }
-}
-
-main()
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: check.R: No such file or directory
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -764,26 +606,7 @@ main()
 <p>The next step is to teach our program to pay attention to the <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, and <code class="highlighter-rouge">--max</code> flags.
 These always appear before the names of the files, so let’s save the following in <code class="highlighter-rouge">readings-04.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  action &lt;- args[1]
-  filenames &lt;- args[-1]
-
-  for (f in filenames) {
-    dat &lt;- read.csv(file = f, header = FALSE)
-
-    if (action == "--min") {
-      values &lt;- apply(dat, 1, min)
-    } else if (action == "--mean") {
-      values &lt;- apply(dat, 1, mean)
-    } else if (action == "--max") {
-      values &lt;- apply(dat, 1, max)
-    }
-    cat(values, sep = "\n")
-  }
-}
-
-main()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-04.R: No such file or directory
 </code></pre></div></div>
 
 <p>And we can confirm this works by running it from the Unix Shell:</p>
@@ -791,8 +614,7 @@ main()
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-04</span><span class="n">.R</span><span class="w"> </span><span class="o">--</span><span class="n">max</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
-2
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'readings-04.R': No such file or directory
 </code></pre></div></div>
 
 <p>but there are several things wrong with it:</p>
@@ -810,31 +632,7 @@ main()
 <p>This version pulls the processing of each file out of the loop into a function of its own.
 It also checks that <code class="highlighter-rouge">action</code> is one of the allowed flags before doing any processing, so that the program fails fast. We’ll save it as <code class="highlighter-rouge">readings-05.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  action &lt;- args[1]
-  filenames &lt;- args[-1]
-  stopifnot(action %in% c("--min", "--mean", "--max"))
-
-  for (f in filenames) {
-    process(f, action)
-  }
-}
-
-process &lt;- function(filename, action) {
-  dat &lt;- read.csv(file = filename, header = FALSE)
-
-  if (action == "--min") {
-    values &lt;- apply(dat, 1, min)
-  } else if (action == "--mean") {
-    values &lt;- apply(dat, 1, mean)
-  } else if (action == "--max") {
-    values &lt;- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-main()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-05.R: No such file or directory
 </code></pre></div></div>
 
 <p>This is four lines longer than its predecessor, but broken into more digestible chunks of 8 and 12 lines.</p>
@@ -861,31 +659,7 @@ Is the program easier to understand?</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">readings</span><span class="o">-</span><span class="n">short.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  action &lt;- args[1]
-  filenames &lt;- args[-1]
-  stopifnot(action %in% c("-n", "-m", "-x"))
-
-  for (f in filenames) {
-    process(f, action)
-  }
-}
-
-process &lt;- function(filename, action) {
-  dat &lt;- read.csv(file = filename, header = FALSE)
-
-  if (action == "-n") {
-    values &lt;- apply(dat, 1, min)
-  } else if (action == "-m") {
-    values &lt;- apply(dat, 1, mean)
-  } else if (action == "-x") {
-    values &lt;- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-main()
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-short.R: No such file or directory
 </code></pre></div>    </div>
     <p>The program is neither easier to read nor easier to understand due to the 
 ambiguity of the argument names.</p>
@@ -893,39 +667,7 @@ ambiguity of the argument names.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">readings</span><span class="o">-</span><span class="n">usage.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  action &lt;- args[1]
-  filenames &lt;- args[-1]
-  if (!(action %in% c("--min", "--mean", "--max"))) {
-    usage()
-  } else if (length(filenames) == 0) {
-    process(file("stdin"), action)
-  } else {
-    for (f in filenames) {
-      process(f, action)
-    }
-  }
-}
-
-process &lt;- function(filename, action) {
-  dat &lt;- read.csv(file = filename, header = FALSE)
-
-  if (action == "--min") {
-    values &lt;- apply(dat, 1, min)
-  } else if (action == "--mean") {
-    values &lt;- apply(dat, 1, mean)
-  } else if (action == "--max") {
-    values &lt;- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-usage &lt;- function() {
-  cat("usage: Rscript readings-usage.R [--min, --mean, --max] filenames", sep = "\n")
-}
-
-main()
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-usage.R: No such file or directory
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -949,7 +691,7 @@ Let’s try running it from the Unix Shell as if it were a regular command-line 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">count</span><span class="o">-</span><span class="n">stdin.R</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lines in standard input: 2
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash: data/small-01.csv: No such file or directory
 </code></pre></div></div>
 
 <p>Note that because we did not specify <code class="highlighter-rouge">sep = "\n"</code> when calling <code class="highlighter-rouge">cat</code>, the output is written on the same line.</p>
@@ -968,35 +710,7 @@ If you ran this, you can pause R by typing <kbd>Ctrl</kbd>+<kbd>Z</kbd> (technic
 Luckily, <code class="highlighter-rouge">read.csv</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code class="highlighter-rouge">process</code>.
 That leaves <code class="highlighter-rouge">main</code>, which we’ll update and save as <code class="highlighter-rouge">readings-06.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  action &lt;- args[1]
-  filenames &lt;- args[-1]
-  stopifnot(action %in% c("--min", "--mean", "--max"))
-
-  if (length(filenames) == 0) {
-    process(file("stdin"), action)
-  } else {
-    for (f in filenames) {
-      process(f, action)
-    }
-  }
-}
-
-process &lt;- function(filename, action) {
-  dat &lt;- read.csv(file = filename, header = FALSE)
-
-  if (action == "--min") {
-    values &lt;- apply(dat, 1, min)
-  } else if (action == "--mean") {
-    values &lt;- apply(dat, 1, mean)
-  } else if (action == "--max") {
-    values &lt;- apply(dat, 1, max)
-  }
-  cat(values, sep = "\n")
-}
-
-main()
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: readings-06.R: No such file or directory
 </code></pre></div></div>
 
 <p>Let’s try it out.
@@ -1005,16 +719,7 @@ Instead of calculating the mean inflammation of every patient, we’ll only calc
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">inflammation</span><span class="m">-01</span><span class="n">.csv</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-06</span><span class="n">.R</span><span class="w"> </span><span class="o">--</span><span class="n">mean</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
-5.425
-6.1
-5.9
-5.55
-6.225
-5.975
-6.65
-6.625
-6.525
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fatal error: cannot open file 'readings-06.R': No such file or directory
 </code></pre></div></div>
 
 <p>And now we’re done: the program now does everything we set out to do.</p>
@@ -1035,30 +740,7 @@ Instead of calculating the mean inflammation of every patient, we’ll only calc
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">line</span><span class="o">-</span><span class="n">count.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
-  args &lt;- commandArgs(trailingOnly = TRUE)
-  if (length(args) &gt; 0) {
-    total_lines &lt;- 0
-    for (filename in args) {
-      input &lt;- readLines(filename)
-      num_lines &lt;- length(input)
-      cat(filename)
-      cat(" ")
-      cat(num_lines, sep = "\n")
-      total_lines &lt;- total_lines + num_lines
-    }
-    if (length(args) &gt; 1) {
-      cat("Total ")
-      cat(total_lines, sep = "\n")
-    }
-  } else {
-    input &lt;- readLines(file("stdin"))
-    num_lines &lt;- length(input)
-    cat(num_lines, sep = "\n")
-  }
-}
-
-main()
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: line-count.R: No such file or directory
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>

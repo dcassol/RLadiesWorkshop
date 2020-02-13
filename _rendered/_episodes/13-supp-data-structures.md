@@ -681,7 +681,7 @@ class(m)
 
 
 ~~~
-[1] "matrix" "array" 
+[1] "matrix"
 ~~~
 {: .output}
 

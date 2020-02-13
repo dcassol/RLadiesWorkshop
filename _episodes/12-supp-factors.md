@@ -241,6 +241,21 @@ dat <- read.csv(file = 'data/sample.csv', stringsAsFactors = TRUE)
 ~~~
 {: .language-r}
 
+
+
+~~~
+Warning in file(file, "rt"): cannot open file 'data/sample.csv': No such file or
+directory
+~~~
+{: .error}
+
+
+
+~~~
+Error in file(file, "rt"): cannot open the connection
+~~~
+{: .error}
+
 > ## Default Behavior
 >
 > `stringsAsFactors = TRUE` is the default behavior for R.
@@ -257,18 +272,9 @@ str(dat)
 
 
 ~~~
-'data.frame':	100 obs. of  9 variables:
- $ ID           : Factor w/ 100 levels "Sub001","Sub002",..: 1 2 3 4 5 6 7 8 9 10 ...
- $ Gender       : Factor w/ 4 levels "f","F","m","M": 3 3 3 1 3 4 1 3 3 1 ...
- $ Group        : Factor w/ 3 levels "Control","Treatment1",..: 1 3 3 2 2 3 1 3 3 1 ...
- $ BloodPressure: int  132 139 130 105 125 112 173 108 131 129 ...
- $ Age          : num  16 17.2 19.5 15.7 19.9 14.3 17.7 19.8 19.4 18.8 ...
- $ Aneurisms_q1 : int  114 148 196 199 188 260 135 216 117 188 ...
- $ Aneurisms_q2 : int  140 209 251 140 120 266 98 238 215 144 ...
- $ Aneurisms_q3 : int  202 248 122 233 222 320 154 279 181 192 ...
- $ Aneurisms_q4 : int  237 248 177 220 228 294 245 251 272 185 ...
+Error in str(dat): object 'dat' not found
 ~~~
-{: .output}
+{: .error}
 
 Notice the first 3 columns have been converted to factors. These values were text in the data file so R automatically interpreted them as categorical variables.
 
@@ -281,24 +287,9 @@ summary(dat)
 
 
 ~~~
-       ID     Gender        Group    BloodPressure        Age       
- Sub001 : 1   f:35   Control   :30   Min.   : 62.0   Min.   :12.10  
- Sub002 : 1   F: 4   Treatment1:35   1st Qu.:107.5   1st Qu.:14.78  
- Sub003 : 1   m:46   Treatment2:35   Median :117.5   Median :16.65  
- Sub004 : 1   M:15                   Mean   :118.6   Mean   :16.42  
- Sub005 : 1                          3rd Qu.:133.0   3rd Qu.:18.30  
- Sub006 : 1                          Max.   :173.0   Max.   :20.00  
- (Other):94                                                         
-  Aneurisms_q1    Aneurisms_q2    Aneurisms_q3    Aneurisms_q4  
- Min.   : 65.0   Min.   : 80.0   Min.   :105.0   Min.   :116.0  
- 1st Qu.:118.0   1st Qu.:131.5   1st Qu.:182.5   1st Qu.:186.8  
- Median :158.0   Median :162.5   Median :217.0   Median :219.0  
- Mean   :158.8   Mean   :168.0   Mean   :219.8   Mean   :217.9  
- 3rd Qu.:188.0   3rd Qu.:196.8   3rd Qu.:248.2   3rd Qu.:244.2  
- Max.   :260.0   Max.   :283.0   Max.   :323.0   Max.   :315.0  
-                                                                
+Error in summary(dat): object 'dat' not found
 ~~~
-{: .output}
+{: .error}
 
 Notice the `summary()` function handles factors differently to numbers (and strings), the occurrence counts for each value is often more useful information.
 
@@ -321,11 +312,9 @@ Notice the `summary()` function handles factors differently to numbers (and stri
 > 
 > 
 > ~~~
-> 
->    Control Treatment1 Treatment2 
->         30         35         35 
+> Error in table(dat$Group): object 'dat' not found
 > ~~~
-> {: .output}
+> {: .error}
 > 
 > 
 > 
@@ -334,17 +323,40 @@ Notice the `summary()` function handles factors differently to numbers (and stri
 > ~~~
 > {: .language-r}
 > 
-> <img src="../fig/rmd-12-supp-factors-reordering-factors-1.png" title="plot of chunk reordering-factors" alt="plot of chunk reordering-factors" width="612" style="display: block; margin: auto;" />
+> 
+> 
+> ~~~
+> Error in table(dat$Group): object 'dat' not found
+> ~~~
+> {: .error}
 > Use the `factor()` command to modify the column dat$Group so that the *control* group is plotted last.
 > > ## Solution
 > > 
 > > ~~~
 > > dat$Group <- factor(dat$Group, levels = c("Treatment1", "Treatment2", "Control"))
+> > ~~~
+> > {: .language-r}
+> > 
+> > 
+> > 
+> > ~~~
+> > Error in factor(dat$Group, levels = c("Treatment1", "Treatment2", "Control")): object 'dat' not found
+> > ~~~
+> > {: .error}
+> > 
+> > 
+> > 
+> > ~~~
 > > barplot(table(dat$Group))
 > > ~~~
 > > {: .language-r}
 > > 
-> > <img src="../fig/rmd-12-supp-factors-reordering-factors-2-1.png" title="plot of chunk reordering-factors-2" alt="plot of chunk reordering-factors-2" width="612" style="display: block; margin: auto;" />
+> > 
+> > 
+> > ~~~
+> > Error in table(dat$Group): object 'dat' not found
+> > ~~~
+> > {: .error}
 > {: .solution}
 {: .challenge}
 
@@ -359,7 +371,12 @@ barplot(table(dat$Gender))
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-12-supp-factors-gender-counts-1.png" title="plot of chunk gender-counts" alt="plot of chunk gender-counts" width="612" style="display: block; margin: auto;" />
+
+
+~~~
+Error in table(dat$Gender): object 'dat' not found
+~~~
+{: .error}
 
 Values should have been recorded as lowercase 'm' and 'f'. We should correct this.
 
@@ -369,6 +386,13 @@ dat$Gender[dat$Gender == 'M'] <- 'm'
 ~~~
 {: .language-r}
 
+
+
+~~~
+Error in dat$Gender[dat$Gender == "M"] <- "m": object 'dat' not found
+~~~
+{: .error}
+
 > ## Updating Factors
 >
 > 
@@ -377,7 +401,12 @@ dat$Gender[dat$Gender == 'M'] <- 'm'
 > ~~~
 > {: .language-r}
 > 
-> <img src="../fig/rmd-12-supp-factors-updating-factors-1.png" title="plot of chunk updating-factors" alt="plot of chunk updating-factors" width="612" style="display: block; margin: auto;" />
+> 
+> 
+> ~~~
+> Error in plot(x = dat$Gender, y = dat$BloodPressure): object 'dat' not found
+> ~~~
+> {: .error}
 >
 > Why does this plot show 4 levels?
 >
@@ -393,11 +422,29 @@ We use the `droplevels()` function to remove extra levels.
 
 ~~~
 dat$Gender <- droplevels(dat$Gender)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in droplevels(dat$Gender): object 'dat' not found
+~~~
+{: .error}
+
+
+
+~~~
 plot(x = dat$Gender, y = dat$BloodPressure)
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-12-supp-factors-dropping-levels-1.png" title="plot of chunk dropping-levels" alt="plot of chunk dropping-levels" width="612" style="display: block; margin: auto;" />
+
+
+~~~
+Error in plot(x = dat$Gender, y = dat$BloodPressure): object 'dat' not found
+~~~
+{: .error}
 
 > ## Adjusting Factor Levels
 >
@@ -406,11 +453,29 @@ plot(x = dat$Gender, y = dat$BloodPressure)
 > 
 > ~~~
 > levels(dat$Gender)[2] <- 'f'
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> Error in levels(dat$Gender)[2] <- "f": object 'dat' not found
+> ~~~
+> {: .error}
+> 
+> 
+> 
+> ~~~
 > plot(x = dat$Gender, y = dat$BloodPressure)
 > ~~~
 > {: .language-r}
 > 
-> <img src="../fig/rmd-12-supp-factors-adjusting-levels-1.png" title="plot of chunk adjusting-levels" alt="plot of chunk adjusting-levels" width="612" style="display: block; margin: auto;" />
+> 
+> 
+> ~~~
+> Error in plot(x = dat$Gender, y = dat$BloodPressure): object 'dat' not found
+> ~~~
+> {: .error}
 {: .callout}
 
 {% include links.md %}

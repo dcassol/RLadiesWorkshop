@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta http-equiv="last-modified" content="2020-02-13 10:05:23 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -422,50 +422,13 @@ Copy and paste code into each script so that <code class="highlighter-rouge">inf
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">inflammation.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This code runs the inflammation data analysis.
-
-source("inflammation_fxns.R")
-analyze_all("inflammation.*csv")
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: inflammation.R: No such file or directory
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">inflammation_fxns.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is code for functions used in our inflammation data analysis.
-
-analyze &lt;- function(filename, output = NULL) {
-  # Plots the average, min, and max inflammation over time.
-  # Input:
-  #    filename: character string of a csv file
-  #    output: character string of pdf file for saving
-  if (!is.null(output)) {
-    pdf(output)
-  }
-  dat &lt;- read.csv(file = filename, header = FALSE)
-  avg_day_inflammation &lt;- apply(dat, 2, mean)
-  plot(avg_day_inflammation)
-  max_day_inflammation &lt;- apply(dat, 2, max)
-  plot(max_day_inflammation)
-  min_day_inflammation &lt;- apply(dat, 2, min)
-  plot(min_day_inflammation)
-  if (!is.null(output)) {
-    dev.off()
-  }
-}
-
-analyze_all &lt;- function(pattern) {
-  # Directory name containing the data
-  data_dir &lt;- "data"
-  # Directory name for results
-  results_dir &lt;- "results"
-  # Runs the function analyze for each file in the current working directory
-  # that contains the given pattern.
-  filenames &lt;- list.files(path = data_dir, pattern = pattern)
-  for (f in filenames) {
-    pdf_name &lt;- file.path(results_dir, sub("csv", "pdf", f))
-    analyze(file.path(data_dir, f), output = pdf_name)
-  }
-}
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat: inflammation_fxns.R: No such file or directory
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>

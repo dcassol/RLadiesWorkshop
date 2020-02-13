@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta http-equiv="last-modified" content="2020-02-13 10:05:23 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -1063,7 +1063,7 @@ Plotting the values is done with the function <code class="highlighter-rouge">pl
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">avg_day_inflammation</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p><img src="../fig/rmd-01-starting-with-data-plot-avg-inflammation-1.png" title="plot of chunk plot-avg-inflammation" alt="plot of chunk plot-avg-inflammation" width="612" style="display: block; margin: auto;" /></p>
+<p><img src="../fig/rmd-01-starting-with-data-plot-avg-inflammation-1.svg" title="plot of chunk plot-avg-inflammation" alt="plot of chunk plot-avg-inflammation" width="612" style="display: block; margin: auto;" /></p>
 
 <p>Above, we gave the function <code class="highlighter-rouge">plot</code> a vector of numbers corresponding to the average inflammation per day across all patients.
 <code class="highlighter-rouge">plot</code> created a scatter plot where the y-axis is the average inflammation level and the x-axis is the order, or index, of the values in the vector, which in this case correspond to the 40 days of treatment.
@@ -1074,13 +1074,13 @@ Let’s have a look at two other statistics: the maximum and minimum inflammatio
 </span><span class="n">plot</span><span class="p">(</span><span class="n">max_day_inflammation</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p><img src="../fig/rmd-01-starting-with-data-plot-max-inflammation-1.png" title="plot of chunk plot-max-inflammation" alt="plot of chunk plot-max-inflammation" width="612" style="display: block; margin: auto;" /></p>
+<p><img src="../fig/rmd-01-starting-with-data-plot-max-inflammation-1.svg" title="plot of chunk plot-max-inflammation" alt="plot of chunk plot-max-inflammation" width="612" style="display: block; margin: auto;" /></p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w">
 </span><span class="n">plot</span><span class="p">(</span><span class="n">min_day_inflammation</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p><img src="../fig/rmd-01-starting-with-data-plot-min-inflammation-1.png" title="plot of chunk plot-min-inflammation" alt="plot of chunk plot-min-inflammation" width="612" style="display: block; margin: auto;" /></p>
+<p><img src="../fig/rmd-01-starting-with-data-plot-min-inflammation-1.svg" title="plot of chunk plot-min-inflammation" alt="plot of chunk plot-min-inflammation" width="612" style="display: block; margin: auto;" /></p>
 
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
 
