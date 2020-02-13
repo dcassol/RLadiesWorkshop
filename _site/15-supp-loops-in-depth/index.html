@@ -1,0 +1,577 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Programming with R"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with R: Loops in R</title>
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-starting-with-data/index.html">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-func-R/index.html">Creating Functions</a></li>
+            
+            <li><a href="../03-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="../04-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="../05-cmdline/index.html">Command-Line Programs</a></li>
+            
+            <li><a href="../06-best-practices-R/index.html">Best Practices for Writing R Code</a></li>
+            
+            <li><a href="../07-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="../08-making-packages-R/index.html">Making Packages in R</a></li>
+            
+            <li><a href="../09-supp-intro-rstudio/index.html">Introduction to RStudio</a></li>
+            
+            <li><a href="../10-supp-addressing-data/index.html">Addressing Data</a></li>
+            
+            <li><a href="../11-supp-read-write-csv/index.html">Reading and Writing CSV Files</a></li>
+            
+            <li><a href="../12-supp-factors/index.html">Understanding Factors</a></li>
+            
+            <li><a href="../13-supp-data-structures/index.html">Data Types and Structures</a></li>
+            
+            <li><a href="../14-supp-call-stack/index.html">The Call Stack</a></li>
+            
+            <li><a href="../15-supp-loops-in-depth/index.html">Loops in R</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/15-supp-loops-in-depth.Rmd">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../14-supp-call-stack/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with R</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Loops in R</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 30 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I do the same thing multiple times more efficiently in R?</p>
+</li>
+	
+	<li><p>What is vectorization?</p>
+</li>
+	
+	<li><p>Should I use a loop or an <code class="highlighter-rouge">apply</code> statement?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Compare loops and vectorized operations.</p>
+</li>
+	
+	<li><p>Use the apply family of functions.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>In R you have multiple options when repeating calculations: vectorized operations, <code class="highlighter-rouge">for</code> loops, and <code class="highlighter-rouge">apply</code> functions.</p>
+
+<p>This lesson is an extension of <a href="../03-loops-R/">Analyzing Multiple Data Sets</a>.
+In that lesson, we introduced how to run a custom function, <code class="highlighter-rouge">analyze</code>, over multiple data files:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">analyze</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="c1"># Plots the average, min, and max inflammation over time.</span><span class="w">
+  </span><span class="c1"># Input is character string of a csv file.</span><span class="w">
+  </span><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+  </span><span class="n">avg_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+  </span><span class="n">plot</span><span class="p">(</span><span class="n">avg_day_inflammation</span><span class="p">)</span><span class="w">
+  </span><span class="n">max_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w">
+  </span><span class="n">plot</span><span class="p">(</span><span class="n">max_day_inflammation</span><span class="p">)</span><span class="w">
+  </span><span class="n">min_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w">
+  </span><span class="n">plot</span><span class="p">(</span><span class="n">min_day_inflammation</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filenames</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">list.files</span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data"</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"inflammation-[0-9]{2}.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">full.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="vectorized-operations">Vectorized Operations</h3>
+
+<p>A key difference between R and many other languages is a topic known as vectorization.
+When you wrote the <code class="highlighter-rouge">total</code> function, we mentioned that R already has <code class="highlighter-rouge">sum</code> to do this; <code class="highlighter-rouge">sum</code> is <em>much</em> faster than the interpreted <code class="highlighter-rouge">for</code> loop because <code class="highlighter-rouge">sum</code> is coded in C to work with a vector of numbers.
+Many of R’s functions work this way; the loop is hidden from you in C.
+Learning to use vectorized operations is a key skill in R.</p>
+
+<p>For example, to add pairs of numbers contained in two vectors</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You could loop over the pairs adding each in turn, but that would be very inefficient in R.</p>
+
+<p>Instead of using <code class="highlighter-rouge">i in a</code> to make our loop variable, we use the function <code class="highlighter-rouge">seq_along</code> to generate indices for each element <code class="highlighter-rouge">a</code> contains.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numeric</span><span class="p">(</span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">res</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  2  4  6  8 10 12 14 16 18 20
+</code></pre></div></div>
+
+<p>Instead, <code class="highlighter-rouge">+</code> is a <em>vectorized</em> function which can operate on entire vectors at once</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">res2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span><span class="n">all.equal</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">res2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+</code></pre></div></div>
+
+<h3 id="vector-recycling">Vector Recycling</h3>
+
+<p>When performing vector operations in R, it is important to know about recycling. If you perform an operation on two or more vectors of unequal length, R will recycle elements of the shorter vector(s) to match the longest vector.  For example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="w">
+</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  2  4  6  8 10  7  9 11 13 15
+</code></pre></div></div>
+
+<p>The elements of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> are added together starting from the first element of both vectors. When R reaches the end of the shorter vector <code class="highlighter-rouge">b</code>, it starts again at the first element of <code class="highlighter-rouge">b</code> and continues until it reaches the last element of the longest vector <code class="highlighter-rouge">a</code>.  This behaviour may seem crazy at first glance, but it is very useful when you want to perform the same operation on every element of a vector. For example, say we want to multiply every element of our vector <code class="highlighter-rouge">a</code> by 5:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  5 10 15 20 25 30 35 40 45 50
+</code></pre></div></div>
+
+<p>Remember there are no scalars in R, so <code class="highlighter-rouge">b</code> is actually a vector of length 1; in order to add its value to every element of <code class="highlighter-rouge">a</code>, it is <em>recycled</em> to match the length of <code class="highlighter-rouge">a</code>.</p>
+
+<p>When the length of the longer object is a multiple of the shorter object length (as in our example above), the recycling occurs silently. When the longer object length is not a multiple of the shorter object length, a warning is given:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="w">
+</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in a + b: longer object length is not a multiple of shorter object
+length
+</code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  2  4  6  8 10 12 14  9 11 13
+</code></pre></div></div>
+
+<h3 id="for-or-apply"><code class="highlighter-rouge">for</code> or <code class="highlighter-rouge">apply</code>?</h3>
+
+<p>A <code class="highlighter-rouge">for</code> loop is used to apply the same function calls to a collection of objects.
+R has a family of functions, the <code class="highlighter-rouge">apply</code> family, which can be used in much the same way.
+You’ve already used one of the family, <code class="highlighter-rouge">apply</code> in the first <a href="../01-starting-with-data/">lesson</a>.
+The <code class="highlighter-rouge">apply</code> family members include</p>
+
+<ul>
+  <li><code class="highlighter-rouge">apply</code>  - apply over the margins of an array (e.g. the rows or columns of a matrix)</li>
+  <li><code class="highlighter-rouge">lapply</code> - apply over an object and return list</li>
+  <li><code class="highlighter-rouge">sapply</code> - apply over an object and return a simplified object (an array) if possible</li>
+  <li><code class="highlighter-rouge">vapply</code> - similar to <code class="highlighter-rouge">sapply</code> but you specify the type of object returned by the iterations</li>
+</ul>
+
+<p>Each of these has an argument <code class="highlighter-rouge">FUN</code> which takes a function to apply to each element of the object.
+Instead of looping over <code class="highlighter-rouge">filenames</code> and calling <code class="highlighter-rouge">analyze</code>, as you did earlier, you could <code class="highlighter-rouge">sapply</code> over <code class="highlighter-rouge">filenames</code> with <code class="highlighter-rouge">FUN = analyze</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sapply</span><span class="p">(</span><span class="n">filenames</span><span class="p">,</span><span class="w"> </span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analyze</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Deciding whether to use <code class="highlighter-rouge">for</code> or one of the <code class="highlighter-rouge">apply</code> family is really personal preference.
+Using an <code class="highlighter-rouge">apply</code> family function forces to you encapsulate your operations as a function rather than separate calls with <code class="highlighter-rouge">for</code>.
+<code class="highlighter-rouge">for</code> loops are often more natural in some circumstances; for several related operations, a <code class="highlighter-rouge">for</code> loop will avoid you having to pass in a lot of extra arguments to your function.</p>
+
+<h3 id="loops-in-r-are-slow">Loops in R Are Slow</h3>
+
+<p>No, they are not! <em>If</em> you follow some golden rules:</p>
+
+<ol>
+  <li>Don’t use a loop when a vectorized alternative exists</li>
+  <li>Don’t grow objects (via <code class="highlighter-rouge">c</code>, <code class="highlighter-rouge">cbind</code>, etc) during the loop - R has to create a new object and copy across the information just to add a new element or row/column</li>
+  <li>Allocate an object to hold the results and fill it in during the loop</li>
+</ol>
+
+<p>As an example, we’ll create a new version of <code class="highlighter-rouge">analyze</code> that will return the mean inflammation per day (column) of each file.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">analyze2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">filenames</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">fdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">filenames</span><span class="p">[</span><span class="n">f</span><span class="p">],</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+    </span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">fdata</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">res</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="c1"># The loop is slowed by this call to cbind that grows the object</span><span class="w">
+      </span><span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cbind</span><span class="p">(</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="nf">return</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">system.time</span><span class="p">(</span><span class="n">avg2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">analyze2</span><span class="p">(</span><span class="n">filenames</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   user  system elapsed 
+  0.033   0.000   0.032 
+</code></pre></div></div>
+
+<p>Note how we add a new column to <code class="highlighter-rouge">out</code> at each iteration?
+This is a cardinal sin of writing a <code class="highlighter-rouge">for</code> loop in R.</p>
+
+<p>Instead, we can create an empty matrix with the right dimensions (rows/columns) to hold the results.
+Then we loop over the files but this time we fill in the <code class="highlighter-rouge">f</code>th column of our results matrix <code class="highlighter-rouge">out</code>.
+This time there is no copying/growing for R to deal with.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">analyze3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">filenames</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">40</span><span class="p">)</span><span class="w"> </span><span class="c1"># assuming 40 here from files</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">filenames</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">fdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">filenames</span><span class="p">[</span><span class="n">f</span><span class="p">],</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+    </span><span class="n">out</span><span class="p">[,</span><span class="w"> </span><span class="n">f</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">fdata</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="nf">return</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">system.time</span><span class="p">(</span><span class="n">avg3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">analyze3</span><span class="p">(</span><span class="n">filenames</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   user  system elapsed 
+  0.048   0.000   0.048 
+</code></pre></div></div>
+
+<p>In this simple example there is little difference in the compute time of <code class="highlighter-rouge">analyze2</code> and <code class="highlighter-rouge">analyze3</code>.
+This is because we are only iterating over 12 files and hence we only incur 12 copy/grow operations.
+If we were doing this over more files or the data objects we were growing were larger, the penalty for copying/growing would be much larger.</p>
+
+<p>Note that <code class="highlighter-rouge">apply</code> handles these memory allocation issues for you, but then you have to write the loop part as a function to pass to <code class="highlighter-rouge">apply</code>.
+At its heart, <code class="highlighter-rouge">apply</code> is just a <code class="highlighter-rouge">for</code> loop with extra convenience.</p>
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Where possible, use vectorized operations instead of <code class="highlighter-rouge">for</code> loops to make code faster and more concise.</p>
+</li>
+    
+    <li><p>Use functions such as <code class="highlighter-rouge">apply</code> instead of <code class="highlighter-rouge">for</code> loops to operate on the values in a data structure.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../14-supp-call-stack/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/15-supp-loops-in-depth.Rmd">Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

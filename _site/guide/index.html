@@ -1,0 +1,401 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Programming with R"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with R: Instructor Notes</title>
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-starting-with-data/index.html">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-func-R/index.html">Creating Functions</a></li>
+            
+            <li><a href="../03-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="../04-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="../05-cmdline/index.html">Command-Line Programs</a></li>
+            
+            <li><a href="../06-best-practices-R/index.html">Best Practices for Writing R Code</a></li>
+            
+            <li><a href="../07-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="../08-making-packages-R/index.html">Making Packages in R</a></li>
+            
+            <li><a href="../09-supp-intro-rstudio/index.html">Introduction to RStudio</a></li>
+            
+            <li><a href="../10-supp-addressing-data/index.html">Addressing Data</a></li>
+            
+            <li><a href="../11-supp-read-write-csv/index.html">Reading and Writing CSV Files</a></li>
+            
+            <li><a href="../12-supp-factors/index.html">Understanding Factors</a></li>
+            
+            <li><a href="../13-supp-data-structures/index.html">Data Types and Structures</a></li>
+            
+            <li><a href="../14-supp-call-stack/index.html">The Call Stack</a></li>
+            
+            <li><a href="../15-supp-loops-in-depth/index.html">Loops in R</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	<li><a href="/edit//_extras/guide.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="maintitle"><a href="../">Programming with R</a>: Instructor Notes</h1>
+
+<article>
+<p>This lesson is written as an introduction to R,
+but its real purpose is to introduce the single most important idea in programming:
+how to solve problems by building functions,
+each of which can fit in a programmer’s working memory.
+In order to teach that,
+we must teach people a little about
+the mechanics of manipulating data with lists and file I/O
+so that their functions can do things they actually care about.
+Our teaching order tries to show practical uses of every idea as soon as it is introduced;
+instructors should resist the temptation to explain
+the “other 90%” of the language
+as well.</p>
+
+<p>The secondary goal of this lesson is to give them a usable mental model of how programs run
+(what computer science educators call a
+<a href="../reference.html#notional-machine">notional machine</a>
+so that they can debug things when they go wrong. In particular,
+they must understand how function call stacks work.</p>
+
+<p>The final example asks them to build a command-line tool
+that works with the Unix pipe-and-filter model.
+We do this because it is a useful skill
+and because it helps learners see that the software they use isn’t magical.
+Tools like <code class="highlighter-rouge">grep</code> might be more sophisticated than
+the programs our learners can write at this point in their careers,
+but it’s crucial they realize this is a difference of scale rather than kind.</p>
+
+<p>A typical, half-day, lesson would use the first three lessons:</p>
+
+<ol>
+  <li><a href="../01-starting-with-data/">Analyzing Patient Data</a></li>
+  <li><a href="../02-func-R/">Creating Functions</a></li>
+  <li><a href="../03-loops-R/">Analyzing Multiple Data Sets</a></li>
+</ol>
+
+<p>An additional half-day could add the next two lessons:</p>
+
+<ol>
+  <li><a href="../04-cond/">Making choices</a></li>
+  <li><a href="../05-cmdline/">Command-Line Programs</a></li>
+</ol>
+
+<p>Time permitting,
+you can fit in one of these shorter lessons that cover bigger picture ideas
+like best practices for organizing code, reproducible research,
+and creating packages:</p>
+
+<ol>
+  <li><a href="../06-best-practices-R/">Best practices for using R and designing programs</a></li>
+  <li><a href="../07-knitr-R/">Dynamic reports with knitr</a></li>
+  <li><a href="../08-making-packages-R/">Making packages in R</a></li>
+</ol>
+
+<h2 id="using-git-in-rstudio">Using Git in RStudio</h2>
+
+<p>Some instructors will demo RStudio’s git integration at some point during the
+workshop. This often goes over very well, but there can be a few snags with the
+setup. First, RStudio may not know where to find git. You can specify where git
+is located in <em>Tools &gt; Global Options &gt; Git/SVN</em>; on Mac/Linux git is often in
+<code class="highlighter-rouge">/usr/bin/git</code> or <code class="highlighter-rouge">/usr/local/bin/git</code> and on Windows it is often in
+<code class="highlighter-rouge">C:/Program Files (x86)/Git/bin/git.exe</code>. If you don’t know where git is
+installed on someone’s computer, open a terminal and try <code class="highlighter-rouge">which git</code> on
+Mac/Linux, or <code class="highlighter-rouge">where git</code> or <code class="highlighter-rouge">whereis git.exe</code> on Windows. See
+<a href="http://stat545-ubc.github.io/git03_rstudio-meet-git.html">Jenny Bryan’s instructions</a>
+for more detail.</p>
+
+<p>If Windows users select the option “Run Git from the Windows command prompt”
+while setting up Git Bash, RStudio will automatically find the git executable.
+If you plan to demo git in RStudio during your workshop, you should edit the
+workshop setup instructions to have the Windows users choose this option during
+setup.</p>
+
+<p>Another common gotcha is that the push/pull buttons in RStudio are grayed out,
+even after you have added a remote and pushed to it from the command line. You
+need to add an upstream tracking reference before you can push and pull directly
+from RStudio; have your learners do <code class="highlighter-rouge">git push -u origin master</code> from the command
+line and this should resolve the issue.</p>
+
+<h2 id="teaching-notes">Teaching Notes</h2>
+
+<ul>
+  <li>
+    <p>Watching the instructor grow programs step by step
+is as helpful to learners as anything to do with R.
+Resist the urge to clean up your R script as you go
+(which is what you’d probably do in real life).
+Instead, keep intermediate steps in your script.
+Once you’ve reached the final version
+you can say,
+“Now why don’t we just breaks things into small functions right from the start?”</p>
+  </li>
+  <li>
+    <p>The discussion of command-line scripts
+assumes that students understand standard I/O and building filters,
+which are covered in the <a href="https://swcarpentry.github.io/shell-novice/">Shell lesson</a>.</p>
+  </li>
+  <li>
+    <p>We are using a dataset with records on inflammation from patients following an
+arthritis treatment. With it we explain <code class="highlighter-rouge">R</code> data structure, basic data
+manipulation and plotting, writing functions and loops.</p>
+  </li>
+</ul>
+
+<h2 id="analyzing-patient-data"><a href="../01-starting-with-data/">Analyzing Patient Data</a></h2>
+
+<ul>
+  <li>
+    <p>Check learners are reading files from the correct location (set working
+directory); remind them of the <a href="https://swcarpentry.github.io/shell-novice/">Shell lesson</a>.</p>
+  </li>
+  <li>
+    <p>Provide shortcut for the assignment operator (<code class="highlighter-rouge">&lt;-</code>) (RStudio: <kbd>Alt</kbd>+<kbd>-</kbd> on
+Windows/Linux; <kbd>Option</kbd>+<kbd>-</kbd> on Mac).</p>
+  </li>
+  <li>
+    <p>When performing operations on sliced rows of data frames, be aware that some 
+functions in R automatically convert the object type to a numeric vector, while 
+others do not. For example, <code class="highlighter-rouge">max(dat[1, ])</code> works as expected, while <code class="highlighter-rouge">mean(dat[1, ])</code> 
+returns an error. You can fix this by including an explicit call to <code class="highlighter-rouge">as.numeric()</code>, 
+for example <code class="highlighter-rouge">mean(as.numeric(dat[1, ]))</code>. This issue is also mentioned in a callout 
+box in the lesson materials, since it is unexpected and can create confusion when 
+simple examples fail (by contrast, operations on sliced columns of data frames always 
+work as expected, since columns of data frames are already vectors).</p>
+  </li>
+</ul>
+
+<h2 id="addressing-data"><a href="../10-supp-addressing-data/">Addressing Data</a></h2>
+
+<ul>
+  <li>Note that the data frame <code class="highlighter-rouge">dat</code> is not the same set of data as in other lessons.</li>
+</ul>
+
+<h2 id="analyzing-multiple-data-sets"><a href="../03-loops-R/">Analyzing Multiple Data Sets</a></h2>
+
+<ul>
+  <li>The transition from the previous lesson to this one might be challenging for
+a very novice audience. Do not rush through the challenges, maybe drop some.</li>
+</ul>
+
+</article>
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	<a href="/edit//_extras/guide.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob//CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

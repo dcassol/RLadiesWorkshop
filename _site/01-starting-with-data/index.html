@@ -1,0 +1,1237 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-02-12 22:34:25 -0800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Programming with R"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with R: Analyzing Patient Data</title>
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-starting-with-data/index.html">Analyzing Patient Data</a></li>
+            
+            <li><a href="../02-func-R/index.html">Creating Functions</a></li>
+            
+            <li><a href="../03-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="../04-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="../05-cmdline/index.html">Command-Line Programs</a></li>
+            
+            <li><a href="../06-best-practices-R/index.html">Best Practices for Writing R Code</a></li>
+            
+            <li><a href="../07-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="../08-making-packages-R/index.html">Making Packages in R</a></li>
+            
+            <li><a href="../09-supp-intro-rstudio/index.html">Introduction to RStudio</a></li>
+            
+            <li><a href="../10-supp-addressing-data/index.html">Addressing Data</a></li>
+            
+            <li><a href="../11-supp-read-write-csv/index.html">Reading and Writing CSV Files</a></li>
+            
+            <li><a href="../12-supp-factors/index.html">Understanding Factors</a></li>
+            
+            <li><a href="../13-supp-data-structures/index.html">Data Types and Structures</a></li>
+            
+            <li><a href="../14-supp-call-stack/index.html">The Call Stack</a></li>
+            
+            <li><a href="../15-supp-loops-in-depth/index.html">Loops in R</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/01-starting-with-data.Rmd">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with R</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../02-func-R/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Analyzing Patient Data</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 45 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How do I read data into R?</p>
+</li>
+	
+	<li><p>How do I assign variables?</p>
+</li>
+	
+	<li><p>What is a data frame?</p>
+</li>
+	
+	<li><p>How do I access subsets of a data frame?</p>
+</li>
+	
+	<li><p>How do I calculate simple statistics like mean and median?</p>
+</li>
+	
+	<li><p>Where can I get help?</p>
+</li>
+	
+	<li><p>How can I plot my data?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Read tabular data from a file into a program.</p>
+</li>
+	
+	<li><p>Assign values to variables.</p>
+</li>
+	
+	<li><p>Select individual values and subsections from data.</p>
+</li>
+	
+	<li><p>Perform operations on a data frame of data.</p>
+</li>
+	
+	<li><p>Display simple graphs.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>We are studying inflammation in patients who have been given a new treatment for arthritis,
+and need to analyze the first dozen data sets.
+The data sets are stored in <a href="../reference.html#comma-separated-values-csv">comma-separated values</a> (CSV) format. Each row holds the observations for just one patient. Each column holds the inflammation measured in a day, so we have a set of values in successive days.
+The first few rows of our first file look like this:</p>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
+0,1,2,1,2,1,3,2,2,6,10,11,5,9,4,4,7,16,8,6,18,4,12,5,12,7,11,5,11,3,3,5,4,4,5,5,1,1,0,1
+0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
+0,0,2,0,4,2,2,1,6,7,10,7,9,13,8,8,15,10,10,7,17,4,4,7,6,15,6,4,9,11,3,5,6,3,3,4,2,3,2,1
+0,1,1,3,3,1,3,5,2,4,4,7,6,5,3,10,8,10,6,17,9,14,9,7,13,9,12,6,7,7,9,6,3,2,2,4,2,0,1,1
+</code></pre></div></div>
+
+<p>We want to:</p>
+
+<ul>
+  <li>Load data into memory,</li>
+  <li>Calculate the average value of inflammation per day across all patients, and</li>
+  <li>Plot the results.</li>
+</ul>
+
+<p>To do all that, we’ll have to learn a little bit about programming.</p>
+
+<h3 id="loading-data">Loading Data</h3>
+
+<p>Let’s import the file called <code class="highlighter-rouge">inflammation-01.csv</code> into our R environment. To import the file, first we need to tell our computer where the file is. We do that by choosing a working directory, that is, a local directory on our computer containing the files we need. This is very important in R. If we forget this step we’ll get an error message saying that the file does not exist. We can set the working directory using the function <code class="highlighter-rouge">setwd</code>. For this example, we change the path to our new directory at the desktop:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setwd</span><span class="p">(</span><span class="s2">"~/Desktop/r-novice-inflammation/"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Just like in the Unix Shell, we type the command and then press <kbd>Return</kbd> (or <kbd>Enter</kbd>).
+Also similar to the Unix Shell, we can use tab completion to make it easier to type the working directory. So while typing inside the setwd command’s quotes, we can press <kbd>Tab</kbd> to list possible directories. 
+Alternatively we can change the working directory using the RStudio GUI using the menu option <code class="highlighter-rouge">Session</code> -&gt; <code class="highlighter-rouge">Set Working Directory</code> -&gt; <code class="highlighter-rouge">Choose Directory...</code></p>
+
+<p>The data file is located in the directory <code class="highlighter-rouge">data</code> inside the working directory. Now we can load the data into R using <code class="highlighter-rouge">read.csv</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The expression <code class="highlighter-rouge">read.csv(...)</code> is a <a href="../reference.html#function-call">function call</a> that asks R to run the function <code class="highlighter-rouge">read.csv</code>.</p>
+
+<p><code class="highlighter-rouge">read.csv</code> has two <a href="../reference.html#argument">arguments</a>: the name of the file we want to read, and whether the first line of the file contains names for the columns of data.
+The filename needs to be a character string (or <a href="../reference.html#string">string</a> for short), so we put it in quotes. Assigning the second argument, <code class="highlighter-rouge">header</code>, to be <code class="highlighter-rouge">FALSE</code> indicates that the data file does not have column headers. We’ll talk more about the value <code class="highlighter-rouge">FALSE</code>, and its converse <code class="highlighter-rouge">TRUE</code>, in lesson 04. In case of our <code class="highlighter-rouge">inflammation-01.csv</code> example, R auto-generates column names in the sequence <code class="highlighter-rouge">V1</code> (for “variable 1”), <code class="highlighter-rouge">V2</code>, and so on, until <code class="highlighter-rouge">V40</code>.</p>
+
+<blockquote class="callout">
+  <h2 id="other-options-for-reading-csv-files">Other Options for Reading CSV Files</h2>
+
+  <p><code class="highlighter-rouge">read.csv</code> actually has many more arguments that you may find useful when
+importing your own data in the future. You can learn more about these
+options in this supplementary <a href="../11-supp-read-write-csv/">lesson</a>.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="loading-data-with-headers">Loading Data with Headers</h2>
+
+  <p>What happens if you forget to put <code class="highlighter-rouge">header = FALSE</code>? The default value is
+<code class="highlighter-rouge">header = TRUE</code>, which you can check with <code class="highlighter-rouge">?read.csv</code> or <code class="highlighter-rouge">help(read.csv)</code>.
+What do you expect will happen if you leave the default value?
+Before you run any code, think about what will happen to the first few rows
+of your data frame, and its overall size. Then run the following code and
+see if your expectations agree:</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <p>R will construct column headers from values in your first row of data, 
+resulting in <code class="highlighter-rouge">X0 X0.1 X1 X3 X1.1 X2 ...</code>.</p>
+
+    <p>Note that the <code class="highlighter-rouge">X</code> is prepended just a number would not be a valid variable
+name. Because that’s what column headers are, the same rules apply. 
+Appending <code class="highlighter-rouge">.1</code>, <code class="highlighter-rouge">.2</code> etc. is necessary to avoid duplicate column headers.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reading-different-decimal-point-formats">Reading Different Decimal Point Formats</h2>
+
+  <p>Depending on the country you live in, your standard can use the dot or the comma as decimal mark.
+Also, different devices or software can generate data with different decimal points.
+Take a look at <code class="highlighter-rouge">?read.csv</code> and write the code to load a file called <code class="highlighter-rouge">commadec.txt</code> that has numeric values with commas as decimal mark, separated by semicolons.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/commadec.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">";"</span><span class="p">,</span><span class="w"> </span><span class="n">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">","</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>or the built-in shortcut:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read.csv2</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/commadec.txt"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p>A function will perform its given action on whatever value is passed to the argument(s).
+For example, in this case if we provided the name of a different file to the argument <code class="highlighter-rouge">file</code>, <code class="highlighter-rouge">read.csv</code> would read that instead.
+We’ll learn more about the details of functions and their arguments in the next lesson.</p>
+
+<p>Since we didn’t tell it to do anything else with the function’s output, the console will display the full contents of the file <code class="highlighter-rouge">inflammation-01.csv</code>.
+Try it out.</p>
+
+<p><code class="highlighter-rouge">read.csv</code> reads the file, but we can’t use the data unless we assign it to a variable.
+We can think of a variable as a container with a name, such as <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">current_temperature</code>, or <code class="highlighter-rouge">subject_id</code> that contains one or more values.
+We can create a new variable and assign a value to it using <code class="highlighter-rouge">&lt;-</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_kg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">55</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Once a variable is created, we can use the variable name to refer to the value it was assigned. The variable name now acts as a tag. Whenever R reads that tag (<code class="highlighter-rouge">weight_kg</code>), it substitutes the value (<code class="highlighter-rouge">55</code>).</p>
+
+<p><img src="../fig/tag-variables.svg" alt="Variables as Tags" /></p>
+
+<p>To see the value of a variable, we can print it by typing the name of the variable and hitting <kbd>Return</kbd> (or <kbd>Enter</kbd>).
+In general, R will print to the console any object returned by a function or operation <em>unless</em> we assign it to a variable.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_kg</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 55
+</code></pre></div></div>
+<p>We can treat our variable like a regular number, and do arithmetic with it:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># weight in pounds:</span><span class="w">
+</span><span class="m">2.2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight_kg</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 121
+</code></pre></div></div>
+
+<p><img src="../fig/arithmetic-variables.svg" alt="Variables as Tags" /></p>
+
+<blockquote class="callout">
+  <h2 id="commenting">Commenting</h2>
+
+  <p>We can add comments to our code using the <code class="highlighter-rouge">#</code> character. It is useful to
+document our code in this way so that others (and us the next time we
+read it) have an easier time following what the code is doing.</p>
+</blockquote>
+
+<p>We can also change a variable’s value by assigning it a new value:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_kg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">57.5</span><span class="w">
+</span><span class="c1"># weight in kilograms is now</span><span class="w">
+</span><span class="n">weight_kg</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 57.5
+</code></pre></div></div>
+<blockquote class="callout">
+  <h2 id="variable-naming-conventions">Variable Naming Conventions</h2>
+
+  <p>Historically, R programmers have used a variety of conventions for naming variables. The <code class="highlighter-rouge">.</code> character
+in R can be a valid part of a variable name; thus the above assignment could have easily been <code class="highlighter-rouge">weight.kg &lt;- 57.5</code>.
+This is often confusing to R newcomers who have programmed in languages where <code class="highlighter-rouge">.</code> has a more significant meaning.
+Today, most R programmers 1) start variable names with lower case letters, 2) separate words in variable names with
+underscores, and 3) use only lowercase letters, underscores, and numbers in variable names. The book <em>R Packages</em> includes
+a <a href="http://r-pkgs.had.co.nz/style.html">chapter</a> on this and other style considerations.</p>
+</blockquote>
+
+<p><img src="../fig/reassign-variables.svg" alt="Reassigning Variables" /></p>
+
+<p>Assigning a new value to a variable breaks the connection with the old value; R forgets that number and applies the variable name to the new value.</p>
+
+<p>When you assign a value to a variable, R only stores the value, not the calculation you used to create it. This is an important point if you’re used to the way a spreadsheet program automatically updates linked cells. Let’s look at an example.</p>
+
+<p>First, we’ll convert <code class="highlighter-rouge">weight_kg</code> into pounds, and store the new value in the variable <code class="highlighter-rouge">weight_lb</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_lb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2.2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight_kg</span><span class="w">
+</span><span class="c1"># weight in kg...</span><span class="w">
+</span><span class="n">weight_kg</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 57.5
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...and in pounds</span><span class="w">
+</span><span class="n">weight_lb</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 126.5
+</code></pre></div></div>
+
+<p>In words, we’re asking R to look up the value we tagged <code class="highlighter-rouge">weight_kg</code>,
+multiply it by 2.2, and tag the result with the name <code class="highlighter-rouge">weight_lb</code>:</p>
+
+<p><img src="../fig/new-variables.svg" alt="Creating Another Variable" /></p>
+
+<p>If we now change the value of <code class="highlighter-rouge">weight_kg</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">weight_kg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100.0</span><span class="w">
+</span><span class="c1"># weight in kg now...</span><span class="w">
+</span><span class="n">weight_kg</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 100
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...and weight in pounds still</span><span class="w">
+</span><span class="n">weight_lb</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 126.5
+</code></pre></div></div>
+
+<p><img src="../fig/memory-variables.svg" alt="Updating a Variable" /></p>
+
+<p>Since <code class="highlighter-rouge">weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code class="highlighter-rouge">weight_kg</code> changes.
+This is different from the way spreadsheets work.</p>
+
+<blockquote class="callout">
+  <h2 id="printing-with-parentheses">Printing with Parentheses</h2>
+
+  <p>An alternative way to print the value of a variable is to use
+<code class="highlighter-rouge">(</code> parentheses <code class="highlighter-rouge">)</code> around the assignment statement.
+As an example: <code class="highlighter-rouge">(total_weight &lt;- weight_kg + weight_lb)</code> adds the values of <code class="highlighter-rouge">weight_kg</code> and <code class="highlighter-rouge">weight_lb</code>,
+assigns the result to the <code class="highlighter-rouge">total_weight</code>,
+and finally prints the assigned value of the variable <code class="highlighter-rouge">total_weight</code>.</p>
+</blockquote>
+
+<p>Now that we know how to assign things to variables, let’s re-run <code class="highlighter-rouge">read.csv</code> and save its result into a variable called ‘dat’:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This statement doesn’t produce any output because the assignment doesn’t display anything.
+If we want to check if our data has been loaded, we can print the variable’s value by typing the name of the variable <code class="highlighter-rouge">dat</code>. However, for large data sets it is convenient to use the function <code class="highlighter-rouge">head</code> to display only the first few rows of data.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19 V20 V21
+1  0  0  1  3  1  2  4  7  8   3   3   3  10   5   7   4   7   7  12  18   6
+2  0  1  2  1  2  1  3  2  2   6  10  11   5   9   4   4   7  16   8   6  18
+3  0  1  1  3  3  2  6  2  5   9   5   7   4   5   4  15   5  11   9  10  19
+4  0  0  2  0  4  2  2  1  6   7  10   7   9  13   8   8  15  10  10   7  17
+5  0  1  1  3  3  1  3  5  2   4   4   7   6   5   3  10   8  10   6  17   9
+6  0  0  1  2  2  4  2  1  6   4   7   6   6   9   9  15   4  16  18  12  12
+  V22 V23 V24 V25 V26 V27 V28 V29 V30 V31 V32 V33 V34 V35 V36 V37 V38 V39 V40
+1  13  11  11   7   7   4   6   8   8   4   4   5   7   3   4   2   3   0   0
+2   4  12   5  12   7  11   5  11   3   3   5   4   4   5   5   1   1   0   1
+3  14  12  17   7  12  11   7   4   2  10   5   4   2   2   3   2   2   1   1
+4   4   4   7   6  15   6   4   9  11   3   5   6   3   3   4   2   3   2   1
+5  14   9   7  13   9  12   6   7   7   9   6   3   2   2   4   2   0   1   1
+6   5  18   9   5   3  10   3  12   7   8   4   7   3   5   4   4   3   2   1
+</code></pre></div></div>
+
+<blockquote class="challenge">
+  <h2 id="assigning-values-to-variables">Assigning Values to Variables</h2>
+
+  <p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mass</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">47.5</span><span class="w">
+</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">122</span><span class="w">
+</span><span class="n">mass</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2.0</span><span class="w">
+</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mass</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">47.5</span><span class="w">
+</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">122</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/mass-age-assign-1.svg" alt="Assigning Variables" /></p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mass</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2.0</span><span class="w">
+</span><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><img src="../fig/mass-age-assign-2.svg" alt="Assigning Variables" /></p>
+
+  </blockquote>
+</blockquote>
+
+<h3 id="manipulating-data">Manipulating Data</h3>
+
+<p>Now that our data are loaded into R, we can start doing things with them.
+First, let’s ask what type of thing <code class="highlighter-rouge">dat</code> is:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
+</code></pre></div></div>
+
+<p>The output tells us that it’s a data frame. Think of this structure as a spreadsheet in MS Excel that many of us are familiar with.
+Data frames are very useful for storing data and you will use them frequently when programming in R.
+A typical data frame of experimental data contains individual observations in rows and variables in columns.</p>
+
+<p>We can see the shape, or <a href="../reference.html#dimensions-of-an-array">dimensions</a>, of the data frame with the function <code class="highlighter-rouge">dim</code>:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 60 40
+</code></pre></div></div>
+
+<p>This tells us that our data frame, <code class="highlighter-rouge">dat</code>, has 60 rows and 40 columns.</p>
+
+<p>If we want to get a single value from the data frame, we can provide an <a href="../reference.html#index">index</a> in square brackets. The first number specifies the row and the second the column:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># first value in dat, row 1, column 1</span><span class="w">
+</span><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># middle value in dat, row 30, column 20</span><span class="w">
+</span><span class="n">dat</span><span class="p">[</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 16
+</code></pre></div></div>
+
+<p>The first value in a data frame index is the row, the second value is the column.
+If we want to select more than one row or column, we can use the function <code class="highlighter-rouge">c</code>, which stands for <strong>c</strong>ombine.
+For example, to pick columns 10 and 20 from rows 1, 3, and 5, we can do this:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  V10 V20
+1   3  18
+3   9  10
+5   4  17
+</code></pre></div></div>
+
+<p>We frequently want to select contiguous rows or columns, such as the first ten rows, or columns 3 through 7. You can use <code class="highlighter-rouge">c</code> for this, but it’s more convenient to use the <code class="highlighter-rouge">:</code> operator. This special function generates sequences of numbers:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3 4 5
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">3</span><span class="o">:</span><span class="m">12</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  3  4  5  6  7  8  9 10 11 12
+</code></pre></div></div>
+
+<p>For example, we can select the first ten columns of values for the first four rows like this:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  V1 V2 V3 V4 V5 V6 V7 V8 V9 V10
+1  0  0  1  3  1  2  4  7  8   3
+2  0  1  2  1  2  1  3  2  2   6
+3  0  1  1  3  3  2  6  2  5   9
+4  0  0  2  0  4  2  2  1  6   7
+</code></pre></div></div>
+
+<p>or the first ten columns of rows 5 to 10 like this:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">5</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   V1 V2 V3 V4 V5 V6 V7 V8 V9 V10
+5   0  1  1  3  3  1  3  5  2   4
+6   0  0  1  2  2  4  2  1  6   4
+7   0  0  2  2  4  2  2  5  5   8
+8   0  0  1  2  3  1  2  3  5   3
+9   0  0  0  3  1  5  6  5  5   8
+10  0  1  1  2  1  3  5  3  5   8
+</code></pre></div></div>
+
+<p>If you want to select all rows or all columns, leave that index value empty.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># All columns from row 5</span><span class="w">
+</span><span class="n">dat</span><span class="p">[</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  V1 V2 V3 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13 V14 V15 V16 V17 V18 V19 V20 V21
+5  0  1  1  3  3  1  3  5  2   4   4   7   6   5   3  10   8  10   6  17   9
+  V22 V23 V24 V25 V26 V27 V28 V29 V30 V31 V32 V33 V34 V35 V36 V37 V38 V39 V40
+5  14   9   7  13   9  12   6   7   7   9   6   3   2   2   4   2   0   1   1
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># All rows from column 16-18</span><span class="w">
+</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">16</span><span class="o">:</span><span class="m">18</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   V16 V17 V18
+1    4   7   7
+2    4   7  16
+3   15   5  11
+4    8  15  10
+5   10   8  10
+6   15   4  16
+7   13   5  12
+8    9  15  11
+9   11   9  10
+10   6  13   8
+11   3   7  13
+12   8  14  11
+13  12   4  17
+14   3  10  13
+15   5   7  17
+16  10   7   8
+17  11  12   5
+18   4  14   7
+19  11  15  17
+20  13   6   5
+21  15  13   6
+22   5  12  12
+23  14   5   5
+24  13   7  14
+25   4  12   9
+26   9   5  16
+27  13   4  13
+28   6  15   6
+29   7   6  11
+30   6   8   7
+31  14  12   8
+32   3   8  10
+33  15  15  10
+34   4  12   9
+35  15   9  17
+36  11   5   7
+37   7   4   7
+38  10   6   7
+39  15  12  13
+40   6   8  15
+41   5   7   5
+42   6  10  13
+43  15  11  12
+44  11   6  10
+45  15  12  15
+46   6   7  11
+47  11  16  12
+48  15   5  15
+49  14   4   6
+50   4   7   9
+51  10  13   6
+52  15  15  12
+53  11  15  13
+54   6  11  12
+55  13   8   9
+56   8   8  16
+57   4  16  11
+58  13  13   9
+59  12  15   5
+60   9  14  11
+</code></pre></div></div>
+
+<p>If you leave both index values empty (i.e., <code class="highlighter-rouge">dat[,]</code>), you get the entire data frame.</p>
+
+<blockquote class="callout">
+  <h2 id="addressing-columns-by-name">Addressing Columns by Name</h2>
+
+  <p>Columns can also be addressed by name, with either the <code class="highlighter-rouge">$</code> operator (ie. <code class="highlighter-rouge">dat$V16</code>) or square brackets (ie. <code class="highlighter-rouge">dat[, 'V16']</code>).
+You can learn more about subsetting by column name in this supplementary <a href="../10-supp-addressing-data/">lesson</a>.</p>
+</blockquote>
+
+<p>Now let’s perform some common mathematical operations to learn more about our inflammation data.
+When analyzing data we often want to look at partial statistics, such as the maximum value per patient or the average value per day.
+One way to do this is to select the data we want to create a new temporary data frame, and then perform the calculation on this subset:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># first row, all of the columns</span><span class="w">
+</span><span class="n">patient_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="c1"># max inflammation for patient 1</span><span class="w">
+</span><span class="nf">max</span><span class="p">(</span><span class="n">patient_1</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 18
+</code></pre></div></div>
+<!-- 
+    OUCH!! The following may be true, but it will vary by R version, not by
+    installation! There shouldn't be an issue with a data frame where all
+    columns are numeric without missing values. Under those circumstances,
+    coercion should do what you expect. You'll get problems with mixed
+    types (factors, character etc), or with missing values. If this is
+    actually a problem, we need to change the example - we should be able
+    to come up with an example that doesn't require this ugliness in the
+    very first lesson. 
+    
+    Also, columns always work as expected because by definition a column
+    contains a vector of values of the same type. Rows include values from
+    different columns, which of course can be different types. This doesn't
+    need to be confusing, and if we're careful in our presentation here we
+    can avoid this until the students know enough to cope rationally.
+-->
+
+<!--
+> ## Forcing Conversion
+>
+> The code above may give you an error in some R installations,
+> since R does not automatically convert a row from a `data.frame` to a vector.
+> (Confusingly, subsetted columns are automatically converted.)
+> If this happens, you can use the `as.numeric` command to convert the row of data to a numeric vector:
+>
+> `patient_1 <- as.numeric(dat[1, ])`
+>
+> `max(patient_1)`
+>
+> You can also check the `class` of each object:
+>
+> `class(dat[1, ])`
+>
+> `class(as.numeric(dat[1, ]))`
+{: .callout}
+-->
+
+<p>We don’t actually need to store the row in a variable of its own.
+Instead, we can combine the selection and the function call:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># max inflammation for patient 2</span><span class="w">
+</span><span class="nf">max</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 18
+</code></pre></div></div>
+
+<p>R also has functions for other common calculations, e.g. finding the minimum, mean, median, and standard deviation of the data:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># minimum inflammation on day 7</span><span class="w">
+</span><span class="nf">min</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">7</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># mean inflammation on day 7</span><span class="w">
+</span><span class="n">mean</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">7</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3.8
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># median inflammation on day 7</span><span class="w">
+</span><span class="n">median</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">7</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># standard deviation of inflammation on day 7</span><span class="w">
+</span><span class="n">sd</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">7</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.725187
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="forcing-conversion">Forcing Conversion</h2>
+
+  <p>Note that R may return an error when you attempt to perform similar calculations on 
+subsetted <em>rows</em> of data frames. This is because some functions in R automatically convert 
+the object type to a numeric vector, while others do not (e.g. <code class="highlighter-rouge">max(dat[1, ])</code> works as 
+expected, while <code class="highlighter-rouge">mean(dat[1, ])</code> returns <code class="highlighter-rouge">NA</code> and a warning). You get the
+expected output by including an
+explicit call to <code class="highlighter-rouge">as.numeric()</code>, e.g. <code class="highlighter-rouge">mean(as.numeric(dat[1, ]))</code>. By contrast, 
+calculations on subsetted <em>columns</em> always work as expected, since columns of data frames 
+are already defined as vectors.</p>
+</blockquote>
+
+<p>R also has a function that summaries the previous common calculations:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Summarize function</span><span class="w">
+</span><span class="n">summary</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       V1          V2             V3              V4      
+ Min.   :0   Min.   :0.00   Min.   :0.000   Min.   :0.00  
+ 1st Qu.:0   1st Qu.:0.00   1st Qu.:1.000   1st Qu.:1.00  
+ Median :0   Median :0.00   Median :1.000   Median :2.00  
+ Mean   :0   Mean   :0.45   Mean   :1.117   Mean   :1.75  
+ 3rd Qu.:0   3rd Qu.:1.00   3rd Qu.:2.000   3rd Qu.:3.00  
+ Max.   :0   Max.   :1.00   Max.   :2.000   Max.   :3.00  
+</code></pre></div></div>
+
+<p>For every column in the data frame, the function “summary” calculates: the minimun value, the first quartile, the median, the mean, the third quartile and the max value, giving helpful details about the sample distribution.</p>
+
+<p>What if we need the maximum inflammation for all patients, or the average for each day?
+As the diagram below shows, we want to perform the operation across a margin of the data frame:</p>
+
+<p><img src="../fig/r-operations-across-margins.svg" alt="Operations Across Margins" /></p>
+
+<p>To support this, we can use the <code class="highlighter-rouge">apply</code> function.</p>
+
+<blockquote class="callout">
+  <h2 id="getting-help">Getting Help</h2>
+
+  <p>To learn about a function in R, e.g. <code class="highlighter-rouge">apply</code>, we can read its help
+documention by running <code class="highlighter-rouge">help(apply)</code> or <code class="highlighter-rouge">?apply</code>.</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">apply</code> allows us to repeat a function on all of the rows (<code class="highlighter-rouge">MARGIN = 1</code>) or columns (<code class="highlighter-rouge">MARGIN = 2</code>) of a data frame.</p>
+
+<p>Thus, to obtain the average inflammation of each patient we will need to calculate the mean of all of the rows (<code class="highlighter-rouge">MARGIN = 1</code>) of the data frame.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">avg_patient_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>And to obtain the average inflammation of each day we will need to calculate the mean of all of the columns (<code class="highlighter-rouge">MARGIN = 2</code>) of the data frame.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">avg_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Since the second argument to <code class="highlighter-rouge">apply</code> is <code class="highlighter-rouge">MARGIN</code>, the above command is equivalent to <code class="highlighter-rouge">apply(dat, MARGIN = 2, mean)</code>.
+We’ll learn why this is so in the next lesson.</p>
+
+<blockquote class="callout">
+  <h2 id="efficient-alternatives">Efficient Alternatives</h2>
+
+  <p>Some common operations have more efficient alternatives. For example, you
+can calculate the row-wise or column-wise means with <code class="highlighter-rouge">rowMeans</code> and
+<code class="highlighter-rouge">colMeans</code>, respectively.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="subsetting-data">Subsetting Data</h2>
+
+  <p>We can take subsets of character vectors as well:</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"m"</span><span class="p">,</span><span class="w"> </span><span class="s2">"o"</span><span class="p">,</span><span class="w"> </span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="s2">"k"</span><span class="p">,</span><span class="w"> </span><span class="s2">"e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># first three characters</span><span class="w">
+</span><span class="n">animal</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">]</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "m" "o" "n"
+</code></pre></div>  </div>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># last three characters</span><span class="w">
+</span><span class="n">animal</span><span class="p">[</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">]</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "k" "e" "y"
+</code></pre></div>  </div>
+
+  <ol class="solution">
+    <li>
+      <p>If the first four characters are selected using the subset <code class="highlighter-rouge">animal[1:4]</code>, how can we obtain the first four characters in reverse order?</p>
+    </li>
+    <li>
+      <p>What is <code class="highlighter-rouge">animal[-1]</code>?
+   What is <code class="highlighter-rouge">animal[-4]</code>?
+   Given those answers,
+   explain what <code class="highlighter-rouge">animal[-1:-4]</code> does.</p>
+    </li>
+    <li>
+      <p>Use a subset of <code class="highlighter-rouge">animal</code> to create a new character vector that spells the word “eon”, i.e. <code class="highlighter-rouge">c("e", "o", "n")</code>.</p>
+      <blockquote>
+        <h2 id="solutions">Solutions</h2>
+
+        <ol>
+          <li>
+            <p><code class="highlighter-rouge">animal[4:1]</code></p>
+          </li>
+          <li>
+            <p><code class="highlighter-rouge">"o" "n" "k" "e" "y"</code> and <code class="highlighter-rouge">"m" "o" "n" "e" "y"</code>, which means that a
+single <code class="highlighter-rouge">-</code> removes the element at the given index position.
+<code class="highlighter-rouge">animal[-1:-4]</code> remove the subset, returning <code class="highlighter-rouge">"e" "y"</code>, which is
+equivalent to <code class="highlighter-rouge">animal[5:6]</code>.</p>
+          </li>
+          <li>
+            <p><code class="highlighter-rouge">animal[c(5,2,3)]</code> combines indexing with the <code class="highlighter-rouge">c</code>ombine function.</p>
+          </li>
+        </ol>
+
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="subsetting-more-data">Subsetting More Data</h2>
+
+  <p>Suppose you want to determine the maximum inflammation for patient 5 across days three to seven.
+To do this you would extract the relevant subset from the data frame and calculate the maximum value.
+Which of the following lines of R code gives the correct answer?</p>
+
+  <ol>
+    <li><code class="highlighter-rouge">max(dat[5, ])</code></li>
+    <li><code class="highlighter-rouge">max(dat[3:7, 5])</code></li>
+    <li><code class="highlighter-rouge">max(dat[5, 3:7])</code></li>
+    <li><code class="highlighter-rouge">max(dat[5, 3, 7])</code></li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <p>Answer: 3</p>
+
+    <p>Explanation: You want to extract the part of the dataframe representing data for patient 5 from days three to seven. In this dataframe, patient data is organised in rows and the days are represented by the columns. Subscripting in R follows the <code class="highlighter-rouge">[i, j]</code> principle, where <code class="highlighter-rouge">i = rows</code> and <code class="highlighter-rouge">j = columns</code>. Thus, answer 3 is correct since the patient is represented by the value for i (5) and the days are represented by the values in j, which is a subset spanning day 3 to 7.</p>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="subsetting-and-re-assignment">Subsetting and Re-Assignment</h2>
+
+  <p>Using the inflammation data frame <code class="highlighter-rouge">dat</code> from above:
+Let’s pretend there was something wrong with the instrument on the first five days for every second patient (#2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.</p>
+
+  <ol>
+    <li>Write a vector containing each affected patient (hint: <code class="highlighter-rouge">?seq</code>)</li>
+    <li>Create a new data frame in which you halve the first five days’ values in only those patients</li>
+    <li>Print out the corrected data frame to check that your code has fixed the problem</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">whichPatients</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="c1"># i.e., which rows</span><span class="w">
+</span><span class="n">whichDays</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w">         </span><span class="c1"># i.e., which columns</span><span class="w">
+</span><span class="n">dat2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dat</span><span class="w">
+</span><span class="c1"># check the size of your subset: returns `30 5`, that is 30 [rows=patients] by 5 [columns=days]</span><span class="w">
+</span><span class="nf">dim</span><span class="p">(</span><span class="n">dat2</span><span class="p">[</span><span class="n">whichPatients</span><span class="p">,</span><span class="w"> </span><span class="n">whichDays</span><span class="p">])</span><span class="w">
+</span><span class="n">dat2</span><span class="p">[</span><span class="n">whichPatients</span><span class="p">,</span><span class="w"> </span><span class="n">whichDays</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dat2</span><span class="p">[</span><span class="n">whichPatients</span><span class="p">,</span><span class="w"> </span><span class="n">whichDays</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">dat2</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="using-the-apply-function-on-patient-data">Using the Apply Function on Patient Data</h2>
+
+  <p>Challenge: the apply function can be used to summarize datasets and subsets
+of data across rows and columns using the MARGIN argument.
+Suppose you want to calculate the mean inflammation for specific days and patients
+in the patient dataset (i.e. 60 patients across 40 days).</p>
+
+  <p>Please use a combination of the apply function and indexing to:</p>
+
+  <ol>
+    <li>calculate the mean inflammation for patients 1 to 5 over the whole 40 days</li>
+    <li>calculate the mean inflammation for days 1 to 10 (across all patients).</li>
+    <li>calculate the mean inflammation for every second day (across all patients).</li>
+  </ol>
+
+  <p>Think about the number of rows and columns you would expect as the result before each
+apply call and check your intuition by applying the mean function.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1.</span><span class="w">
+</span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+</span><span class="c1"># 2.</span><span class="w">
+</span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">],</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+</span><span class="c1"># 3.</span><span class="w">
+</span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">40</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)],</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<h3 id="plotting">Plotting</h3>
+
+<p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data.
+Visualization deserves an entire lecture (or course) of its own, but we can explore a few of R’s plotting features.</p>
+
+<p>Let’s take a look at the average inflammation over time.
+Recall that we already calculated these values above using <code class="highlighter-rouge">apply(dat, 2, mean)</code> and saved them in the variable <code class="highlighter-rouge">avg_day_inflammation</code>.
+Plotting the values is done with the function <code class="highlighter-rouge">plot</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">avg_day_inflammation</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-01-starting-with-data-plot-avg-inflammation-1.png" title="plot of chunk plot-avg-inflammation" alt="plot of chunk plot-avg-inflammation" width="612" style="display: block; margin: auto;" /></p>
+
+<p>Above, we gave the function <code class="highlighter-rouge">plot</code> a vector of numbers corresponding to the average inflammation per day across all patients.
+<code class="highlighter-rouge">plot</code> created a scatter plot where the y-axis is the average inflammation level and the x-axis is the order, or index, of the values in the vector, which in this case correspond to the 40 days of treatment.
+The result is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall.
+Let’s have a look at two other statistics: the maximum and minimum inflammation per day.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">max_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">max_day_inflammation</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-01-starting-with-data-plot-max-inflammation-1.png" title="plot of chunk plot-max-inflammation" alt="plot of chunk plot-max-inflammation" width="612" style="display: block; margin: auto;" /></p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="p">)</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">min_day_inflammation</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-01-starting-with-data-plot-min-inflammation-1.png" title="plot of chunk plot-min-inflammation" alt="plot of chunk plot-min-inflammation" width="612" style="display: block; margin: auto;" /></p>
+
+<p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
+
+<blockquote class="challenge">
+  <h2 id="plotting-data">Plotting Data</h2>
+
+  <p>Create a plot showing the standard deviation of the inflammation data for each day across all patients.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-6">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sd_day_inflammation</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="p">)</span><span class="w">
+</span><span class="n">plot</span><span class="p">(</span><span class="n">sd_day_inflammation</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Use <code class="highlighter-rouge">variable &lt;- value</code> to assign a value to a variable in order to record it in memory.</p>
+</li>
+    
+    <li><p>Objects are created on demand whenever a value is assigned to them.</p>
+</li>
+    
+    <li><p>The function <code class="highlighter-rouge">dim</code> gives the dimensions of a data frame.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">object[x, y]</code> to select a single element from a data frame.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">from:to</code> to specify a sequence that includes the indices from <code class="highlighter-rouge">from</code> to <code class="highlighter-rouge">to</code>.</p>
+</li>
+    
+    <li><p>All the indexing and subsetting that works on data frames also works on vectors.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">#</code> to add comments to programs.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">min</code> and <code class="highlighter-rouge">sd</code> to calculate simple statistics.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">apply</code> to calculate statistics across the rows or columns of a data frame.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">plot</code> to create simple visualizations.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../02-func-R/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/01-starting-with-data.Rmd">Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

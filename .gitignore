@@ -4,8 +4,6 @@
 .ipynb_checkpoints
 .sass-cache
 __pycache__
-_episodes
-_site
 link_res*.csv
 logs.sh
 
@@ -47,8 +45,4 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
-# End of https://www.gitignore.io/api/r
 
-
-# Markdown files for episodes
-_episodes/
