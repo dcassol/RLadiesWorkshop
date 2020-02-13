@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-13 10:05:23 -0800">
+    <meta http-equiv="last-modified" content="2020-02-13 11:46:10 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -113,35 +113,45 @@
           <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
           <ul class="dropdown-menu">
             
+            <li><a href="./01-rstudio-intro/index.html">Introduction to R and RStudio</a></li>
+            
             <li><a href="./01-starting-with-data/index.html">Analyzing Patient Data</a></li>
             
-            <li><a href="./02-func-R/index.html">Creating Functions</a></li>
+            <li><a href="./03-data-structures-part1/index.html">Data Structures</a></li>
             
-            <li><a href="./03-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            <li><a href="./04-data-structures-part2/index.html">Exploring Data Frames</a></li>
             
-            <li><a href="./04-cond/index.html">Making Choices</a></li>
+            <li><a href="./05-data-subsetting/index.html">Subsetting Data</a></li>
             
-            <li><a href="./05-cmdline/index.html">Command-Line Programs</a></li>
+            <li><a href="./06-writing-data/index.html">Writing Data</a></li>
             
-            <li><a href="./06-best-practices-R/index.html">Best Practices for Writing R Code</a></li>
+            <li><a href="./07-control-flow/index.html">Control Flow</a></li>
             
-            <li><a href="./07-knitr-R/index.html">Dynamic Reports with knitr</a></li>
-            
-            <li><a href="./08-making-packages-R/index.html">Making Packages in R</a></li>
-            
-            <li><a href="./09-supp-intro-rstudio/index.html">Introduction to RStudio</a></li>
-            
-            <li><a href="./10-supp-addressing-data/index.html">Addressing Data</a></li>
-            
-            <li><a href="./11-supp-read-write-csv/index.html">Reading and Writing CSV Files</a></li>
-            
-            <li><a href="./12-supp-factors/index.html">Understanding Factors</a></li>
-            
-            <li><a href="./13-supp-data-structures/index.html">Data Types and Structures</a></li>
+            <li><a href="./08-plot-ggplot2/index.html">Creating Publication-Quality Graphics with ggplot2</a></li>
             
             <li><a href="./14-supp-call-stack/index.html">The Call Stack</a></li>
             
-            <li><a href="./15-supp-loops-in-depth/index.html">Loops in R</a></li>
+            <li><a href="./15-best-practices-R/index.html">GIT SECTION: Best Practices for Writing R Code</a></li>
+            
+            <li><a href="./16-wrap-up/index.html">GIT SECTION: Writing Good Software</a></li>
+            
+            <li><a href="./17-cmdline/index.html">EXTRA: Command-Line Programs</a></li>
+            
+            <li><a href="./17-func-R/index.html">EXTRA: Creating Functions</a></li>
+            
+            <li><a href="./18-making-packages-R/index.html">EXTRA: Making Packages in R</a></li>
+            
+            <li><a href="./20-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="./21-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="./22-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="./23-supp-intro-rstudio/index.html">MERGE 01: Introduction to RStudio</a></li>
+            
+            <li><a href="./24-supp-addressing-data/index.html">MERGE 04: Addressing Data</a></li>
+            
+            <li><a href="./25-supp-read-write-csv/index.html">MERGE 06: Reading and Writing CSV Files</a></li>
             
 	    <li role="separator" class="divider"></li>
             <li><a href="./aio.html">All in one page (Beta)</a></li>
@@ -220,6 +230,37 @@
   
     <tr>
       <td class="col-md-3">
+        <a href="./01-rstudio-intro/index.html">Introduction to R and RStudio</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use RStudio to write and run R programs.</p>
+</li>
+        
+        <li><p>R has the usual arithmetic operators and mathematical functions.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">&lt;-</code> to assign values to variables.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">ls()</code> to list the variables in a program.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">rm()</code> to delete objects in a program.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">install.packages()</code> to install packages (libraries).</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
         <a href="./01-starting-with-data/index.html">Analyzing Patient Data</a>
       </td>
       <td class="col-md-9">
@@ -263,33 +304,18 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./02-func-R/index.html">Creating Functions</a>
+        <a href="./03-data-structures-part1/index.html">Data Structures</a>
       </td>
       <td class="col-md-9">
         <ul>
         
-        <li><p>Define a function using <code class="highlighter-rouge">name &lt;- function(...args...) {...body...}</code>.</p>
+        <li><p>Use <code class="highlighter-rouge">read.csv</code> to read tabular data in R.</p>
 </li>
         
-        <li><p>Call a function using <code class="highlighter-rouge">name(...values...)</code>.</p>
+        <li><p>The basic data types in R are double, integer, complex, logical, and character.</p>
 </li>
         
-        <li><p>R looks for variables in the current stack frame before looking for them at the top level.</p>
-</li>
-        
-        <li><p>Use <code class="highlighter-rouge">help(thing)</code> to view help for something.</p>
-</li>
-        
-        <li><p>Put comments at the beginning of functions to provide help for that function.</p>
-</li>
-        
-        <li><p>Annotate your code!</p>
-</li>
-        
-        <li><p>Specify default values for arguments when defining a function using <code class="highlighter-rouge">name = value</code> in the argument list.</p>
-</li>
-        
-        <li><p>Arguments can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</p>
+        <li><p>Use factors to represent categories in R.</p>
 </li>
         
         </ul>
@@ -300,21 +326,33 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./03-loops-R/index.html">Analyzing Multiple Data Sets</a>
+        <a href="./04-data-structures-part2/index.html">Exploring Data Frames</a>
       </td>
       <td class="col-md-9">
         <ul>
         
-        <li><p>Use <code class="highlighter-rouge">for (variable in collection)</code> to process the elements of a collection one at a time.</p>
+        <li><p>Use <code class="highlighter-rouge">cbind()</code> to add a new column to a data frame.</p>
 </li>
         
-        <li><p>The body of a <code class="highlighter-rouge">for</code> loop is surrounded by curly braces (<code class="highlighter-rouge">{}</code>).</p>
+        <li><p>Use <code class="highlighter-rouge">rbind()</code> to add a new row to a data frame.</p>
 </li>
         
-        <li><p>Use <code class="highlighter-rouge">length(thing)</code> to determine the length of something that contains other values.</p>
+        <li><p>Remove rows from a data frame.</p>
 </li>
         
-        <li><p>Use <code class="highlighter-rouge">list.files(path = "path", pattern = "pattern", full.names = TRUE)</code> to create a list of files whose names match a pattern.</p>
+        <li><p>Use <code class="highlighter-rouge">na.omit()</code> to remove rows from a data frame with <code class="highlighter-rouge">NA</code> values.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">levels()</code> and <code class="highlighter-rouge">as.character()</code> to explore and manipulate factors.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">str()</code>, <code class="highlighter-rouge">summary()</code>, <code class="highlighter-rouge">nrow()</code>, <code class="highlighter-rouge">ncol()</code>, <code class="highlighter-rouge">dim()</code>, <code class="highlighter-rouge">colnames()</code>, <code class="highlighter-rouge">rownames()</code>, <code class="highlighter-rouge">head()</code>, and <code class="highlighter-rouge">typeof()</code> to understand the structure of a data frame.</p>
+</li>
+        
+        <li><p>Read in a csv file using <code class="highlighter-rouge">read.csv()</code>.</p>
+</li>
+        
+        <li><p>Understand what <code class="highlighter-rouge">length()</code> of a data frame represents.</p>
 </li>
         
         </ul>
@@ -325,27 +363,24 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./04-cond/index.html">Making Choices</a>
+        <a href="./05-data-subsetting/index.html">Subsetting Data</a>
       </td>
       <td class="col-md-9">
         <ul>
         
-        <li><p>Save a plot in a pdf file using <code class="highlighter-rouge">pdf("name.pdf")</code> and stop writing to the pdf file with <code class="highlighter-rouge">dev.off()</code>.</p>
+        <li><p>Indexing in R starts at 1, not 0.</p>
 </li>
         
-        <li><p>Use <code class="highlighter-rouge">if (condition)</code> to start a conditional statement, <code class="highlighter-rouge">else if (condition)</code> to provide additional tests, and <code class="highlighter-rouge">else</code> to provide a default.</p>
+        <li><p>Access individual values by location using <code class="highlighter-rouge">[]</code>.</p>
 </li>
         
-        <li><p>The bodies of conditional statements must be surrounded by curly braces <code class="highlighter-rouge">{ }</code>.</p>
+        <li><p>Access slices of data using <code class="highlighter-rouge">[low:high]</code>.</p>
 </li>
         
-        <li><p>Use <code class="highlighter-rouge">==</code> to test for equality.</p>
+        <li><p>Access arbitrary sets of data using <code class="highlighter-rouge">[c(...)]</code>.</p>
 </li>
         
-        <li><p><code class="highlighter-rouge">X &amp;&amp; Y</code> is only true if both X and Y are true.</p>
-</li>
-        
-        <li><p><code class="highlighter-rouge">X || Y</code> is true if either X or Y, or both, are true.</p>
+        <li><p>Use logical operations and logical vectors to access subsets of data.</p>
 </li>
         
         </ul>
@@ -356,22 +391,15 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./05-cmdline/index.html">Command-Line Programs</a>
+        <a href="./06-writing-data/index.html">Writing Data</a>
       </td>
       <td class="col-md-9">
         <ul>
         
-        <li><p>Use <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code> to obtain a vector of the command-line arguments that a program was run with.</p>
+        <li><p>Save plots from RStudio using the ‘Export’ button.</p>
 </li>
         
-        <li><p>Avoid silent failures.</p>
-</li>
-        
-        <li><p>Use <code class="highlighter-rouge">file("stdin")</code> to connect to a program’s standard input.</p>
-</li>
-        
-        <li><p>Use <code class="highlighter-rouge">cat(vec, sep = "
-")</code> to write the elements of <code class="highlighter-rouge">vec</code> to standard output, one per line.</p>
+        <li><p>Use <code class="highlighter-rouge">write.table</code> to save tabular data.</p>
 </li>
         
         </ul>
@@ -382,7 +410,64 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./06-best-practices-R/index.html">Best Practices for Writing R Code</a>
+        <a href="./07-control-flow/index.html">Control Flow</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use <code class="highlighter-rouge">if</code> and <code class="highlighter-rouge">else</code> to make choices.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">for</code> to repeat operations.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./08-plot-ggplot2/index.html">Creating Publication-Quality Graphics with ggplot2</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use <code class="highlighter-rouge">ggplot2</code> to create plots.</p>
+</li>
+        
+        <li><p>Think about graphics in layers: aesthetics, geometry, statistics, scale transformation, and grouping.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./14-supp-call-stack/index.html">The Call Stack</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>R keeps track of active function calls using a call stack comprised of stack frames.</p>
+</li>
+        
+        <li><p>Only global variables and variables in the current stack frame can be accessed directly.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./15-best-practices-R/index.html">GIT SECTION: Best Practices for Writing R Code</a>
       </td>
       <td class="col-md-9">
         <ul>
@@ -437,18 +522,30 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./07-knitr-R/index.html">Dynamic Reports with knitr</a>
+        <a href="./16-wrap-up/index.html">GIT SECTION: Writing Good Software</a>
       </td>
       <td class="col-md-9">
         <ul>
         
-        <li><p>Use knitr to generate reports that combine text, code, and results.</p>
+        <li><p>Keep your project folder structured, organized and tidy.</p>
 </li>
         
-        <li><p>Use Markdown to format text.</p>
+        <li><p>Document what and why, not how.</p>
 </li>
         
-        <li><p>Put code in blocks delimited by triple back quotes followed by <code class="highlighter-rouge">{r}</code>.</p>
+        <li><p>Break programs into short single-purpose functions.</p>
+</li>
+        
+        <li><p>Write re-runnable tests.</p>
+</li>
+        
+        <li><p>Don’t repeat yourself.</p>
+</li>
+        
+        <li><p>Don’t repeat yourself.</p>
+</li>
+        
+        <li><p>Be consistent in naming, indentation, and other aspects of style.</p>
 </li>
         
         </ul>
@@ -459,7 +556,70 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./08-making-packages-R/index.html">Making Packages in R</a>
+        <a href="./17-cmdline/index.html">EXTRA: Command-Line Programs</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code> to obtain a vector of the command-line arguments that a program was run with.</p>
+</li>
+        
+        <li><p>Avoid silent failures.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">file("stdin")</code> to connect to a program’s standard input.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">cat(vec, sep = "
+")</code> to write the elements of <code class="highlighter-rouge">vec</code> to standard output, one per line.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./17-func-R/index.html">EXTRA: Creating Functions</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Define a function using <code class="highlighter-rouge">name &lt;- function(...args...) {...body...}</code>.</p>
+</li>
+        
+        <li><p>Call a function using <code class="highlighter-rouge">name(...values...)</code>.</p>
+</li>
+        
+        <li><p>R looks for variables in the current stack frame before looking for them at the top level.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">help(thing)</code> to view help for something.</p>
+</li>
+        
+        <li><p>Put comments at the beginning of functions to provide help for that function.</p>
+</li>
+        
+        <li><p>Annotate your code!</p>
+</li>
+        
+        <li><p>Specify default values for arguments when defining a function using <code class="highlighter-rouge">name = value</code> in the argument list.</p>
+</li>
+        
+        <li><p>Arguments can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./18-making-packages-R/index.html">EXTRA: Making Packages in R</a>
       </td>
       <td class="col-md-9">
         <ul>
@@ -481,7 +641,85 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./09-supp-intro-rstudio/index.html">Introduction to RStudio</a>
+        <a href="./20-loops-R/index.html">Analyzing Multiple Data Sets</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use <code class="highlighter-rouge">for (variable in collection)</code> to process the elements of a collection one at a time.</p>
+</li>
+        
+        <li><p>The body of a <code class="highlighter-rouge">for</code> loop is surrounded by curly braces (<code class="highlighter-rouge">{}</code>).</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">length(thing)</code> to determine the length of something that contains other values.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">list.files(path = "path", pattern = "pattern", full.names = TRUE)</code> to create a list of files whose names match a pattern.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./21-cond/index.html">Making Choices</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Save a plot in a pdf file using <code class="highlighter-rouge">pdf("name.pdf")</code> and stop writing to the pdf file with <code class="highlighter-rouge">dev.off()</code>.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">if (condition)</code> to start a conditional statement, <code class="highlighter-rouge">else if (condition)</code> to provide additional tests, and <code class="highlighter-rouge">else</code> to provide a default.</p>
+</li>
+        
+        <li><p>The bodies of conditional statements must be surrounded by curly braces <code class="highlighter-rouge">{ }</code>.</p>
+</li>
+        
+        <li><p>Use <code class="highlighter-rouge">==</code> to test for equality.</p>
+</li>
+        
+        <li><p><code class="highlighter-rouge">X &amp;&amp; Y</code> is only true if both X and Y are true.</p>
+</li>
+        
+        <li><p><code class="highlighter-rouge">X || Y</code> is true if either X or Y, or both, are true.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./22-knitr-R/index.html">Dynamic Reports with knitr</a>
+      </td>
+      <td class="col-md-9">
+        <ul>
+        
+        <li><p>Use knitr to generate reports that combine text, code, and results.</p>
+</li>
+        
+        <li><p>Use Markdown to format text.</p>
+</li>
+        
+        <li><p>Put code in blocks delimited by triple back quotes followed by <code class="highlighter-rouge">{r}</code>.</p>
+</li>
+        
+        </ul>
+      </td>
+    </tr>
+  
+
+  
+    <tr>
+      <td class="col-md-3">
+        <a href="./23-supp-intro-rstudio/index.html">MERGE 01: Introduction to RStudio</a>
       </td>
       <td class="col-md-9">
         <ul>
@@ -497,7 +735,7 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./10-supp-addressing-data/index.html">Addressing Data</a>
+        <a href="./24-supp-addressing-data/index.html">MERGE 04: Addressing Data</a>
       </td>
       <td class="col-md-9">
         <ul>
@@ -516,7 +754,7 @@
   
     <tr>
       <td class="col-md-3">
-        <a href="./11-supp-read-write-csv/index.html">Reading and Writing CSV Files</a>
+        <a href="./25-supp-read-write-csv/index.html">MERGE 06: Reading and Writing CSV Files</a>
       </td>
       <td class="col-md-9">
         <ul>
@@ -531,88 +769,6 @@
 </li>
         
         <li><p>Understand some of the key arguments available for exporting the data properly, such as <code class="highlighter-rouge">row.names</code>, <code class="highlighter-rouge">col.names</code>, and <code class="highlighter-rouge">na</code>.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="./12-supp-factors/index.html">Understanding Factors</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>Factors are used to represent categorical data.</p>
-</li>
-        
-        <li><p>Factors can be <em>ordered</em> or <em>unordered</em>.</p>
-</li>
-        
-        <li><p>Some R functions have special methods for handling factors.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="./13-supp-data-structures/index.html">Data Types and Structures</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>R’s basic data types are character, numeric, integer, complex, and logical.</p>
-</li>
-        
-        <li><p>R’s basic data structures include the vector, list, matrix, data frame, and factors. Some of these structures require that all members be of the same data type (e.g. vectors, matrices) while others permit multiple data types (e.g. lists, data frames).</p>
-</li>
-        
-        <li><p>Objects may have attributes, such as name, dimension, and class.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="./14-supp-call-stack/index.html">The Call Stack</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>R keeps track of active function calls using a call stack comprised of stack frames.</p>
-</li>
-        
-        <li><p>Only global variables and variables in the current stack frame can be accessed directly.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="./15-supp-loops-in-depth/index.html">Loops in R</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>Where possible, use vectorized operations instead of <code class="highlighter-rouge">for</code> loops to make code faster and more concise.</p>
-</li>
-        
-        <li><p>Use functions such as <code class="highlighter-rouge">apply</code> instead of <code class="highlighter-rouge">for</code> loops to operate on the values in a data structure.</p>
 </li>
         
         </ul>

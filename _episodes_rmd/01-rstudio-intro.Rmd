@@ -1,0 +1,638 @@
+---
+title: "Introduction to R and RStudio"
+teaching: 45
+exercises: 10
+questions:
+- "How to find your way around RStudio?"
+- "How to interact with R?"
+- "How to manage your environment?"
+- "How to install packages?"
+objectives:
+- "Describe the purpose and use of each pane in the RStudio IDE"
+- "Locate buttons and options in the RStudio IDE"
+- "Define a variable"
+- "Assign data to a variable"
+- "Manage a workspace in an interactive R session"
+- "Use mathematical and comparison operators"
+- "Call functions"
+- "Manage packages"
+keypoints:
+- "Use RStudio to write and run R programs."
+- "R has the usual arithmetic operators and mathematical functions."
+- "Use `<-` to assign values to variables."
+- "Use `ls()` to list the variables in a program."
+- "Use `rm()` to delete objects in a program."
+- "Use `install.packages()` to install packages (libraries)."
+source: Rmd
+---
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("0.01-")
+```
+
+
+## Motivation
+
+Science is a multi-step process: once you've designed an experiment and collected
+data, the real fun begins! This lesson will teach you how to start this process using
+R and RStudio. We will begin with raw data, perform exploratory analyses, and learn
+how to plot results graphically. This example starts with a dataset from
+[gapminder.org](https://www.gapminder.org) containing population information for many
+countries through time. Can you read the data into R? Can you plot the population for
+Senegal? Can you calculate the average income for countries on the continent of Asia?
+By the end of these lessons you will be able to do things like plot the populations
+for all of these countries in under a minute!
+
+## Before Starting The Workshop
+
+Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
+
+* [Download and install the latest version of R here](https://www.r-project.org/)
+* [Download and install RStudio here](https://www.rstudio.com/)
+
+## Introduction to RStudio
+
+Welcome to the R portion of the Software Carpentry workshop.
+
+Throughout this lesson, we're going to teach you some of the fundamentals of
+the R language as well as some best practices for organizing code for
+scientific projects that will make your life easier.
+
+We'll be using RStudio: a free, open source R integrated development
+environment. It provides a built in editor, works on all platforms (including
+on servers) and provides many advantages such as integration with version
+control and project management.
+
+
+
+**Basic layout**
+
+When you first open RStudio, you will be greeted by three panels:
+
+  * The interactive R console (entire left)
+  * Environment/History (tabbed in upper right)
+  * Files/Plots/Packages/Help/Viewer (tabbed in lower right)
+
+![RStudio layout](../fig/01-rstudio.png)
+
+Once you open files, such as R scripts, an editor panel will also open
+in the top left.
+
+![RStudio layout with .R file open](../fig/01-rstudio-script.png)
+
+
+## Work flow within RStudio
+There are two main ways one can work within RStudio.
+
+1. Test and play within the interactive R console then copy code into
+a .R file to run later.
+   *  This works well when doing small tests and initially starting off.
+   *  It quickly becomes laborious
+2. Start writing in an .R file and use RStudio's short cut keys for the Run command
+to push the current line, selected lines or modified lines to the
+interactive R console.
+   * This is a great way to start; all your code is saved for later
+   * You will be able to run the file you create from within RStudio
+   or using R's `source()`  function.
+
+> ## Tip: Running segments of your code
+>
+> RStudio offers you great flexibility in running code from within the editor
+> window. There are buttons, menu choices, and keyboard shortcuts. To run the
+> current line, you can 
+> 1. click on the `Run` button above the editor panel, or 
+> 2. select "Run Lines" from the "Code" menu, or 
+> 3. hit <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Windows or Linux 
+> or <kbd>&#8984;</kbd>+<kbd>Return</kbd> on OS X.
+> (This shortcut can also be seen by hovering
+> the mouse over the button). To run a block of code, select it and then `Run`.
+> If you have modified a line of code within a block of code you have just run,
+> there is no need to reselect the section and `Run`, you can use the next button
+> along, `Re-run the previous region`. This will run the previous code block
+> including the modifications you have made.
+{: .callout}
+
+## Introduction to R
+
+Much of your time in R will be spent in the R interactive
+console. This is where you will run all of your code, and can be a
+useful environment to try out ideas before adding them to an R script
+file. This console in RStudio is the same as the one you would get if
+you typed in `R` in your command-line environment.
+
+The first thing you will see in the R interactive session is a bunch
+of information, followed by a ">" and a blinking cursor. In many ways
+this is similar to the shell environment you learned about during the
+shell lessons: it operates on the same idea of a "Read, evaluate,
+print loop": you type in commands, R tries to execute them, and then
+returns a result.
+
+## Variables and assignment
+
+We can store values in variables using the assignment operator `<-`, like this:
+
+```{r}
+x <- 1/40
+```
+
+Notice that assignment does not print a value. Instead, we stored it for later
+in something called a **variable**. `x` now contains the **value** `0.025`:
+
+```{r}
+x
+```
+
+More precisely, the stored value is a *decimal approximation* of
+this fraction called a [floating point number](http://en.wikipedia.org/wiki/Floating_point).
+
+Look for the `Environment` tab in one of the panes of RStudio, and you will see that `x` and its value
+have appeared. Our variable `x` can be used in place of a number in any calculation that expects a number:
+
+```{r}
+log(x)
+```
+
+Notice also that variables can be reassigned:
+
+```{r}
+x <- 100
+```
+
+`x` used to contain the value 0.025 and and now it has the value 100.
+
+Assignment values can contain the variable being assigned to:
+
+```{r}
+x <- x + 1 #notice how RStudio updates its description of x on the top right tab
+y <- x * 2
+```
+
+The right hand side of the assignment can be any valid R expression.
+The right hand side is *fully evaluated* before the assignment occurs.
+
+Variable names can contain letters, numbers, underscores and periods. They
+cannot start with a number nor contain spaces at all. Different people use
+different conventions for long variable names, these include
+
+  * periods.between.words
+  * underscores\_between_words
+  * camelCaseToSeparateWords
+
+What you use is up to you, but **be consistent**.
+
+It is also possible to use the `=` operator for assignment:
+
+```{r}
+x = 1/40
+```
+
+But this is much less common among R users.  The most important thing is to
+**be consistent** with the operator you use. There are occasionally places
+where it is less confusing to use `<-` than `=`, and it is the most common
+symbol used in the community. So the recommendation is to use `<-`.
+
+> ## Challenge 1
+>
+> Which of the following are valid R variable names?
+> ```{r, eval=FALSE}
+> min_height
+> max.height
+> _age
+> .mass
+> MaxLength
+> min-length
+> 2widths
+> celsius2kelvin
+> ```
+>
+> > ## Solution to challenge 1
+> >
+> > The following can be used as R variables:
+> > ```{r ch1pt1-sol, eval=FALSE}
+> > min_height
+> > max.height
+> > MaxLength
+> > celsius2kelvin
+> > ```
+> >
+> > The following creates a hidden variable:
+> > ```{r ch1pt2-sol, eval=FALSE}
+> > .mass
+> > ```
+> >
+> > The following will not be able to be used to create a variable
+> > ```{r ch1pt3-sol, eval=FALSE}
+> > _age
+> > min-length
+> > 2widths
+> > ```
+> {: .solution}
+{: .challenge}
+
+
+> ## Tip: Cancelling commands
+>
+> If you're using R from the commandline instead of from within RStudio,
+> you need to use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead of <kbd>Esc</kbd>
+> to cancel the command. This applies to Mac users as well!
+>
+> Cancelling a command isn't only useful for killing incomplete commands:
+> you can also use it to tell R to stop running code (for example if it's
+> taking much longer than you expect), or to get rid of the code you're
+> currently writing.
+>
+{: .callout}
+
+## Comparing things **Dani: add this in the next section**
+
+We can also do comparison in R:
+
+```{r}
+1 == 1  # equality (note two equals signs, read as "is equal to")
+```
+
+```{r}
+1 != 2  # inequality (read as "is not equal to")
+```
+
+```{r}
+1 < 2  # less than
+```
+
+```{r}
+1 <= 1  # less than or equal to
+```
+
+```{r}
+1 > 0  # greater than
+```
+
+```{r}
+1 >= -9 # greater than or equal to
+```
+
+> ## Tip: Comparing Numbers
+>
+> A word of warning about comparing numbers: you should
+> never use `==` to compare two numbers unless they are
+> integers (a data type which can specifically represent
+> only whole numbers).
+>
+> Computers may only represent decimal numbers with a
+> certain degree of precision, so two numbers which look
+> the same when printed out by R, may actually have
+> different underlying representations and therefore be
+> different by a small margin of error (called Machine
+> numeric tolerance).
+>
+> Instead you should use the `all.equal` function.
+>
+> Further reading: [http://floating-point-gui.de/](http://floating-point-gui.de/)
+>
+{: .callout}
+
+## Managing your environment
+
+There are a few useful commands you can use to interact with the R session.
+
+`ls` will list all of the variables and functions stored in the global environment
+(your working R session):
+
+```{r}
+ls()
+```
+
+> ## Tip: hidden objects
+>
+> Like in the shell, `ls` will hide any variables or functions starting
+> with a "." by default. To list all objects, type `ls(all.names=TRUE)`
+> instead
+>
+{: .callout}
+
+Note here that we didn't give any arguments to `ls`, but we still
+needed to give the parentheses to tell R to call the function.
+
+If we type `ls` by itself, R will print out the source code for that function!
+
+```{r}
+ls
+```
+
+You can use `rm` to delete objects you no longer need:
+
+```{r, eval=FALSE}
+rm(x)
+```
+
+If you have lots of things in your environment and want to delete all of them,
+you can pass the results of `ls` to the `rm` function:
+
+```{r, eval=FALSE}
+rm(list = ls())
+```
+
+In this case we've combined the two. Like the order of operations, anything
+inside the innermost parentheses is evaluated first, and so on.
+
+In this case we've specified that the results of `ls` should be used for the
+`list` argument in `rm`. When assigning values to arguments by name, you *must*
+use the `=` operator!!
+
+If instead we use `<-`, there will be unintended side effects, or you may get an error message:
+
+```{r, error=TRUE}
+rm(list <- ls())
+```
+
+> ## Tip: Warnings vs. Errors
+>
+> Pay attention when R does something unexpected! Errors, like above,
+> are thrown when R cannot proceed with a calculation. Warnings on the
+> other hand usually mean that the function has run, but it probably
+> hasn't worked as expected.
+>
+> In both cases, the message that R prints out usually give you clues
+> how to fix a problem.
+>
+{: .callout}
+
+## R Packages
+
+It is possible to add functions to R by writing a package, or by
+obtaining a package written by someone else. As of this writing, there
+are over 10,000 packages available on CRAN (the comprehensive R archive
+network). R and RStudio have functionality for managing packages:
+
+* You can see what packages are installed by typing
+  `installed.packages()`
+* You can install packages by typing `install.packages("packagename")`,
+  where `packagename` is the package name, in quotes.
+* You can update installed packages by typing `update.packages()`
+* You can remove a package with `remove.packages("packagename")`
+* You can make a package available for use with `library(packagename)`
+
+> ## Challenge 2
+>
+> What will be the value of each  variable  after each
+> statement in the following program?
+>
+> ```{r, eval=FALSE}
+> mass <- 47.5
+> age <- 122
+> mass <- mass * 2.3
+> age <- age - 20
+> ```
+>
+> > ## Solution to challenge 2
+> >
+> > ```{r ch2pt1-sol}
+> > mass <- 47.5
+> > ```
+> > This will give a value of `r mass` for the variable mass
+> >
+> > ```{r ch2pt2-sol}
+> > age <- 122
+> > ```
+> > This will give a value of `r age` for the variable age
+> >
+> > ```{r ch2pt3-sol}
+> > mass <- mass * 2.3
+> > ```
+> > This will multiply the existing value of `r mass/2.3` by 2.3 to give a new value of
+> > `r mass` to the variable mass.
+> >
+> > ```{r ch2pt4-sol}
+> > age <- age - 20
+> > ```
+> > This will subtract 20 from the existing value of `r age + 20 ` to give a new value
+> > of `r age` to the variable age.
+> {: .solution}
+{: .challenge}
+
+
+> ## Challenge 3
+>
+> Run the code from the previous challenge, and write a command to
+> compare mass to age. Is mass larger than age?
+>
+> > ## Solution to challenge 3
+> >
+> > One way of answering this question in R is to use the `>` to set up the following:
+> > ```{r ch3-sol}
+> > mass > age
+> >```
+> > This should yield a boolean value of TRUE since `r mass` is greater than `r age`.
+> {: .solution}
+{: .challenge}
+
+
+> ## Challenge 4
+>
+> Clean up your working environment by deleting the mass and age
+> variables.
+>
+> > ## Solution to challenge 4
+> >
+> > We can use the `rm` command to accomplish this task
+> > ```{r ch4-sol}
+> > rm(age, mass)
+> > ```
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 5
+>
+> Install the following packages: `ggplot2`, `plyr`, `gapminder`
+>
+> > ## Solution to challenge 5
+> >
+> > We can use the `install.packages()` command to install the required packages.
+> > ```{r ch5-sol, eval=FALSE}
+> > install.packages("ggplot2")
+> > install.packages("plyr")
+> > install.packages("gapminder")
+> >```
+> >
+> > An alternate solution, to install multiple packages with a single `install.packages()` command is:
+> > ```{r ch5-sol2, eval=FALSE}
+> > install.packages(c("ggplot2", "plyr", "gapminder"))
+> >```
+> {: .solution}
+{: .challenge}
+
+## Seeking Help
+
+## Reading Help files
+
+R, and every package, provide help files for functions. The general syntax to search for help on any
+function, "function_name", from a specific function that is in a package loaded into your
+namespace (your interactive R session):
+
+```{r, eval=FALSE}
+?function_name
+help(function_name)
+```
+
+This will load up a help page in RStudio (or as plain text in R by itself).
+
+Each help page is broken down into sections:
+
+ - Description: An extended description of what the function does.
+ - Usage: The arguments of the function and their default values.
+ - Arguments: An explanation of the data each argument is expecting.
+ - Details: Any important details to be aware of.
+ - Value: The data the function returns.
+ - See Also: Any related functions you might find useful.
+ - Examples: Some examples for how to use the function.
+
+Different functions might have different sections, but these are the main ones you should be aware of.
+
+> ## Tip: Running Examples
+>
+> From within the function help page, you can highlight code in the 
+> Examples and hit <kbd>Ctrl</kbd>+<kbd>Return</kbd> to run it in 
+> RStudio console. This is gives you a quick way to get a feel for
+> how a function works.
+
+> ## Tip: Reading help files
+>
+> One of the most daunting aspects of R is the large number of functions
+> available. It would be prohibitive, if not impossible to remember the
+> correct usage for every function you use. Luckily, the help files
+> mean you don't have to!
+{: .callout}
+
+## Special Operators
+
+To seek help on special operators, use quotes:
+
+```{r, eval=FALSE}
+?"<-"
+```
+
+## Getting help on packages
+
+Many packages come with "vignettes": tutorials and extended example documentation.
+Without any arguments, `vignette()` will list all vignettes for all installed packages;
+`vignette(package="package-name")` will list all available vignettes for
+`package-name`, and `vignette("vignette-name")` will open the specified vignette.
+
+If a package doesn't have any vignettes, you can usually find help by typing
+`help("package-name")`.
+
+## When you kind of remember the function
+
+If you're not sure what package a function is in, or how it's specifically spelled you can do a fuzzy search:
+
+```{r, eval=FALSE}
+??function_name
+```
+
+## When you have no idea where to begin
+
+If you don't know what function or package you need to use
+[CRAN Task Views](http://cran.at.r-project.org/web/views)
+is a specially maintained list of packages grouped into
+fields. This can be a good starting point.
+
+## When your code doesn't work: seeking help from your peers
+
+If you're having trouble using a function, 9 times out of 10,
+the answers you are seeking have already been answered on
+[Stack Overflow](http://stackoverflow.com/). You can search using
+the `[r]` tag.
+
+If you can't find the answer, there are a few useful functions to
+help you ask a question from your peers:
+
+```{r, eval=FALSE}
+?dput
+```
+
+Will dump the data you're working with into a format so that it can
+be copy and pasted by anyone else into their R session.
+
+```{r}
+sessionInfo()
+```
+
+Will print out your current version of R, as well as any packages you
+have loaded. This can be useful for others to help reproduce and debug
+your issue.
+
+> ## Challenge 1
+>
+> Look at the help for the `c` function. What kind of vector do you
+> expect you will create if you evaluate the following:
+> ```{r, eval=FALSE}
+> c(1, 2, 3)
+> c('d', 'e', 'f')
+> c(1, 2, 'f')
+> ```
+> > ## Solution to Challenge 1
+> >
+> > The `c()` function creates a vector, in which all elements are the
+> > same type. In the first case, the elements are numeric, in the
+> > second, they are characters, and in the third they are characters:
+> > the numeric values are "coerced" to be characters.
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 2
+>
+> Look at the help for the `paste` function. You'll need to use this later.
+> What is the difference between the `sep` and `collapse` arguments?
+>
+> > ## Solution to Challenge 2
+> >
+> > To look at the help for the `paste()` function, use:
+> > ```{r, eval=FALSE}
+> > help("paste")
+> > ?paste
+> > ```
+> > The difference between `sep` and `collapse` is a little
+> > tricky. The `paste` function accepts any number of arguments, each of which
+> > can be a vector of any length. The `sep` argument specifies the string
+> > used between concatenated terms — by default, a space. The result is a
+> > vector as long as the longest argument supplied to `paste`. In contrast,
+> > `collapse` specifies that after concatenation the elements are *collapsed*
+> > together using the given separator, the result being a single string.
+> > e.g. 
+> > ```{r} 
+> > paste(c("a","b"), "c")
+> > paste(c("a","b"), "c", sep = ",")
+> > paste(c("a","b"), "c", collapse = "|")
+> > paste(c("a","b"), "c", sep = ",", collapse = "|")
+> > ```
+> > (For more information,
+> > scroll to the bottom of the `?paste` help page and look at the
+> > examples, or try `example('paste')`.)
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 3
+> Use help to find a function (and its associated parameters) that you could
+> use to load data from a tabular file in which columns are delimited with "\t"
+> (tab) and the decimal point is a "." (period). This check for decimal
+> separator is important, especially if you are working with international
+> colleagues, because different countries have different conventions for the
+> decimal point (i.e. comma vs period).
+> hint: use `??"read table"` to look up functions related to reading in tabular data.
+> > ## Solution to Challenge 3
+> >
+> > The standard R function for reading tab-delimited files with a period
+> > decimal separator is read.delim(). You can also do this with
+> > `read.table(file, sep="\t")` (the period is the *default* decimal
+> > separator for `read.table()`, although you may have to change
+> > the `comment.char` argument as well if your data file contains
+> > hash (#) characters
+> {: .solution}
+{: .challenge}
+
+## Other ports of call
+
+* [Quick R](http://www.statmethods.net/)
+* [RStudio cheat sheets](http://www.rstudio.com/resources/cheatsheets/)
+* [Cookbook for R](http://www.cookbook-r.com/)

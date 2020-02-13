@@ -1,0 +1,846 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-02-13 11:46:10 -0800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Programming with R"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with R: MERGE 04: Addressing Data</title>
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-rstudio-intro/index.html">Introduction to R and RStudio</a></li>
+            
+            <li><a href="../01-starting-with-data/index.html">Analyzing Patient Data</a></li>
+            
+            <li><a href="../03-data-structures-part1/index.html">Data Structures</a></li>
+            
+            <li><a href="../04-data-structures-part2/index.html">Exploring Data Frames</a></li>
+            
+            <li><a href="../05-data-subsetting/index.html">Subsetting Data</a></li>
+            
+            <li><a href="../06-writing-data/index.html">Writing Data</a></li>
+            
+            <li><a href="../07-control-flow/index.html">Control Flow</a></li>
+            
+            <li><a href="../08-plot-ggplot2/index.html">Creating Publication-Quality Graphics with ggplot2</a></li>
+            
+            <li><a href="../14-supp-call-stack/index.html">The Call Stack</a></li>
+            
+            <li><a href="../15-best-practices-R/index.html">GIT SECTION: Best Practices for Writing R Code</a></li>
+            
+            <li><a href="../16-wrap-up/index.html">GIT SECTION: Writing Good Software</a></li>
+            
+            <li><a href="../17-cmdline/index.html">EXTRA: Command-Line Programs</a></li>
+            
+            <li><a href="../17-func-R/index.html">EXTRA: Creating Functions</a></li>
+            
+            <li><a href="../18-making-packages-R/index.html">EXTRA: Making Packages in R</a></li>
+            
+            <li><a href="../20-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="../21-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="../22-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="../23-supp-intro-rstudio/index.html">MERGE 01: Introduction to RStudio</a></li>
+            
+            <li><a href="../24-supp-addressing-data/index.html">MERGE 04: Addressing Data</a></li>
+            
+            <li><a href="../25-supp-read-write-csv/index.html">MERGE 06: Reading and Writing CSV Files</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/24-supp-addressing-data.Rmd">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../23-supp-intro-rstudio/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with R</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../25-supp-read-write-csv/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">MERGE 04: Addressing Data</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 20 min
+      <br/>
+      <strong>Exercises:</strong> 0 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>What are the different methods for accessing parts of a data frame?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Understand the three different ways R can address data inside a data frame.</p>
+</li>
+	
+	<li><p>Combine different methods for addressing data with the assignment operator to update subsets of data.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>R is a powerful language for data manipulation.
+There are three main ways for addressing data inside R objects.</p>
+
+<ul>
+  <li>By index (subsetting)</li>
+  <li>By logical vector</li>
+  <li>By name (columns only)</li>
+</ul>
+
+<p>Lets start by loading some sample data:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/sample.csv'</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="interpreting-rows-as-headers">Interpreting Rows as Headers</h2>
+
+  <p>The first row of this csv file is a list of column names.
+We used the <em>header = TRUE</em> argument to <code class="highlighter-rouge">read.csv</code> so that R can interpret the file correctly.
+We are using the <em>stringsAsFactors = FALSE</em> argument to override the default behaviour for R.
+Using factors in R is covered in a separate lesson.</p>
+</blockquote>
+
+<p>Lets take a look at this data.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
+</code></pre></div></div>
+
+<p>R has loaded the contents of the .csv file into a variable called <code class="highlighter-rouge">dat</code> which is a <code class="highlighter-rouge">data frame</code>.</p>
+
+<p>We can compactly display the internal structure of a data frame using the  structure function <code class="highlighter-rouge">str</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  9 variables:
+ $ ID           : chr  "Sub001" "Sub002" "Sub003" "Sub004" ...
+ $ Gender       : chr  "m" "m" "m" "f" ...
+ $ Group        : chr  "Control" "Treatment2" "Treatment2" "Treatment1" ...
+ $ BloodPressure: int  132 139 130 105 125 112 173 108 131 129 ...
+ $ Age          : num  16 17.2 19.5 15.7 19.9 14.3 17.7 19.8 19.4 18.8 ...
+ $ Aneurisms_q1 : int  114 148 196 199 188 260 135 216 117 188 ...
+ $ Aneurisms_q2 : int  140 209 251 140 120 266 98 238 215 144 ...
+ $ Aneurisms_q3 : int  202 248 122 233 222 320 154 279 181 192 ...
+ $ Aneurisms_q4 : int  237 248 177 220 228 294 245 251 272 185 ...
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">str</code> function tell us that the data has 100 rows and 9 columns. It is also tell us that the data frame is made up of character <code class="highlighter-rouge">chr</code>, integer <code class="highlighter-rouge">int</code> and <code class="highlighter-rouge">numeric</code> vectors.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age Aneurisms_q1 Aneurisms_q2
+1 Sub001      m    Control           132 16.0          114          140
+2 Sub002      m Treatment2           139 17.2          148          209
+3 Sub003      m Treatment2           130 19.5          196          251
+4 Sub004      f Treatment1           105 15.7          199          140
+5 Sub005      m Treatment1           125 19.9          188          120
+6 Sub006      M Treatment2           112 14.3          260          266
+  Aneurisms_q3 Aneurisms_q4
+1          202          237
+2          248          248
+3          122          177
+4          233          220
+5          222          228
+6          320          294
+</code></pre></div></div>
+
+<p>The data is the results of an (not real) experiment, looking at the number of aneurysms that formed in the eyes of patients who undertook 3 different treatments.</p>
+
+<h3 id="addressing-by-index">Addressing by Index</h3>
+
+<p>Data can be accessed by index. We have already seen how square brackets <code class="highlighter-rouge">[</code> can be used to subset data (sometimes also called “slicing”). The generic format is <code class="highlighter-rouge">dat[row_numbers,column_numbers]</code>.</p>
+
+<blockquote class="challenge">
+  <h2 id="selecting-values">Selecting Values</h2>
+
+  <p>What will be returned by <code class="highlighter-rouge">dat[1, 1]</code>?
+Think about the number of rows and columns you would expect as the result.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Sub001"
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p>If we leave out a dimension R will interpret this as a request for all values in that dimension.</p>
+
+<blockquote class="challenge">
+  <h2 id="selecting-more-values">Selecting More Values</h2>
+
+  <p>What will be returned by <code class="highlighter-rouge">dat[, 2]</code>?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
+ [19] "m" "F" "f" "m" "f" "f" "m" "M" "M" "f" "m" "f" "f" "m" "m" "m" "m" "f"
+ [37] "f" "m" "M" "m" "f" "m" "m" "m" "f" "f" "M" "M" "m" "m" "m" "f" "f" "f"
+ [55] "m" "f" "m" "m" "m" "f" "f" "f" "f" "M" "f" "m" "f" "f" "M" "m" "m" "m"
+ [73] "F" "m" "m" "f" "M" "M" "M" "f" "m" "M" "M" "m" "m" "f" "f" "f" "m" "m"
+ [91] "f" "m" "F" "f" "m" "m" "F" "m" "M" "M"
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p>The colon <code class="highlighter-rouge">:</code> can be used to create a sequence of integers.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6 7 8 9
+</code></pre></div></div>
+
+<p>Creates a vector of numbers from 6 to 9.</p>
+
+<p>This can be very useful for addressing data.</p>
+
+<blockquote class="challenge">
+  <h2 id="subsetting-with-sequences">Subsetting with Sequences</h2>
+
+  <p>Use the colon operator to index just the aneurism count data (columns 6 to 9).</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">]</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Aneurisms_q1 Aneurisms_q2 Aneurisms_q3 Aneurisms_q4
+1            114          140          202          237
+2            148          209          248          248
+3            196          251          122          177
+4            199          140          233          220
+5            188          120          222          228
+6            260          266          320          294
+7            135           98          154          245
+8            216          238          279          251
+9            117          215          181          272
+10           188          144          192          185
+11           134          155          247          223
+12           152          177          323          245
+13           112          220          225          195
+14           109          150          177          189
+15           146          140          239          223
+16            97          172          203          207
+17           165          157          200          193
+18           158          265          243          187
+19           178          109          206          182
+20           107          188          167          218
+21           174          160          203          183
+22            97          110          194          133
+23           187          239          281          214
+24           188          191          256          265
+25           114          199          242          195
+26           115          160          158          228
+27           128          249          294          315
+28           112          230          281          126
+29           136          109          105          155
+30           103          148          219          228
+31           132          151          234          162
+32           118          154          260          160
+33           166          176          253          233
+34           152          105          197          299
+35           191          148          166          185
+36           152          178          158          170
+37           161          270          232          284
+38           239          184          317          269
+39           132          137          193          206
+40           168          255          273          274
+41           140          184          239          202
+42           166           85          179          196
+43           141          160          179          239
+44           161          168          212          181
+45           103          111          254          126
+46           231          240          260          310
+47           192          141          180          225
+48           178          180          169          183
+49           167          123          236          224
+50           135          150          208          279
+51           150          166          153          204
+52           192           80          138          222
+53           153          153          236          216
+54           205          264          269          207
+55           117          194          216          211
+56           199          119          183          251
+57           182          129          226          218
+58           180          196          250          294
+59           111          111          244          201
+60           101           98          178          116
+61           166          167          232          241
+62           158          171          237          212
+63           189          178          177          238
+64           189          101          193          172
+65           239          189          297          300
+66           185          224          151          182
+67           224          112          304          288
+68           104          139          211          204
+69           222          199          280          196
+70           107           98          204          138
+71           153          255          218          234
+72           118          165          220          227
+73           102          184          246          222
+74           188          125          191          157
+75           180          283          204          298
+76           178          214          291          240
+77           168          184          184          229
+78           118          170          249          249
+79           169          114          248          233
+80           156          138          218          258
+81           232          211          219          246
+82           188          108          180          136
+83           169          168          180          211
+84           241          233          292          182
+85            65          207          234          235
+86           225          185          195          235
+87           104          116          173          221
+88           179          158          216          244
+89           103          140          209          186
+90           112          130          175          191
+91           226          170          307          244
+92           228          221          316          259
+93           209          142          199          184
+94           153          104          194          214
+95           111          118          173          191
+96           148          132          200          194
+97           141          196          322          273
+98           193          112          123          181
+99           130          226          286          281
+100          126          157          129          160
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p>Finally we can use the <code class="highlighter-rouge">c()</code> (combine) function to address non-sequential rows and columns.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">),</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age
+1 Sub001      m    Control           132 16.0
+5 Sub005      m Treatment1           125 19.9
+7 Sub007      f    Control           173 17.7
+9 Sub009      m Treatment2           131 19.4
+</code></pre></div></div>
+
+<p>Returns the first 5 columns for patients in rows 1,5,7 and 9</p>
+
+<blockquote class="challenge">
+  <h2 id="subsetting-non-sequential-data">Subsetting Non-Sequential Data</h2>
+
+  <p>Write code to return the age and gender values for the first 5 patients.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)]</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
+1 16.0      m
+2 17.2      m
+3 19.5      m
+4 15.7      f
+5 19.9      m
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<h3 id="addressing-by-name">Addressing by Name</h3>
+
+<p>Columns in an R data frame are named.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "ID"            "Gender"        "Group"         "BloodPressure"
+[5] "Age"           "Aneurisms_q1"  "Aneurisms_q2"  "Aneurisms_q3" 
+[9] "Aneurisms_q4" 
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="default-names">Default Names</h2>
+
+  <p>If column names are not specified e.g. using <code class="highlighter-rouge">headers = FALSE</code> in a <code class="highlighter-rouge">read.csv()</code> function, R assigns default names <code class="highlighter-rouge">V1, V2, ..., Vn</code></p>
+</blockquote>
+
+<p>We usually use the <code class="highlighter-rouge">$</code> operator to address a column by name</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
+ [19] "m" "F" "f" "m" "f" "f" "m" "M" "M" "f" "m" "f" "f" "m" "m" "m" "m" "f"
+ [37] "f" "m" "M" "m" "f" "m" "m" "m" "f" "f" "M" "M" "m" "m" "m" "f" "f" "f"
+ [55] "m" "f" "m" "m" "m" "f" "f" "f" "f" "M" "f" "m" "f" "f" "M" "m" "m" "m"
+ [73] "F" "m" "m" "f" "M" "M" "M" "f" "m" "M" "M" "m" "m" "f" "f" "f" "m" "m"
+ [91] "f" "m" "F" "f" "m" "m" "F" "m" "M" "M"
+</code></pre></div></div>
+
+<p>When we extract a single column column from a data frame using the <code class="highlighter-rouge">$</code> operator, R will return a vector of that column class and not a data frame.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BloodPressure</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+</code></pre></div></div>
+
+<p>Named addressing can also be used in square brackets.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'Age'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Gender'</span><span class="p">)])</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
+1 16.0      m
+2 17.2      m
+3 19.5      m
+4 15.7      f
+5 19.9      m
+6 14.3      M
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="best-practice">Best Practice</h2>
+
+  <p>Best practice is to address columns by name. Often, you will create or delete columns and the column position will change.</p>
+</blockquote>
+
+<h3 id="logical-indexing">Logical Indexing</h3>
+
+<p>A logical vector contains only the special values <code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE FALSE FALSE  TRUE
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="truth-and-its-opposite">Truth and Its Opposite</h2>
+
+  <p>Note the values <code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code> are all capital letters and are not quoted.</p>
+</blockquote>
+
+<p>Logical vectors can be created using <code class="highlighter-rouge">relational operators</code> e.g. <code class="highlighter-rouge">&lt;, &gt;, ==, !=, %in%</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">13</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+</code></pre></div></div>
+
+<p>We can use logical vectors to select data from a data frame.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dat</span><span class="o">$</span><span class="n">Group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Control'</span><span class="w">
+</span><span class="n">dat</span><span class="p">[</span><span class="n">index</span><span class="p">,]</span><span class="o">$</span><span class="n">BloodPressure</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] 132 173 129  77 158  81 137 111 135 108 133 139 126 125  99 122 155 133  94
+[20]  98  74 116  97 104 117  90 150 116 108 102
+</code></pre></div></div>
+
+<p>Often this operation is written as one line of code:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="o">$</span><span class="n">Group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Control'</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="o">$</span><span class="n">BloodPressure</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="../fig/rmd-24-supp-addressing-data-logical_vectors_indexing2-1.svg" title="plot of chunk logical_vectors_indexing2" alt="plot of chunk logical_vectors_indexing2" width="612" style="display: block; margin: auto;" /></p>
+
+<blockquote class="challenge">
+  <h2 id="using-logical-indexes">Using Logical Indexes</h2>
+
+  <ol>
+    <li>Create a scatterplot showing BloodPressure for subjects not in the control group.</li>
+    <li>How many ways are there to index this set of subjects?</li>
+  </ol>
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <ol>
+      <li>
+        <p>The code for such a plot:</p>
+
+        <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">plot</span><span class="p">(</span><span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="o">$</span><span class="n">Group</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'Control'</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="o">$</span><span class="n">BloodPressure</span><span class="p">)</span><span class="w">
+</span></code></pre></div>        </div>
+
+        <p><img src="../fig/rmd-24-supp-addressing-data-plot-logical-1.svg" title="plot of chunk plot-logical" alt="plot of chunk plot-logical" width="612" style="display: block; margin: auto;" /></p>
+      </li>
+      <li>
+        <p>In addition to 
+<code class="highlighter-rouge">dat$Group != 'Control'</code>, one could use 
+<code class="highlighter-rouge">dat$Group %in% c("Treatment1", "Treatment2")</code>.</p>
+      </li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<h3 id="combining-indexing-and-assignment">Combining Indexing and Assignment</h3>
+
+<p>The assignment operator <code class="highlighter-rouge">&lt;-</code> can be combined with indexing.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">13</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="n">x</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  0  0  0 11 12 13
+</code></pre></div></div>
+
+<blockquote class="challenge">
+  <h2 id="updating-a-subset-of-values">Updating a Subset of Values</h2>
+
+  <p>In this dataset, values for Gender have been recorded as both uppercase <code class="highlighter-rouge">M, F</code> and lowercase <code class="highlighter-rouge">m, f</code>.
+Combine the indexing and assignment operations to convert all values to lowercase.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-5">Solution</h2>
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'M'</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="o">$</span><span class="n">Gender</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'m'</span><span class="w">
+</span><span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'F'</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="o">$</span><span class="n">Gender</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'f'</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Data in data frames can be addressed by index (subsetting), by logical vector, or by name (columns only).</p>
+</li>
+    
+    <li><p>Use the <code class="highlighter-rouge">$</code> operator to address a column by name.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../23-supp-intro-rstudio/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../25-supp-read-write-csv/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/24-supp-addressing-data.Rmd">Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

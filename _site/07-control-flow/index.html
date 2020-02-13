@@ -1,0 +1,929 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2020-02-13 11:46:10 -0800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Programming with R"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Programming with R: Control Flow</title>
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-rstudio-intro/index.html">Introduction to R and RStudio</a></li>
+            
+            <li><a href="../01-starting-with-data/index.html">Analyzing Patient Data</a></li>
+            
+            <li><a href="../03-data-structures-part1/index.html">Data Structures</a></li>
+            
+            <li><a href="../04-data-structures-part2/index.html">Exploring Data Frames</a></li>
+            
+            <li><a href="../05-data-subsetting/index.html">Subsetting Data</a></li>
+            
+            <li><a href="../06-writing-data/index.html">Writing Data</a></li>
+            
+            <li><a href="../07-control-flow/index.html">Control Flow</a></li>
+            
+            <li><a href="../08-plot-ggplot2/index.html">Creating Publication-Quality Graphics with ggplot2</a></li>
+            
+            <li><a href="../14-supp-call-stack/index.html">The Call Stack</a></li>
+            
+            <li><a href="../15-best-practices-R/index.html">GIT SECTION: Best Practices for Writing R Code</a></li>
+            
+            <li><a href="../16-wrap-up/index.html">GIT SECTION: Writing Good Software</a></li>
+            
+            <li><a href="../17-cmdline/index.html">EXTRA: Command-Line Programs</a></li>
+            
+            <li><a href="../17-func-R/index.html">EXTRA: Creating Functions</a></li>
+            
+            <li><a href="../18-making-packages-R/index.html">EXTRA: Making Packages in R</a></li>
+            
+            <li><a href="../20-loops-R/index.html">Analyzing Multiple Data Sets</a></li>
+            
+            <li><a href="../21-cond/index.html">Making Choices</a></li>
+            
+            <li><a href="../22-knitr-R/index.html">Dynamic Reports with knitr</a></li>
+            
+            <li><a href="../23-supp-intro-rstudio/index.html">MERGE 01: Introduction to RStudio</a></li>
+            
+            <li><a href="../24-supp-addressing-data/index.html">MERGE 04: Addressing Data</a></li>
+            
+            <li><a href="../25-supp-read-write-csv/index.html">MERGE 06: Reading and Writing CSV Files</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference.html">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../figures/">Figures</a></li>
+            
+            <li><a href="../guide/">Instructor Notes</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	
+	<li><a href="/edit//_episodes_rmd/07-control-flow.Rmd">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../06-writing-data/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Programming with R</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../08-plot-ggplot2/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Control Flow</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 45 min
+      <br/>
+      <strong>Exercises:</strong> 20 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I make data-dependent choices in R?</p>
+</li>
+	
+	<li><p>How can I repeat operations in R?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Write conditional statements with <code class="highlighter-rouge">if()</code> and <code class="highlighter-rouge">else()</code>.</p>
+</li>
+	
+	<li><p>Write and understand <code class="highlighter-rouge">for()</code> loops.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<p>Often when we’re coding we want to control the flow of our actions. This can be done
+by setting actions to occur only if a condition or a set of conditions are met.
+Alternatively, we can also set an action to occur a particular number of times.</p>
+
+<p>There are several ways you can control flow in R.
+For conditional statements, the most commonly used approaches are the constructs:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># if</span><span class="w">
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">perform</span><span class="w"> </span><span class="n">action</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># if ... else</span><span class="w">
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">perform</span><span class="w"> </span><span class="n">action</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1"># that is, if the condition is false,</span><span class="w">
+  </span><span class="n">perform</span><span class="w"> </span><span class="n">alternative</span><span class="w"> </span><span class="n">action</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Say, for example, that we want R to print a message if a variable <code class="highlighter-rouge">x</code> has a particular value:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
+
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is greater than or equal to 10"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">x</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
+</code></pre></div></div>
+
+<p>The print statement does not appear in the console because x is not greater than 10. To print a different message for numbers less than 10, we can add an <code class="highlighter-rouge">else</code> statement.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
+
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is greater than or equal to 10"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is less than 10"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is less than 10"
+</code></pre></div></div>
+
+<p>You can also test multiple conditions by using <code class="highlighter-rouge">else if</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
+
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is greater than or equal to 10"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is greater than 5, but less than 10"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="s2">"x is less than 5"</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is greater than 5, but less than 10"
+</code></pre></div></div>
+
+<p><strong>Important:</strong> when R evaluates the condition inside <code class="highlighter-rouge">if()</code> statements, it is
+looking for a logical element, i.e., <code class="highlighter-rouge">TRUE</code> or <code class="highlighter-rouge">FALSE</code>. This can cause some
+headaches for beginners. For example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w">  </span><span class="o">&lt;-</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"4 equals 3"</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"4 does not equal 3"</span><span class="w">          
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "4 does not equal 3"
+</code></pre></div></div>
+
+<p>As we can see, the not equal message was printed because the vector x is <code class="highlighter-rouge">FALSE</code></p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="n">x</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE
+</code></pre></div></div>
+
+<blockquote class="challenge">
+  <h2 id="challenge-1">Challenge 1</h2>
+
+  <p>Use an <code class="highlighter-rouge">if()</code> statement to print a suitable message
+reporting whether there are any records from 2002 in
+the <code class="highlighter-rouge">gapminder</code> dataset.
+Now do the same for 2012.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-to-challenge-1">Solution to Challenge 1</h2>
+    <p>We will first see a solution to Challenge 1 which does not use the <code class="highlighter-rouge">any()</code> function.
+We first obtain a logical vector describing which element of <code class="highlighter-rouge">gapminder$year</code> is equal to <code class="highlighter-rouge">2002</code>:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="p">[(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">),]</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>Then, we count the number of rows of the data.frame <code class="highlighter-rouge">gapminder</code> that correspond to the 2002:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows2002_number</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">),])</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>The presence of any record for the year 2002 is equivalent to the request that <code class="highlighter-rouge">rows2002_number</code> is one or more:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows2002_number</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>Putting all together, we obtain:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">),])</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1</span><span class="p">){</span><span class="w">
+   </span><span class="n">print</span><span class="p">(</span><span class="s2">"Record(s) for the year 2002 found."</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>All this can be done more quickly with <code class="highlighter-rouge">any()</code>. The logical condition can be expressed as:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">)){</span><span class="w">
+   </span><span class="n">print</span><span class="p">(</span><span class="s2">"Record(s) for the year 2002 found."</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+  </blockquote>
+</blockquote>
+
+<p>Did anyone get a warning message like this?</p>
+
+<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in if (gapminder$year == 2012) {: the condition has length &gt; 1
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">if()</code> function only accepts singular (of length 1) inputs, and therefore 
+returns an error when you use it with a vector. The <code class="highlighter-rouge">if()</code> function will still 
+run, but will only evaluate the condition in the first element of the vector. 
+Therefore, to use the <code class="highlighter-rouge">if()</code> function, you need to make sure your input is 
+singular (of length 1).</p>
+
+<blockquote>
+  <h2 id="tip-built-in-ifelse-function">Tip: Built in <code class="highlighter-rouge">ifelse()</code> function</h2>
+
+  <p><code class="highlighter-rouge">R</code> accepts both <code class="highlighter-rouge">if()</code> and <code class="highlighter-rouge">ifelse()</code> statements structured as outlined above, 
+but also statements using <code class="highlighter-rouge">R</code>’s built-in <code class="highlighter-rouge">ifelse()</code> function. This 
+function accepts both singular and vector inputs and is structured as 
+follows:</p>
+</blockquote>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ifelse function </span><span class="w">
+</span><span class="n">ifelse</span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">true</span><span class="p">,</span><span class="w"> </span><span class="n">perform</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="n">perform</span><span class="w"> </span><span class="n">alternative</span><span class="w"> </span><span class="n">action</span><span class="p">)</span><span class="w"> 
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>where the first argument is the condition or a set of conditions to be met, the 
+second argument is the statement that is evaluated when the condition is <code class="highlighter-rouge">TRUE</code>,
+and the third statement  is the statement that is evaluated when the condition 
+is <code class="highlighter-rouge">FALSE</code>.</p>
+</blockquote>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">-3</span><span class="w">
+</span><span class="n">ifelse</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"y is a negative number"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y is either positive or zero"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output callout highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "y is a negative number"
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="tip-any-and-all">Tip: <code class="highlighter-rouge">any()</code> and <code class="highlighter-rouge">all()</code></h2>
+
+  <p>The <code class="highlighter-rouge">any()</code> function will return <code class="highlighter-rouge">TRUE</code> if at least one
+<code class="highlighter-rouge">TRUE</code> value is found within a vector, otherwise it will return <code class="highlighter-rouge">FALSE</code>.
+This can be used in a similar way to the <code class="highlighter-rouge">%in%</code> operator.
+The function <code class="highlighter-rouge">all()</code>, as the name suggests, will only return <code class="highlighter-rouge">TRUE</code> if all values in
+the vector are <code class="highlighter-rouge">TRUE</code>.</p>
+</blockquote>
+
+<h2 id="repeating-operations">Repeating operations</h2>
+
+<p>If you want to iterate over
+a set of values, when the order of iteration is important, and perform the
+same operation on each, a <code class="highlighter-rouge">for()</code> loop will do the job.
+We saw <code class="highlighter-rouge">for()</code> loops in the shell lessons earlier. This is the most
+flexible of looping operations, but therefore also the hardest to use
+correctly. In general, the advice of many <code class="highlighter-rouge">R</code> users would be to learn about 
+<code class="highlighter-rouge">for()</code> loops, but to avoid using <code class="highlighter-rouge">for()</code> loops unless the order of iteration is
+important: i.e. the calculation at each iteration depends on the results of 
+previous iterations. If the order of iteration is not important, then you 
+should learn about vectorized alternatives, such as the <code class="highlighter-rouge">purr</code> package, as they
+pay off in computational efficiency.</p>
+
+<p>The basic structure of a <code class="highlighter-rouge">for()</code> loop is:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">do</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">thing</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">1:10</code> bit creates a vector on the fly; you can iterate
+over any other vector as well.</p>
+
+<p>We can use a <code class="highlighter-rouge">for()</code> loop nested within another <code class="highlighter-rouge">for()</code> loop to iterate over two things at
+once.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "1 a"
+[1] "1 b"
+[1] "1 c"
+[1] "1 d"
+[1] "1 e"
+[1] "2 a"
+[1] "2 b"
+[1] "2 c"
+[1] "2 d"
+[1] "2 e"
+[1] "3 a"
+[1] "3 b"
+[1] "3 c"
+[1] "3 d"
+[1] "3 e"
+[1] "4 a"
+[1] "4 b"
+[1] "4 c"
+[1] "4 d"
+[1] "4 e"
+[1] "5 a"
+[1] "5 b"
+[1] "5 c"
+[1] "5 d"
+[1] "5 e"
+</code></pre></div></div>
+
+<p>We notice in the output that when the first index (<code class="highlighter-rouge">i</code>) is set to 1, the second 
+index (<code class="highlighter-rouge">j</code>) iterates through its full set of indices. Once the indices of <code class="highlighter-rouge">j</code> 
+have been iterated through, then <code class="highlighter-rouge">i</code> is incremented. This process continues 
+until the last index has been used for each <code class="highlighter-rouge">for()</code> loop.</p>
+
+<p>Rather than printing the results, we could write the loop output to a new object.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">temp_output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w">
+    </span><span class="n">output_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">output_vector</span><span class="p">,</span><span class="w"> </span><span class="n">temp_output</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">output_vector</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b"
+[13] "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b" "5 c" "5 d"
+[25] "5 e"
+</code></pre></div></div>
+
+<p>This approach can be useful, but ‘growing your results’ (building
+the result object incrementally) is computationally inefficient, so avoid
+it when you are iterating through a lot of values.</p>
+
+<blockquote class="callout">
+  <h2 id="tip-dont-grow-your-results">Tip: don’t grow your results</h2>
+
+  <p>One of the biggest things that trips up novices and
+experienced R users alike, is building a results object
+(vector, list, matrix, data frame) as your for loop progresses.
+Computers are very bad at handling this, so your calculations
+can very quickly slow to a crawl. It’s much better to define
+an empty results object before hand of appropriate dimensions, rather 
+than initializing an empty object without dimensions.
+So if you know the end result will be stored in a matrix like above,
+create an empty matrix with 5 row and 5 columns, then at each iteration
+store the results in the appropriate location.</p>
+</blockquote>
+
+<p>A better way is to define your (empty) output object before filling in the values.
+For this example, it looks more involved, but is still more efficient.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">nrow</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span><span class="n">j_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">,</span><span class="w"> </span><span class="s1">'e'</span><span class="p">)</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">temp_j_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">j_vector</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w">
+    </span><span class="n">temp_output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">temp_j_value</span><span class="p">)</span><span class="w">
+    </span><span class="n">output_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">temp_output</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">output_vector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.vector</span><span class="p">(</span><span class="n">output_matrix</span><span class="p">)</span><span class="w">
+</span><span class="n">output_vector2</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c"
+[13] "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e"
+[25] "5 e"
+</code></pre></div></div>
+
+<blockquote class="callout">
+  <h2 id="tip-while-loops">Tip: While loops</h2>
+
+  <p>Sometimes you will find yourself needing to repeat an operation as long as a certain
+condition is met. You can do this with a <code class="highlighter-rouge">while()</code> loop.</p>
+
+  <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">this</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">true</span><span class="p">){</span><span class="w">
+  </span><span class="n">do</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">thing</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>R will interpret a condition being met as “TRUE”.</p>
+
+  <p>As an example, here’s a while loop
+that generates random numbers from a uniform distribution (the <code class="highlighter-rouge">runif()</code> function)
+between 0 and 1 until it gets one that’s less than 0.1.</p>
+
+  <div class="r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>z &lt;- 1
+while(z &gt; 0.1){
+  z &lt;- runif(1)
+  cat(z, "\n")
+}
+</code></pre></div>  </div>
+
+  <p><code class="highlighter-rouge">while()</code> loops will not always be appropriate. You have to be particularly careful
+that you don’t end up stuck in an infinite loop because your condition is always met and hence the while statement never terminates.</p>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="challenge-2">Challenge 2</h2>
+
+  <p>Compare the objects output_vector and
+output_vector2. Are they the same? If not, why not?
+How would you change the last block of code to make output_vector2
+the same as output_vector?</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-to-challenge-2">Solution to Challenge 2</h2>
+    <p>We can check whether the two vectors are identical using the <code class="highlighter-rouge">all()</code> function:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">output_vector2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>However, all the elements of <code class="highlighter-rouge">output_vector</code> can be found in <code class="highlighter-rouge">output_vector2</code>:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">output_vector2</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>and vice versa:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector2</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">output_vector</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>therefore, the element in <code class="highlighter-rouge">output_vector</code> and <code class="highlighter-rouge">output_vector2</code> are just sorted in a different order.
+This is because <code class="highlighter-rouge">as.vector()</code> outputs the elements of an input matrix going over its column.
+Taking a look at <code class="highlighter-rouge">output_matrix</code>, we can notice that we want its elements by rows.
+The solution is to transpose the <code class="highlighter-rouge">output_matrix</code>. We can do it either by calling the transpose function
+<code class="highlighter-rouge">t()</code> or by inputting the elements in the right order.
+The first solution requires to change the original</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_vector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.vector</span><span class="p">(</span><span class="n">output_matrix</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>into</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_vector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.vector</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">output_matrix</span><span class="p">))</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>The second solution requires to change</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">temp_output</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>into</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">temp_output</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="challenge-3">Challenge 3</h2>
+
+  <p>Write a script that loops through the <code class="highlighter-rouge">gapminder</code> data by continent and prints out
+whether the mean life expectancy is smaller or larger than 50
+years.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-to-challenge-3">Solution to Challenge 3</h2>
+
+    <p><strong>Step 1</strong>:  We want to make sure we can extract all the unique values of the continent vector</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"data/gapminder_data.csv"</span><span class="p">)</span><span class="w">
+</span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><strong>Step 2</strong>: We also need to loop over each of these continents and calculate the average life expectancy for each <code class="highlighter-rouge">subset</code> of data.
+We can do that as follows:</p>
+
+    <ol>
+      <li>Loop over each of the unique values of ‘continent’</li>
+      <li>For each value of continent, create a temporary variable storing that subset</li>
+      <li>Return the calculated life expectancy to the user by printing the output:</li>
+    </ol>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iContinent</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iContinent</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">   
+  </span><span class="n">cat</span><span class="p">(</span><span class="n">iContinent</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">tmp</span><span class="o">$</span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">  
+  </span><span class="n">rm</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p><strong>Step 3</strong>: The exercise only wants the output printed if the average life expectancy is less than 50 or greater than 50.
+So we need to add an <code class="highlighter-rouge">if()</code> condition before printing, which evaluates whether the calculated average life expectancy is above or below a threshold, and print an output conditional on the result.
+We need to amend (3) from above:</p>
+
+    <p>3a. If the calculated life expectancy is less than some threshold (50 years), return the continent and a statement that life expectancy is less than threshold, otherwise return the continent and   a statement that life expectancy is greater than threshold,:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thresholdValue</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
+
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iContinent</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iContinent</span><span class="p">,</span><span class="w"> </span><span class="s2">"lifeExp"</span><span class="p">])</span><span class="w">
+   
+   </span><span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">thresholdValue</span><span class="p">){</span><span class="w">
+       </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iContinent</span><span class="p">,</span><span class="w"> </span><span class="s2">"is less than"</span><span class="p">,</span><span class="w"> </span><span class="n">thresholdValue</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+   </span><span class="k">else</span><span class="p">{</span><span class="w">
+       </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iContinent</span><span class="p">,</span><span class="w"> </span><span class="s2">"is greater than"</span><span class="p">,</span><span class="w"> </span><span class="n">thresholdValue</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="c1"># end if else condition</span><span class="w">
+   </span><span class="n">rm</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w">
+   </span><span class="p">}</span><span class="w"> </span><span class="c1"># end for loop</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="challenge-4">Challenge 4</h2>
+
+  <p>Modify the script from Challenge 3 to loop over each
+country. This time print out whether the life expectancy is
+smaller than 50, between 50 and 70, or greater than 70.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-to-challenge-4">Solution to Challenge 4</h2>
+    <p>We modify our solution to Challenge 3 by now adding two thresholds, <code class="highlighter-rouge">lowerThreshold</code> and <code class="highlighter-rouge">upperThreshold</code> and extending our if-else statements:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">lowerThreshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
+ </span><span class="n">upperThreshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">70</span><span class="w">
+ 
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iCountry</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"lifeExp"</span><span class="p">])</span><span class="w">
+    
+    </span><span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lowerThreshold</span><span class="p">){</span><span class="w">
+        </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"is less than"</span><span class="p">,</span><span class="w"> </span><span class="n">lowerThreshold</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">lowerThreshold</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">upperThreshold</span><span class="p">){</span><span class="w">
+        </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"is between"</span><span class="p">,</span><span class="w"> </span><span class="n">lowerThreshold</span><span class="p">,</span><span class="w"> </span><span class="s2">"and"</span><span class="p">,</span><span class="w"> </span><span class="n">upperThreshold</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"is greater than"</span><span class="p">,</span><span class="w"> </span><span class="n">upperThreshold</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">rm</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="challenge-5---advanced">Challenge 5 - Advanced</h2>
+
+  <p>Write a script that loops over each country in the <code class="highlighter-rouge">gapminder</code> dataset,
+tests whether the country starts with a ‘B’, and graphs life expectancy
+against time as a line graph if the mean life expectancy is under 50 years.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-for-challenge-5">Solution for Challenge 5</h2>
+
+    <p>We will use the <code class="highlighter-rouge">grep()</code> command that was introduced in the Unix Shell lesson to find countries that start with “B.”
+Lets understand how to do this first.
+Following from the Unix shell section we may be tempted to try the following</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">))</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>But when we evaluate this command it returns the indices of the factor variable <code class="highlighter-rouge">country</code> that start with “B.”
+To get the values, we must add the <code class="highlighter-rouge">value=TRUE</code> option to the <code class="highlighter-rouge">grep()</code> command:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>We will now store these countries in a variable called candidateCountries, and then loop over each entry in the variable.
+Inside the loop, we evaluate the average life expectancy for each country, and if the average life expectancy is less than 50 we use base-plot to plot the evolution of average life expectancy using <code class="highlighter-rouge">with()</code> and <code class="highlighter-rouge">subset()</code>:</p>
+
+    <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thresholdValue</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
+</span><span class="n">candidateCountries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iCountry</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">candidateCountries</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"lifeExp"</span><span class="p">])</span><span class="w">
+    
+    </span><span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">thresholdValue</span><span class="p">){</span><span class="w">
+        </span><span class="n">cat</span><span class="p">(</span><span class="s2">"Average Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"is less than"</span><span class="p">,</span><span class="w"> </span><span class="n">thresholdValue</span><span class="p">,</span><span class="w"> </span><span class="s2">"plotting life expectancy graph... \n"</span><span class="p">)</span><span class="w">
+        
+        </span><span class="n">with</span><span class="p">(</span><span class="n">subset</span><span class="p">(</span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="o">==</span><span class="n">iCountry</span><span class="p">),</span><span class="w">
+                </span><span class="n">plot</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w">
+                     </span><span class="n">type</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span><span class="w">
+                     </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="s2">"Life Expectancy in"</span><span class="p">,</span><span class="w"> </span><span class="n">iCountry</span><span class="p">,</span><span class="w"> </span><span class="s2">"over time"</span><span class="p">),</span><span class="w">
+                     </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Life Expectancy"</span><span class="p">,</span><span class="w">
+                     </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Year"</span><span class="w">
+                   </span><span class="p">)</span><span class="w"> </span><span class="c1"># end plot</span><span class="w">
+              </span><span class="p">)</span><span class="w"> </span><span class="c1"># end with</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="c1"># end for loop</span><span class="w">
+    </span><span class="n">rm</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Use <code class="highlighter-rouge">if</code> and <code class="highlighter-rouge">else</code> to make choices.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">for</code> to repeat operations.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../06-writing-data/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../08-plot-ggplot2/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Licensed under <a href="">CC-BY 4.0</a> 2018–2020
+	by <a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Licensed under <a href="">CC-BY 4.0</a> 2016–2018
+	by <a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	
+	<a href="/edit//_episodes_rmd/07-control-flow.Rmd">Edit on GitHub</a>
+	
+	
+	/
+	<a href="/blob//CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob//CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
