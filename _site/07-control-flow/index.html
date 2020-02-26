@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -273,10 +273,10 @@
       <strong>Objectives</strong>
       <ul>
 	
-	<li><p>Write conditional statements with <code class="highlighter-rouge">if()</code> and <code class="highlighter-rouge">else()</code>.</p>
+	<li><p>Write conditional statements with <code class="language-plaintext highlighter-rouge">if()</code> and <code class="language-plaintext highlighter-rouge">else()</code>.</p>
 </li>
 	
-	<li><p>Write and understand <code class="highlighter-rouge">for()</code> loops.</p>
+	<li><p>Write and understand <code class="language-plaintext highlighter-rouge">for()</code> loops.</p>
 </li>
 	
       </ul>
@@ -305,7 +305,7 @@ For conditional statements, the most commonly used approaches are the constructs
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Say, for example, that we want R to print a message if a variable <code class="highlighter-rouge">x</code> has a particular value:</p>
+<p>Say, for example, that we want R to print a message if a variable <code class="language-plaintext highlighter-rouge">x</code> has a particular value:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
 
@@ -316,10 +316,10 @@ For conditional statements, the most commonly used approaches are the constructs
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 8
 </code></pre></div></div>
 
-<p>The print statement does not appear in the console because x is not greater than 10. To print a different message for numbers less than 10, we can add an <code class="highlighter-rouge">else</code> statement.</p>
+<p>The print statement does not appear in the console because x is not greater than 10. To print a different message for numbers less than 10, we can add an <code class="language-plaintext highlighter-rouge">else</code> statement.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
 
@@ -330,10 +330,10 @@ For conditional statements, the most commonly used approaches are the constructs
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is less than 10"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is less than 10"
 </code></pre></div></div>
 
-<p>You can also test multiple conditions by using <code class="highlighter-rouge">else if</code>.</p>
+<p>You can also test multiple conditions by using <code class="language-plaintext highlighter-rouge">else if</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">8</span><span class="w">
 
@@ -346,11 +346,11 @@ For conditional statements, the most commonly used approaches are the constructs
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is greater than 5, but less than 10"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "x is greater than 5, but less than 10"
 </code></pre></div></div>
 
-<p><strong>Important:</strong> when R evaluates the condition inside <code class="highlighter-rouge">if()</code> statements, it is
-looking for a logical element, i.e., <code class="highlighter-rouge">TRUE</code> or <code class="highlighter-rouge">FALSE</code>. This can cause some
+<p><strong>Important:</strong> when R evaluates the condition inside <code class="language-plaintext highlighter-rouge">if()</code> statements, it is
+looking for a logical element, i.e., <code class="language-plaintext highlighter-rouge">TRUE</code> or <code class="language-plaintext highlighter-rouge">FALSE</code>. This can cause some
 headaches for beginners. For example:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w">  </span><span class="o">&lt;-</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w">
@@ -361,38 +361,38 @@ headaches for beginners. For example:</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "4 does not equal 3"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "4 does not equal 3"
 </code></pre></div></div>
 
-<p>As we can see, the not equal message was printed because the vector x is <code class="highlighter-rouge">FALSE</code></p>
+<p>As we can see, the not equal message was printed because the vector x is <code class="language-plaintext highlighter-rouge">FALSE</code></p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w">
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE
 </code></pre></div></div>
 
 <blockquote class="challenge">
   <h2 id="challenge-1">Challenge 1</h2>
 
-  <p>Use an <code class="highlighter-rouge">if()</code> statement to print a suitable message
+  <p>Use an <code class="language-plaintext highlighter-rouge">if()</code> statement to print a suitable message
 reporting whether there are any records from 2002 in
-the <code class="highlighter-rouge">gapminder</code> dataset.
+the <code class="language-plaintext highlighter-rouge">gapminder</code> dataset.
 Now do the same for 2012.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-1">Solution to Challenge 1</h2>
-    <p>We will first see a solution to Challenge 1 which does not use the <code class="highlighter-rouge">any()</code> function.
-We first obtain a logical vector describing which element of <code class="highlighter-rouge">gapminder$year</code> is equal to <code class="highlighter-rouge">2002</code>:</p>
+    <p>We will first see a solution to Challenge 1 which does not use the <code class="language-plaintext highlighter-rouge">any()</code> function.
+We first obtain a logical vector describing which element of <code class="language-plaintext highlighter-rouge">gapminder$year</code> is equal to <code class="language-plaintext highlighter-rouge">2002</code>:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="p">[(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">),]</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>Then, we count the number of rows of the data.frame <code class="highlighter-rouge">gapminder</code> that correspond to the 2002:</p>
+    <p>Then, we count the number of rows of the data.frame <code class="language-plaintext highlighter-rouge">gapminder</code> that correspond to the 2002:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows2002_number</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">),])</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>The presence of any record for the year 2002 is equivalent to the request that <code class="highlighter-rouge">rows2002_number</code> is one or more:</p>
+    <p>The presence of any record for the year 2002 is equivalent to the request that <code class="language-plaintext highlighter-rouge">rows2002_number</code> is one or more:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows2002_number</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1</span><span class="w">
 </span></code></pre></div>    </div>
@@ -403,7 +403,7 @@ We first obtain a logical vector describing which element of <code class="highli
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p>All this can be done more quickly with <code class="highlighter-rouge">any()</code>. The logical condition can be expressed as:</p>
+    <p>All this can be done more quickly with <code class="language-plaintext highlighter-rouge">any()</code>. The logical condition can be expressed as:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2002</span><span class="p">)){</span><span class="w">
    </span><span class="n">print</span><span class="p">(</span><span class="s2">"Record(s) for the year 2002 found."</span><span class="p">)</span><span class="w">
@@ -415,20 +415,20 @@ We first obtain a logical vector describing which element of <code class="highli
 
 <p>Did anyone get a warning message like this?</p>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in if (gapminder$year == 2012) {: the condition has length &gt; 1
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in if (gapminder$year == 2012) {: the condition has length &gt; 1
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">if()</code> function only accepts singular (of length 1) inputs, and therefore 
-returns an error when you use it with a vector. The <code class="highlighter-rouge">if()</code> function will still 
+<p>The <code class="language-plaintext highlighter-rouge">if()</code> function only accepts singular (of length 1) inputs, and therefore 
+returns an error when you use it with a vector. The <code class="language-plaintext highlighter-rouge">if()</code> function will still 
 run, but will only evaluate the condition in the first element of the vector. 
-Therefore, to use the <code class="highlighter-rouge">if()</code> function, you need to make sure your input is 
+Therefore, to use the <code class="language-plaintext highlighter-rouge">if()</code> function, you need to make sure your input is 
 singular (of length 1).</p>
 
 <blockquote>
-  <h2 id="tip-built-in-ifelse-function">Tip: Built in <code class="highlighter-rouge">ifelse()</code> function</h2>
+  <h2 id="tip-built-in-ifelse-function">Tip: Built in <code class="language-plaintext highlighter-rouge">ifelse()</code> function</h2>
 
-  <p><code class="highlighter-rouge">R</code> accepts both <code class="highlighter-rouge">if()</code> and <code class="highlighter-rouge">ifelse()</code> statements structured as outlined above, 
-but also statements using <code class="highlighter-rouge">R</code>’s built-in <code class="highlighter-rouge">ifelse()</code> function. This 
+  <p><code class="language-plaintext highlighter-rouge">R</code> accepts both <code class="language-plaintext highlighter-rouge">if()</code> and <code class="language-plaintext highlighter-rouge">ifelse()</code> statements structured as outlined above, 
+but also statements using <code class="language-plaintext highlighter-rouge">R</code>’s built-in <code class="language-plaintext highlighter-rouge">ifelse()</code> function. This 
 function accepts both singular and vector inputs and is structured as 
 follows:</p>
 </blockquote>
@@ -439,43 +439,43 @@ follows:</p>
 
 <blockquote>
   <p>where the first argument is the condition or a set of conditions to be met, the 
-second argument is the statement that is evaluated when the condition is <code class="highlighter-rouge">TRUE</code>,
+second argument is the statement that is evaluated when the condition is <code class="language-plaintext highlighter-rouge">TRUE</code>,
 and the third statement  is the statement that is evaluated when the condition 
-is <code class="highlighter-rouge">FALSE</code>.</p>
+is <code class="language-plaintext highlighter-rouge">FALSE</code>.</p>
 </blockquote>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">-3</span><span class="w">
 </span><span class="n">ifelse</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"y is a negative number"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y is either positive or zero"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output callout highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "y is a negative number"
+<div class="language-plaintext output callout highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "y is a negative number"
 </code></pre></div></div>
 
 <blockquote class="callout">
-  <h2 id="tip-any-and-all">Tip: <code class="highlighter-rouge">any()</code> and <code class="highlighter-rouge">all()</code></h2>
+  <h2 id="tip-any-and-all">Tip: <code class="language-plaintext highlighter-rouge">any()</code> and <code class="language-plaintext highlighter-rouge">all()</code></h2>
 
-  <p>The <code class="highlighter-rouge">any()</code> function will return <code class="highlighter-rouge">TRUE</code> if at least one
-<code class="highlighter-rouge">TRUE</code> value is found within a vector, otherwise it will return <code class="highlighter-rouge">FALSE</code>.
-This can be used in a similar way to the <code class="highlighter-rouge">%in%</code> operator.
-The function <code class="highlighter-rouge">all()</code>, as the name suggests, will only return <code class="highlighter-rouge">TRUE</code> if all values in
-the vector are <code class="highlighter-rouge">TRUE</code>.</p>
+  <p>The <code class="language-plaintext highlighter-rouge">any()</code> function will return <code class="language-plaintext highlighter-rouge">TRUE</code> if at least one
+<code class="language-plaintext highlighter-rouge">TRUE</code> value is found within a vector, otherwise it will return <code class="language-plaintext highlighter-rouge">FALSE</code>.
+This can be used in a similar way to the <code class="language-plaintext highlighter-rouge">%in%</code> operator.
+The function <code class="language-plaintext highlighter-rouge">all()</code>, as the name suggests, will only return <code class="language-plaintext highlighter-rouge">TRUE</code> if all values in
+the vector are <code class="language-plaintext highlighter-rouge">TRUE</code>.</p>
 </blockquote>
 
 <h2 id="repeating-operations">Repeating operations</h2>
 
 <p>If you want to iterate over
 a set of values, when the order of iteration is important, and perform the
-same operation on each, a <code class="highlighter-rouge">for()</code> loop will do the job.
-We saw <code class="highlighter-rouge">for()</code> loops in the shell lessons earlier. This is the most
+same operation on each, a <code class="language-plaintext highlighter-rouge">for()</code> loop will do the job.
+We saw <code class="language-plaintext highlighter-rouge">for()</code> loops in the shell lessons earlier. This is the most
 flexible of looping operations, but therefore also the hardest to use
-correctly. In general, the advice of many <code class="highlighter-rouge">R</code> users would be to learn about 
-<code class="highlighter-rouge">for()</code> loops, but to avoid using <code class="highlighter-rouge">for()</code> loops unless the order of iteration is
+correctly. In general, the advice of many <code class="language-plaintext highlighter-rouge">R</code> users would be to learn about 
+<code class="language-plaintext highlighter-rouge">for()</code> loops, but to avoid using <code class="language-plaintext highlighter-rouge">for()</code> loops unless the order of iteration is
 important: i.e. the calculation at each iteration depends on the results of 
 previous iterations. If the order of iteration is not important, then you 
-should learn about vectorized alternatives, such as the <code class="highlighter-rouge">purr</code> package, as they
+should learn about vectorized alternatives, such as the <code class="language-plaintext highlighter-rouge">purr</code> package, as they
 pay off in computational efficiency.</p>
 
-<p>The basic structure of a <code class="highlighter-rouge">for()</code> loop is:</p>
+<p>The basic structure of a <code class="language-plaintext highlighter-rouge">for()</code> loop is:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">do</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">thing</span><span class="w">
@@ -489,7 +489,7 @@ pay off in computational efficiency.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1
 [1] 2
 [1] 3
 [1] 4
@@ -501,10 +501,10 @@ pay off in computational efficiency.</p>
 [1] 10
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">1:10</code> bit creates a vector on the fly; you can iterate
+<p>The <code class="language-plaintext highlighter-rouge">1:10</code> bit creates a vector on the fly; you can iterate
 over any other vector as well.</p>
 
-<p>We can use a <code class="highlighter-rouge">for()</code> loop nested within another <code class="highlighter-rouge">for()</code> loop to iterate over two things at
+<p>We can use a <code class="language-plaintext highlighter-rouge">for()</code> loop nested within another <code class="language-plaintext highlighter-rouge">for()</code> loop to iterate over two things at
 once.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -514,7 +514,7 @@ once.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "1 a"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "1 a"
 [1] "1 b"
 [1] "1 c"
 [1] "1 d"
@@ -541,10 +541,10 @@ once.</p>
 [1] "5 e"
 </code></pre></div></div>
 
-<p>We notice in the output that when the first index (<code class="highlighter-rouge">i</code>) is set to 1, the second 
-index (<code class="highlighter-rouge">j</code>) iterates through its full set of indices. Once the indices of <code class="highlighter-rouge">j</code> 
-have been iterated through, then <code class="highlighter-rouge">i</code> is incremented. This process continues 
-until the last index has been used for each <code class="highlighter-rouge">for()</code> loop.</p>
+<p>We notice in the output that when the first index (<code class="language-plaintext highlighter-rouge">i</code>) is set to 1, the second 
+index (<code class="language-plaintext highlighter-rouge">j</code>) iterates through its full set of indices. Once the indices of <code class="language-plaintext highlighter-rouge">j</code> 
+have been iterated through, then <code class="language-plaintext highlighter-rouge">i</code> is incremented. This process continues 
+until the last index has been used for each <code class="language-plaintext highlighter-rouge">for()</code> loop.</p>
 
 <p>Rather than printing the results, we could write the loop output to a new object.</p>
 
@@ -558,7 +558,7 @@ until the last index has been used for each <code class="highlighter-rouge">for(
 </span><span class="n">output_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b"
 [13] "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b" "5 c" "5 d"
 [25] "5 e"
 </code></pre></div></div>
@@ -598,7 +598,7 @@ For this example, it looks more involved, but is still more efficient.</p>
 </span><span class="n">output_vector2</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c"
 [13] "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e"
 [25] "5 e"
 </code></pre></div></div>
@@ -607,7 +607,7 @@ For this example, it looks more involved, but is still more efficient.</p>
   <h2 id="tip-while-loops">Tip: While loops</h2>
 
   <p>Sometimes you will find yourself needing to repeat an operation as long as a certain
-condition is met. You can do this with a <code class="highlighter-rouge">while()</code> loop.</p>
+condition is met. You can do this with a <code class="language-plaintext highlighter-rouge">while()</code> loop.</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">this</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">true</span><span class="p">){</span><span class="w">
   </span><span class="n">do</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">thing</span><span class="w">
@@ -616,17 +616,17 @@ condition is met. You can do this with a <code class="highlighter-rouge">while()
   <p>R will interpret a condition being met as “TRUE”.</p>
 
   <p>As an example, here’s a while loop
-that generates random numbers from a uniform distribution (the <code class="highlighter-rouge">runif()</code> function)
+that generates random numbers from a uniform distribution (the <code class="language-plaintext highlighter-rouge">runif()</code> function)
 between 0 and 1 until it gets one that’s less than 0.1.</p>
 
-  <div class="r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>z &lt;- 1
+  <div class="language-plaintext r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>z &lt;- 1
 while(z &gt; 0.1){
   z &lt;- runif(1)
   cat(z, "\n")
 }
 </code></pre></div>  </div>
 
-  <p><code class="highlighter-rouge">while()</code> loops will not always be appropriate. You have to be particularly careful
+  <p><code class="language-plaintext highlighter-rouge">while()</code> loops will not always be appropriate. You have to be particularly careful
 that you don’t end up stuck in an infinite loop because your condition is always met and hence the while statement never terminates.</p>
 </blockquote>
 
@@ -640,11 +640,11 @@ the same as output_vector?</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2">Solution to Challenge 2</h2>
-    <p>We can check whether the two vectors are identical using the <code class="highlighter-rouge">all()</code> function:</p>
+    <p>We can check whether the two vectors are identical using the <code class="language-plaintext highlighter-rouge">all()</code> function:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">output_vector2</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>However, all the elements of <code class="highlighter-rouge">output_vector</code> can be found in <code class="highlighter-rouge">output_vector2</code>:</p>
+    <p>However, all the elements of <code class="language-plaintext highlighter-rouge">output_vector</code> can be found in <code class="language-plaintext highlighter-rouge">output_vector2</code>:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">output_vector2</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
@@ -652,11 +652,11 @@ the same as output_vector?</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">all</span><span class="p">(</span><span class="n">output_vector2</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">output_vector</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>therefore, the element in <code class="highlighter-rouge">output_vector</code> and <code class="highlighter-rouge">output_vector2</code> are just sorted in a different order.
-This is because <code class="highlighter-rouge">as.vector()</code> outputs the elements of an input matrix going over its column.
-Taking a look at <code class="highlighter-rouge">output_matrix</code>, we can notice that we want its elements by rows.
-The solution is to transpose the <code class="highlighter-rouge">output_matrix</code>. We can do it either by calling the transpose function
-<code class="highlighter-rouge">t()</code> or by inputting the elements in the right order.
+    <p>therefore, the element in <code class="language-plaintext highlighter-rouge">output_vector</code> and <code class="language-plaintext highlighter-rouge">output_vector2</code> are just sorted in a different order.
+This is because <code class="language-plaintext highlighter-rouge">as.vector()</code> outputs the elements of an input matrix going over its column.
+Taking a look at <code class="language-plaintext highlighter-rouge">output_matrix</code>, we can notice that we want its elements by rows.
+The solution is to transpose the <code class="language-plaintext highlighter-rouge">output_matrix</code>. We can do it either by calling the transpose function
+<code class="language-plaintext highlighter-rouge">t()</code> or by inputting the elements in the right order.
 The first solution requires to change the original</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">output_vector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.vector</span><span class="p">(</span><span class="n">output_matrix</span><span class="p">)</span><span class="w">
@@ -679,7 +679,7 @@ The first solution requires to change the original</p>
 <blockquote class="challenge">
   <h2 id="challenge-3">Challenge 3</h2>
 
-  <p>Write a script that loops through the <code class="highlighter-rouge">gapminder</code> data by continent and prints out
+  <p>Write a script that loops through the <code class="language-plaintext highlighter-rouge">gapminder</code> data by continent and prints out
 whether the mean life expectancy is smaller or larger than 50
 years.</p>
 
@@ -692,7 +692,7 @@ years.</p>
 </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">continent</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p><strong>Step 2</strong>: We also need to loop over each of these continents and calculate the average life expectancy for each <code class="highlighter-rouge">subset</code> of data.
+    <p><strong>Step 2</strong>: We also need to loop over each of these continents and calculate the average life expectancy for each <code class="language-plaintext highlighter-rouge">subset</code> of data.
 We can do that as follows:</p>
 
     <ol>
@@ -709,7 +709,7 @@ We can do that as follows:</p>
 </span></code></pre></div>    </div>
 
     <p><strong>Step 3</strong>: The exercise only wants the output printed if the average life expectancy is less than 50 or greater than 50.
-So we need to add an <code class="highlighter-rouge">if()</code> condition before printing, which evaluates whether the calculated average life expectancy is above or below a threshold, and print an output conditional on the result.
+So we need to add an <code class="language-plaintext highlighter-rouge">if()</code> condition before printing, which evaluates whether the calculated average life expectancy is above or below a threshold, and print an output conditional on the result.
 We need to amend (3) from above:</p>
 
     <p>3a. If the calculated life expectancy is less than some threshold (50 years), return the continent and a statement that life expectancy is less than threshold, otherwise return the continent and   a statement that life expectancy is greater than threshold,:</p>
@@ -740,7 +740,7 @@ smaller than 50, between 50 and 70, or greater than 70.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-4">Solution to Challenge 4</h2>
-    <p>We modify our solution to Challenge 3 by now adding two thresholds, <code class="highlighter-rouge">lowerThreshold</code> and <code class="highlighter-rouge">upperThreshold</code> and extending our if-else statements:</p>
+    <p>We modify our solution to Challenge 3 by now adding two thresholds, <code class="language-plaintext highlighter-rouge">lowerThreshold</code> and <code class="language-plaintext highlighter-rouge">upperThreshold</code> and extending our if-else statements:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">lowerThreshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
  </span><span class="n">upperThreshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">70</span><span class="w">
@@ -766,28 +766,28 @@ smaller than 50, between 50 and 70, or greater than 70.</p>
 <blockquote class="challenge">
   <h2 id="challenge-5---advanced">Challenge 5 - Advanced</h2>
 
-  <p>Write a script that loops over each country in the <code class="highlighter-rouge">gapminder</code> dataset,
+  <p>Write a script that loops over each country in the <code class="language-plaintext highlighter-rouge">gapminder</code> dataset,
 tests whether the country starts with a ‘B’, and graphs life expectancy
 against time as a line graph if the mean life expectancy is under 50 years.</p>
 
   <blockquote class="solution">
     <h2 id="solution-for-challenge-5">Solution for Challenge 5</h2>
 
-    <p>We will use the <code class="highlighter-rouge">grep()</code> command that was introduced in the Unix Shell lesson to find countries that start with “B.”
+    <p>We will use the <code class="language-plaintext highlighter-rouge">grep()</code> command that was introduced in the Unix Shell lesson to find countries that start with “B.”
 Lets understand how to do this first.
 Following from the Unix shell section we may be tempted to try the following</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">))</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p>But when we evaluate this command it returns the indices of the factor variable <code class="highlighter-rouge">country</code> that start with “B.”
-To get the values, we must add the <code class="highlighter-rouge">value=TRUE</code> option to the <code class="highlighter-rouge">grep()</code> command:</p>
+    <p>But when we evaluate this command it returns the indices of the factor variable <code class="language-plaintext highlighter-rouge">country</code> that start with “B.”
+To get the values, we must add the <code class="language-plaintext highlighter-rouge">value=TRUE</code> option to the <code class="language-plaintext highlighter-rouge">grep()</code> command:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
     <p>We will now store these countries in a variable called candidateCountries, and then loop over each entry in the variable.
-Inside the loop, we evaluate the average life expectancy for each country, and if the average life expectancy is less than 50 we use base-plot to plot the evolution of average life expectancy using <code class="highlighter-rouge">with()</code> and <code class="highlighter-rouge">subset()</code>:</p>
+Inside the loop, we evaluate the average life expectancy for each country, and if the average life expectancy is less than 50 we use base-plot to plot the evolution of average life expectancy using <code class="language-plaintext highlighter-rouge">with()</code> and <code class="language-plaintext highlighter-rouge">subset()</code>:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thresholdValue</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">50</span><span class="w">
 </span><span class="n">candidateCountries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">grep</span><span class="p">(</span><span class="s2">"^B"</span><span class="p">,</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
@@ -818,10 +818,10 @@ Inside the loop, we evaluate the average life expectancy for each country, and i
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Use <code class="highlighter-rouge">if</code> and <code class="highlighter-rouge">else</code> to make choices.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">else</code> to make choices.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">for</code> to repeat operations.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">for</code> to repeat operations.</p>
 </li>
     
   </ul>

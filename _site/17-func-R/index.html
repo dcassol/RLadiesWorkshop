@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -303,7 +303,7 @@ In this lesson, we’ll learn how to write a function so that we can repeat seve
 
 <h3 id="defining-a-function">Defining a Function</h3>
 
-<p>Let’s start by defining a function <code class="highlighter-rouge">fahrenheit_to_celsius</code> that converts temperatures from <a href="https://en.wikipedia.org/wiki/Temperature_conversion_formulas#Fahrenheit">Fahrenheit to Celsius</a>:</p>
+<p>Let’s start by defining a function <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code> that converts temperatures from <a href="https://en.wikipedia.org/wiki/Temperature_conversion_formulas#Fahrenheit">Fahrenheit to Celsius</a>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fahrenheit_to_celsius</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">temp_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">temp_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">9</span><span class="w">
@@ -311,9 +311,9 @@ In this lesson, we’ll learn how to write a function so that we can repeat seve
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>We define <code class="highlighter-rouge">fahrenheit_to_celsius</code> by assigning it to the output of <code class="highlighter-rouge">function</code>.
+<p>We define <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code> by assigning it to the output of <code class="language-plaintext highlighter-rouge">function</code>.
 The list of argument names are contained within parentheses.
-Next, the <a href="../reference.html#function-body">body</a> of the function–the statements that are executed when it runs–is contained within curly braces (<code class="highlighter-rouge">{}</code>).
+Next, the <a href="../reference.html#function-body">body</a> of the function–the statements that are executed when it runs–is contained within curly braces (<code class="language-plaintext highlighter-rouge">{}</code>).
 The statements in the body are indented by two spaces, which makes the code easier to read but does not affect how the code operates.</p>
 
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function.
@@ -335,14 +335,14 @@ Calling our own function is no different from calling any other function:</p>
 </span><span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># boiling point of water</span><span class="w">
 </span><span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">212</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 100
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 100
 </code></pre></div></div>
 
 <p>We’ve successfully called the function that we defined, and we have access to the value that we returned.</p>
@@ -360,7 +360,7 @@ Calling our own function is no different from calling any other function:</p>
 </span><span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
 </code></pre></div></div>
 
 <p>What about converting Fahrenheit to Kelvin?
@@ -377,7 +377,7 @@ Instead, we can <a href="../reference.html#function-composition">compose</a> the
 </span><span class="n">fahrenheit_to_kelvin</span><span class="p">(</span><span class="m">32.0</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
 </code></pre></div></div>
 
 <p>This is our first taste of how larger programs are built: we define basic
@@ -387,8 +387,8 @@ Real-life functions will usually be larger than the ones shown here–typically 
 <blockquote class="callout">
   <h2 id="nesting-functions">Nesting Functions</h2>
 
-  <p>This example showed the output of <code class="highlighter-rouge">fahrenheit_to_celsius</code> assigned to <code class="highlighter-rouge">temp_C</code>, which
-is then passed to <code class="highlighter-rouge">celsius_to_kelvin</code> to get the final result. It is also possible
+  <p>This example showed the output of <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code> assigned to <code class="language-plaintext highlighter-rouge">temp_C</code>, which
+is then passed to <code class="language-plaintext highlighter-rouge">celsius_to_kelvin</code> to get the final result. It is also possible
 to perform this calculation in one line of code, by “nesting” one function
 inside another, like so:</p>
 
@@ -396,18 +396,18 @@ inside another, like so:</p>
 </span><span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32.0</span><span class="p">))</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 273.15
 </code></pre></div>  </div>
 </blockquote>
 
 <blockquote class="challenge">
   <h2 id="create-a-function">Create a Function</h2>
 
-  <p>In the last lesson, we learned to <strong>c</strong>ombine elements into a vector using the <code class="highlighter-rouge">c</code> function,
-e.g. <code class="highlighter-rouge">x &lt;- c("A", "B", "C")</code> creates a vector <code class="highlighter-rouge">x</code> with three elements.
-Furthermore, we can extend that vector again using <code class="highlighter-rouge">c</code>, e.g. <code class="highlighter-rouge">y &lt;- c(x, "D")</code> creates a vector <code class="highlighter-rouge">y</code> with four elements.
-Write a function called <code class="highlighter-rouge">highlight</code> that takes two vectors as arguments, called
-<code class="highlighter-rouge">content</code> and <code class="highlighter-rouge">wrapper</code>, and returns a new vector that has the wrapper vector
+  <p>In the last lesson, we learned to <strong>c</strong>ombine elements into a vector using the <code class="language-plaintext highlighter-rouge">c</code> function,
+e.g. <code class="language-plaintext highlighter-rouge">x &lt;- c("A", "B", "C")</code> creates a vector <code class="language-plaintext highlighter-rouge">x</code> with three elements.
+Furthermore, we can extend that vector again using <code class="language-plaintext highlighter-rouge">c</code>, e.g. <code class="language-plaintext highlighter-rouge">y &lt;- c(x, "D")</code> creates a vector <code class="language-plaintext highlighter-rouge">y</code> with four elements.
+Write a function called <code class="language-plaintext highlighter-rouge">highlight</code> that takes two vectors as arguments, called
+<code class="language-plaintext highlighter-rouge">content</code> and <code class="language-plaintext highlighter-rouge">wrapper</code>, and returns a new vector that has the wrapper vector
 at the beginning and end of the content:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">best_practice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"Write"</span><span class="p">,</span><span class="w"> </span><span class="s2">"programs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"for"</span><span class="p">,</span><span class="w"> </span><span class="s2">"people"</span><span class="p">,</span><span class="w"> </span><span class="s2">"not"</span><span class="p">,</span><span class="w"> </span><span class="s2">"computers"</span><span class="p">)</span><span class="w">
@@ -416,7 +416,7 @@ at the beginning and end of the content:</p>
 </span><span class="n">highlight</span><span class="p">(</span><span class="n">best_practice</span><span class="p">,</span><span class="w"> </span><span class="n">asterisk</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "***"       "Write"     "programs"  "for"       "people"    "not"      
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "***"       "Write"     "programs"  "for"       "people"    "not"      
 [7] "computers" "***"      
 </code></pre></div>  </div>
 
@@ -429,14 +429,14 @@ at the beginning and end of the content:</p>
 </span></code></pre></div>    </div>
   </blockquote>
 
-  <p>If the variable <code class="highlighter-rouge">v</code> refers to a vector, then <code class="highlighter-rouge">v[1]</code> is the vector’s first element and <code class="highlighter-rouge">v[length(v)]</code> is its last (the function <code class="highlighter-rouge">length</code> returns the number of elements in a vector).
-Write a function called <code class="highlighter-rouge">edges</code> that returns a vector made up of just the first and last elements of its input:</p>
+  <p>If the variable <code class="language-plaintext highlighter-rouge">v</code> refers to a vector, then <code class="language-plaintext highlighter-rouge">v[1]</code> is the vector’s first element and <code class="language-plaintext highlighter-rouge">v[length(v)]</code> is its last (the function <code class="language-plaintext highlighter-rouge">length</code> returns the number of elements in a vector).
+Write a function called <code class="language-plaintext highlighter-rouge">edges</code> that returns a vector made up of just the first and last elements of its input:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dry_principle</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"Don't"</span><span class="p">,</span><span class="w"> </span><span class="s2">"repeat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"yourself"</span><span class="p">,</span><span class="w"> </span><span class="s2">"or"</span><span class="p">,</span><span class="w"> </span><span class="s2">"others"</span><span class="p">)</span><span class="w">
 </span><span class="n">edges</span><span class="p">(</span><span class="n">dry_principle</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Don't"  "others"
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Don't"  "others"
 </code></pre></div>  </div>
 
   <blockquote class="solution">
@@ -465,7 +465,7 @@ have a look at the <a href="../14-supp-call-stack/">supplementary material</a>.<
   <h2 id="named-variables-and-the-scope-of-variables">Named Variables and the Scope of Variables</h2>
 
   <p>Functions can accept arguments explicitly assigned to a variable name in
-the function call <code class="highlighter-rouge">functionName(variable = value)</code>, as well as arguments by
+the function call <code class="language-plaintext highlighter-rouge">functionName(variable = value)</code>, as well as arguments by
 order:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">input_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">20</span><span class="w">
@@ -476,7 +476,7 @@ order:</p>
 </span></code></pre></div>  </div>
 
   <ol>
-    <li>Given the above code was run, which value does <code class="highlighter-rouge">mySum(input_1 = 1, 3)</code> produce?
+    <li>Given the above code was run, which value does <code class="language-plaintext highlighter-rouge">mySum(input_1 = 1, 3)</code> produce?
       <ol>
         <li>4</li>
         <li>11</li>
@@ -484,18 +484,18 @@ order:</p>
         <li>30</li>
       </ol>
     </li>
-    <li>If <code class="highlighter-rouge">mySum(3)</code> returns 13, why does <code class="highlighter-rouge">mySum(input_2 = 3)</code> return an error?</li>
+    <li>If <code class="language-plaintext highlighter-rouge">mySum(3)</code> returns 13, why does <code class="language-plaintext highlighter-rouge">mySum(input_2 = 3)</code> return an error?</li>
   </ol>
 
   <blockquote class="solution">
     <h2 id="solution-2">Solution</h2>
     <ol>
       <li>
-        <p>The solution is <code class="highlighter-rouge">1.</code>.</p>
+        <p>The solution is <code class="language-plaintext highlighter-rouge">1.</code>.</p>
       </li>
       <li>
-        <p>Read the error message: <code class="highlighter-rouge">argument "input_1" is missing, with no default</code>
-means that no value for <code class="highlighter-rouge">input_1</code> is provided in the function call, 
+        <p>Read the error message: <code class="language-plaintext highlighter-rouge">argument "input_1" is missing, with no default</code>
+means that no value for <code class="language-plaintext highlighter-rouge">input_1</code> is provided in the function call, 
 and neither in the function’s defintion. Thus, the addition in the
 function body can not be completed.</p>
       </li>
@@ -524,13 +524,13 @@ This will make it simple to see if our function is working as expected:</p>
 </span><span class="n">z</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 0 0 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 0 0 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">center</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 3 3 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 3 3 3
 </code></pre></div></div>
 
 <p>That looks right, so let’s try center on our real data. We’ll center the inflammation data from day 4 around 0:</p>
@@ -540,7 +540,7 @@ This will make it simple to see if our function is working as expected:</p>
 </span><span class="n">head</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  1.25 -0.75  1.25 -1.75  1.25  0.25
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  1.25 -0.75  1.25 -1.75  1.25  0.25
 </code></pre></div></div>
 
 <p>It’s hard to tell from the default output whether the result is correct, but there are a few simple tests that will reassure us:</p>
@@ -549,42 +549,42 @@ This will make it simple to see if our function is working as expected:</p>
 </span><span class="nf">min</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># original mean</span><span class="w">
 </span><span class="n">mean</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.75
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.75
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># original max</span><span class="w">
 </span><span class="nf">max</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># centered min</span><span class="w">
 </span><span class="nf">min</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -1.75
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -1.75
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># centered mean</span><span class="w">
 </span><span class="n">mean</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># centered max</span><span class="w">
 </span><span class="nf">max</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.25
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.25
 </code></pre></div></div>
 
 <p>That seems almost right: the original mean was about 1.75, so the lower bound from zero is now about -1.75.
@@ -595,14 +595,14 @@ We can even go further and check that the standard deviation hasn’t changed:</
 </span><span class="n">sd</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.067628
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.067628
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># centered standard deviation</span><span class="w">
 </span><span class="n">sd</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.067628
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1.067628
 </code></pre></div></div>
 
 <p>Those values look the same, but we probably wouldn’t notice if they were different in the sixth decimal place.
@@ -612,16 +612,16 @@ Let’s do this instead:</p>
 </span><span class="n">sd</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">])</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sd</span><span class="p">(</span><span class="n">centered</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <p>Sometimes, a very small difference can be detected due to rounding at very low decimal places.
-R has a useful function for comparing two objects allowing for rounding errors, <code class="highlighter-rouge">all.equal</code>:</p>
+R has a useful function for comparing two objects allowing for rounding errors, <code class="language-plaintext highlighter-rouge">all.equal</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all.equal</span><span class="p">(</span><span class="n">sd</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">4</span><span class="p">]),</span><span class="w"> </span><span class="n">sd</span><span class="p">(</span><span class="n">centered</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <p>It’s still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis.
@@ -641,11 +641,11 @@ We have one more task first, though: we should write some <a href="../reference.
 <blockquote class="callout">
   <h2 id="writing-documentation">Writing Documentation</h2>
 
-  <p>Formal documentation for R functions is written in separate <code class="highlighter-rouge">.Rd</code> using a
+  <p>Formal documentation for R functions is written in separate <code class="language-plaintext highlighter-rouge">.Rd</code> using a
 markup language similar to <a href="https://www.latex-project.org/">LaTeX</a>. You see the result of this documentation
-when you look at the help file for a given function, e.g. <code class="highlighter-rouge">?read.csv</code>.
+when you look at the help file for a given function, e.g. <code class="language-plaintext highlighter-rouge">?read.csv</code>.
 The <a href="https://cran.r-project.org/package=roxygen2/vignettes/rd.html">roxygen2</a> package allows R coders to write documentation alongside
-the function code and then process it into the appropriate <code class="highlighter-rouge">.Rd</code> files.
+the function code and then process it into the appropriate <code class="language-plaintext highlighter-rouge">.Rd</code> files.
 You will want to switch to this more formal method of writing documentation
 when you start writing more complicated R projects.</p>
 </blockquote>
@@ -653,10 +653,10 @@ when you start writing more complicated R projects.</p>
 <blockquote class="challenge">
   <h2 id="functions-to-create-graphs">Functions to Create Graphs</h2>
 
-  <p>Write a function called <code class="highlighter-rouge">analyze</code> that takes a filename as an argument
+  <p>Write a function called <code class="language-plaintext highlighter-rouge">analyze</code> that takes a filename as an argument
 and displays the three graphs produced in the <a href="../01-starting-with-data/">previous lesson</a> (average, min and max inflammation over time).
-<code class="highlighter-rouge">analyze("data/inflammation-01.csv")</code> should produce the graphs already shown,
-while <code class="highlighter-rouge">analyze("data/inflammation-02.csv")</code> should produce corresponding graphs for the second data set.
+<code class="language-plaintext highlighter-rouge">analyze("data/inflammation-01.csv")</code> should produce the graphs already shown,
+while <code class="language-plaintext highlighter-rouge">analyze("data/inflammation-02.csv")</code> should produce corresponding graphs for the second data set.
 Be sure to document your function with comments.</p>
 
   <blockquote class="solution">
@@ -679,11 +679,11 @@ Be sure to document your function with comments.</p>
 <blockquote class="challenge">
   <h2 id="rescaling">Rescaling</h2>
 
-  <p>Write a function <code class="highlighter-rouge">rescale</code> that takes a vector as input and returns a corresponding vector of values scaled to lie in the range 0 to 1.
-(If <code class="highlighter-rouge">L</code> and <code class="highlighter-rouge">H</code> are the lowest and highest values in the original vector, then the replacement for a value <code class="highlighter-rouge">v</code> should be <code class="highlighter-rouge">(v-L) / (H-L)</code>.)
+  <p>Write a function <code class="language-plaintext highlighter-rouge">rescale</code> that takes a vector as input and returns a corresponding vector of values scaled to lie in the range 0 to 1.
+(If <code class="language-plaintext highlighter-rouge">L</code> and <code class="language-plaintext highlighter-rouge">H</code> are the lowest and highest values in the original vector, then the replacement for a value <code class="language-plaintext highlighter-rouge">v</code> should be <code class="language-plaintext highlighter-rouge">(v-L) / (H-L)</code>.)
 Be sure to document your function with comments.</p>
 
-  <p>Test that your <code class="highlighter-rouge">rescale</code> function is working properly using <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, and <code class="highlighter-rouge">plot</code>.</p>
+  <p>Test that your <code class="language-plaintext highlighter-rouge">rescale</code> function is working properly using <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code>, and <code class="language-plaintext highlighter-rouge">plot</code>.</p>
 
   <blockquote class="solution">
     <h2 id="solution-4">Solution</h2>
@@ -700,8 +700,8 @@ Be sure to document your function with comments.</p>
 
 <h3 id="defining-defaults">Defining Defaults</h3>
 
-<p>We have passed arguments to functions in two ways: directly, as in <code class="highlighter-rouge">dim(dat)</code>, and by name, as in <code class="highlighter-rouge">read.csv(file = "data/inflammation-01.csv", header = FALSE)</code>.
-In fact, we can pass the arguments to <code class="highlighter-rouge">read.csv</code> without naming them:</p>
+<p>We have passed arguments to functions in two ways: directly, as in <code class="language-plaintext highlighter-rouge">dim(dat)</code>, and by name, as in <code class="language-plaintext highlighter-rouge">read.csv(file = "data/inflammation-01.csv", header = FALSE)</code>.
+In fact, we can pass the arguments to <code class="language-plaintext highlighter-rouge">read.csv</code> without naming them:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"data/inflammation-01.csv"</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -712,10 +712,10 @@ In fact, we can pass the arguments to <code class="highlighter-rouge">read.csv</
 </span><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : 'file' must be a character string or connection
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : 'file' must be a character string or connection
 </code></pre></div></div>
 
-<p>To understand what’s going on, and make our own functions easier to use, let’s re-define our <code class="highlighter-rouge">center</code> function like this:</p>
+<p>To understand what’s going on, and make our own functions easier to use, let’s re-define our <code class="language-plaintext highlighter-rouge">center</code> function like this:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">center</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">midpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="c1"># return a new vector containing the original data centered around the</span><span class="w">
@@ -726,29 +726,29 @@ In fact, we can pass the arguments to <code class="highlighter-rouge">read.csv</
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The key change is that the second argument is now written <code class="highlighter-rouge">midpoint = 0</code> instead of just <code class="highlighter-rouge">midpoint</code>.
+<p>The key change is that the second argument is now written <code class="language-plaintext highlighter-rouge">midpoint = 0</code> instead of just <code class="language-plaintext highlighter-rouge">midpoint</code>.
 If we call the function with two arguments, it works as it did before:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w">
 </span><span class="n">center</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 3 3 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 3 3 3
 </code></pre></div></div>
 
-<p>But we can also now call <code class="highlighter-rouge">center()</code> with just one argument, in which case <code class="highlighter-rouge">midpoint</code> is automatically assigned the default value of <code class="highlighter-rouge">0</code>:</p>
+<p>But we can also now call <code class="language-plaintext highlighter-rouge">center()</code> with just one argument, in which case <code class="language-plaintext highlighter-rouge">midpoint</code> is automatically assigned the default value of <code class="language-plaintext highlighter-rouge">0</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">more_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">test_data</span><span class="w">
 </span><span class="n">more_data</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 5 5 5 5
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 5 5 5 5
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">center</span><span class="p">(</span><span class="n">more_data</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 0 0 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 0 0 0
 </code></pre></div></div>
 
 <p>This is handy: if we usually want a function to work one way, but occasionally need it to do something else, we can allow people to pass an argument when they need to but provide a default to make the normal case easier.</p>
@@ -765,7 +765,7 @@ If we call the function with two arguments, it works as it did before:</p>
 </span><span class="n">display</span><span class="p">()</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a b c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a b c 
 1 2 3 
 </code></pre></div></div>
 
@@ -773,7 +773,7 @@ If we call the function with two arguments, it works as it did before:</p>
 </span><span class="n">display</span><span class="p">(</span><span class="m">55</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
 55  2  3 
 </code></pre></div></div>
 
@@ -781,7 +781,7 @@ If we call the function with two arguments, it works as it did before:</p>
 </span><span class="n">display</span><span class="p">(</span><span class="m">55</span><span class="p">,</span><span class="w"> </span><span class="m">66</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
 55 66  3 
 </code></pre></div></div>
 
@@ -789,7 +789,7 @@ If we call the function with two arguments, it works as it did before:</p>
 </span><span class="n">display</span><span class="p">(</span><span class="m">55</span><span class="p">,</span><span class="w"> </span><span class="m">66</span><span class="p">,</span><span class="w"> </span><span class="m">77</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
 55 66 77 
 </code></pre></div></div>
 
@@ -800,7 +800,7 @@ We can override this behavior by naming the value as we pass it in:</p>
 </span><span class="n">display</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">77</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a  b  c 
  1  2 77 
 </code></pre></div></div>
 
@@ -820,7 +820,7 @@ by you are matched to the <em>formal arguments</em> of the function definition:<
 complete name, then by partial matching of names, and finally by position.</p>
 </blockquote>
 
-<p>With that in hand, let’s look at the help for <code class="highlighter-rouge">read.csv()</code>:</p>
+<p>With that in hand, let’s look at the help for <code class="language-plaintext highlighter-rouge">read.csv()</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">?</span><span class="n">read.csv</span><span class="w">
 </span></code></pre></div></div>
@@ -831,21 +831,21 @@ complete name, then by partial matching of names, and finally by position.</p>
          </span><span class="n">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"."</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">comment.char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p>This tells us that <code class="highlighter-rouge">read.csv()</code> has one argument, <code class="highlighter-rouge">file</code>, that doesn’t have a default value, and six others that do.
+<p>This tells us that <code class="language-plaintext highlighter-rouge">read.csv()</code> has one argument, <code class="language-plaintext highlighter-rouge">file</code>, that doesn’t have a default value, and six others that do.
 Now we understand why the following gives an error:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : 'file' must be a character string or connection
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : 'file' must be a character string or connection
 </code></pre></div></div>
 
-<p>It fails because <code class="highlighter-rouge">FALSE</code> is assigned to <code class="highlighter-rouge">file</code> and the filename is assigned to the argument <code class="highlighter-rouge">header</code>.</p>
+<p>It fails because <code class="language-plaintext highlighter-rouge">FALSE</code> is assigned to <code class="language-plaintext highlighter-rouge">file</code> and the filename is assigned to the argument <code class="language-plaintext highlighter-rouge">header</code>.</p>
 
 <blockquote class="challenge">
   <h2 id="a-function-with-default-argument-values">A Function with Default Argument Values</h2>
 
-  <p>Rewrite the <code class="highlighter-rouge">rescale</code> function so that it scales a vector to lie between 0 and 1 by default, but will allow the caller to specify lower and upper bounds if they want.
+  <p>Rewrite the <code class="language-plaintext highlighter-rouge">rescale</code> function so that it scales a vector to lie between 0 and 1 by default, but will allow the caller to specify lower and upper bounds if they want.
 Compare your implementation to your neighbor’s:
 Do your two implementations produce the same results when
 both are given the same input vector and parameters?</p>
@@ -869,16 +869,16 @@ both are given the same input vector and parameters?</p>
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Define a function using <code class="highlighter-rouge">name &lt;- function(...args...) {...body...}</code>.</p>
+    <li><p>Define a function using <code class="language-plaintext highlighter-rouge">name &lt;- function(...args...) {...body...}</code>.</p>
 </li>
     
-    <li><p>Call a function using <code class="highlighter-rouge">name(...values...)</code>.</p>
+    <li><p>Call a function using <code class="language-plaintext highlighter-rouge">name(...values...)</code>.</p>
 </li>
     
     <li><p>R looks for variables in the current stack frame before looking for them at the top level.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">help(thing)</code> to view help for something.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">help(thing)</code> to view help for something.</p>
 </li>
     
     <li><p>Put comments at the beginning of functions to provide help for that function.</p>
@@ -887,7 +887,7 @@ both are given the same input vector and parameters?</p>
     <li><p>Annotate your code!</p>
 </li>
     
-    <li><p>Specify default values for arguments when defining a function using <code class="highlighter-rouge">name = value</code> in the argument list.</p>
+    <li><p>Specify default values for arguments when defining a function using <code class="language-plaintext highlighter-rouge">name = value</code> in the argument list.</p>
 </li>
     
     <li><p>Arguments can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</p>

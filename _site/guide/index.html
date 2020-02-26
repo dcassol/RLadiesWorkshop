@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -231,7 +231,7 @@ they must understand how function call stacks work.</p>
 that works with the Unix pipe-and-filter model.
 We do this because it is a useful skill
 and because it helps learners see that the software they use isn’t magical.
-Tools like <code class="highlighter-rouge">grep</code> might be more sophisticated than
+Tools like <code class="language-plaintext highlighter-rouge">grep</code> might be more sophisticated than
 the programs our learners can write at this point in their careers,
 but it’s crucial they realize this is a difference of scale rather than kind.</p>
 
@@ -267,10 +267,10 @@ and creating packages:</p>
 workshop. This often goes over very well, but there can be a few snags with the
 setup. First, RStudio may not know where to find git. You can specify where git
 is located in <em>Tools &gt; Global Options &gt; Git/SVN</em>; on Mac/Linux git is often in
-<code class="highlighter-rouge">/usr/bin/git</code> or <code class="highlighter-rouge">/usr/local/bin/git</code> and on Windows it is often in
-<code class="highlighter-rouge">C:/Program Files (x86)/Git/bin/git.exe</code>. If you don’t know where git is
-installed on someone’s computer, open a terminal and try <code class="highlighter-rouge">which git</code> on
-Mac/Linux, or <code class="highlighter-rouge">where git</code> or <code class="highlighter-rouge">whereis git.exe</code> on Windows. See
+<code class="language-plaintext highlighter-rouge">/usr/bin/git</code> or <code class="language-plaintext highlighter-rouge">/usr/local/bin/git</code> and on Windows it is often in
+<code class="language-plaintext highlighter-rouge">C:/Program Files (x86)/Git/bin/git.exe</code>. If you don’t know where git is
+installed on someone’s computer, open a terminal and try <code class="language-plaintext highlighter-rouge">which git</code> on
+Mac/Linux, or <code class="language-plaintext highlighter-rouge">where git</code> or <code class="language-plaintext highlighter-rouge">whereis git.exe</code> on Windows. See
 <a href="http://stat545-ubc.github.io/git03_rstudio-meet-git.html">Jenny Bryan’s instructions</a>
 for more detail.</p>
 
@@ -283,7 +283,7 @@ setup.</p>
 <p>Another common gotcha is that the push/pull buttons in RStudio are grayed out,
 even after you have added a remote and pushed to it from the command line. You
 need to add an upstream tracking reference before you can push and pull directly
-from RStudio; have your learners do <code class="highlighter-rouge">git push -u origin master</code> from the command
+from RStudio; have your learners do <code class="language-plaintext highlighter-rouge">git push -u origin master</code> from the command
 line and this should resolve the issue.</p>
 
 <h2 id="teaching-notes">Teaching Notes</h2>
@@ -306,7 +306,7 @@ which are covered in the <a href="https://swcarpentry.github.io/shell-novice/">S
   </li>
   <li>
     <p>We are using a dataset with records on inflammation from patients following an
-arthritis treatment. With it we explain <code class="highlighter-rouge">R</code> data structure, basic data
+arthritis treatment. With it we explain <code class="language-plaintext highlighter-rouge">R</code> data structure, basic data
 manipulation and plotting, writing functions and loops.</p>
   </li>
 </ul>
@@ -319,15 +319,15 @@ manipulation and plotting, writing functions and loops.</p>
 directory); remind them of the <a href="https://swcarpentry.github.io/shell-novice/">Shell lesson</a>.</p>
   </li>
   <li>
-    <p>Provide shortcut for the assignment operator (<code class="highlighter-rouge">&lt;-</code>) (RStudio: <kbd>Alt</kbd>+<kbd>-</kbd> on
+    <p>Provide shortcut for the assignment operator (<code class="language-plaintext highlighter-rouge">&lt;-</code>) (RStudio: <kbd>Alt</kbd>+<kbd>-</kbd> on
 Windows/Linux; <kbd>Option</kbd>+<kbd>-</kbd> on Mac).</p>
   </li>
   <li>
     <p>When performing operations on sliced rows of data frames, be aware that some 
 functions in R automatically convert the object type to a numeric vector, while 
-others do not. For example, <code class="highlighter-rouge">max(dat[1, ])</code> works as expected, while <code class="highlighter-rouge">mean(dat[1, ])</code> 
-returns an error. You can fix this by including an explicit call to <code class="highlighter-rouge">as.numeric()</code>, 
-for example <code class="highlighter-rouge">mean(as.numeric(dat[1, ]))</code>. This issue is also mentioned in a callout 
+others do not. For example, <code class="language-plaintext highlighter-rouge">max(dat[1, ])</code> works as expected, while <code class="language-plaintext highlighter-rouge">mean(dat[1, ])</code> 
+returns an error. You can fix this by including an explicit call to <code class="language-plaintext highlighter-rouge">as.numeric()</code>, 
+for example <code class="language-plaintext highlighter-rouge">mean(as.numeric(dat[1, ]))</code>. This issue is also mentioned in a callout 
 box in the lesson materials, since it is unexpected and can create confusion when 
 simple examples fail (by contrast, operations on sliced columns of data frames always 
 work as expected, since columns of data frames are already vectors).</p>
@@ -337,7 +337,7 @@ work as expected, since columns of data frames are already vectors).</p>
 <h2 id="addressing-data"><a href="../10-supp-addressing-data/">Addressing Data</a></h2>
 
 <ul>
-  <li>Note that the data frame <code class="highlighter-rouge">dat</code> is not the same set of data as in other lessons.</li>
+  <li>Note that the data frame <code class="language-plaintext highlighter-rouge">dat</code> is not the same set of data as in other lessons.</li>
 </ul>
 
 <h2 id="analyzing-multiple-data-sets"><a href="../03-loops-R/">Analyzing Multiple Data Sets</a></h2>

@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -259,7 +259,7 @@
 	<li><p>How can I put my text, code, and results all in one document?</p>
 </li>
 	
-	<li><p>How do I use <code class="highlighter-rouge">knitr</code>?</p>
+	<li><p>How do I use <code class="language-plaintext highlighter-rouge">knitr</code>?</p>
 </li>
 	
 	<li><p>How do I write in Markdown?</p>
@@ -276,7 +276,7 @@
       <strong>Objectives</strong>
       <ul>
 	
-	<li><p>Understand the value of <code class="highlighter-rouge">knitr</code> for generating dynamic documents that include text, code, and results.</p>
+	<li><p>Understand the value of <code class="language-plaintext highlighter-rouge">knitr</code> for generating dynamic documents that include text, code, and results.</p>
 </li>
 	
 	<li><p>Control basic formatting using markdown syntax.</p>
@@ -291,11 +291,11 @@
 
 </blockquote>
 
-<p><code class="highlighter-rouge">knitr</code> is an R package that allows you to organize your notes, code, and results in a single document. It’s a great tool for “literate programming” – the idea that your code should be readable by humans as well as computers! It also keeps your writing and results together, so if you collect some new data or change how you clean the data, you just have to re-compile the document and you’re up to date!</p>
+<p><code class="language-plaintext highlighter-rouge">knitr</code> is an R package that allows you to organize your notes, code, and results in a single document. It’s a great tool for “literate programming” – the idea that your code should be readable by humans as well as computers! It also keeps your writing and results together, so if you collect some new data or change how you clean the data, you just have to re-compile the document and you’re up to date!</p>
 
-<p>You write <code class="highlighter-rouge">knitr</code> documents in a simple plain text-like format called markdown, which allows you to format text using intuitive notation, so that you can focus on the content you’re writing and generating a well-formatted document when needed. In fact, you can turn your plain text (and R code and results) into an HTML file or, if you have an installation of LaTeX and <a href="https://pandoc.org/">Pandoc</a> on your machine, a PDF, or even a Word document (if you must!).</p>
+<p>You write <code class="language-plaintext highlighter-rouge">knitr</code> documents in a simple plain text-like format called markdown, which allows you to format text using intuitive notation, so that you can focus on the content you’re writing and generating a well-formatted document when needed. In fact, you can turn your plain text (and R code and results) into an HTML file or, if you have an installation of LaTeX and <a href="https://pandoc.org/">Pandoc</a> on your machine, a PDF, or even a Word document (if you must!).</p>
 
-<p>To get started, install the <code class="highlighter-rouge">knitr</code> package.</p>
+<p>To get started, install the <code class="language-plaintext highlighter-rouge">knitr</code> package.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"knitr"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -310,26 +310,26 @@
   <p>In the example document add</p>
 
   <ul>
-    <li>Headers using <code class="highlighter-rouge">#</code></li>
+    <li>Headers using <code class="language-plaintext highlighter-rouge">#</code></li>
     <li>Emphasis using asterisk: *italics* and **bold**</li>
-    <li>Lists using <code class="highlighter-rouge">*</code> and numbered lists using <code class="highlighter-rouge">1.</code>, <code class="highlighter-rouge">2.</code>, etc.</li>
+    <li>Lists using <code class="language-plaintext highlighter-rouge">*</code> and numbered lists using <code class="language-plaintext highlighter-rouge">1.</code>, <code class="language-plaintext highlighter-rouge">2.</code>, etc.</li>
     <li><strong>Bonus:</strong> Create a table</li>
   </ul>
 </blockquote>
 
 <p>Markdown also supports LaTeX equation editing.
-We can display pretty equations by enclosing them in <code class="highlighter-rouge">$</code>,
-e.g., <code class="highlighter-rouge">$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> renders as:
+We can display pretty equations by enclosing them in <code class="language-plaintext highlighter-rouge">$</code>,
+e.g., <code class="language-plaintext highlighter-rouge">$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> renders as:
 <a href="https://latex.codecogs.com/gif.latex?%5Calpha%20%3D%20%5Cdfrac%7B1%7D%7B%281%20-%20%5Cbeta%29%5E2%7D"><img src="https://latex.codecogs.com/gif.latex?%5Calpha%20%3D%20%5Cdfrac%7B1%7D%7B%281%20-%20%5Cbeta%29%5E2%7D" alt="" /></a></p>
 
 <p>The top of the source (.Rmd) file has some header material in YAML format (enclosed by triple dashes).
 Some of this gets displayed in the output header, other of it provides formatting information to the conversion engine.</p>
 
-<p>To distinguish R code from text, RMarkdown uses three back-ticks followed by <code class="highlighter-rouge">{r}</code> to distinguish a “code chunk”.
+<p>To distinguish R code from text, RMarkdown uses three back-ticks followed by <code class="language-plaintext highlighter-rouge">{r}</code> to distinguish a “code chunk”.
 In RStudio, the keyboard shortcut to create a code chunk is <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> or <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd>.</p>
 
 <p>A code chunk will set off the code and its results in the output document,
-but you can also print the results of code within a text block by enclosing code like so: <code class="highlighter-rouge">`r code-here`</code>.</p>
+but you can also print the results of code within a text block by enclosing code like so: <code class="language-plaintext highlighter-rouge">`r code-here`</code>.</p>
 
 <blockquote class="challenge">
   <h2 id="use-knitr-to-produce-a-report">Use knitr to Produce a Report</h2>
@@ -338,7 +338,7 @@ but you can also print the results of code within a text block by enclosing code
     <li>Open an new .Rmd script and save it as inflammation_report.Rmd</li>
     <li>Copy code from earlier into code chunks to read the inflammation data and plot average inflammation.</li>
     <li>Add a few notes describing what the code does and what the main findings are. Include an in-line calculation of the median inflammation level.</li>
-    <li><code class="highlighter-rouge">knit</code> the document and view the html result.</li>
+    <li><code class="language-plaintext highlighter-rouge">knit</code> the document and view the html result.</li>
   </ol>
 </blockquote>
 
@@ -354,7 +354,7 @@ but you can also print the results of code within a text block by enclosing code
     <li><p>Use Markdown to format text.</p>
 </li>
     
-    <li><p>Put code in blocks delimited by triple back quotes followed by <code class="highlighter-rouge">{r}</code>.</p>
+    <li><p>Put code in blocks delimited by triple back quotes followed by <code class="language-plaintext highlighter-rouge">{r}</code>.</p>
 </li>
     
   </ul>

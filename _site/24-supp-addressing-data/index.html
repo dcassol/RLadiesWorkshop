@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -300,7 +300,7 @@ There are three main ways for addressing data inside R objects.</p>
   <h2 id="interpreting-rows-as-headers">Interpreting Rows as Headers</h2>
 
   <p>The first row of this csv file is a list of column names.
-We used the <em>header = TRUE</em> argument to <code class="highlighter-rouge">read.csv</code> so that R can interpret the file correctly.
+We used the <em>header = TRUE</em> argument to <code class="language-plaintext highlighter-rouge">read.csv</code> so that R can interpret the file correctly.
 We are using the <em>stringsAsFactors = FALSE</em> argument to override the default behaviour for R.
 Using factors in R is covered in a separate lesson.</p>
 </blockquote>
@@ -310,17 +310,17 @@ Using factors in R is covered in a separate lesson.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
 </code></pre></div></div>
 
-<p>R has loaded the contents of the .csv file into a variable called <code class="highlighter-rouge">dat</code> which is a <code class="highlighter-rouge">data frame</code>.</p>
+<p>R has loaded the contents of the .csv file into a variable called <code class="language-plaintext highlighter-rouge">dat</code> which is a <code class="language-plaintext highlighter-rouge">data frame</code>.</p>
 
-<p>We can compactly display the internal structure of a data frame using the  structure function <code class="highlighter-rouge">str</code>.</p>
+<p>We can compactly display the internal structure of a data frame using the  structure function <code class="language-plaintext highlighter-rouge">str</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  9 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  9 variables:
  $ ID           : chr  "Sub001" "Sub002" "Sub003" "Sub004" ...
  $ Gender       : chr  "m" "m" "m" "f" ...
  $ Group        : chr  "Control" "Treatment2" "Treatment2" "Treatment1" ...
@@ -332,12 +332,12 @@ Using factors in R is covered in a separate lesson.</p>
  $ Aneurisms_q4 : int  237 248 177 220 228 294 245 251 272 185 ...
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">str</code> function tell us that the data has 100 rows and 9 columns. It is also tell us that the data frame is made up of character <code class="highlighter-rouge">chr</code>, integer <code class="highlighter-rouge">int</code> and <code class="highlighter-rouge">numeric</code> vectors.</p>
+<p>The <code class="language-plaintext highlighter-rouge">str</code> function tell us that the data has 100 rows and 9 columns. It is also tell us that the data frame is made up of character <code class="language-plaintext highlighter-rouge">chr</code>, integer <code class="language-plaintext highlighter-rouge">int</code> and <code class="language-plaintext highlighter-rouge">numeric</code> vectors.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age Aneurisms_q1 Aneurisms_q2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age Aneurisms_q1 Aneurisms_q2
 1 Sub001      m    Control           132 16.0          114          140
 2 Sub002      m Treatment2           139 17.2          148          209
 3 Sub003      m Treatment2           130 19.5          196          251
@@ -357,12 +357,12 @@ Using factors in R is covered in a separate lesson.</p>
 
 <h3 id="addressing-by-index">Addressing by Index</h3>
 
-<p>Data can be accessed by index. We have already seen how square brackets <code class="highlighter-rouge">[</code> can be used to subset data (sometimes also called “slicing”). The generic format is <code class="highlighter-rouge">dat[row_numbers,column_numbers]</code>.</p>
+<p>Data can be accessed by index. We have already seen how square brackets <code class="language-plaintext highlighter-rouge">[</code> can be used to subset data (sometimes also called “slicing”). The generic format is <code class="language-plaintext highlighter-rouge">dat[row_numbers,column_numbers]</code>.</p>
 
 <blockquote class="challenge">
   <h2 id="selecting-values">Selecting Values</h2>
 
-  <p>What will be returned by <code class="highlighter-rouge">dat[1, 1]</code>?
+  <p>What will be returned by <code class="language-plaintext highlighter-rouge">dat[1, 1]</code>?
 Think about the number of rows and columns you would expect as the result.</p>
 
   <blockquote class="solution">
@@ -371,7 +371,7 @@ Think about the number of rows and columns you would expect as the result.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Sub001"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Sub001"
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -381,7 +381,7 @@ Think about the number of rows and columns you would expect as the result.</p>
 <blockquote class="challenge">
   <h2 id="selecting-more-values">Selecting More Values</h2>
 
-  <p>What will be returned by <code class="highlighter-rouge">dat[, 2]</code>?</p>
+  <p>What will be returned by <code class="language-plaintext highlighter-rouge">dat[, 2]</code>?</p>
 
   <blockquote class="solution">
     <h2 id="solution-1">Solution</h2>
@@ -389,7 +389,7 @@ Think about the number of rows and columns you would expect as the result.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
  [19] "m" "F" "f" "m" "f" "f" "m" "M" "M" "f" "m" "f" "f" "m" "m" "m" "m" "f"
  [37] "f" "m" "M" "m" "f" "m" "m" "m" "f" "f" "M" "M" "m" "m" "m" "f" "f" "f"
  [55] "m" "f" "m" "m" "m" "f" "f" "f" "f" "M" "f" "m" "f" "f" "M" "m" "m" "m"
@@ -399,12 +399,12 @@ Think about the number of rows and columns you would expect as the result.</p>
   </blockquote>
 </blockquote>
 
-<p>The colon <code class="highlighter-rouge">:</code> can be used to create a sequence of integers.</p>
+<p>The colon <code class="language-plaintext highlighter-rouge">:</code> can be used to create a sequence of integers.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6 7 8 9
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6 7 8 9
 </code></pre></div></div>
 
 <p>Creates a vector of numbers from 6 to 9.</p>
@@ -422,7 +422,7 @@ Think about the number of rows and columns you would expect as the result.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="m">6</span><span class="o">:</span><span class="m">9</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Aneurisms_q1 Aneurisms_q2 Aneurisms_q3 Aneurisms_q4
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Aneurisms_q1 Aneurisms_q2 Aneurisms_q3 Aneurisms_q4
 1            114          140          202          237
 2            148          209          248          248
 3            196          251          122          177
@@ -527,12 +527,12 @@ Think about the number of rows and columns you would expect as the result.</p>
   </blockquote>
 </blockquote>
 
-<p>Finally we can use the <code class="highlighter-rouge">c()</code> (combine) function to address non-sequential rows and columns.</p>
+<p>Finally we can use the <code class="language-plaintext highlighter-rouge">c()</code> (combine) function to address non-sequential rows and columns.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">),</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ID Gender      Group BloodPressure  Age
 1 Sub001      m    Control           132 16.0
 5 Sub005      m Treatment1           125 19.9
 7 Sub007      f    Control           173 17.7
@@ -552,7 +552,7 @@ Think about the number of rows and columns you would expect as the result.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
 1 16.0      m
 2 17.2      m
 3 19.5      m
@@ -569,7 +569,7 @@ Think about the number of rows and columns you would expect as the result.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "ID"            "Gender"        "Group"         "BloodPressure"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "ID"            "Gender"        "Group"         "BloodPressure"
 [5] "Age"           "Aneurisms_q1"  "Aneurisms_q2"  "Aneurisms_q3" 
 [9] "Aneurisms_q4" 
 </code></pre></div></div>
@@ -577,15 +577,15 @@ Think about the number of rows and columns you would expect as the result.</p>
 <blockquote class="callout">
   <h2 id="default-names">Default Names</h2>
 
-  <p>If column names are not specified e.g. using <code class="highlighter-rouge">headers = FALSE</code> in a <code class="highlighter-rouge">read.csv()</code> function, R assigns default names <code class="highlighter-rouge">V1, V2, ..., Vn</code></p>
+  <p>If column names are not specified e.g. using <code class="language-plaintext highlighter-rouge">headers = FALSE</code> in a <code class="language-plaintext highlighter-rouge">read.csv()</code> function, R assigns default names <code class="language-plaintext highlighter-rouge">V1, V2, ..., Vn</code></p>
 </blockquote>
 
-<p>We usually use the <code class="highlighter-rouge">$</code> operator to address a column by name</p>
+<p>We usually use the <code class="language-plaintext highlighter-rouge">$</code> operator to address a column by name</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "m" "m" "m" "f" "m" "M" "f" "m" "m" "f" "m" "f" "f" "m" "m" "m" "f" "m"
  [19] "m" "F" "f" "m" "f" "f" "m" "M" "M" "f" "m" "f" "f" "m" "m" "m" "m" "f"
  [37] "f" "m" "M" "m" "f" "m" "m" "m" "f" "f" "M" "M" "m" "m" "m" "f" "f" "f"
  [55] "m" "f" "m" "m" "m" "f" "f" "f" "f" "M" "f" "m" "f" "f" "M" "m" "m" "m"
@@ -593,18 +593,18 @@ Think about the number of rows and columns you would expect as the result.</p>
  [91] "f" "m" "F" "f" "m" "m" "F" "m" "M" "M"
 </code></pre></div></div>
 
-<p>When we extract a single column column from a data frame using the <code class="highlighter-rouge">$</code> operator, R will return a vector of that column class and not a data frame.</p>
+<p>When we extract a single column column from a data frame using the <code class="language-plaintext highlighter-rouge">$</code> operator, R will return a vector of that column class and not a data frame.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">Gender</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BloodPressure</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <p>Named addressing can also be used in square brackets.</p>
@@ -612,7 +612,7 @@ Think about the number of rows and columns you would expect as the result.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">dat</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'Age'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Gender'</span><span class="p">)])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Age Gender
 1 16.0      m
 2 17.2      m
 3 19.5      m
@@ -629,33 +629,33 @@ Think about the number of rows and columns you would expect as the result.</p>
 
 <h3 id="logical-indexing">Logical Indexing</h3>
 
-<p>A logical vector contains only the special values <code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code>.</p>
+<p>A logical vector contains only the special values <code class="language-plaintext highlighter-rouge">TRUE</code> and <code class="language-plaintext highlighter-rouge">FALSE</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE FALSE FALSE  TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE FALSE FALSE  TRUE
 </code></pre></div></div>
 
 <blockquote class="callout">
   <h2 id="truth-and-its-opposite">Truth and Its Opposite</h2>
 
-  <p>Note the values <code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code> are all capital letters and are not quoted.</p>
+  <p>Note the values <code class="language-plaintext highlighter-rouge">TRUE</code> and <code class="language-plaintext highlighter-rouge">FALSE</code> are all capital letters and are not quoted.</p>
 </blockquote>
 
-<p>Logical vectors can be created using <code class="highlighter-rouge">relational operators</code> e.g. <code class="highlighter-rouge">&lt;, &gt;, ==, !=, %in%</code>.</p>
+<p>Logical vectors can be created using <code class="language-plaintext highlighter-rouge">relational operators</code> e.g. <code class="language-plaintext highlighter-rouge">&lt;, &gt;, ==, !=, %in%</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">13</span><span class="p">)</span><span class="w">
 </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
 </code></pre></div></div>
 
 <p>We can use logical vectors to select data from a data frame.</p>
@@ -664,7 +664,7 @@ Think about the number of rows and columns you would expect as the result.</p>
 </span><span class="n">dat</span><span class="p">[</span><span class="n">index</span><span class="p">,]</span><span class="o">$</span><span class="n">BloodPressure</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] 132 173 129  77 158  81 137 111 135 108 133 139 126 125  99 122 155 133  94
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1] 132 173 129  77 158  81 137 111 135 108 133 139 126 125  99 122 155 133  94
 [20]  98  74 116  97 104 117  90 150 116 108 102
 </code></pre></div></div>
 
@@ -696,8 +696,8 @@ Think about the number of rows and columns you would expect as the result.</p>
       </li>
       <li>
         <p>In addition to 
-<code class="highlighter-rouge">dat$Group != 'Control'</code>, one could use 
-<code class="highlighter-rouge">dat$Group %in% c("Treatment1", "Treatment2")</code>.</p>
+<code class="language-plaintext highlighter-rouge">dat$Group != 'Control'</code>, one could use 
+<code class="language-plaintext highlighter-rouge">dat$Group %in% c("Treatment1", "Treatment2")</code>.</p>
       </li>
     </ol>
   </blockquote>
@@ -705,20 +705,20 @@ Think about the number of rows and columns you would expect as the result.</p>
 
 <h3 id="combining-indexing-and-assignment">Combining Indexing and Assignment</h3>
 
-<p>The assignment operator <code class="highlighter-rouge">&lt;-</code> can be combined with indexing.</p>
+<p>The assignment operator <code class="language-plaintext highlighter-rouge">&lt;-</code> can be combined with indexing.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">13</span><span class="p">)</span><span class="w">
 </span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  0  0  0 11 12 13
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  0  0  0 11 12 13
 </code></pre></div></div>
 
 <blockquote class="challenge">
   <h2 id="updating-a-subset-of-values">Updating a Subset of Values</h2>
 
-  <p>In this dataset, values for Gender have been recorded as both uppercase <code class="highlighter-rouge">M, F</code> and lowercase <code class="highlighter-rouge">m, f</code>.
+  <p>In this dataset, values for Gender have been recorded as both uppercase <code class="language-plaintext highlighter-rouge">M, F</code> and lowercase <code class="language-plaintext highlighter-rouge">m, f</code>.
 Combine the indexing and assignment operations to convert all values to lowercase.</p>
 
   <blockquote class="solution">
@@ -738,7 +738,7 @@ Combine the indexing and assignment operations to convert all values to lowercas
     <li><p>Data in data frames can be addressed by index (subsetting), by logical vector, or by name (columns only).</p>
 </li>
     
-    <li><p>Use the <code class="highlighter-rouge">$</code> operator to address a column by name.</p>
+    <li><p>Use the <code class="language-plaintext highlighter-rouge">$</code> operator to address a column by name.</p>
 </li>
     
   </ul>

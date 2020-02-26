@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -377,7 +377,7 @@ interactive R console.
     <ul>
       <li>This is a great way to start; all your code is saved for later</li>
       <li>You will be able to run the file you create from within RStudio
-or using R’s <code class="highlighter-rouge">source()</code>  function.</li>
+or using R’s <code class="language-plaintext highlighter-rouge">source()</code>  function.</li>
     </ul>
   </li>
 </ol>
@@ -389,15 +389,15 @@ or using R’s <code class="highlighter-rouge">source()</code>  function.</li>
 window. There are buttons, menu choices, and keyboard shortcuts. To run the
 current line, you can</p>
   <ol>
-    <li>click on the <code class="highlighter-rouge">Run</code> button above the editor panel, or</li>
+    <li>click on the <code class="language-plaintext highlighter-rouge">Run</code> button above the editor panel, or</li>
     <li>select “Run Lines” from the “Code” menu, or</li>
     <li>hit <kbd>Ctrl</kbd>+<kbd>Return</kbd> in Windows or Linux 
 or <kbd>&#8984;</kbd>+<kbd>Return</kbd> on OS X.
 (This shortcut can also be seen by hovering
-the mouse over the button). To run a block of code, select it and then <code class="highlighter-rouge">Run</code>.
+the mouse over the button). To run a block of code, select it and then <code class="language-plaintext highlighter-rouge">Run</code>.
 If you have modified a line of code within a block of code you have just run,
-there is no need to reselect the section and <code class="highlighter-rouge">Run</code>, you can use the next button
-along, <code class="highlighter-rouge">Re-run the previous region</code>. This will run the previous code block
+there is no need to reselect the section and <code class="language-plaintext highlighter-rouge">Run</code>, you can use the next button
+along, <code class="language-plaintext highlighter-rouge">Re-run the previous region</code>. This will run the previous code block
 including the modifications you have made.</li>
   </ol>
 </blockquote>
@@ -408,7 +408,7 @@ including the modifications you have made.</li>
 console. This is where you will run all of your code, and can be a
 useful environment to try out ideas before adding them to an R script
 file. This console in RStudio is the same as the one you would get if
-you typed in <code class="highlighter-rouge">R</code> in your command-line environment.</p>
+you typed in <code class="language-plaintext highlighter-rouge">R</code> in your command-line environment.</p>
 
 <p>The first thing you will see in the R interactive session is a bunch
 of information, followed by a “&gt;” and a blinking cursor. In many ways
@@ -419,30 +419,30 @@ returns a result.</p>
 
 <h2 id="variables-and-assignment">Variables and assignment</h2>
 
-<p>We can store values in variables using the assignment operator <code class="highlighter-rouge">&lt;-</code>, like this:</p>
+<p>We can store values in variables using the assignment operator <code class="language-plaintext highlighter-rouge">&lt;-</code>, like this:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">40</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Notice that assignment does not print a value. Instead, we stored it for later
-in something called a <strong>variable</strong>. <code class="highlighter-rouge">x</code> now contains the <strong>value</strong> <code class="highlighter-rouge">0.025</code>:</p>
+in something called a <strong>variable</strong>. <code class="language-plaintext highlighter-rouge">x</code> now contains the <strong>value</strong> <code class="language-plaintext highlighter-rouge">0.025</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0.025
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0.025
 </code></pre></div></div>
 
 <p>More precisely, the stored value is a <em>decimal approximation</em> of
 this fraction called a <a href="http://en.wikipedia.org/wiki/Floating_point">floating point number</a>.</p>
 
-<p>Look for the <code class="highlighter-rouge">Environment</code> tab in one of the panes of RStudio, and you will see that <code class="highlighter-rouge">x</code> and its value
-have appeared. Our variable <code class="highlighter-rouge">x</code> can be used in place of a number in any calculation that expects a number:</p>
+<p>Look for the <code class="language-plaintext highlighter-rouge">Environment</code> tab in one of the panes of RStudio, and you will see that <code class="language-plaintext highlighter-rouge">x</code> and its value
+have appeared. Our variable <code class="language-plaintext highlighter-rouge">x</code> can be used in place of a number in any calculation that expects a number:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -3.688879
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -3.688879
 </code></pre></div></div>
 
 <p>Notice also that variables can be reassigned:</p>
@@ -450,7 +450,7 @@ have appeared. Our variable <code class="highlighter-rouge">x</code> can be used
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span><span class="w">
 </span></code></pre></div></div>
 
-<p><code class="highlighter-rouge">x</code> used to contain the value 0.025 and and now it has the value 100.</p>
+<p><code class="language-plaintext highlighter-rouge">x</code> used to contain the value 0.025 and and now it has the value 100.</p>
 
 <p>Assignment values can contain the variable being assigned to:</p>
 
@@ -473,15 +473,15 @@ different conventions for long variable names, these include</p>
 
 <p>What you use is up to you, but <strong>be consistent</strong>.</p>
 
-<p>It is also possible to use the <code class="highlighter-rouge">=</code> operator for assignment:</p>
+<p>It is also possible to use the <code class="language-plaintext highlighter-rouge">=</code> operator for assignment:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">40</span><span class="w">
 </span></code></pre></div></div>
 
 <p>But this is much less common among R users.  The most important thing is to
 <strong>be consistent</strong> with the operator you use. There are occasionally places
-where it is less confusing to use <code class="highlighter-rouge">&lt;-</code> than <code class="highlighter-rouge">=</code>, and it is the most common
-symbol used in the community. So the recommendation is to use <code class="highlighter-rouge">&lt;-</code>.</p>
+where it is less confusing to use <code class="language-plaintext highlighter-rouge">&lt;-</code> than <code class="language-plaintext highlighter-rouge">=</code>, and it is the most common
+symbol used in the community. So the recommendation is to use <code class="language-plaintext highlighter-rouge">&lt;-</code>.</p>
 
 <blockquote class="challenge">
   <h2 id="challenge-1">Challenge 1</h2>
@@ -544,44 +544,44 @@ currently writing.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># equality (note two equals signs, read as "is equal to")</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c1"># inequality (read as "is not equal to")</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c1"># less than</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># less than or equal to</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="c1"># greater than</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">-9</span><span class="w"> </span><span class="c1"># greater than or equal to</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div></div>
 
 <blockquote class="callout">
   <h2 id="tip-comparing-numbers">Tip: Comparing Numbers</h2>
 
   <p>A word of warning about comparing numbers: you should
-never use <code class="highlighter-rouge">==</code> to compare two numbers unless they are
+never use <code class="language-plaintext highlighter-rouge">==</code> to compare two numbers unless they are
 integers (a data type which can specifically represent
 only whole numbers).</p>
 
@@ -592,7 +592,7 @@ different underlying representations and therefore be
 different by a small margin of error (called Machine
 numeric tolerance).</p>
 
-  <p>Instead you should use the <code class="highlighter-rouge">all.equal</code> function.</p>
+  <p>Instead you should use the <code class="language-plaintext highlighter-rouge">all.equal</code> function.</p>
 
   <p>Further reading: <a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a></p>
 
@@ -602,34 +602,34 @@ numeric tolerance).</p>
 
 <p>There are a few useful commands you can use to interact with the R session.</p>
 
-<p><code class="highlighter-rouge">ls</code> will list all of the variables and functions stored in the global environment
+<p><code class="language-plaintext highlighter-rouge">ls</code> will list all of the variables and functions stored in the global environment
 (your working R session):</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span><span class="p">()</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "args"          "dest_md"       "missing_pkgs"  "required_pkgs"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "args"          "dest_md"       "missing_pkgs"  "required_pkgs"
 [5] "src_rmd"       "x"             "y"            
 </code></pre></div></div>
 
 <blockquote class="callout">
   <h2 id="tip-hidden-objects">Tip: hidden objects</h2>
 
-  <p>Like in the shell, <code class="highlighter-rouge">ls</code> will hide any variables or functions starting
-with a “.” by default. To list all objects, type <code class="highlighter-rouge">ls(all.names=TRUE)</code>
+  <p>Like in the shell, <code class="language-plaintext highlighter-rouge">ls</code> will hide any variables or functions starting
+with a “.” by default. To list all objects, type <code class="language-plaintext highlighter-rouge">ls(all.names=TRUE)</code>
 instead</p>
 
 </blockquote>
 
-<p>Note here that we didn’t give any arguments to <code class="highlighter-rouge">ls</code>, but we still
+<p>Note here that we didn’t give any arguments to <code class="language-plaintext highlighter-rouge">ls</code>, but we still
 needed to give the parentheses to tell R to call the function.</p>
 
-<p>If we type <code class="highlighter-rouge">ls</code> by itself, R will print out the source code for that function!</p>
+<p>If we type <code class="language-plaintext highlighter-rouge">ls</code> by itself, R will print out the source code for that function!</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
     pattern, sorted = TRUE) 
 {
     if (!missing(name)) {
@@ -664,13 +664,13 @@ needed to give the parentheses to tell R to call the function.</p>
 &lt;environment: namespace:base&gt;
 </code></pre></div></div>
 
-<p>You can use <code class="highlighter-rouge">rm</code> to delete objects you no longer need:</p>
+<p>You can use <code class="language-plaintext highlighter-rouge">rm</code> to delete objects you no longer need:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>If you have lots of things in your environment and want to delete all of them,
-you can pass the results of <code class="highlighter-rouge">ls</code> to the <code class="highlighter-rouge">rm</code> function:</p>
+you can pass the results of <code class="language-plaintext highlighter-rouge">ls</code> to the <code class="language-plaintext highlighter-rouge">rm</code> function:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rm</span><span class="p">(</span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ls</span><span class="p">())</span><span class="w">
 </span></code></pre></div></div>
@@ -678,16 +678,16 @@ you can pass the results of <code class="highlighter-rouge">ls</code> to the <co
 <p>In this case we’ve combined the two. Like the order of operations, anything
 inside the innermost parentheses is evaluated first, and so on.</p>
 
-<p>In this case we’ve specified that the results of <code class="highlighter-rouge">ls</code> should be used for the
-<code class="highlighter-rouge">list</code> argument in <code class="highlighter-rouge">rm</code>. When assigning values to arguments by name, you <em>must</em>
-use the <code class="highlighter-rouge">=</code> operator!!</p>
+<p>In this case we’ve specified that the results of <code class="language-plaintext highlighter-rouge">ls</code> should be used for the
+<code class="language-plaintext highlighter-rouge">list</code> argument in <code class="language-plaintext highlighter-rouge">rm</code>. When assigning values to arguments by name, you <em>must</em>
+use the <code class="language-plaintext highlighter-rouge">=</code> operator!!</p>
 
-<p>If instead we use <code class="highlighter-rouge">&lt;-</code>, there will be unintended side effects, or you may get an error message:</p>
+<p>If instead we use <code class="language-plaintext highlighter-rouge">&lt;-</code>, there will be unintended side effects, or you may get an error message:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rm</span><span class="p">(</span><span class="n">list</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ls</span><span class="p">())</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in rm(list &lt;- ls()): ... must contain names or character strings
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in rm(list &lt;- ls()): ... must contain names or character strings
 </code></pre></div></div>
 
 <blockquote class="callout">
@@ -712,12 +712,12 @@ network). R and RStudio have functionality for managing packages:</p>
 
 <ul>
   <li>You can see what packages are installed by typing
-<code class="highlighter-rouge">installed.packages()</code></li>
-  <li>You can install packages by typing <code class="highlighter-rouge">install.packages("packagename")</code>,
-where <code class="highlighter-rouge">packagename</code> is the package name, in quotes.</li>
-  <li>You can update installed packages by typing <code class="highlighter-rouge">update.packages()</code></li>
-  <li>You can remove a package with <code class="highlighter-rouge">remove.packages("packagename")</code></li>
-  <li>You can make a package available for use with <code class="highlighter-rouge">library(packagename)</code></li>
+<code class="language-plaintext highlighter-rouge">installed.packages()</code></li>
+  <li>You can install packages by typing <code class="language-plaintext highlighter-rouge">install.packages("packagename")</code>,
+where <code class="language-plaintext highlighter-rouge">packagename</code> is the package name, in quotes.</li>
+  <li>You can update installed packages by typing <code class="language-plaintext highlighter-rouge">update.packages()</code></li>
+  <li>You can remove a package with <code class="language-plaintext highlighter-rouge">remove.packages("packagename")</code></li>
+  <li>You can make a package available for use with <code class="language-plaintext highlighter-rouge">library(packagename)</code></li>
 </ul>
 
 <blockquote class="challenge">
@@ -764,12 +764,12 @@ compare mass to age. Is mass larger than age?</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-3">Solution to challenge 3</h2>
 
-    <p>One way of answering this question in R is to use the <code class="highlighter-rouge">&gt;</code> to set up the following:</p>
+    <p>One way of answering this question in R is to use the <code class="language-plaintext highlighter-rouge">&gt;</code> to set up the following:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mass</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">age</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] TRUE
 </code></pre></div>    </div>
     <p>This should yield a boolean value of TRUE since 109.25 is greater than 102.</p>
   </blockquote>
@@ -784,7 +784,7 @@ variables.</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-4">Solution to challenge 4</h2>
 
-    <p>We can use the <code class="highlighter-rouge">rm</code> command to accomplish this task</p>
+    <p>We can use the <code class="language-plaintext highlighter-rouge">rm</code> command to accomplish this task</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rm</span><span class="p">(</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">mass</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
@@ -794,19 +794,19 @@ variables.</p>
 <blockquote class="challenge">
   <h2 id="challenge-5">Challenge 5</h2>
 
-  <p>Install the following packages: <code class="highlighter-rouge">ggplot2</code>, <code class="highlighter-rouge">plyr</code>, <code class="highlighter-rouge">gapminder</code></p>
+  <p>Install the following packages: <code class="language-plaintext highlighter-rouge">ggplot2</code>, <code class="language-plaintext highlighter-rouge">plyr</code>, <code class="language-plaintext highlighter-rouge">gapminder</code></p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-5">Solution to challenge 5</h2>
 
-    <p>We can use the <code class="highlighter-rouge">install.packages()</code> command to install the required packages.</p>
+    <p>We can use the <code class="language-plaintext highlighter-rouge">install.packages()</code> command to install the required packages.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">)</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"plyr"</span><span class="p">)</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"gapminder"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p>An alternate solution, to install multiple packages with a single <code class="highlighter-rouge">install.packages()</code> command is:</p>
+    <p>An alternate solution, to install multiple packages with a single <code class="language-plaintext highlighter-rouge">install.packages()</code> command is:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"plyr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"gapminder"</span><span class="p">))</span><span class="w">
 </span></code></pre></div>    </div>
@@ -869,12 +869,12 @@ mean you don’t have to!</p>
 <h2 id="getting-help-on-packages">Getting help on packages</h2>
 
 <p>Many packages come with “vignettes”: tutorials and extended example documentation.
-Without any arguments, <code class="highlighter-rouge">vignette()</code> will list all vignettes for all installed packages;
-<code class="highlighter-rouge">vignette(package="package-name")</code> will list all available vignettes for
-<code class="highlighter-rouge">package-name</code>, and <code class="highlighter-rouge">vignette("vignette-name")</code> will open the specified vignette.</p>
+Without any arguments, <code class="language-plaintext highlighter-rouge">vignette()</code> will list all vignettes for all installed packages;
+<code class="language-plaintext highlighter-rouge">vignette(package="package-name")</code> will list all available vignettes for
+<code class="language-plaintext highlighter-rouge">package-name</code>, and <code class="language-plaintext highlighter-rouge">vignette("vignette-name")</code> will open the specified vignette.</p>
 
 <p>If a package doesn’t have any vignettes, you can usually find help by typing
-<code class="highlighter-rouge">help("package-name")</code>.</p>
+<code class="language-plaintext highlighter-rouge">help("package-name")</code>.</p>
 
 <h2 id="when-you-kind-of-remember-the-function">When you kind of remember the function</h2>
 
@@ -895,7 +895,7 @@ fields. This can be a good starting point.</p>
 <p>If you’re having trouble using a function, 9 times out of 10,
 the answers you are seeking have already been answered on
 <a href="http://stackoverflow.com/">Stack Overflow</a>. You can search using
-the <code class="highlighter-rouge">[r]</code> tag.</p>
+the <code class="language-plaintext highlighter-rouge">[r]</code> tag.</p>
 
 <p>If you can’t find the answer, there are a few useful functions to
 help you ask a question from your peers:</p>
@@ -909,7 +909,7 @@ be copy and pasted by anyone else into their R session.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sessionInfo</span><span class="p">()</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R Under development (unstable) (2019-12-19 r77606)
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R Under development (unstable) (2019-12-19 r77606)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Pop!_OS 19.04
 
@@ -945,7 +945,7 @@ your issue.</p>
 <blockquote class="challenge">
   <h2 id="challenge-1-1">Challenge 1</h2>
 
-  <p>Look at the help for the <code class="highlighter-rouge">c</code> function. What kind of vector do you
+  <p>Look at the help for the <code class="language-plaintext highlighter-rouge">c</code> function. What kind of vector do you
 expect you will create if you evaluate the following:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
@@ -955,7 +955,7 @@ expect you will create if you evaluate the following:</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-1-1">Solution to Challenge 1</h2>
 
-    <p>The <code class="highlighter-rouge">c()</code> function creates a vector, in which all elements are the
+    <p>The <code class="language-plaintext highlighter-rouge">c()</code> function creates a vector, in which all elements are the
 same type. In the first case, the elements are numeric, in the
 second, they are characters, and in the third they are characters:
 the numeric values are “coerced” to be characters.</p>
@@ -965,52 +965,52 @@ the numeric values are “coerced” to be characters.</p>
 <blockquote class="challenge">
   <h2 id="challenge-2-1">Challenge 2</h2>
 
-  <p>Look at the help for the <code class="highlighter-rouge">paste</code> function. You’ll need to use this later.
-What is the difference between the <code class="highlighter-rouge">sep</code> and <code class="highlighter-rouge">collapse</code> arguments?</p>
+  <p>Look at the help for the <code class="language-plaintext highlighter-rouge">paste</code> function. You’ll need to use this later.
+What is the difference between the <code class="language-plaintext highlighter-rouge">sep</code> and <code class="language-plaintext highlighter-rouge">collapse</code> arguments?</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2-1">Solution to Challenge 2</h2>
 
-    <p>To look at the help for the <code class="highlighter-rouge">paste()</code> function, use:</p>
+    <p>To look at the help for the <code class="language-plaintext highlighter-rouge">paste()</code> function, use:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help</span><span class="p">(</span><span class="s2">"paste"</span><span class="p">)</span><span class="w">
 </span><span class="o">?</span><span class="n">paste</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>The difference between <code class="highlighter-rouge">sep</code> and <code class="highlighter-rouge">collapse</code> is a little
-tricky. The <code class="highlighter-rouge">paste</code> function accepts any number of arguments, each of which
-can be a vector of any length. The <code class="highlighter-rouge">sep</code> argument specifies the string
+    <p>The difference between <code class="language-plaintext highlighter-rouge">sep</code> and <code class="language-plaintext highlighter-rouge">collapse</code> is a little
+tricky. The <code class="language-plaintext highlighter-rouge">paste</code> function accepts any number of arguments, each of which
+can be a vector of any length. The <code class="language-plaintext highlighter-rouge">sep</code> argument specifies the string
 used between concatenated terms — by default, a space. The result is a
-vector as long as the longest argument supplied to <code class="highlighter-rouge">paste</code>. In contrast,
-<code class="highlighter-rouge">collapse</code> specifies that after concatenation the elements are <em>collapsed</em>
+vector as long as the longest argument supplied to <code class="language-plaintext highlighter-rouge">paste</code>. In contrast,
+<code class="language-plaintext highlighter-rouge">collapse</code> specifies that after concatenation the elements are <em>collapsed</em>
 together using the given separator, the result being a single string.
 e.g.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">),</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a c" "b c"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a c" "b c"
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">),</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">","</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a,c" "b,c"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a,c" "b,c"
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">),</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"|"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a c|b c"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a c|b c"
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">),</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">","</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"|"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a,c|b,c"
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a,c|b,c"
 </code></pre></div>    </div>
     <p>(For more information,
-scroll to the bottom of the <code class="highlighter-rouge">?paste</code> help page and look at the
-examples, or try <code class="highlighter-rouge">example('paste')</code>.)</p>
+scroll to the bottom of the <code class="language-plaintext highlighter-rouge">?paste</code> help page and look at the
+examples, or try <code class="language-plaintext highlighter-rouge">example('paste')</code>.)</p>
   </blockquote>
 </blockquote>
 
@@ -1022,15 +1022,15 @@ use to load data from a tabular file in which columns are delimited with “\t�
 separator is important, especially if you are working with international
 colleagues, because different countries have different conventions for the
 decimal point (i.e. comma vs period).
-hint: use <code class="highlighter-rouge">??"read table"</code> to look up functions related to reading in tabular data.</p>
+hint: use <code class="language-plaintext highlighter-rouge">??"read table"</code> to look up functions related to reading in tabular data.</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-3-1">Solution to Challenge 3</h2>
 
     <p>The standard R function for reading tab-delimited files with a period
 decimal separator is read.delim(). You can also do this with
-<code class="highlighter-rouge">read.table(file, sep="\t")</code> (the period is the <em>default</em> decimal
-separator for <code class="highlighter-rouge">read.table()</code>, although you may have to change
-the <code class="highlighter-rouge">comment.char</code> argument as well if your data file contains
+<code class="language-plaintext highlighter-rouge">read.table(file, sep="\t")</code> (the period is the <em>default</em> decimal
+separator for <code class="language-plaintext highlighter-rouge">read.table()</code>, although you may have to change
+the <code class="language-plaintext highlighter-rouge">comment.char</code> argument as well if your data file contains
 hash (#) characters</p>
   </blockquote>
 </blockquote>
@@ -1054,16 +1054,16 @@ hash (#) characters</p>
     <li><p>R has the usual arithmetic operators and mathematical functions.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">&lt;-</code> to assign values to variables.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">&lt;-</code> to assign values to variables.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">ls()</code> to list the variables in a program.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">ls()</code> to list the variables in a program.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">rm()</code> to delete objects in a program.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">rm()</code> to delete objects in a program.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">install.packages()</code> to install packages (libraries).</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">install.packages()</code> to install packages (libraries).</p>
 </li>
     
   </ul>

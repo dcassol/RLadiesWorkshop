@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -293,14 +293,14 @@
 
 <p>One of R’s most powerful features is its ability to deal with tabular data -
 such as you may already have in a spreadsheet or a CSV file. Let’s start by
-making a toy dataset in your <code class="highlighter-rouge">data/</code> directory, called <code class="highlighter-rouge">feline-data.csv</code>:</p>
+making a toy dataset in your <code class="language-plaintext highlighter-rouge">data/</code> directory, called <code class="language-plaintext highlighter-rouge">feline-data.csv</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">coat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"calico"</span><span class="p">,</span><span class="w"> </span><span class="s2">"black"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tabby"</span><span class="p">),</span><span class="w"> 
                     </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2.1</span><span class="p">,</span><span class="w"> </span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">3.2</span><span class="p">),</span><span class="w"> 
                     </span><span class="n">likes_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">
 </span><span class="n">write.csv</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/feline-data.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
-<p>The contents of the new file, <code class="highlighter-rouge">feline-data.csv</code>:</p>
+<p>The contents of the new file, <code class="language-plaintext highlighter-rouge">feline-data.csv</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coat</span><span class="p">,</span><span class="n">weight</span><span class="p">,</span><span class="n">likes_string</span><span class="w">
 </span><span class="n">calico</span><span class="p">,</span><span class="m">2.1</span><span class="p">,</span><span class="m">1</span><span class="w">
@@ -311,7 +311,7 @@ making a toy dataset in your <code class="highlighter-rouge">data/</code> direct
 <blockquote class="callout">
   <h2 id="tip-editing-text-files-in-r">Tip: Editing Text files in R</h2>
 
-  <p>Alternatively, you can create <code class="highlighter-rouge">data/feline-data.csv</code> using a text editor (Nano),
+  <p>Alternatively, you can create <code class="language-plaintext highlighter-rouge">data/feline-data.csv</code> using a text editor (Nano),
 or within RStudio with the <strong>File -&gt; New File -&gt; Text File</strong> menu item.</p>
 </blockquote>
 
@@ -321,35 +321,35 @@ or within RStudio with the <strong>File -&gt; New File -&gt; Text File</strong> 
 </span><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
 1 calico    2.1            1
 2  black    5.0            0
 3  tabby    3.2            1
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">read.table</code> function is used for reading in tabular data stored in a text
+<p>The <code class="language-plaintext highlighter-rouge">read.table</code> function is used for reading in tabular data stored in a text
 file where the columns of data are separated by punctuation characters such as
 CSV files (csv = comma-separated values). Tabs and commas are the most common
 punctuation characters used to separate or delimit data points in csv files. 
-For convenience R provides 2 other versions of <code class="highlighter-rouge">read.table</code>. These are: <code class="highlighter-rouge">read.csv</code>
-for files where the data are separated with commas and <code class="highlighter-rouge">read.delim</code> for files
-where the data are separated with tabs. Of these three functions <code class="highlighter-rouge">read.csv</code> is
+For convenience R provides 2 other versions of <code class="language-plaintext highlighter-rouge">read.table</code>. These are: <code class="language-plaintext highlighter-rouge">read.csv</code>
+for files where the data are separated with commas and <code class="language-plaintext highlighter-rouge">read.delim</code> for files
+where the data are separated with tabs. Of these three functions <code class="language-plaintext highlighter-rouge">read.csv</code> is
 the most commonly used.  If needed it is possible to override the default 
-delimiting punctuation marks for both <code class="highlighter-rouge">read.csv</code> and <code class="highlighter-rouge">read.delim</code>.</p>
+delimiting punctuation marks for both <code class="language-plaintext highlighter-rouge">read.csv</code> and <code class="language-plaintext highlighter-rouge">read.delim</code>.</p>
 
 <p>We can begin exploring our dataset right away, pulling out columns by specifying
-them using the <code class="highlighter-rouge">$</code> operator:</p>
+them using the <code class="language-plaintext highlighter-rouge">$</code> operator:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2.1 5.0 3.2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2.1 5.0 3.2
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div></div>
 
@@ -359,13 +359,13 @@ Levels: black calico tabby
 </span><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4.1 7.0 5.2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 4.1 7.0 5.2
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="s2">"My cat is"</span><span class="p">,</span><span class="w"> </span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "My cat is calico" "My cat is black"  "My cat is tabby" 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "My cat is calico" "My cat is black"  "My cat is tabby" 
 </code></pre></div></div>
 
 <p>But what about</p>
@@ -373,57 +373,57 @@ Levels: black calico tabby
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in Ops.factor(cats$weight, cats$coat): '+' not meaningful for factors
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in Ops.factor(cats$weight, cats$coat): '+' not meaningful for factors
 </code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA NA NA
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA NA NA
 </code></pre></div></div>
 
 <p>Understanding what happened here is key to successfully analyzing data in R.</p>
 
 <h2 id="data-types">Data Types</h2>
 
-<p>If you guessed that the last command will return an error because <code class="highlighter-rouge">2.1</code> plus
-<code class="highlighter-rouge">"black"</code> is nonsense, you’re right - and you already have some intuition for an
+<p>If you guessed that the last command will return an error because <code class="language-plaintext highlighter-rouge">2.1</code> plus
+<code class="language-plaintext highlighter-rouge">"black"</code> is nonsense, you’re right - and you already have some intuition for an
 important concept in programming called <em>data types</em>. We can ask what type of
 data something is:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
 </code></pre></div></div>
 
-<p>There are 5 main types: <code class="highlighter-rouge">double</code>, <code class="highlighter-rouge">integer</code>, <code class="highlighter-rouge">complex</code>, <code class="highlighter-rouge">logical</code> and <code class="highlighter-rouge">character</code>.</p>
+<p>There are 5 main types: <code class="language-plaintext highlighter-rouge">double</code>, <code class="language-plaintext highlighter-rouge">integer</code>, <code class="language-plaintext highlighter-rouge">complex</code>, <code class="language-plaintext highlighter-rouge">logical</code> and <code class="language-plaintext highlighter-rouge">character</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="m">3.14</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="m">1L</span><span class="p">)</span><span class="w"> </span><span class="c1"># The L suffix forces the number to be an integer, since by default R uses float numbers</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="m">1+1i</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "complex"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "complex"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "logical"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "logical"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="s1">'banana'</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
 </code></pre></div></div>
 
 <p>No matter how
@@ -431,7 +431,7 @@ complicated our analyses become, all data in R is interpreted as one of these
 basic data types. This strictness has some really important consequences.</p>
 
 <p>A user has added details of another cat. This information is in the file
-<code class="highlighter-rouge">data/feline-data_v2.csv</code>.</p>
+<code class="language-plaintext highlighter-rouge">data/feline-data_v2.csv</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file.show</span><span class="p">(</span><span class="s2">"data/feline-data_v2.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -444,13 +444,13 @@ basic data types. This strictness has some really important consequences.</p>
 </span></code></pre></div></div>
 
 <p>Load the new cats data like before, and check what type of data we find in the
-<code class="highlighter-rouge">weight</code> column:</p>
+<code class="language-plaintext highlighter-rouge">weight</code> column:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/feline-data_v2.csv"</span><span class="p">)</span><span class="w">
 </span><span class="n">typeof</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <p>Oh no, our weights aren’t the double type anymore! If we try to do the same math
@@ -459,10 +459,10 @@ we did on them before, we run into trouble:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in Ops.factor(cats$weight, 2): '+' not meaningful for factors
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in Ops.factor(cats$weight, 2): '+' not meaningful for factors
 </code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA NA NA NA
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] NA NA NA NA
 </code></pre></div></div>
 
 <p>What happened? When R reads a csv file into one of these tables, it insists that
@@ -473,12 +473,12 @@ double. The table that R loaded our cats data into is something called a
 structure</em> - that is, a structure which R knows how to build out of the basic
 data types.</p>
 
-<p>We can see that it is a <em>data.frame</em> by calling the <code class="highlighter-rouge">class</code> function on it:</p>
+<p>We can see that it is a <em>data.frame</em> by calling the <code class="language-plaintext highlighter-rouge">class</code> function on it:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "data.frame"
 </code></pre></div></div>
 
 <p>In order to successfully use our data in R, we need to understand what the basic
@@ -487,7 +487,7 @@ from our cats data and reload it, while we investigate this behavior further:</p
 
 <p>feline-data.csv:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>coat,weight,likes_string
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>coat,weight,likes_string
 calico,2.1,1
 black,5.0,0
 tabby,3.2,1
@@ -507,19 +507,19 @@ the <em>vector</em>.</p>
 </span><span class="n">my_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE FALSE FALSE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE FALSE FALSE
 </code></pre></div></div>
 
 <p>A vector in R is essentially an ordered list of things, with the special
 condition that <em>everything in the vector must be the same basic data type</em>. If
-you don’t choose the datatype, it’ll default to <code class="highlighter-rouge">logical</code>; or, you can declare
+you don’t choose the datatype, it’ll default to <code class="language-plaintext highlighter-rouge">logical</code>; or, you can declare
 an empty vector of whatever type you like.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">another_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vector</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'character'</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">
 </span><span class="n">another_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "" "" ""
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "" "" ""
 </code></pre></div></div>
 
 <p>You can check if something is a vector:</p>
@@ -527,22 +527,22 @@ an empty vector of whatever type you like.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">another_vector</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> chr [1:3] "" "" ""
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> chr [1:3] "" "" ""
 </code></pre></div></div>
 
 <p>The somewhat cryptic output from this command indicates the basic data type
-found in this vector - in this case <code class="highlighter-rouge">chr</code>, character; an indication of the
+found in this vector - in this case <code class="language-plaintext highlighter-rouge">chr</code>, character; an indication of the
 number of things in the vector - actually, the indexes of the vector, in this
-case <code class="highlighter-rouge">[1:3]</code>; and a few examples of what’s actually in the vector - in this case
+case <code class="language-plaintext highlighter-rouge">[1:3]</code>; and a few examples of what’s actually in the vector - in this case
 empty character strings. If we similarly do</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3] 2.1 5 3.2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3] 2.1 5 3.2
 </code></pre></div></div>
 
-<p>we see that <code class="highlighter-rouge">cats$weight</code> is a vector, too - <em>the columns of data we load into R
+<p>we see that <code class="language-plaintext highlighter-rouge">cats$weight</code> is a vector, too - <em>the columns of data we load into R
 data.frames are all vectors</em>, and that’s the root of why R forces everything in
 a column to be the same basic data type.</p>
 
@@ -570,7 +570,7 @@ our lives easier in R.</p>
 </span><span class="n">combine_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 6 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2 6 3
 </code></pre></div></div>
 
 <p>Given what we’ve learned so far, what do you think the following will produce?</p>
@@ -588,39 +588,39 @@ type. Consider:</p>
 </span><span class="n">coercion_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a"    "TRUE"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a"    "TRUE"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">another_coercion_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span><span class="n">another_coercion_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 1
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 1
 </code></pre></div></div>
 
-<p>The coercion rules go: <code class="highlighter-rouge">logical</code> -&gt; <code class="highlighter-rouge">integer</code> -&gt; <code class="highlighter-rouge">numeric</code> -&gt; <code class="highlighter-rouge">complex</code> -&gt;
-<code class="highlighter-rouge">character</code>, where -&gt; can be read as <em>are transformed into</em>. You can try to
-force coercion against this flow using the <code class="highlighter-rouge">as.</code> functions:</p>
+<p>The coercion rules go: <code class="language-plaintext highlighter-rouge">logical</code> -&gt; <code class="language-plaintext highlighter-rouge">integer</code> -&gt; <code class="language-plaintext highlighter-rouge">numeric</code> -&gt; <code class="language-plaintext highlighter-rouge">complex</code> -&gt;
+<code class="language-plaintext highlighter-rouge">character</code>, where -&gt; can be read as <em>are transformed into</em>. You can try to
+force coercion against this flow using the <code class="language-plaintext highlighter-rouge">as.</code> functions:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">character_vector_example</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'0'</span><span class="p">,</span><span class="s1">'2'</span><span class="p">,</span><span class="s1">'4'</span><span class="p">)</span><span class="w">
 </span><span class="n">character_vector_example</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "0" "2" "4"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "0" "2" "4"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">character_coerced_to_numeric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">character_vector_example</span><span class="p">)</span><span class="w">
 </span><span class="n">character_coerced_to_numeric</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 2 4
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0 2 4
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numeric_coerced_to_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.logical</span><span class="p">(</span><span class="n">character_coerced_to_numeric</span><span class="p">)</span><span class="w">
 </span><span class="n">numeric_coerced_to_logical</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE  TRUE  TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE  TRUE  TRUE
 </code></pre></div></div>
 
 <p>As you can see, some surprising things can happen when R forces one basic data
@@ -629,40 +629,40 @@ data doesn’t look like what you thought it was going to look like, type coerci
 may well be to blame; make sure everything is the same type in your vectors and
 your columns of data.frames, or you will get nasty surprises!</p>
 
-<p>But coercion can also be very useful! For example, in our <code class="highlighter-rouge">cats</code> data
-<code class="highlighter-rouge">likes_string</code> is numeric, but we know that the 1s and 0s actually represent
-<code class="highlighter-rouge">TRUE</code> and <code class="highlighter-rouge">FALSE</code> (a common way of representing them). We should use the
-<code class="highlighter-rouge">logical</code> datatype here, which has two states: <code class="highlighter-rouge">TRUE</code> or <code class="highlighter-rouge">FALSE</code>, which is
-exactly what our data represents. We can ‘coerce’ this column to be <code class="highlighter-rouge">logical</code> by
-using the <code class="highlighter-rouge">as.logical</code> function:</p>
+<p>But coercion can also be very useful! For example, in our <code class="language-plaintext highlighter-rouge">cats</code> data
+<code class="language-plaintext highlighter-rouge">likes_string</code> is numeric, but we know that the 1s and 0s actually represent
+<code class="language-plaintext highlighter-rouge">TRUE</code> and <code class="language-plaintext highlighter-rouge">FALSE</code> (a common way of representing them). We should use the
+<code class="language-plaintext highlighter-rouge">logical</code> datatype here, which has two states: <code class="language-plaintext highlighter-rouge">TRUE</code> or <code class="language-plaintext highlighter-rouge">FALSE</code>, which is
+exactly what our data represents. We can ‘coerce’ this column to be <code class="language-plaintext highlighter-rouge">logical</code> by
+using the <code class="language-plaintext highlighter-rouge">as.logical</code> function:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">likes_string</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 0 1
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 0 1
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">likes_string</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.logical</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">likes_string</span><span class="p">)</span><span class="w">
 </span><span class="n">cats</span><span class="o">$</span><span class="n">likes_string</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE FALSE  TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  TRUE FALSE  TRUE
 </code></pre></div></div>
 
-<p>The combine function, <code class="highlighter-rouge">c()</code>, will also append things to an existing vector:</p>
+<p>The combine function, <code class="language-plaintext highlighter-rouge">c()</code>, will also append things to an existing vector:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ab_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'b'</span><span class="p">)</span><span class="w">
 </span><span class="n">ab_vector</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a" "b"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a" "b"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">combine_example</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ab_vector</span><span class="p">,</span><span class="w"> </span><span class="s1">'SWC'</span><span class="p">)</span><span class="w">
 </span><span class="n">combine_example</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a"   "b"   "SWC"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a"   "b"   "SWC"
 </code></pre></div></div>
 
 <p>You can also make series of numbers:</p>
@@ -671,19 +671,19 @@ using the <code class="highlighter-rouge">as.logical</code> function:</p>
 </span><span class="n">mySeries</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seq</span><span class="p">(</span><span class="m">10</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1  2  3  4  5  6  7  8  9 10
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1.0  1.1  1.2  1.3  1.4  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [1]  1.0  1.1  1.2  1.3  1.4  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4
 [16]  2.5  2.6  2.7  2.8  2.9  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9
 [31]  4.0  4.1  4.2  4.3  4.4  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4
 [46]  5.5  5.6  5.7  5.8  5.9  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9
@@ -698,31 +698,31 @@ using the <code class="highlighter-rouge">as.logical</code> function:</p>
 </span><span class="n">head</span><span class="p">(</span><span class="n">sequence_example</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tail</span><span class="p">(</span><span class="n">sequence_example</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  7  8  9 10
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1]  7  8  9 10
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">sequence_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 10
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 10
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">sequence_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">sequence_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <p>Finally, you can give names to elements in your vector:</p>
@@ -732,14 +732,14 @@ using the <code class="highlighter-rouge">as.logical</code> function:</p>
 </span><span class="n">my_example</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a b c d 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a b c d 
 5 6 7 8 
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">my_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a" "b" "c" "d"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "a" "b" "c" "d"
 </code></pre></div></div>
 
 <blockquote class="challenge">
@@ -747,7 +747,7 @@ using the <code class="highlighter-rouge">as.logical</code> function:</p>
 
   <p>Start by making a vector with the numbers 1 through 26.
 Multiply the vector by 2, and give the resulting vector
-names A through Z (hint: there is a built in vector called <code class="highlighter-rouge">LETTERS</code>)</p>
+names A through Z (hint: there is a built in vector called <code class="language-plaintext highlighter-rouge">LETTERS</code>)</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-1">Solution to Challenge 1</h2>
@@ -766,13 +766,13 @@ names A through Z (hint: there is a built in vector called <code class="highligh
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3] 2.1 5 3.2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3] 2.1 5 3.2
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">likes_string</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logi [1:3] TRUE FALSE TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> logi [1:3] TRUE FALSE TRUE
 </code></pre></div></div>
 
 <p>These make sense. But what about</p>
@@ -780,7 +780,7 @@ names A through Z (hint: there is a built in vector called <code class="highligh
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","calico",..: 2 1 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","calico",..: 2 1 3
 </code></pre></div></div>
 
 <h2 id="factors">Factors</h2>
@@ -794,14 +794,14 @@ cats in our study:</p>
 </span><span class="n">coats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "tabby"         "tortoiseshell" "tortoiseshell" "black"        
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "tabby"         "tortoiseshell" "tortoiseshell" "black"        
 [5] "tabby"        
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">coats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> chr [1:5] "tabby" "tortoiseshell" "tortoiseshell" "black" "tabby"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> chr [1:5] "tabby" "tortoiseshell" "tortoiseshell" "black" "tabby"
 </code></pre></div></div>
 
 <p>We can turn a vector into a factor like so:</p>
@@ -810,13 +810,13 @@ cats in our study:</p>
 </span><span class="nf">class</span><span class="p">(</span><span class="n">CATegories</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "factor"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "factor"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">CATegories</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","tabby",..: 2 3 3 1 2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","tabby",..: 2 3 3 1 2
 </code></pre></div></div>
 
 <p>Now R has noticed that there are three possible categories in our data - but it
@@ -828,33 +828,33 @@ calculations utilise such numerical representations for categorical data:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">coats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "character"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">CATegories</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <blockquote class="challenge">
   <h2 id="challenge-2">Challenge 2</h2>
 
-  <p>Is there a factor in our <code class="highlighter-rouge">cats</code> data.frame? what is its name?
-Try using <code class="highlighter-rouge">?read.csv</code> to figure out how to keep text columns as character
+  <p>Is there a factor in our <code class="language-plaintext highlighter-rouge">cats</code> data.frame? what is its name?
+Try using <code class="language-plaintext highlighter-rouge">?read.csv</code> to figure out how to keep text columns as character
 vectors instead of factors; then write a command or two to show that the factor
-in <code class="highlighter-rouge">cats</code> is actually a character vector when loaded in this way.</p>
+in <code class="language-plaintext highlighter-rouge">cats</code> is actually a character vector when loaded in this way.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2">Solution to Challenge 2</h2>
 
-    <p>One solution is use the argument <code class="highlighter-rouge">stringAsFactors</code>:</p>
+    <p>One solution is use the argument <code class="language-plaintext highlighter-rouge">stringAsFactors</code>:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/feline-data.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p>Another solution is use the argument <code class="highlighter-rouge">colClasses</code>
+    <p>Another solution is use the argument <code class="language-plaintext highlighter-rouge">colClasses</code>
 that allow finer control.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"data/feline-data.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">colClasses</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="s2">"character"</span><span class="p">))</span><span class="w">
@@ -876,7 +876,7 @@ alphabetical order. You can change this by specifying the levels:</p>
 </span><span class="n">str</span><span class="p">(</span><span class="n">factor_ordering_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 2 levels "control","case": 2 1 1 2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 2 levels "control","case": 2 1 1 2
 </code></pre></div></div>
 
 <p>In this case, we’ve explicitly told R that “control” should be represented by 1, and
@@ -885,7 +885,7 @@ results of statistical models!</p>
 
 <h2 id="lists">Lists</h2>
 
-<p>Another data structure you’ll want in your bag of tricks is the <code class="highlighter-rouge">list</code>. A list
+<p>Another data structure you’ll want in your bag of tricks is the <code class="language-plaintext highlighter-rouge">list</code>. A list
 is simpler in some ways than the other types, because you can put anything you
 want in it:</p>
 
@@ -893,7 +893,7 @@ want in it:</p>
 </span><span class="n">list_example</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1]]
 [1] 1
 
 [[2]]
@@ -910,7 +910,7 @@ want in it:</p>
 </span><span class="n">another_list</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$title
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$title
 [1] "Numbers"
 
 $numbers
@@ -925,43 +925,43 @@ $data
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
 </code></pre></div></div>
 
 <p>We see that data.frames look like lists ‘under the hood’ - this is because a
 data.frame is really a list of vectors and factors, as they have to be - in
 order to hold those columns that are a mix of vectors and factors, the
 data.frame needs something a bit more flexible than a vector to put all the
-columns together into a familiar table.  In other words, a <code class="highlighter-rouge">data.frame</code> is a
+columns together into a familiar table.  In other words, a <code class="language-plaintext highlighter-rouge">data.frame</code> is a
 special list in which all the vectors must have the same length.</p>
 
-<p>In our <code class="highlighter-rouge">cats</code> example, we have an integer, a double and a logical variable. As
+<p>In our <code class="language-plaintext highlighter-rouge">cats</code> example, we have an integer, a double and a logical variable. As
 we have seen already, each column of data.frame is a vector.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">cats</span><span class="p">[,</span><span class="m">1</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="p">[,</span><span class="m">1</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","calico",..: 2 1 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 3 levels "black","calico",..: 2 1 3
 </code></pre></div></div>
 
 <p>Each row is an <em>observation</em> of different variables, itself a data.frame, and
@@ -970,20 +970,20 @@ thus can be composed of elements of different types.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
 1 calico    2.1         TRUE
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">,])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">,])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	1 obs. of  3 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	1 obs. of  3 variables:
  $ coat        : Factor w/ 3 levels "black","calico",..: 2
  $ weight      : num 2.1
  $ likes_string: logi TRUE
@@ -996,18 +996,18 @@ thus can be composed of elements of different types.</p>
 elements from data.frames:</p>
 
   <ul>
-    <li><code class="highlighter-rouge">cats[1]</code></li>
-    <li><code class="highlighter-rouge">cats[[1]]</code></li>
-    <li><code class="highlighter-rouge">cats$coat</code></li>
-    <li><code class="highlighter-rouge">cats["coat"]</code></li>
-    <li><code class="highlighter-rouge">cats[1, 1]</code></li>
-    <li><code class="highlighter-rouge">cats[, 1]</code></li>
-    <li><code class="highlighter-rouge">cats[1, ]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats[1]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats[[1]]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats$coat</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats["coat"]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats[1, 1]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats[, 1]</code></li>
+    <li><code class="language-plaintext highlighter-rouge">cats[1, ]</code></li>
   </ul>
 
   <p>Try out these examples and explain what is returned by each one.</p>
 
-  <p><em>Hint:</em> Use the function <code class="highlighter-rouge">typeof()</code> to examine what is returned in each case.</p>
+  <p><em>Hint:</em> Use the function <code class="language-plaintext highlighter-rouge">typeof()</code> to examine what is returned in each case.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-3">Solution to Challenge 3</h2>
@@ -1015,48 +1015,48 @@ elements from data.frames:</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat
 1 calico
 2  black
 3  tabby
 </code></pre></div>    </div>
-    <p>We can think of a data frame as a list of vectors. The single brace <code class="highlighter-rouge">[1]</code>
+    <p>We can think of a data frame as a list of vectors. The single brace <code class="language-plaintext highlighter-rouge">[1]</code>
 returns the first slice of the list, as another list. In this case it is the
 first column of the data frame.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div>    </div>
-    <p>The double brace <code class="highlighter-rouge">[[1]]</code> returns the contents of the list item. In this case
+    <p>The double brace <code class="language-plaintext highlighter-rouge">[[1]]</code> returns the contents of the list item. In this case
 it is the contents of the first column, a <em>vector</em> of type <em>factor</em>.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div>    </div>
-    <p>This example uses the <code class="highlighter-rouge">$</code> character to address items by name. <em>coat</em> is the
+    <p>This example uses the <code class="language-plaintext highlighter-rouge">$</code> character to address items by name. <em>coat</em> is the
 first column of the data frame, again a <em>vector</em> of type <em>factor</em>.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="s2">"coat"</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat
 1 calico
 2  black
 3  tabby
 </code></pre></div>    </div>
-    <p>Here we are using a single brace <code class="highlighter-rouge">["coat"]</code> replacing the index number with
+    <p>Here we are using a single brace <code class="language-plaintext highlighter-rouge">["coat"]</code> replacing the index number with
 the column name. Like example 1, the returned object is a <em>list</em>.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico
 Levels: black calico tabby
 </code></pre></div>    </div>
     <p>This example uses a single brace, but this time we provide row and column
@@ -1067,7 +1067,7 @@ displays the label “calico” associated with the integer value.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] calico black  tabby 
 Levels: black calico tabby
 </code></pre></div>    </div>
     <p>Like the previous example we use single braces and provide row and column
@@ -1077,7 +1077,7 @@ value as all the elements in this <em>column</em> <em>vector</em>.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
 1 calico    2.1         TRUE
 </code></pre></div>    </div>
     <p>Again we use the single brace with row and column coordinates. The column
@@ -1094,7 +1094,7 @@ values in the first row.</p>
 </span><span class="n">matrix_example</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3] [,4] [,5] [,6]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3] [,4] [,5] [,6]
 [1,]    0    0    0    0    0    0
 [2,]    0    0    0    0    0    0
 [3,]    0    0    0    0    0    0
@@ -1105,44 +1105,44 @@ values in the first row.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">class</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "matrix"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "matrix"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "double"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3, 1:6] 0 0 0 0 0 0 0 0 0 0 ...
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num [1:3, 1:6] 0 0 0 0 0 0 0 0 0 0 ...
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dim</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 6
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3 6
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nrow</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ncol</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
 </code></pre></div></div>
 
 <blockquote class="challenge">
   <h2 id="challenge-4">Challenge 4</h2>
 
   <p>What do you think will be the result of
-<code class="highlighter-rouge">length(matrix_example)</code>?
+<code class="language-plaintext highlighter-rouge">length(matrix_example)</code>?
 Try it.
 Were you right? Why / why not?</p>
 
@@ -1150,16 +1150,16 @@ Were you right? Why / why not?</p>
     <h2 id="solution-to-challenge-4">Solution to Challenge 4</h2>
 
     <p>What do you think will be the result of
-<code class="highlighter-rouge">length(matrix_example)</code>?</p>
+<code class="language-plaintext highlighter-rouge">length(matrix_example)</code>?</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix_example</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">
 </span><span class="nf">length</span><span class="p">(</span><span class="n">matrix_example</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 18
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 18
 </code></pre></div>    </div>
 
-    <p>Because a matrix is a vector with added dimension attributes, <code class="highlighter-rouge">length</code>
+    <p>Because a matrix is a vector with added dimension attributes, <code class="language-plaintext highlighter-rouge">length</code>
 gives you the total number of elements in the matrix.</p>
   </blockquote>
 </blockquote>
@@ -1169,20 +1169,20 @@ gives you the total number of elements in the matrix.</p>
 
   <p>Make another matrix, this time containing the numbers 1:50,
 with 5 columns and 10 rows.
-Did the <code class="highlighter-rouge">matrix</code> function fill your matrix by column, or by
+Did the <code class="language-plaintext highlighter-rouge">matrix</code> function fill your matrix by column, or by
 row, as its default behaviour?
 See if you can figure out how to change this.
-(hint: read the documentation for <code class="highlighter-rouge">matrix</code>!)</p>
+(hint: read the documentation for <code class="language-plaintext highlighter-rouge">matrix</code>!)</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-5">Solution to Challenge 5</h2>
 
     <p>Make another matrix, this time containing the numbers 1:50,
 with 5 columns and 10 rows.
-Did the <code class="highlighter-rouge">matrix</code> function fill your matrix by column, or by
+Did the <code class="language-plaintext highlighter-rouge">matrix</code> function fill your matrix by column, or by
 row, as its default behaviour?
 See if you can figure out how to change this.
-(hint: read the documentation for <code class="highlighter-rouge">matrix</code>!)</p>
+(hint: read the documentation for <code class="language-plaintext highlighter-rouge">matrix</code>!)</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="w">
 </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="c1"># to fill by row</span><span class="w">
@@ -1221,7 +1221,7 @@ to remind people of the importance of these basics.</p>
 
   <p>Consider the R output of the matrix below:</p>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2]
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2]
 [1,]    4    1
 [2,]    9    5
 [3,]   10    7
@@ -1231,10 +1231,10 @@ each command and try to figure out the correct one before typing them.
 Think about what matrices the other commands will produce.</p>
 
   <ol>
-    <li><code class="highlighter-rouge">matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)</code></li>
-    <li><code class="highlighter-rouge">matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)</code></li>
-    <li><code class="highlighter-rouge">matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)</code></li>
-    <li><code class="highlighter-rouge">matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)</code></li>
+    <li><code class="language-plaintext highlighter-rouge">matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)</code></li>
+    <li><code class="language-plaintext highlighter-rouge">matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)</code></li>
+    <li><code class="language-plaintext highlighter-rouge">matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)</code></li>
+    <li><code class="language-plaintext highlighter-rouge">matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)</code></li>
   </ol>
 
   <blockquote class="solution">
@@ -1242,7 +1242,7 @@ Think about what matrices the other commands will produce.</p>
 
     <p>Consider the R output of the matrix below:</p>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2]
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2]
 [1,]    4    1
 [2,]    9    5
 [3,]   10    7
@@ -1261,7 +1261,7 @@ Think about what matrices the other commands will produce.</p>
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Use <code class="highlighter-rouge">read.csv</code> to read tabular data in R.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">read.csv</code> to read tabular data in R.</p>
 </li>
     
     <li><p>The basic data types in R are double, integer, complex, logical, and character.</p>

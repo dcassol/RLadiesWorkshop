@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -290,7 +290,7 @@
 
 <h3 id="the-call-stack">The Call Stack</h3>
 
-<p>Let’s take a closer look at what happens when we call <code class="highlighter-rouge">fahrenheit_to_kelvin(32)</code>.
+<p>Let’s take a closer look at what happens when we call <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin(32)</code>.
 To make things clearer,
 we’ll start by putting the initial value 32 in a variable and store the final result in one as well:</p>
 
@@ -302,45 +302,45 @@ we’ll start by putting the initial value 32 in a variable and store the final 
 
 <p><img src="../fig/python-call-stack-01.svg" alt="Call Stack (Initial State)" /></p>
 
-<p>When we call <code class="highlighter-rouge">fahrenheit_to_kelvin</code>, R <em>doesn’t</em> create the variable <code class="highlighter-rouge">temp_F</code> right away.
-Instead, it creates something called a <a href="../reference.html#stack-frame">stack frame</a> to keep track of the variables defined by <code class="highlighter-rouge">fahrenheit_to_kelvin</code>.
-Initially, this stack frame only holds the value of <code class="highlighter-rouge">temp_F</code>:</p>
+<p>When we call <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code>, R <em>doesn’t</em> create the variable <code class="language-plaintext highlighter-rouge">temp_F</code> right away.
+Instead, it creates something called a <a href="../reference.html#stack-frame">stack frame</a> to keep track of the variables defined by <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code>.
+Initially, this stack frame only holds the value of <code class="language-plaintext highlighter-rouge">temp_F</code>:</p>
 
 <p><img src="../fig/python-call-stack-02.svg" alt="Call Stack Immediately After First Function Call" /></p>
 
-<p>When we call <code class="highlighter-rouge">fahrenheit_to_celsius</code> inside <code class="highlighter-rouge">fahrenheit_to_kelvin</code>, R creates another stack frame to hold <code class="highlighter-rouge">fahrenheit_to_celsius</code>’s variables:</p>
+<p>When we call <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code> inside <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code>, R creates another stack frame to hold <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code>’s variables:</p>
 
 <p><img src="../fig/python-call-stack-03.svg" alt="Call Stack During First Nested Function Call" /></p>
 
-<p>It does this because there are now two variables in play called <code class="highlighter-rouge">temp_F</code>: the argument to <code class="highlighter-rouge">fahrenheit_to_celsius</code>, and the argument to <code class="highlighter-rouge">fahrenheit_to_kelvin</code>.
+<p>It does this because there are now two variables in play called <code class="language-plaintext highlighter-rouge">temp_F</code>: the argument to <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code>, and the argument to <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code>.
 Having two variables with the same name in the same part of the program would be ambiguous, so R (and every other modern programming language) creates a new stack frame for each function call to keep that function’s variables separate from those defined by other functions.</p>
 
-<p>When the call to <code class="highlighter-rouge">fahrenheit_to_celsius</code> returns a value, R throws away <code class="highlighter-rouge">fahrenheit_to_celsius</code>’s stack frame and creates a new variable in the stack frame for <code class="highlighter-rouge">fahrenheit_to_kelvin</code> to hold the temperature in Celsius:</p>
+<p>When the call to <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code> returns a value, R throws away <code class="language-plaintext highlighter-rouge">fahrenheit_to_celsius</code>’s stack frame and creates a new variable in the stack frame for <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code> to hold the temperature in Celsius:</p>
 
 <p><img src="../fig/python-call-stack-04.svg" alt="Call Stack After Return From First Nested Function Call" /></p>
 
-<p>It then calls <code class="highlighter-rouge">celsius_to_kelvin</code>, which means it creates a stack frame to hold that function’s variables:</p>
+<p>It then calls <code class="language-plaintext highlighter-rouge">celsius_to_kelvin</code>, which means it creates a stack frame to hold that function’s variables:</p>
 
 <p><img src="../fig/python-call-stack-05.svg" alt="Call Stack During Call to Second Nested Function" /></p>
 
-<p>Once again, R throws away that stack frame when <code class="highlighter-rouge">celsius_to_kelvin</code> is done
-and creates the variable <code class="highlighter-rouge">temp_K</code> in the stack frame for <code class="highlighter-rouge">fahrenheit_to_kelvin</code>:</p>
+<p>Once again, R throws away that stack frame when <code class="language-plaintext highlighter-rouge">celsius_to_kelvin</code> is done
+and creates the variable <code class="language-plaintext highlighter-rouge">temp_K</code> in the stack frame for <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code>:</p>
 
 <p><img src="../fig/python-call-stack-06.svg" alt="Call Stack After Second Nested Function Returns" /></p>
 
-<p>Finally, when <code class="highlighter-rouge">fahrenheit_to_kelvin</code> is done, R throws away <em>its</em> stack frame and puts its result in a new variable called <code class="highlighter-rouge">final</code> that lives in the stack frame we started with:</p>
+<p>Finally, when <code class="language-plaintext highlighter-rouge">fahrenheit_to_kelvin</code> is done, R throws away <em>its</em> stack frame and puts its result in a new variable called <code class="language-plaintext highlighter-rouge">final</code> that lives in the stack frame we started with:</p>
 
 <p><img src="../fig/python-call-stack-07.svg" alt="Call Stack After All Functions Have Finished" /></p>
 
 <p>This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
 What it <em>doesn’t</em> hold is the variables that were in the various stack frames.
-If we try to get the value of <code class="highlighter-rouge">temp_F</code> after our functions have finished running, R tells us that there’s no such thing:</p>
+If we try to get the value of <code class="language-plaintext highlighter-rouge">temp_F</code> after our functions have finished running, R tells us that there’s no such thing:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">temp_F</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in eval(expr, envir, enclos): object 'temp_F' not found
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in eval(expr, envir, enclos): object 'temp_F' not found
 </code></pre></div></div>
 
 <blockquote class="callout">
@@ -357,7 +357,7 @@ comfortable writing functions in R, you can learn more by reading the
 terminology “environments” instead of frames.</p>
 </blockquote>
 
-<p>Why go to all this trouble? Well, here’s a function called <code class="highlighter-rouge">span</code> that calculates the difference between the minimum and maximum values in an array:</p>
+<p>Why go to all this trouble? Well, here’s a function called <code class="language-plaintext highlighter-rouge">span</code> that calculates the difference between the minimum and maximum values in an array:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">span</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">diff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">
@@ -369,21 +369,21 @@ terminology “environments” instead of frames.</p>
 </span><span class="n">span</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 20
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 20
 </code></pre></div></div>
 
-<p>Notice <code class="highlighter-rouge">span</code> assigns a value to variable called <code class="highlighter-rouge">diff</code>. We might very well use a variable with the same name (<code class="highlighter-rouge">diff</code>) to hold the inflammation data:</p>
+<p>Notice <code class="language-plaintext highlighter-rouge">span</code> assigns a value to variable called <code class="language-plaintext highlighter-rouge">diff</code>. We might very well use a variable with the same name (<code class="language-plaintext highlighter-rouge">diff</code>) to hold the inflammation data:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">diff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/inflammation-01.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span><span class="c1"># span of inflammation data</span><span class="w">
 </span><span class="n">span</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 20
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 20
 </code></pre></div></div>
 
-<p>We don’t expect the variable <code class="highlighter-rouge">diff</code> to have the value 20 after this function call, so the name <code class="highlighter-rouge">diff</code> cannot refer to the same variable defined inside <code class="highlighter-rouge">span</code> as it does in the main body of our program (which R refers to as the global environment).
-And yes, we could probably choose a different name than <code class="highlighter-rouge">diff</code> for our variable in this case, but we don’t want to have to read every line of code of the R functions we call to see what variable names they use, just in case they change the values of our variables.</p>
+<p>We don’t expect the variable <code class="language-plaintext highlighter-rouge">diff</code> to have the value 20 after this function call, so the name <code class="language-plaintext highlighter-rouge">diff</code> cannot refer to the same variable defined inside <code class="language-plaintext highlighter-rouge">span</code> as it does in the main body of our program (which R refers to as the global environment).
+And yes, we could probably choose a different name than <code class="language-plaintext highlighter-rouge">diff</code> for our variable in this case, but we don’t want to have to read every line of code of the R functions we call to see what variable names they use, just in case they change the values of our variables.</p>
 
 <p>The big idea here is <a href="../reference.html#encapsulation">encapsulation</a>, and it’s the key to writing correct, comprehensible programs.
 A function’s job is to turn several operations into one so that we can think about a single function call instead of a dozen or a hundred statements each time we want to do something.
@@ -392,7 +392,7 @@ That only works if functions don’t interfere with each other; if they do, we h
 <blockquote class="challenge">
   <h2 id="following-the-call-stack">Following the Call Stack</h2>
 
-  <p>We previously wrote functions called <code class="highlighter-rouge">highlight</code> and <code class="highlighter-rouge">edges</code>.
+  <p>We previously wrote functions called <code class="language-plaintext highlighter-rouge">highlight</code> and <code class="language-plaintext highlighter-rouge">edges</code>.
 Draw a diagram showing how the call stack changes when we run the following:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inner_vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"carbon"</span><span class="w">

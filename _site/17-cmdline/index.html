@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -304,7 +304,7 @@ For example, we may want a program that reads a data set and prints the average 
 
 <p>but we might also want to look at the minimum of the first four lines</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>head <span class="nt">-4</span> data/inflammation-01.csv | Rscript readings.R <span class="nt">--min</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">head</span> <span class="nt">-4</span> data/inflammation-01.csv | Rscript readings.R <span class="nt">--min</span>
 </code></pre></div></div>
 
 <p>or the maximum inflammations in several files one after another:</p>
@@ -317,7 +317,7 @@ For example, we may want a program that reads a data set and prints the average 
 <ol>
   <li>If no filename is given on the command line, read data from <a href="../reference.html#standard-input-stdin">standard input</a>.</li>
   <li>If one or more filenames are given, read data from them and report statistics for each file separately.</li>
-  <li>Use the <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, or <code class="highlighter-rouge">--max</code> flag to determine what statistic to print.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">--min</code>, <code class="language-plaintext highlighter-rouge">--mean</code>, or <code class="language-plaintext highlighter-rouge">--max</code> flag to determine what statistic to print.</li>
 </ol>
 
 <p>To make this work, we need to know how to handle command-line arguments in a program, and how to get at standard input.
@@ -325,20 +325,20 @@ We’ll tackle these questions in turn below.</p>
 
 <h3 id="command-line-arguments">Command-Line Arguments</h3>
 
-<p>Using the text editor of your choice, save the following line of code in a text file called <code class="highlighter-rouge">session-info.R</code>:</p>
+<p>Using the text editor of your choice, save the following line of code in a text file called <code class="language-plaintext highlighter-rouge">session-info.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sessionInfo()
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sessionInfo()
 </code></pre></div></div>
 
-<p>The function, <code class="highlighter-rouge">sessionInfo</code>, outputs the version of R you are running as well as the type of computer you are using (as well as the versions of the packages that have been loaded).
+<p>The function, <code class="language-plaintext highlighter-rouge">sessionInfo</code>, outputs the version of R you are running as well as the type of computer you are using (as well as the versions of the packages that have been loaded).
 This is very useful information to include when asking others for help with your R code.</p>
 
-<p>Now we can run the code in the file we created from the Unix Shell using <code class="highlighter-rouge">Rscript</code>:</p>
+<p>Now we can run the code in the file we created from the Unix Shell using <code class="language-plaintext highlighter-rouge">Rscript</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">session</span><span class="o">-</span><span class="n">info.R</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R Under development (unstable) (2019-12-19 r77606)
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R Under development (unstable) (2019-12-19 r77606)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Pop!_OS 19.04
 
@@ -364,44 +364,44 @@ loaded via a namespace (and not attached):
 <blockquote class="callout">
   <h2 id="the-right-directory">The Right Directory</h2>
 
-  <p>If that did not work, you might have seen an error message indicating that the file <code class="highlighter-rouge">session-info.R</code> does not exist.
+  <p>If that did not work, you might have seen an error message indicating that the file <code class="language-plaintext highlighter-rouge">session-info.R</code> does not exist.
 Remember that you must be in the correct directory, the one in which you created your script file.
-You can determine which directory you are currently in using <code class="highlighter-rouge">pwd</code> and change to a different directory using <code class="highlighter-rouge">cd</code>.
+You can determine which directory you are currently in using <code class="language-plaintext highlighter-rouge">pwd</code> and change to a different directory using <code class="language-plaintext highlighter-rouge">cd</code>.
 For a review, see this <a href="https://swcarpentry.github.io/shell-novice/02-filedir/">lesson</a>.</p>
 </blockquote>
 
-<p>Now let’s create another script that does something more interesting. Write the following lines in a file named <code class="highlighter-rouge">print-args.R</code>:</p>
+<p>Now let’s create another script that does something more interesting. Write the following lines in a file named <code class="language-plaintext highlighter-rouge">print-args.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs()
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs()
 cat(args, sep = "\n")
 </code></pre></div></div>
 
-<p>The function <code class="highlighter-rouge">commandArgs</code> extracts all the command line arguments and returns them as a vector.
-The function <code class="highlighter-rouge">cat</code>, similar to the <code class="highlighter-rouge">cat</code> of the Unix Shell, outputs the contents of the variable.
-Since we did not specify a filename for writing, <code class="highlighter-rouge">cat</code> sends the output to <a href="../reference.html#standard-output-stdout">standard output</a>,
+<p>The function <code class="language-plaintext highlighter-rouge">commandArgs</code> extracts all the command line arguments and returns them as a vector.
+The function <code class="language-plaintext highlighter-rouge">cat</code>, similar to the <code class="language-plaintext highlighter-rouge">cat</code> of the Unix Shell, outputs the contents of the variable.
+Since we did not specify a filename for writing, <code class="language-plaintext highlighter-rouge">cat</code> sends the output to <a href="../reference.html#standard-output-stdout">standard output</a>,
 which we can then pipe to other Unix functions.
-Because we set the argument <code class="highlighter-rouge">sep</code> to <code class="highlighter-rouge">"\n"</code>, which is the symbol to start a new line, each element of the vector is printed on its own line.
+Because we set the argument <code class="language-plaintext highlighter-rouge">sep</code> to <code class="language-plaintext highlighter-rouge">"\n"</code>, which is the symbol to start a new line, each element of the vector is printed on its own line.
 Let’s see what happens when we run this program in the Unix Shell:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
 --no-echo
 --no-restore
 --file=print-args.R
 </code></pre></div></div>
 
-<p>From this output, we learn that <code class="highlighter-rouge">Rscript</code> is just a convenience command for running R scripts.
-The first argument in the vector is the path to the <code class="highlighter-rouge">R</code> executable.
+<p>From this output, we learn that <code class="language-plaintext highlighter-rouge">Rscript</code> is just a convenience command for running R scripts.
+The first argument in the vector is the path to the <code class="language-plaintext highlighter-rouge">R</code> executable.
 The following are all command-line arguments that affect the behavior of R.
 From the R help file:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">--slave</code>: Make R run as quietly as possible</li>
-  <li><code class="highlighter-rouge">--no-restore</code>: Don’t restore anything that was created during the R session</li>
-  <li><code class="highlighter-rouge">--file</code>: Run this file</li>
-  <li><code class="highlighter-rouge">--args</code>: Pass these arguments to the file being run</li>
+  <li><code class="language-plaintext highlighter-rouge">--slave</code>: Make R run as quietly as possible</li>
+  <li><code class="language-plaintext highlighter-rouge">--no-restore</code>: Don’t restore anything that was created during the R session</li>
+  <li><code class="language-plaintext highlighter-rouge">--file</code>: Run this file</li>
+  <li><code class="language-plaintext highlighter-rouge">--args</code>: Pass these arguments to the file being run</li>
 </ul>
 
 <p>Thus running a file with Rscript is an easier way to run the following:</p>
@@ -409,7 +409,7 @@ From the R help file:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">R</span><span class="w"> </span><span class="o">--</span><span class="n">slave</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">restore</span><span class="w"> </span><span class="o">--</span><span class="n">file</span><span class="o">=</span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w"> </span><span class="o">--</span><span class="n">args</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
 --slave
 --no-restore
 --file=print-args.R
@@ -421,7 +421,7 @@ From the R help file:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args.R</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">third</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/lib/R/bin/exec/R
 --no-echo
 --no-restore
 --file=print-args.R
@@ -431,32 +431,32 @@ second
 third
 </code></pre></div></div>
 
-<p>then <code class="highlighter-rouge">commandArgs</code> adds each of those arguments to the vector it returns.
-Since the first elements of the vector are always the same, we can tell <code class="highlighter-rouge">commandArgs</code> to only return the arguments that come after <code class="highlighter-rouge">--args</code>.
-Let’s update <code class="highlighter-rouge">print-args.R</code> and save it as <code class="highlighter-rouge">print-args-trailing.R</code>:</p>
+<p>then <code class="language-plaintext highlighter-rouge">commandArgs</code> adds each of those arguments to the vector it returns.
+Since the first elements of the vector are always the same, we can tell <code class="language-plaintext highlighter-rouge">commandArgs</code> to only return the arguments that come after <code class="language-plaintext highlighter-rouge">--args</code>.
+Let’s update <code class="language-plaintext highlighter-rouge">print-args.R</code> and save it as <code class="language-plaintext highlighter-rouge">print-args-trailing.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs(trailingOnly = TRUE)
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>args &lt;- commandArgs(trailingOnly = TRUE)
 cat(args, sep = "\n")
 </code></pre></div></div>
 
-<p>And then run <code class="highlighter-rouge">print-args-trailing</code> from the Unix Shell:</p>
+<p>And then run <code class="language-plaintext highlighter-rouge">print-args-trailing</code> from the Unix Shell:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args</span><span class="o">-</span><span class="n">trailing.R</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="n">third</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first
 second
 third
 </code></pre></div></div>
 
-<p>Now <code class="highlighter-rouge">commandArgs</code> returns only the arguments that we listed after <code class="highlighter-rouge">print-args-trailing.R</code>.</p>
+<p>Now <code class="language-plaintext highlighter-rouge">commandArgs</code> returns only the arguments that we listed after <code class="language-plaintext highlighter-rouge">print-args-trailing.R</code>.</p>
 
-<p>With this in hand, let’s build a version of <code class="highlighter-rouge">readings.R</code> that always prints the per-patient (per-row) mean of a single data file.
+<p>With this in hand, let’s build a version of <code class="language-plaintext highlighter-rouge">readings.R</code> that always prints the per-patient (per-row) mean of a single data file.
 The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work.
-By convention this function is usually called <code class="highlighter-rouge">main</code>, though we can call it whatever we want.
-Write the following code in a file called <code class="highlighter-rouge">readings-01.R</code>:</p>
+By convention this function is usually called <code class="language-plaintext highlighter-rouge">main</code>, though we can call it whatever we want.
+Write the following code in a file called <code class="language-plaintext highlighter-rouge">readings-01.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   filename &lt;- args[1]
   dat &lt;- read.csv(file = filename, header = FALSE)
@@ -465,16 +465,16 @@ Write the following code in a file called <code class="highlighter-rouge">readin
 }
 </code></pre></div></div>
 
-<p>This function gets the name of the file to process from the first element returned by <code class="highlighter-rouge">commandArgs</code>.
+<p>This function gets the name of the file to process from the first element returned by <code class="language-plaintext highlighter-rouge">commandArgs</code>.
 Here’s a simple test to run from the Unix Shell:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-01</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">inflammation</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
 <p>There is no output because we have defined a function, but haven’t actually called it.
-Let’s add a call to <code class="highlighter-rouge">main</code> and save it as <code class="highlighter-rouge">readings-02.R</code>:</p>
+Let’s add a call to <code class="language-plaintext highlighter-rouge">main</code> and save it as <code class="language-plaintext highlighter-rouge">readings-02.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   filename &lt;- args[1]
   dat &lt;- read.csv(file = filename, header = FALSE)
@@ -488,7 +488,7 @@ main()
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-02</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">inflammation</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
 5.425
 6.1
 5.9
@@ -558,20 +558,20 @@ main()
       <p>Write a command-line program that does addition and subtraction of two numbers.</p>
 
       <p><strong>Hint:</strong> Everything argument read from the command-line is interpreted as a character <a href="../reference.html#string">string</a>.
-You can convert from a string to a number using the function <code class="highlighter-rouge">as.numeric</code>.</p>
+You can convert from a string to a number using the function <code class="language-plaintext highlighter-rouge">as.numeric</code>.</p>
     </li>
   </ol>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">arith.R</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
 </code></pre></div>  </div>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">arith.R</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1
 </code></pre></div>  </div>
 
   <blockquote class="solution">
@@ -580,7 +580,7 @@ You can convert from a string to a number using the function <code class="highli
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">arith.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   # Performs addition or subtraction from the command line.
   #
   # Takes three arguments:
@@ -611,7 +611,7 @@ main()
   </blockquote>
 
   <ol>
-    <li>What goes wrong if you try to add multiplication using <code class="highlighter-rouge">*</code> to the program?</li>
+    <li>What goes wrong if you try to add multiplication using <code class="language-plaintext highlighter-rouge">*</code> to the program?</li>
   </ol>
 
   <blockquote class="solution">
@@ -621,8 +621,8 @@ This is likely because ‘*’ has a special meaning in the shell, as a wildcard
   </blockquote>
 
   <ol>
-    <li>Using the function <code class="highlighter-rouge">list.files</code> introduced in a previous <a href="../03-loops-R/">lesson</a>,
-write a command-line program called <code class="highlighter-rouge">find-pattern.R</code>
+    <li>Using the function <code class="language-plaintext highlighter-rouge">list.files</code> introduced in a previous <a href="../03-loops-R/">lesson</a>,
+write a command-line program called <code class="language-plaintext highlighter-rouge">find-pattern.R</code>
 that lists all the files in the current directory that contain a specific pattern:</li>
   </ol>
 
@@ -630,7 +630,7 @@ that lists all the files in the current directory that contain a specific patter
 </span><span class="n">Rscript</span><span class="w"> </span><span class="n">find</span><span class="o">-</span><span class="n">pattern.R</span><span class="w"> </span><span class="n">print</span><span class="o">-</span><span class="n">args</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print-args-trailing.R
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print-args-trailing.R
 print-args.R
 </code></pre></div>  </div>
 
@@ -640,7 +640,7 @@ print-args.R
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">find</span><span class="o">-</span><span class="n">pattern.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   # Finds all files in the current directory that contain a given pattern.
   #
   # Takes one argument: the pattern to be searched.
@@ -668,7 +668,7 @@ Let’s investigate them from the Unix Shell:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ls</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="o">-*</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data/small-01.csv
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data/small-01.csv
 data/small-02.csv
 data/small-03.csv
 </code></pre></div></div>
@@ -676,14 +676,14 @@ data/small-03.csv
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0,0,1
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0,0,1
 0,1,2
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-02</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
 1
 </code></pre></div></div>
 
@@ -691,13 +691,13 @@ data/small-03.csv
 This is yet another rule of programming: test the simple things first.</p>
 
 <p>We want our program to process each file separately, so we need a loop that executes once for each filename.
-If we specify the files on the command line, the filenames will be returned by <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code>.
+If we specify the files on the command line, the filenames will be returned by <code class="language-plaintext highlighter-rouge">commandArgs(trailingOnly = TRUE)</code>.
 We’ll need to handle an unknown number of filenames, since our program could be run for any number of files.</p>
 
-<p>The solution is to loop over the vector returned by <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code>.
-Here’s our changed program, which we’ll save as <code class="highlighter-rouge">readings-03.R</code>:</p>
+<p>The solution is to loop over the vector returned by <code class="language-plaintext highlighter-rouge">commandArgs(trailingOnly = TRUE)</code>.
+Here’s our changed program, which we’ll save as <code class="language-plaintext highlighter-rouge">readings-03.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   for (filename in args) {
     dat &lt;- read.csv(file = filename, header = FALSE)
@@ -714,20 +714,20 @@ main()
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-03</span><span class="n">.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-02</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.3333333
 1
 13.66667
 11
 </code></pre></div></div>
 
-<p><strong>Note</strong>: at this point, we have created three versions of our script called <code class="highlighter-rouge">readings-01.R</code>, <code class="highlighter-rouge">readings-02.R</code>, and <code class="highlighter-rouge">readings-03.R</code>.
-We wouldn’t do this in real life: instead, we would have one file called <code class="highlighter-rouge">readings.R</code> that we committed to version control every time we got an enhancement working.
+<p><strong>Note</strong>: at this point, we have created three versions of our script called <code class="language-plaintext highlighter-rouge">readings-01.R</code>, <code class="language-plaintext highlighter-rouge">readings-02.R</code>, and <code class="language-plaintext highlighter-rouge">readings-03.R</code>.
+We wouldn’t do this in real life: instead, we would have one file called <code class="language-plaintext highlighter-rouge">readings.R</code> that we committed to version control every time we got an enhancement working.
 For teaching, though, we need all the successive versions side by side.</p>
 
 <blockquote class="challenge">
   <h2 id="a-command-line-program-with-arguments">A Command Line Program with Arguments</h2>
 
-  <p>Write a program called <code class="highlighter-rouge">check.R</code>
+  <p>Write a program called <code class="language-plaintext highlighter-rouge">check.R</code>
 that takes the names of one or more inflammation data files as arguments
 and checks that all the files have the same number of rows and columns.
 What is the best way to test your program?</p>
@@ -738,7 +738,7 @@ What is the best way to test your program?</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">check.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   # Checks that all csv files have the same number of rows and columns.
   #
   # Takes multiple arguments: the names of the files to be checked.
@@ -769,10 +769,10 @@ main()
 
 <h3 id="handling-command-line-flags">Handling Command-Line Flags</h3>
 
-<p>The next step is to teach our program to pay attention to the <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, and <code class="highlighter-rouge">--max</code> flags.
-These always appear before the names of the files, so let’s save the following in <code class="highlighter-rouge">readings-04.R</code>:</p>
+<p>The next step is to teach our program to pay attention to the <code class="language-plaintext highlighter-rouge">--min</code>, <code class="language-plaintext highlighter-rouge">--mean</code>, and <code class="language-plaintext highlighter-rouge">--max</code> flags.
+These always appear before the names of the files, so let’s save the following in <code class="language-plaintext highlighter-rouge">readings-04.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   action &lt;- args[1]
   filenames &lt;- args[-1]
@@ -799,7 +799,7 @@ main()
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-04</span><span class="n">.R</span><span class="w"> </span><span class="o">--</span><span class="n">max</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 2
 </code></pre></div></div>
 
@@ -807,18 +807,18 @@ main()
 
 <ol>
   <li>
-    <p><code class="highlighter-rouge">main</code> is too large to read comfortably.</p>
+    <p><code class="language-plaintext highlighter-rouge">main</code> is too large to read comfortably.</p>
   </li>
   <li>
-    <p>If <code class="highlighter-rouge">action</code> isn’t one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match).
+    <p>If <code class="language-plaintext highlighter-rouge">action</code> isn’t one of the three recognized flags, the program loads each file but does nothing with it (because none of the branches in the conditional match).
 <a href="../reference.html#silent-failure">Silent failures</a> like this are always hard to debug.</p>
   </li>
 </ol>
 
 <p>This version pulls the processing of each file out of the loop into a function of its own.
-It also checks that <code class="highlighter-rouge">action</code> is one of the allowed flags before doing any processing, so that the program fails fast. We’ll save it as <code class="highlighter-rouge">readings-05.R</code>:</p>
+It also checks that <code class="language-plaintext highlighter-rouge">action</code> is one of the allowed flags before doing any processing, so that the program fails fast. We’ll save it as <code class="language-plaintext highlighter-rouge">readings-05.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   action &lt;- args[1]
   filenames &lt;- args[-1]
@@ -857,7 +857,7 @@ We will not cover this package in this lesson but when you start writing program
 <blockquote class="challenge">
   <h2 id="shorter-command-line-arguments">Shorter Command Line Arguments</h2>
 
-  <p>Rewrite this program so that it uses <code class="highlighter-rouge">-n</code>, <code class="highlighter-rouge">-m</code>, and <code class="highlighter-rouge">-x</code> instead of <code class="highlighter-rouge">--min</code>, <code class="highlighter-rouge">--mean</code>, and <code class="highlighter-rouge">--max</code> respectively.
+  <p>Rewrite this program so that it uses <code class="language-plaintext highlighter-rouge">-n</code>, <code class="language-plaintext highlighter-rouge">-m</code>, and <code class="language-plaintext highlighter-rouge">-x</code> instead of <code class="language-plaintext highlighter-rouge">--min</code>, <code class="language-plaintext highlighter-rouge">--mean</code>, and <code class="language-plaintext highlighter-rouge">--max</code> respectively.
 Is the code easier to read?
 Is the program easier to understand?</p>
 
@@ -869,7 +869,7 @@ Is the program easier to understand?</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">readings</span><span class="o">-</span><span class="n">short.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   action &lt;- args[1]
   filenames &lt;- args[-1]
@@ -901,7 +901,7 @@ ambiguity of the argument names.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">readings</span><span class="o">-</span><span class="n">usage.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   action &lt;- args[1]
   filenames &lt;- args[-1]
@@ -941,42 +941,42 @@ main()
 <h3 id="handling-standard-input">Handling Standard Input</h3>
 
 <p>The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on.
-Let’s experiment in another script, which we’ll save as <code class="highlighter-rouge">count-stdin.R</code>:</p>
+Let’s experiment in another script, which we’ll save as <code class="language-plaintext highlighter-rouge">count-stdin.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lines &lt;- readLines(con = file("stdin"))
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lines &lt;- readLines(con = file("stdin"))
 count &lt;- length(lines)
 cat("lines in standard input: ")
 cat(count, sep = "\n")
 </code></pre></div></div>
 
-<p>This little program reads lines from the program’s standard input using <code class="highlighter-rouge">file("stdin")</code>.
+<p>This little program reads lines from the program’s standard input using <code class="language-plaintext highlighter-rouge">file("stdin")</code>.
 This allows us to do almost anything with it that we could do to a regular file.
-In this example, we passed it as an argument to the function <code class="highlighter-rouge">readLines</code>, which stores each line as an element in a vector.
+In this example, we passed it as an argument to the function <code class="language-plaintext highlighter-rouge">readLines</code>, which stores each line as an element in a vector.
 Let’s try running it from the Unix Shell as if it were a regular command-line program:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">count</span><span class="o">-</span><span class="n">stdin.R</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lines in standard input: 2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lines in standard input: 2
 </code></pre></div></div>
 
-<p>Note that because we did not specify <code class="highlighter-rouge">sep = "\n"</code> when calling <code class="highlighter-rouge">cat</code>, the output is written on the same line.</p>
+<p>Note that because we did not specify <code class="language-plaintext highlighter-rouge">sep = "\n"</code> when calling <code class="language-plaintext highlighter-rouge">cat</code>, the output is written on the same line.</p>
 
 <p>A common mistake is to try to run something that reads from standard input like this:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Rscript</span><span class="w"> </span><span class="n">count</span><span class="o">-</span><span class="n">stdin.R</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">small</span><span class="m">-01</span><span class="n">.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<p>i.e., to forget the <code class="highlighter-rouge">&lt;</code> character that redirect the file to standard input.
+<p>i.e., to forget the <code class="language-plaintext highlighter-rouge">&lt;</code> character that redirect the file to standard input.
 In this case, there’s nothing in standard input, so the program waits at the start of the loop for someone to type something on the keyboard.
 We can type some input, but R keeps running because it doesn’t know when the standard input has ended.
-If you ran this, you can pause R by typing <kbd>Ctrl</kbd>+<kbd>Z</kbd> (technically it is still paused in the background; if you want to fully kill the process type <code class="highlighter-rouge">kill %</code>; see <a href="https://www.gnu.org/software/bash/manual/bash.html#Job-Control-Basics">bash manual</a> for more information).</p>
+If you ran this, you can pause R by typing <kbd>Ctrl</kbd>+<kbd>Z</kbd> (technically it is still paused in the background; if you want to fully kill the process type <code class="language-plaintext highlighter-rouge">kill %</code>; see <a href="https://www.gnu.org/software/bash/manual/bash.html#Job-Control-Basics">bash manual</a> for more information).</p>
 
-<p>We now need to rewrite the program so that it loads data from <code class="highlighter-rouge">file("stdin")</code> if no filenames are provided.
-Luckily, <code class="highlighter-rouge">read.csv</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code class="highlighter-rouge">process</code>.
-That leaves <code class="highlighter-rouge">main</code>, which we’ll update and save as <code class="highlighter-rouge">readings-06.R</code>:</p>
+<p>We now need to rewrite the program so that it loads data from <code class="language-plaintext highlighter-rouge">file("stdin")</code> if no filenames are provided.
+Luckily, <code class="language-plaintext highlighter-rouge">read.csv</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code class="language-plaintext highlighter-rouge">process</code>.
+That leaves <code class="language-plaintext highlighter-rouge">main</code>, which we’ll update and save as <code class="language-plaintext highlighter-rouge">readings-06.R</code>:</p>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   action &lt;- args[1]
   filenames &lt;- args[-1]
@@ -1013,7 +1013,7 @@ Instead of calculating the mean inflammation of every patient, we’ll only calc
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="w"> </span><span class="n">data</span><span class="o">/</span><span class="n">inflammation</span><span class="m">-01</span><span class="n">.csv</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Rscript</span><span class="w"> </span><span class="n">readings</span><span class="m">-06</span><span class="n">.R</span><span class="w"> </span><span class="o">--</span><span class="n">mean</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5.45
 5.425
 6.1
 5.9
@@ -1028,9 +1028,9 @@ Instead of calculating the mean inflammation of every patient, we’ll only calc
 <p>And now we’re done: the program now does everything we set out to do.</p>
 
 <blockquote class="challenge">
-  <h2 id="implementing-wc-in-r">Implementing <code class="highlighter-rouge">wc</code> in R</h2>
+  <h2 id="implementing-wc-in-r">Implementing <code class="language-plaintext highlighter-rouge">wc</code> in R</h2>
 
-  <p>Write a program called <code class="highlighter-rouge">line-count.R</code> that works like the Unix <code class="highlighter-rouge">wc</code> command:</p>
+  <p>Write a program called <code class="language-plaintext highlighter-rouge">line-count.R</code> that works like the Unix <code class="language-plaintext highlighter-rouge">wc</code> command:</p>
 
   <ul>
     <li>If no filenames are given, it reports the number of lines in standard input.</li>
@@ -1043,7 +1043,7 @@ Instead of calculating the mean inflammation of every patient, we’ll only calc
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="w"> </span><span class="n">line</span><span class="o">-</span><span class="n">count.R</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
   if (length(args) &gt; 0) {
     total_lines &lt;- 0
@@ -1077,17 +1077,17 @@ main()
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Use <code class="highlighter-rouge">commandArgs(trailingOnly = TRUE)</code> to obtain a vector of the command-line arguments that a program was run with.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">commandArgs(trailingOnly = TRUE)</code> to obtain a vector of the command-line arguments that a program was run with.</p>
 </li>
     
     <li><p>Avoid silent failures.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">file("stdin")</code> to connect to a program’s standard input.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">file("stdin")</code> to connect to a program’s standard input.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">cat(vec, sep = "
-")</code> to write the elements of <code class="highlighter-rouge">vec</code> to standard output, one per line.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">cat(vec, sep = "
+")</code> to write the elements of <code class="language-plaintext highlighter-rouge">vec</code> to standard output, one per line.</p>
 </li>
     
   </ul>

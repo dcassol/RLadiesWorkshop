@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -273,16 +273,16 @@
 	<li><p>Add and remove rows or columns.</p>
 </li>
 	
-	<li><p>Remove rows with <code class="highlighter-rouge">NA</code> values.</p>
+	<li><p>Remove rows with <code class="language-plaintext highlighter-rouge">NA</code> values.</p>
 </li>
 	
 	<li><p>Append two data frames.</p>
 </li>
 	
-	<li><p>Understand what a <code class="highlighter-rouge">factor</code> is.</p>
+	<li><p>Understand what a <code class="language-plaintext highlighter-rouge">factor</code> is.</p>
 </li>
 	
-	<li><p>Convert a <code class="highlighter-rouge">factor</code> to a <code class="highlighter-rouge">character</code> vector and vice versa.</p>
+	<li><p>Convert a <code class="language-plaintext highlighter-rouge">factor</code> to a <code class="language-plaintext highlighter-rouge">character</code> vector and vice versa.</p>
 </li>
 	
 	<li><p>Display basic properties of data frames including size and class of the columns, names, and first few rows.</p>
@@ -309,7 +309,7 @@ new column, we can start by making a new vector:</p>
 </span><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string
 1 calico    2.1            1
 2  black    5.0            0
 3  tabby    3.2            1
@@ -320,7 +320,7 @@ new column, we can start by making a new vector:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string age
 1 calico    2.1            1   2
 2  black    5.0            0   3
 3  tabby    3.2            1   5
@@ -332,14 +332,14 @@ new column, we can start by making a new vector:</p>
 </span><span class="n">cbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in data.frame(..., check.names = FALSE): arguments imply differing number of rows: 3, 4
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in data.frame(..., check.names = FALSE): arguments imply differing number of rows: 3, 4
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
 </span><span class="n">cbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in data.frame(..., check.names = FALSE): arguments imply differing number of rows: 3, 2
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in data.frame(..., check.names = FALSE): arguments imply differing number of rows: 3, 2
 </code></pre></div></div>
 
 <p>Why didn’t this work? Of course, R wants to see one element in our new column
@@ -348,16 +348,16 @@ for every row in the table:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nrow</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 3
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
 </code></pre></div></div>
 
-<p>So for it to work we need to have <code class="highlighter-rouge">nrow(cats)</code> = <code class="highlighter-rouge">length(age)</code>. Let’s overwrite the content of cats with our new data frame.</p>
+<p>So for it to work we need to have <code class="language-plaintext highlighter-rouge">nrow(cats)</code> = <code class="language-plaintext highlighter-rouge">length(age)</code>. Let’s overwrite the content of cats with our new data frame.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w">
 </span><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w">
@@ -370,27 +370,27 @@ data frame are lists:</p>
 </span><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">newRow</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in `[&lt;-.factor`(`*tmp*`, ri, value = "tortoiseshell"): invalid factor
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in `[&lt;-.factor`(`*tmp*`, ri, value = "tortoiseshell"): invalid factor
 level, NA generated
 </code></pre></div></div>
 
-<p>Looks like our attempt to use the <code class="highlighter-rouge">rbind()</code> function returns a warning.  Recall that, unlike errors, warnings do not necessarily stop a function from performing its intended action.  You can confirm this by taking a look at the <code class="highlighter-rouge">cats</code> data frame.</p>
+<p>Looks like our attempt to use the <code class="language-plaintext highlighter-rouge">rbind()</code> function returns a warning.  Recall that, unlike errors, warnings do not necessarily stop a function from performing its intended action.  You can confirm this by taking a look at the <code class="language-plaintext highlighter-rouge">cats</code> data frame.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    coat weight likes_string age
 1 calico    2.1            1   2
 2  black    5.0            0   3
 3  tabby    3.2            1   5
 4   &lt;NA&gt;    3.3            1   9
 </code></pre></div></div>
 
-<p>Notice that not only did we successfully add a new row, but there is <code class="highlighter-rouge">NA</code> in the column <em>coats</em> where we expected “tortoiseshell” to be.  Why did this happen?</p>
+<p>Notice that not only did we successfully add a new row, but there is <code class="language-plaintext highlighter-rouge">NA</code> in the column <em>coats</em> where we expected “tortoiseshell” to be.  Why did this happen?</p>
 
 <h2 id="factors">Factors</h2>
 
-<p>For an object containing the data type <code class="highlighter-rouge">factor</code>, each different value represents what is called a <code class="highlighter-rouge">level</code>. In our case, the <code class="highlighter-rouge">factor</code> “coat” has 3 levels: “black”, “calico”, and “tabby”. R will only accept values that match one of the levels. If you add a new value, it will become <code class="highlighter-rouge">NA</code>.</p>
+<p>For an object containing the data type <code class="language-plaintext highlighter-rouge">factor</code>, each different value represents what is called a <code class="language-plaintext highlighter-rouge">level</code>. In our case, the <code class="language-plaintext highlighter-rouge">factor</code> “coat” has 3 levels: “black”, “calico”, and “tabby”. R will only accept values that match one of the levels. If you add a new value, it will become <code class="language-plaintext highlighter-rouge">NA</code>.</p>
 
 <p>The warning is telling us that we unsuccessfully added “tortoiseshell” to our
 <em>coat</em> factor, but 3.3 (a numeric), TRUE (a logical), and 9 (a numeric) were
@@ -401,7 +401,7 @@ those variables are not factors. To successfully add a cat with a
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">levels</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "black"  "calico" "tabby" 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "black"  "calico" "tabby" 
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">levels</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">levels</span><span class="p">(</span><span class="n">cats</span><span class="o">$</span><span class="n">coat</span><span class="p">),</span><span class="w"> </span><span class="s2">"tortoiseshell"</span><span class="p">)</span><span class="w">
@@ -415,7 +415,7 @@ column without babysitting the factor levels:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	5 obs. of  4 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	5 obs. of  4 variables:
  $ coat        : Factor w/ 4 levels "black","calico",..: 2 1 3 NA 4
  $ weight      : num  2.1 5 3.2 3.3 3.3
  $ likes_string: int  1 0 1 1 1
@@ -426,7 +426,7 @@ column without babysitting the factor levels:</p>
 </span><span class="n">str</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	5 obs. of  4 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	5 obs. of  4 variables:
  $ coat        : chr  "calico" "black" "tabby" NA ...
  $ weight      : num  2.1 5 3.2 3.3 3.3
  $ likes_string: int  1 0 1 1 1
@@ -437,17 +437,17 @@ column without babysitting the factor levels:</p>
   <h2 id="challenge-1">Challenge 1</h2>
   <p>Let’s imagine that 1 cat year is equivalent to 7 human years.</p>
   <ol>
-    <li>Create a vector called <code class="highlighter-rouge">human_age</code> by multiplying <code class="highlighter-rouge">cats$age</code> by 7.</li>
-    <li>Convert <code class="highlighter-rouge">human_age</code> to a factor.</li>
-    <li>Convert <code class="highlighter-rouge">human_age</code> back to a numeric vector using the <code class="highlighter-rouge">as.numeric()</code> function. Now divide it by 7 to get the original ages back. Explain what happened.</li>
+    <li>Create a vector called <code class="language-plaintext highlighter-rouge">human_age</code> by multiplying <code class="language-plaintext highlighter-rouge">cats$age</code> by 7.</li>
+    <li>Convert <code class="language-plaintext highlighter-rouge">human_age</code> to a factor.</li>
+    <li>Convert <code class="language-plaintext highlighter-rouge">human_age</code> back to a numeric vector using the <code class="language-plaintext highlighter-rouge">as.numeric()</code> function. Now divide it by 7 to get the original ages back. Explain what happened.</li>
   </ol>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-1">Solution to Challenge 1</h2>
     <ol>
-      <li><code class="highlighter-rouge">human_age &lt;- cats$age * 7</code></li>
-      <li><code class="highlighter-rouge">human_age &lt;- factor(human_age)</code>. <code class="highlighter-rouge">as.factor(human_age)</code> works just as well.</li>
-      <li><code class="highlighter-rouge">as.numeric(human_age)</code> yields <code class="highlighter-rouge">1 2 3 4 4</code> because factors are stored as integers (here, 1:4), each of which is associated with a label (here, 28, 35, 56, and 63). Converting the factor to a numeric vector gives us the underlying integers, not the labels. If we want the original numbers, we need to convert <code class="highlighter-rouge">human_age</code> to a character vector (using <code class="highlighter-rouge">as.character(human_age)</code>) and then to a numeric vector (why does this work?). This comes up in real life when we accidentally include a character somewhere in a column of a .csv file supposed to only contain numbers, and forget to set <code class="highlighter-rouge">stringsAsFactors=FALSE</code> when we read in the data.</li>
+      <li><code class="language-plaintext highlighter-rouge">human_age &lt;- cats$age * 7</code></li>
+      <li><code class="language-plaintext highlighter-rouge">human_age &lt;- factor(human_age)</code>. <code class="language-plaintext highlighter-rouge">as.factor(human_age)</code> works just as well.</li>
+      <li><code class="language-plaintext highlighter-rouge">as.numeric(human_age)</code> yields <code class="language-plaintext highlighter-rouge">1 2 3 4 4</code> because factors are stored as integers (here, 1:4), each of which is associated with a label (here, 28, 35, 56, and 63). Converting the factor to a numeric vector gives us the underlying integers, not the labels. If we want the original numbers, we need to convert <code class="language-plaintext highlighter-rouge">human_age</code> to a character vector (using <code class="language-plaintext highlighter-rouge">as.character(human_age)</code>) and then to a numeric vector (why does this work?). This comes up in real life when we accidentally include a character somewhere in a column of a .csv file supposed to only contain numbers, and forget to set <code class="language-plaintext highlighter-rouge">stringsAsFactors=FALSE</code> when we read in the data.</li>
     </ol>
   </blockquote>
 </blockquote>
@@ -461,7 +461,7 @@ added a garbage row:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
 1        calico    2.1            1   2
 2         black    5.0            0   3
 3         tabby    3.2            1   5
@@ -474,7 +474,7 @@ added a garbage row:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[</span><span class="m">-4</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
 1        calico    2.1            1   2
 2         black    5.0            0   3
 3         tabby    3.2            1   5
@@ -484,21 +484,21 @@ added a garbage row:</p>
 <p>Notice the comma with nothing after it to indicate that we want to drop the entire fourth row.</p>
 
 <p>Note: we could also remove both new rows at once by putting the row numbers
-inside of a vector: <code class="highlighter-rouge">cats[c(-4,-5), ]</code></p>
+inside of a vector: <code class="language-plaintext highlighter-rouge">cats[c(-4,-5), ]</code></p>
 
-<p>Alternatively, we can drop all rows with <code class="highlighter-rouge">NA</code> values:</p>
+<p>Alternatively, we can drop all rows with <code class="language-plaintext highlighter-rouge">NA</code> values:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">na.omit</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
 1        calico    2.1            1   2
 2         black    5.0            0   3
 3         tabby    3.2            1   5
 5 tortoiseshell    3.3            1   9
 </code></pre></div></div>
 
-<p>Let’s reassign the output to <code class="highlighter-rouge">cats</code>, so that our changes will be permanent:</p>
+<p>Let’s reassign the output to <code class="language-plaintext highlighter-rouge">cats</code>, so that our changes will be permanent:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">na.omit</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -510,7 +510,7 @@ inside of a vector: <code class="highlighter-rouge">cats[c(-4,-5), ]</code></p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="p">[,</span><span class="m">-4</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string
 1        calico    2.1            1
 2         black    5.0            0
 3         tabby    3.2            1
@@ -519,13 +519,13 @@ inside of a vector: <code class="highlighter-rouge">cats[c(-4,-5), ]</code></p>
 
 <p>Notice the comma with nothing before it, indicating we want to keep all of the rows.</p>
 
-<p>Alternatively, we can drop the column by using the index name and the <code class="highlighter-rouge">%in%</code> operator. The <code class="highlighter-rouge">%in%</code> operator goes through each element of its left argument, in this case the names of <code class="highlighter-rouge">cats</code>, and asks, “Does this element occur in the second argument?”</p>
+<p>Alternatively, we can drop the column by using the index name and the <code class="language-plaintext highlighter-rouge">%in%</code> operator. The <code class="language-plaintext highlighter-rouge">%in%</code> operator goes through each element of its left argument, in this case the names of <code class="language-plaintext highlighter-rouge">cats</code>, and asks, “Does this element occur in the second argument?”</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"age"</span><span class="p">)</span><span class="w">
 </span><span class="n">cats</span><span class="p">[,</span><span class="o">!</span><span class="n">drop</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string
 1        calico    2.1            1
 2         black    5.0            0
 3         tabby    3.2            1
@@ -536,13 +536,13 @@ inside of a vector: <code class="highlighter-rouge">cats[c(-4,-5), ]</code></p>
 
 <p>The key to remember when adding data to a data frame is that <em>columns are
 vectors and rows are lists.</em> We can also glue two data frames
-together with <code class="highlighter-rouge">rbind</code>:</p>
+together with <code class="language-plaintext highlighter-rouge">rbind</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span><span class="w"> </span><span class="n">cats</span><span class="p">)</span><span class="w">
 </span><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            coat weight likes_string age
 1         calico    2.1            1   2
 2          black    5.0            0   3
 3          tabby    3.2            1   5
@@ -559,7 +559,7 @@ and R will automatically re-name them sequentially:</p>
 </span><span class="n">cats</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           coat weight likes_string age
 1        calico    2.1            1   2
 2         black    5.0            0   3
 3         tabby    3.2            1   5
@@ -588,8 +588,8 @@ and R will automatically re-name them sequentially:</p>
     <li>lucky number</li>
   </ul>
 
-  <p>Then use <code class="highlighter-rouge">rbind</code> to add an entry for the people sitting beside you.
-Finally, use <code class="highlighter-rouge">cbind</code> to add a column with each person’s answer to the question, “Is it time for coffee break?”</p>
+  <p>Then use <code class="language-plaintext highlighter-rouge">rbind</code> to add an entry for the people sitting beside you.
+Finally, use <code class="language-plaintext highlighter-rouge">cbind</code> to add a column with each person’s answer to the question, “Is it time for coffee break?”</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2">Solution to Challenge 2</h2>
@@ -607,7 +607,7 @@ Finally, use <code class="highlighter-rouge">cbind</code> to add a column with e
 <h2 id="realistic-example">Realistic example</h2>
 <p>So far, you have seen the basics of manipulating data frames with our cat data;
 now let’s use those skills to digest a more realistic dataset. Let’s read in the
-<code class="highlighter-rouge">gapminder</code> dataset that we downloaded previously:</p>
+<code class="language-plaintext highlighter-rouge">gapminder</code> dataset that we downloaded previously:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"data/gapminder_data.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -617,12 +617,12 @@ now let’s use those skills to digest a more realistic dataset. Let’s read in
 
   <ul>
     <li>
-      <p>Another type of file you might encounter are tab-separated value files (.tsv). To specify a tab as a separator, use <code class="highlighter-rouge">"\\t"</code> or <code class="highlighter-rouge">read.delim()</code>.</p>
+      <p>Another type of file you might encounter are tab-separated value files (.tsv). To specify a tab as a separator, use <code class="language-plaintext highlighter-rouge">"\\t"</code> or <code class="language-plaintext highlighter-rouge">read.delim()</code>.</p>
     </li>
     <li>
       <p>Files can also be downloaded directly from the Internet into a local
-folder of your choice onto your computer using the <code class="highlighter-rouge">download.file</code> function.
-The <code class="highlighter-rouge">read.csv</code> function can then be executed to read the downloaded file from the download location, for example,</p>
+folder of your choice onto your computer using the <code class="language-plaintext highlighter-rouge">download.file</code> function.
+The <code class="language-plaintext highlighter-rouge">read.csv</code> function can then be executed to read the downloaded file from the download location, for example,</p>
     </li>
   </ul>
 
@@ -631,7 +631,7 @@ The <code class="highlighter-rouge">read.csv</code> function can then be execute
 </span></code></pre></div>  </div>
 
   <ul>
-    <li>Alternatively, you can also read in files directly into R from the Internet by replacing the file paths with a web address in <code class="highlighter-rouge">read.csv</code>. One should note that in doing this no local copy of the csv file is first saved onto your computer. For example,</li>
+    <li>Alternatively, you can also read in files directly into R from the Internet by replacing the file paths with a web address in <code class="language-plaintext highlighter-rouge">read.csv</code>. One should note that in doing this no local copy of the csv file is first saved onto your computer. For example,</li>
   </ul>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv"</span><span class="p">)</span><span class="w">
@@ -644,12 +644,12 @@ converting them to plain text first by using the <a href="https://cran.r-project
 </blockquote>
 
 <p>Let’s investigate gapminder a bit; the first thing we should always do is check
-out what the data looks like with <code class="highlighter-rouge">str</code>:</p>
+out what the data looks like with <code class="language-plaintext highlighter-rouge">str</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	1704 obs. of  6 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	1704 obs. of  6 variables:
  $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
  $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
@@ -658,12 +658,12 @@ out what the data looks like with <code class="highlighter-rouge">str</code>:</p
  $ gdpPercap: num  779 821 853 836 740 ...
 </code></pre></div></div>
 
-<p>An additional method for examining the structure of gapminder is to use the <code class="highlighter-rouge">summary</code> function. This function can be used on various objects in R. For data frames, <code class="highlighter-rouge">summary</code> yields a numeric, tabular, or descriptive summary of each column. Factor columns are summarized by the number of items in each level, numeric or integer columns by the descriptive statistics (quartiles and mean), and character columns by its length, class, and mode.</p>
+<p>An additional method for examining the structure of gapminder is to use the <code class="language-plaintext highlighter-rouge">summary</code> function. This function can be used on various objects in R. For data frames, <code class="language-plaintext highlighter-rouge">summary</code> yields a numeric, tabular, or descriptive summary of each column. Factor columns are summarized by the number of items in each level, numeric or integer columns by the descriptive statistics (quartiles and mean), and character columns by its length, class, and mode.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">summary</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             Afghanistan                  Albania                  Algeria 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             Afghanistan                  Albania                  Algeria 
                       12                       12                       12 
                   Angola                Argentina                Australia 
                       12                       12                       12 
@@ -733,34 +733,34 @@ Central African Republic                     Chad                    Chile
                      516 
 </code></pre></div></div>
 
-<p>Along with the <code class="highlighter-rouge">str</code> and <code class="highlighter-rouge">summary</code> functions, we can examine individual columns of the data frame with our <code class="highlighter-rouge">typeof</code> function:</p>
+<p>Along with the <code class="language-plaintext highlighter-rouge">str</code> and <code class="language-plaintext highlighter-rouge">summary</code> functions, we can examine individual columns of the data frame with our <code class="language-plaintext highlighter-rouge">typeof</code> function:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "integer"
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
 </code></pre></div></div>
 
 <p>We can also interrogate the data frame for information about its dimensions;
-remembering that <code class="highlighter-rouge">str(gapminder)</code> said there were 1704 observations of 6
+remembering that <code class="language-plaintext highlighter-rouge">str(gapminder)</code> said there were 1704 observations of 6
 variables in gapminder, what do you think the following will produce, and why?</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
 </code></pre></div></div>
 
 <p>A fair guess would have been to say that the length of a data frame would be the
@@ -770,22 +770,22 @@ is a <em>list of vectors and factors</em>:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "list"
 </code></pre></div></div>
 
-<p>When <code class="highlighter-rouge">length</code> gave us 6, it’s because gapminder is built out of a list of 6
+<p>When <code class="language-plaintext highlighter-rouge">length</code> gave us 6, it’s because gapminder is built out of a list of 6
 columns. To get the number of rows and columns in our dataset, try:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nrow</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1704
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1704
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ncol</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 6
 </code></pre></div></div>
 
 <p>Or, both at once:</p>
@@ -793,7 +793,7 @@ columns. To get the number of rows and columns in our dataset, try:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dim</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1704    6
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1704    6
 </code></pre></div></div>
 
 <p>We’ll also likely want to know what the titles of all the columns are, so we can
@@ -802,7 +802,7 @@ ask for them later:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colnames</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "country"   "year"      "pop"       "continent" "lifeExp"   "gdpPercap"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "country"   "year"      "pop"       "continent" "lifeExp"   "gdpPercap"
 </code></pre></div></div>
 
 <p>At this stage, it’s important to ask ourselves if the structure R is reporting
@@ -818,7 +818,7 @@ to start digging into our data proper. Check out the first few lines:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
 1 Afghanistan 1952  8425333      Asia  28.801  779.4453
 2 Afghanistan 1957  9240934      Asia  30.332  820.8530
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007
@@ -838,7 +838,7 @@ to start digging into our data proper. Check out the first few lines:</p>
     <h2 id="solution-to-challenge-3">Solution to Challenge 3</h2>
     <p>To check the last few lines it’s relatively simple as R already has a function for this:</p>
 
-    <div class="r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tail(gapminder)
+    <div class="language-plaintext r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tail(gapminder)
 tail(gapminder, n = 15)
 </code></pre></div>    </div>
 
@@ -846,7 +846,7 @@ tail(gapminder, n = 15)
     <h2 id="tip-there-are-several-ways-to-achieve-this">Tip: There are several ways to achieve this.</h2>
     <p>The solution here presents one form of using nested functions, i.e. a function passed as an argument to another function. This might sound like a new concept, but you are already using it!
 Remember my_dataframe[rows, cols] will print to screen your data frame with the number of rows and columns you asked for (although you might have asked for a range or named columns for example). How would you get the last row if you don’t know how many rows your data frame has? R has a function for this. What about getting a (pseudorandom) sample? R also has a function for this.</p>
-    <div class="r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gapminder[sample(nrow(gapminder), 5), ]
+    <div class="language-plaintext r highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gapminder[sample(nrow(gapminder), 5), ]
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -858,28 +858,28 @@ into a script file so we can come back to it later.</p>
   <h2 id="challenge-4">Challenge 4</h2>
 
   <p>Go to file -&gt; new file -&gt; R script, and write an R script
-to load in the gapminder dataset. Put it in the <code class="highlighter-rouge">scripts/</code>
+to load in the gapminder dataset. Put it in the <code class="language-plaintext highlighter-rouge">scripts/</code>
 directory and add it to version control.</p>
 
-  <p>Run the script using the <code class="highlighter-rouge">source</code> function, using the file path
+  <p>Run the script using the <code class="language-plaintext highlighter-rouge">source</code> function, using the file path
 as its argument (or by pressing the “source” button in RStudio).</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-4">Solution to Challenge 4</h2>
 
-    <p>The <code class="highlighter-rouge">source</code> function can be used to use a script within a script.
+    <p>The <code class="language-plaintext highlighter-rouge">source</code> function can be used to use a script within a script.
 Assume you would like to load the same type of file over and over 
 again and therefore you need to specify the arguments to fit the 
 needs of your file. Instead of writing the necessary argument again
 and again you could just write it once and save it as a script. Then,
-you can use <code class="highlighter-rouge">source("Your_Script_containing_the_load_function")</code> in a new
+you can use <code class="language-plaintext highlighter-rouge">source("Your_Script_containing_the_load_function")</code> in a new
 script to use the function of that script without writing everything again.
-Check out <code class="highlighter-rouge">?source</code> to find out more.</p>
+Check out <code class="language-plaintext highlighter-rouge">?source</code> to find out more.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">download.file</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">destfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/gapminder_data.csv"</span><span class="p">)</span><span class="w">
 </span><span class="n">gapminder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"data/gapminder_data.csv"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>To run the script and load the data into the <code class="highlighter-rouge">gapminder</code> variable:</p>
+    <p>To run the script and load the data into the <code class="language-plaintext highlighter-rouge">gapminder</code> variable:</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"scripts/load-gapminder.R"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
@@ -889,20 +889,20 @@ Check out <code class="highlighter-rouge">?source</code> to find out more.</p>
 <blockquote class="challenge">
   <h2 id="challenge-5">Challenge 5</h2>
 
-  <p>Read the output of <code class="highlighter-rouge">str(gapminder)</code> again;
+  <p>Read the output of <code class="language-plaintext highlighter-rouge">str(gapminder)</code> again;
 this time, use what you’ve learned about factors, lists and vectors,
-as well as the output of functions like <code class="highlighter-rouge">colnames</code> and <code class="highlighter-rouge">dim</code>
-to explain what everything that <code class="highlighter-rouge">str</code> prints out for gapminder means.
+as well as the output of functions like <code class="language-plaintext highlighter-rouge">colnames</code> and <code class="language-plaintext highlighter-rouge">dim</code>
+to explain what everything that <code class="language-plaintext highlighter-rouge">str</code> prints out for gapminder means.
 If there are any parts you can’t interpret, discuss with your neighbors!</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-5">Solution to Challenge 5</h2>
 
-    <p>The object <code class="highlighter-rouge">gapminder</code> is a data frame with columns</p>
+    <p>The object <code class="language-plaintext highlighter-rouge">gapminder</code> is a data frame with columns</p>
     <ul>
-      <li><code class="highlighter-rouge">country</code> and <code class="highlighter-rouge">continent</code> are factors.</li>
-      <li><code class="highlighter-rouge">year</code> is an integer vector.</li>
-      <li><code class="highlighter-rouge">pop</code>, <code class="highlighter-rouge">lifeExp</code>, and <code class="highlighter-rouge">gdpPercap</code> are numeric vectors.</li>
+      <li><code class="language-plaintext highlighter-rouge">country</code> and <code class="language-plaintext highlighter-rouge">continent</code> are factors.</li>
+      <li><code class="language-plaintext highlighter-rouge">year</code> is an integer vector.</li>
+      <li><code class="language-plaintext highlighter-rouge">pop</code>, <code class="language-plaintext highlighter-rouge">lifeExp</code>, and <code class="language-plaintext highlighter-rouge">gdpPercap</code> are numeric vectors.</li>
     </ul>
 
   </blockquote>
@@ -913,28 +913,28 @@ If there are any parts you can’t interpret, discuss with your neighbors!</p>
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Use <code class="highlighter-rouge">cbind()</code> to add a new column to a data frame.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">cbind()</code> to add a new column to a data frame.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">rbind()</code> to add a new row to a data frame.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">rbind()</code> to add a new row to a data frame.</p>
 </li>
     
     <li><p>Remove rows from a data frame.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">na.omit()</code> to remove rows from a data frame with <code class="highlighter-rouge">NA</code> values.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">na.omit()</code> to remove rows from a data frame with <code class="language-plaintext highlighter-rouge">NA</code> values.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">levels()</code> and <code class="highlighter-rouge">as.character()</code> to explore and manipulate factors.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">levels()</code> and <code class="language-plaintext highlighter-rouge">as.character()</code> to explore and manipulate factors.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">str()</code>, <code class="highlighter-rouge">summary()</code>, <code class="highlighter-rouge">nrow()</code>, <code class="highlighter-rouge">ncol()</code>, <code class="highlighter-rouge">dim()</code>, <code class="highlighter-rouge">colnames()</code>, <code class="highlighter-rouge">rownames()</code>, <code class="highlighter-rouge">head()</code>, and <code class="highlighter-rouge">typeof()</code> to understand the structure of a data frame.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">str()</code>, <code class="language-plaintext highlighter-rouge">summary()</code>, <code class="language-plaintext highlighter-rouge">nrow()</code>, <code class="language-plaintext highlighter-rouge">ncol()</code>, <code class="language-plaintext highlighter-rouge">dim()</code>, <code class="language-plaintext highlighter-rouge">colnames()</code>, <code class="language-plaintext highlighter-rouge">rownames()</code>, <code class="language-plaintext highlighter-rouge">head()</code>, and <code class="language-plaintext highlighter-rouge">typeof()</code> to understand the structure of a data frame.</p>
 </li>
     
-    <li><p>Read in a csv file using <code class="highlighter-rouge">read.csv()</code>.</p>
+    <li><p>Read in a csv file using <code class="language-plaintext highlighter-rouge">read.csv()</code>.</p>
 </li>
     
-    <li><p>Understand what <code class="highlighter-rouge">length()</code> of a data frame represents.</p>
+    <li><p>Understand what <code class="language-plaintext highlighter-rouge">length()</code> of a data frame represents.</p>
 </li>
     
   </ul>

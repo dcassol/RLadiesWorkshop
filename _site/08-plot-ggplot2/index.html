@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -321,31 +321,31 @@ Inkscape.</p>
 
 <p><img src="../fig/rmd-08-lifeExp-vs-gdpPercap-scatter-1.svg" title="plot of chunk lifeExp-vs-gdpPercap-scatter" alt="plot of chunk lifeExp-vs-gdpPercap-scatter" width="612" style="display: block; margin: auto;" /></p>
 
-<p>So the first thing we do is call the <code class="highlighter-rouge">ggplot</code> function. This function lets R
+<p>So the first thing we do is call the <code class="language-plaintext highlighter-rouge">ggplot</code> function. This function lets R
 know that we’re creating a new plot, and any of the arguments we give the
-<code class="highlighter-rouge">ggplot</code> function are the <em>global</em> options for the plot: they apply to all
+<code class="language-plaintext highlighter-rouge">ggplot</code> function are the <em>global</em> options for the plot: they apply to all
 layers on the plot.</p>
 
-<p>We’ve passed in two arguments to <code class="highlighter-rouge">ggplot</code>. First, we tell <code class="highlighter-rouge">ggplot</code> what data we
+<p>We’ve passed in two arguments to <code class="language-plaintext highlighter-rouge">ggplot</code>. First, we tell <code class="language-plaintext highlighter-rouge">ggplot</code> what data we
 want to show on our figure, in this example the gapminder data we read in
-earlier. For the second argument,  we passed in the <code class="highlighter-rouge">aes</code> function, which
-tells <code class="highlighter-rouge">ggplot</code> how variables in the <strong>data</strong> map to <em>aesthetic</em> properties of
-the figure, in this case the <strong>x</strong> and <strong>y</strong> locations. Here we told <code class="highlighter-rouge">ggplot</code> we
+earlier. For the second argument,  we passed in the <code class="language-plaintext highlighter-rouge">aes</code> function, which
+tells <code class="language-plaintext highlighter-rouge">ggplot</code> how variables in the <strong>data</strong> map to <em>aesthetic</em> properties of
+the figure, in this case the <strong>x</strong> and <strong>y</strong> locations. Here we told <code class="language-plaintext highlighter-rouge">ggplot</code> we
 want to plot the “gdpPercap” column of the gapminder data frame on the x-axis, and
 the “lifeExp” column on the y-axis. Notice that we didn’t need to explicitly
-pass <code class="highlighter-rouge">aes</code> these columns (e.g. <code class="highlighter-rouge">x = gapminder[, "gdpPercap"]</code>), this is because
-<code class="highlighter-rouge">ggplot</code> is smart enough to know to look in the <strong>data</strong> for that column!</p>
+pass <code class="language-plaintext highlighter-rouge">aes</code> these columns (e.g. <code class="language-plaintext highlighter-rouge">x = gapminder[, "gdpPercap"]</code>), this is because
+<code class="language-plaintext highlighter-rouge">ggplot</code> is smart enough to know to look in the <strong>data</strong> for that column!</p>
 
-<p>By itself, the call to <code class="highlighter-rouge">ggplot</code> isn’t enough to draw a figure:</p>
+<p>By itself, the call to <code class="language-plaintext highlighter-rouge">ggplot</code> isn’t enough to draw a figure:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdpPercap</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
 <p><img src="../fig/rmd-08-unnamed-chunk-2-1.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" /></p>
 
-<p>We need to tell <code class="highlighter-rouge">ggplot</code> how we want to visually represent the data, which we
-do by adding a new <strong>geom</strong> layer. In our example, we used <code class="highlighter-rouge">geom_point</code>, which
-tells <code class="highlighter-rouge">ggplot</code> we want to visually represent the relationship between <strong>x</strong> and
+<p>We need to tell <code class="language-plaintext highlighter-rouge">ggplot</code> how we want to visually represent the data, which we
+do by adding a new <strong>geom</strong> layer. In our example, we used <code class="language-plaintext highlighter-rouge">geom_point</code>, which
+tells <code class="language-plaintext highlighter-rouge">ggplot</code> we want to visually represent the relationship between <strong>x</strong> and
 <strong>y</strong> as a scatterplot of points:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdpPercap</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -383,7 +383,7 @@ on the x-axis.</p>
 
   <h2 id="challenge-2">Challenge 2</h2>
 
-  <p>In the previous examples and challenge we’ve used the <code class="highlighter-rouge">aes</code> function to tell
+  <p>In the previous examples and challenge we’ve used the <code class="language-plaintext highlighter-rouge">aes</code> function to tell
 the scatterplot <strong>geom</strong> about the <strong>x</strong> and <strong>y</strong> locations of each point.
 Another <em>aesthetic</em> property we can modify is the point <em>color</em>. Modify the
 code from the previous challenge to <strong>color</strong> the points by the “continent”
@@ -392,7 +392,7 @@ column. What trends do you see in the data? Are they what you expected?</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2">Solution to challenge 2</h2>
 
-    <p>The solution presented below adds <code class="highlighter-rouge">color=continent</code> to the call of the <code class="highlighter-rouge">aes</code>
+    <p>The solution presented below adds <code class="language-plaintext highlighter-rouge">color=continent</code> to the call of the <code class="language-plaintext highlighter-rouge">aes</code>
 function. The general trend seems to indicate an increased life expectancy
 over the years. On continents with stronger economies we find a longer life
 expectancy.</p>
@@ -409,7 +409,7 @@ expectancy.</p>
 <h2 id="layers">Layers</h2>
 
 <p>Using a scatterplot probably isn’t the best for visualizing change over time.
-Instead, let’s tell <code class="highlighter-rouge">ggplot</code> to visualize the data as a line plot:</p>
+Instead, let’s tell <code class="language-plaintext highlighter-rouge">ggplot</code> to visualize the data as a line plot:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_line</span><span class="p">()</span><span class="w">
@@ -417,8 +417,8 @@ Instead, let’s tell <code class="highlighter-rouge">ggplot</code> to visualize
 
 <p><img src="../fig/rmd-08-lifeExp-line-1.svg" title="plot of chunk lifeExp-line" alt="plot of chunk lifeExp-line" width="612" style="display: block; margin: auto;" /></p>
 
-<p>Instead of adding a <code class="highlighter-rouge">geom_point</code> layer, we’ve added a <code class="highlighter-rouge">geom_line</code> layer. We’ve
-added the <strong>by</strong> <em>aesthetic</em>, which tells <code class="highlighter-rouge">ggplot</code> to draw a line for each
+<p>Instead of adding a <code class="language-plaintext highlighter-rouge">geom_point</code> layer, we’ve added a <code class="language-plaintext highlighter-rouge">geom_line</code> layer. We’ve
+added the <strong>by</strong> <em>aesthetic</em>, which tells <code class="language-plaintext highlighter-rouge">ggplot</code> to draw a line for each
 country.</p>
 
 <p>But what if we want to visualize both lines and points on the plot? We can
@@ -441,14 +441,14 @@ demonstration:</p>
 <p><img src="../fig/rmd-08-lifeExp-layer-example-1-1.svg" title="plot of chunk lifeExp-layer-example-1" alt="plot of chunk lifeExp-layer-example-1" width="612" style="display: block; margin: auto;" /></p>
 
 <p>In this example, the <em>aesthetic</em> mapping of <strong>color</strong> has been moved from the
-global plot options in <code class="highlighter-rouge">ggplot</code> to the <code class="highlighter-rouge">geom_line</code> layer so it no longer applies
+global plot options in <code class="language-plaintext highlighter-rouge">ggplot</code> to the <code class="language-plaintext highlighter-rouge">geom_line</code> layer so it no longer applies
 to the points. Now we can clearly see that the points are drawn on top of the
 lines.</p>
 
 <blockquote class="callout">
   <h2 id="tip-setting-an-aesthetic-to-a-value-instead-of-a-mapping">Tip: Setting an aesthetic to a value instead of a mapping</h2>
 
-  <p>So far, we’ve seen how to use an aesthetic (such as <strong>color</strong>) as a <em>mapping</em> to a variable in the data. For example, when we use <code class="highlighter-rouge">geom_line(mapping = aes(color=continent))</code>, ggplot will give a different color to each continent. But what if we want to change the colour of all lines to blue? You may think that <code class="highlighter-rouge">geom_line(mapping = aes(color="blue"))</code> should work, but it doesn’t. Since we don’t want to create a mapping to a specific variable, we simply move the color specification outside of the <code class="highlighter-rouge">aes()</code> function, like this: <code class="highlighter-rouge">geom_line(color="blue")</code>.</p>
+  <p>So far, we’ve seen how to use an aesthetic (such as <strong>color</strong>) as a <em>mapping</em> to a variable in the data. For example, when we use <code class="language-plaintext highlighter-rouge">geom_line(mapping = aes(color=continent))</code>, ggplot will give a different color to each continent. But what if we want to change the colour of all lines to blue? You may think that <code class="language-plaintext highlighter-rouge">geom_line(mapping = aes(color="blue"))</code> should work, but it doesn’t. Since we don’t want to create a mapping to a specific variable, we simply move the color specification outside of the <code class="language-plaintext highlighter-rouge">aes()</code> function, like this: <code class="language-plaintext highlighter-rouge">geom_line(color="blue")</code>.</p>
 </blockquote>
 
 <blockquote class="challenge">
@@ -495,7 +495,7 @@ a large amount of data which is very clustered.</p>
 
 <p><img src="../fig/rmd-08-axis-scale-1.svg" title="plot of chunk axis-scale" alt="plot of chunk axis-scale" width="612" style="display: block; margin: auto;" /></p>
 
-<p>The <code class="highlighter-rouge">log10</code> function applied a transformation to the values of the gdpPercap
+<p>The <code class="language-plaintext highlighter-rouge">log10</code> function applied a transformation to the values of the gdpPercap
 column before rendering them on the plot, so that each multiple of 10 now only
 corresponds to an increase in 1 on the transformed scale, e.g. a GDP per capita
 of 1,000 is now 3 on the x axis, a value of 10,000 corresponds to 4 on the x
@@ -505,11 +505,11 @@ x-axis.</p>
 <blockquote class="callout">
   <h2 id="tip-reminder-setting-an-aesthetic-to-a-value-instead-of-a-mapping">Tip Reminder: Setting an aesthetic to a value instead of a mapping</h2>
 
-  <p>Notice that we used <code class="highlighter-rouge">geom_point(alpha = 0.5)</code>. As the previous tip mentioned, using a setting outside of the <code class="highlighter-rouge">aes()</code> function will cause this value to be used for all points, which is what we want in this case. But just like any other aesthetic setting, <em>alpha</em> can also be mapped to a variable in the data. For example, we can give a different transparency to each continent with <code class="highlighter-rouge">geom_point(mapping = aes(alpha = continent))</code>.</p>
+  <p>Notice that we used <code class="language-plaintext highlighter-rouge">geom_point(alpha = 0.5)</code>. As the previous tip mentioned, using a setting outside of the <code class="language-plaintext highlighter-rouge">aes()</code> function will cause this value to be used for all points, which is what we want in this case. But just like any other aesthetic setting, <em>alpha</em> can also be mapped to a variable in the data. For example, we can give a different transparency to each continent with <code class="language-plaintext highlighter-rouge">geom_point(mapping = aes(alpha = continent))</code>.</p>
 </blockquote>
 
 <p>We can fit a simple relationship to the data by adding another layer,
-<code class="highlighter-rouge">geom_smooth</code>:</p>
+<code class="language-plaintext highlighter-rouge">geom_smooth</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdpPercap</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_x_log10</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">)</span><span class="w">
@@ -518,7 +518,7 @@ x-axis.</p>
 <p><img src="../fig/rmd-08-lm-fit-1.svg" title="plot of chunk lm-fit" alt="plot of chunk lm-fit" width="612" style="display: block; margin: auto;" /></p>
 
 <p>We can make the line thicker by <em>setting</em> the <strong>size</strong> aesthetic in the
-<code class="highlighter-rouge">geom_smooth</code> layer:</p>
+<code class="language-plaintext highlighter-rouge">geom_smooth</code> layer:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdpPercap</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_x_log10</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"lm"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span><span class="w">
@@ -527,8 +527,8 @@ x-axis.</p>
 <p><img src="../fig/rmd-08-lm-fit2-1.svg" title="plot of chunk lm-fit2" alt="plot of chunk lm-fit2" width="612" style="display: block; margin: auto;" /></p>
 
 <p>There are two ways an <em>aesthetic</em> can be specified. Here we <em>set</em> the <strong>size</strong>
-aesthetic by passing it as an argument to <code class="highlighter-rouge">geom_smooth</code>. Previously in the
-lesson we’ve used the <code class="highlighter-rouge">aes</code> function to define a <em>mapping</em> between data
+aesthetic by passing it as an argument to <code class="language-plaintext highlighter-rouge">geom_smooth</code>. Previously in the
+lesson we’ve used the <code class="language-plaintext highlighter-rouge">aes</code> function to define a <em>mapping</em> between data
 variables and their visual representation.</p>
 
 <blockquote class="challenge">
@@ -537,13 +537,13 @@ variables and their visual representation.</p>
   <p>Modify the color and size of the points on the point layer in the previous
 example.</p>
 
-  <p>Hint: do not use the <code class="highlighter-rouge">aes</code> function.</p>
+  <p>Hint: do not use the <code class="language-plaintext highlighter-rouge">aes</code> function.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-4a">Solution to challenge 4a</h2>
 
     <p>Here a possible solution: 
-Notice that the <code class="highlighter-rouge">color</code> argument is supplied outside of the <code class="highlighter-rouge">aes()</code> function. 
+Notice that the <code class="language-plaintext highlighter-rouge">color</code> argument is supplied outside of the <code class="language-plaintext highlighter-rouge">aes()</code> function. 
 This means that it applies to all data points on the graph and is not related to 
 a specific variable.</p>
 
@@ -567,10 +567,10 @@ trendlines.  Hint: The color argument can be used inside the aesthetic.</p>
     <h2 id="solution-to-challenge-4b">Solution to challenge 4b</h2>
 
     <p>Here is a possible solution: 
-Notice that supplying the <code class="highlighter-rouge">color</code> argument inside the <code class="highlighter-rouge">aes()</code> functions enables you to 
-connect it to a certain variable. The <code class="highlighter-rouge">shape</code> argument, as you can see, modifies all
-data points the same way (it is outside the <code class="highlighter-rouge">aes()</code> call) while the <code class="highlighter-rouge">color</code> argument which
-is placed inside the <code class="highlighter-rouge">aes()</code> call modifies a point’s color based on its continent value.</p>
+Notice that supplying the <code class="language-plaintext highlighter-rouge">color</code> argument inside the <code class="language-plaintext highlighter-rouge">aes()</code> functions enables you to 
+connect it to a certain variable. The <code class="language-plaintext highlighter-rouge">shape</code> argument, as you can see, modifies all
+data points the same way (it is outside the <code class="language-plaintext highlighter-rouge">aes()</code> call) while the <code class="language-plaintext highlighter-rouge">color</code> argument which
+is placed inside the <code class="language-plaintext highlighter-rouge">aes()</code> call modifies a point’s color based on its continent value.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdpPercap</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="m">17</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_x_log10</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -606,7 +606,7 @@ ggplot2 is customizable.</p>
 
 <p><img src="../fig/rmd-08-facet-1.svg" title="plot of chunk facet" alt="plot of chunk facet" width="612" style="display: block; margin: auto;" /></p>
 
-<p>The <code class="highlighter-rouge">facet_wrap</code> layer took a “formula” as its argument, denoted by the tilde
+<p>The <code class="language-plaintext highlighter-rouge">facet_wrap</code> layer took a “formula” as its argument, denoted by the tilde
 (~). This tells R to draw a panel for each unique value in the country column
 of the gapminder dataset.</p>
 
@@ -618,10 +618,10 @@ elements. The x-axis is too cluttered, and the y axis should read
 
 <p>We can do this by adding a couple of different layers. The <strong>theme</strong> layer
 controls the axis text, and overall text size. Labels for the axes, plot 
-title and any legend can be set using the <code class="highlighter-rouge">labs</code> function. Legend titles
-are set using the same names we used in the <code class="highlighter-rouge">aes</code> specification. Thus below
-the color legend title is set using <code class="highlighter-rouge">color = "Continent"</code>, while the title 
-of a fill legend would be set using <code class="highlighter-rouge">fill = "MyTitle"</code>.</p>
+title and any legend can be set using the <code class="language-plaintext highlighter-rouge">labs</code> function. Legend titles
+are set using the same names we used in the <code class="language-plaintext highlighter-rouge">aes</code> specification. Thus below
+the color legend title is set using <code class="language-plaintext highlighter-rouge">color = "Continent"</code>, while the title 
+of a fill legend would be set using <code class="language-plaintext highlighter-rouge">fill = "MyTitle"</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">americas</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -638,7 +638,7 @@ of a fill legend would be set using <code class="highlighter-rouge">fill = "MyTi
 
 <h2 id="exporting-the-plot">Exporting the plot</h2>
 
-<p>The <code class="highlighter-rouge">ggsave()</code> function allows you to export a plot created with ggplot. You can specify the dimension and resolution of your plot by adjusting the appropriate arguments (<code class="highlighter-rouge">width</code>, <code class="highlighter-rouge">height</code> and <code class="highlighter-rouge">dpi</code>) to create high quality graphics for publication. In order to save the plot from above, we first assign it to a variable <code class="highlighter-rouge">lifeExp_plot</code>, then tell <code class="highlighter-rouge">ggsave</code> to save that plot in <code class="highlighter-rouge">png</code> format to a directory called <code class="highlighter-rouge">results</code>. (Make sure you have a <code class="highlighter-rouge">results/</code> folder in your working directory.)</p>
+<p>The <code class="language-plaintext highlighter-rouge">ggsave()</code> function allows you to export a plot created with ggplot. You can specify the dimension and resolution of your plot by adjusting the appropriate arguments (<code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">dpi</code>) to create high quality graphics for publication. In order to save the plot from above, we first assign it to a variable <code class="language-plaintext highlighter-rouge">lifeExp_plot</code>, then tell <code class="language-plaintext highlighter-rouge">ggsave</code> to save that plot in <code class="language-plaintext highlighter-rouge">png</code> format to a directory called <code class="language-plaintext highlighter-rouge">results</code>. (Make sure you have a <code class="language-plaintext highlighter-rouge">results/</code> folder in your working directory.)</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lifeExp_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">americas</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -653,10 +653,10 @@ of a fill legend would be set using <code class="highlighter-rouge">fill = "MyTi
 </span><span class="n">ggsave</span><span class="p">(</span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"results/lifeExp.png"</span><span class="p">,</span><span class="w"> </span><span class="n">plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp_plot</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">dpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cm"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in grDevices::png(..., res = dpi, units = "in"): X11 is not available
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in grDevices::png(..., res = dpi, units = "in"): X11 is not available
 </code></pre></div></div>
 
-<p>There are two nice things about <code class="highlighter-rouge">ggsave</code>. First, it defaults to the last plot, so if you omit the <code class="highlighter-rouge">plot</code> argument it will automatically save the last plot you created with <code class="highlighter-rouge">ggplot</code>. Secondly, it tries to determine the format you want to save your plot in from the file extension you provide for the filename (for example <code class="highlighter-rouge">.png</code> or <code class="highlighter-rouge">.pdf</code>). If you need to, you can specify the format explicitly in the <code class="highlighter-rouge">device</code> argument.</p>
+<p>There are two nice things about <code class="language-plaintext highlighter-rouge">ggsave</code>. First, it defaults to the last plot, so if you omit the <code class="language-plaintext highlighter-rouge">plot</code> argument it will automatically save the last plot you created with <code class="language-plaintext highlighter-rouge">ggplot</code>. Secondly, it tries to determine the format you want to save your plot in from the file extension you provide for the filename (for example <code class="language-plaintext highlighter-rouge">.png</code> or <code class="language-plaintext highlighter-rouge">.pdf</code>). If you need to, you can specify the format explicitly in the <code class="language-plaintext highlighter-rouge">device</code> argument.</p>
 
 <p>This is a taste of what you can do with ggplot2. RStudio provides a
 really useful <a href="https://www.rstudio.org/links/data_visualization_cheat_sheet">cheat sheet</a> of the different layers available, and more
@@ -680,8 +680,8 @@ code to modify!</p>
     <h2 id="solution-to-challenge-5">Solution to Challenge 5</h2>
 
     <p>Here a possible solution: 
-<code class="highlighter-rouge">xlab()</code> and <code class="highlighter-rouge">ylab()</code> set labels for the x and y axes, respectively
-The axis title, text and ticks are attributes of the theme and must be modified within a <code class="highlighter-rouge">theme()</code> call.</p>
+<code class="language-plaintext highlighter-rouge">xlab()</code> and <code class="language-plaintext highlighter-rouge">ylab()</code> set labels for the x and y axes, respectively
+The axis title, text and ticks are attributes of the theme and must be modified within a <code class="language-plaintext highlighter-rouge">theme()</code> call.</p>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gapminder</span><span class="p">,</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">continent</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">continent</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
  </span><span class="n">geom_boxplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -700,7 +700,7 @@ The axis title, text and ticks are attributes of the theme and must be modified 
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Use <code class="highlighter-rouge">ggplot2</code> to create plots.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">ggplot2</code> to create plots.</p>
 </li>
     
     <li><p>Think about graphics in layers: aesthetics, geometry, statistics, scale transformation, and grouping.</p>

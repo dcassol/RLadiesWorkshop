@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -298,7 +298,7 @@ different subsetting operators for the different data structures.</p>
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 </code></pre></div></div>
 
@@ -319,14 +319,14 @@ from one:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a 
 5.4 
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  d 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  d 
 4.8 
 </code></pre></div></div>
 
@@ -338,7 +338,7 @@ from one:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c 
 5.4 7.1 
 </code></pre></div></div>
 
@@ -347,22 +347,22 @@ from one:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d 
 5.4 6.2 7.1 4.8 
 </code></pre></div></div>
 
-<p>the <code class="highlighter-rouge">:</code> operator creates a sequence of numbers from the left element to the right.</p>
+<p>the <code class="language-plaintext highlighter-rouge">:</code> operator creates a sequence of numbers from the left element to the right.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3 4
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3 4
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3 4
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3 4
 </code></pre></div></div>
 
 <p>We can ask for the same element multiple times:</p>
@@ -370,7 +370,7 @@ from one:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   a   c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   a   c 
 5.4 5.4 7.1 
 </code></pre></div></div>
 
@@ -379,18 +379,18 @@ from one:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">6</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;NA&gt; 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;NA&gt; 
   NA 
 </code></pre></div></div>
 
-<p>This is a vector of length one containing an <code class="highlighter-rouge">NA</code>, whose name is also <code class="highlighter-rouge">NA</code>.</p>
+<p>This is a vector of length one containing an <code class="language-plaintext highlighter-rouge">NA</code>, whose name is also <code class="language-plaintext highlighter-rouge">NA</code>.</p>
 
 <p>If we ask for the 0th element, we get an empty vector:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>named numeric(0)
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>named numeric(0)
 </code></pre></div></div>
 
 <blockquote class="callout">
@@ -408,7 +408,7 @@ every element <em>except</em> for the one specified:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">-2</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c   d   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c   d   e 
 5.4 7.1 4.8 7.5 
 </code></pre></div></div>
 
@@ -417,7 +417,7 @@ every element <em>except</em> for the one specified:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="m">-5</span><span class="p">)]</span><span class="w">  </span><span class="c1"># or x[-c(1,5)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
 6.2 7.1 4.8 
 </code></pre></div></div>
 
@@ -433,20 +433,20 @@ sequence like so:</p>
 
   <p>This gives a somewhat cryptic error:</p>
 
-  <div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in x[-1:3]: only 0's may be mixed with negative subscripts
+  <div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in x[-1:3]: only 0's may be mixed with negative subscripts
 </code></pre></div>  </div>
 
-  <p>But remember the order of operations. <code class="highlighter-rouge">:</code> is really a function.
+  <p>But remember the order of operations. <code class="language-plaintext highlighter-rouge">:</code> is really a function.
 It takes its first argument as -1, and its second as 3,
-so generates the sequence of numbers: <code class="highlighter-rouge">c(-1, 0, 1, 2, 3)</code>.</p>
+so generates the sequence of numbers: <code class="language-plaintext highlighter-rouge">c(-1, 0, 1, 2, 3)</code>.</p>
 
   <p>The correct solution is to wrap that function call in brackets, so
-that the <code class="highlighter-rouge">-</code> operator applies to the result:</p>
+that the <code class="language-plaintext highlighter-rouge">-</code> operator applies to the result:</p>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)]</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  d   e 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  d   e 
 4.8 7.5 
 </code></pre></div>  </div>
 </blockquote>
@@ -458,7 +458,7 @@ into the variable:</p>
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   e 
 5.4 6.2 7.1 7.5 
 </code></pre></div></div>
 
@@ -472,13 +472,13 @@ into the variable:</p>
 </span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 </code></pre></div>  </div>
 
   <p>Come up with at least 2 different commands that will produce the following output:</p>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
 6.2 7.1 4.8 
 </code></pre></div>  </div>
 
@@ -490,21 +490,21 @@ into the variable:</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
 6.2 7.1 4.8 
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">5</span><span class="p">)]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
 6.2 7.1 4.8 
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d 
 6.2 7.1 4.8 
 </code></pre></div>    </div>
 
@@ -519,7 +519,7 @@ into the variable:</p>
 </span><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   c 
 5.4 7.1 
 </code></pre></div></div>
 
@@ -534,32 +534,32 @@ subsetting operations, but the names will always remain the same!</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  c   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  c   e 
 7.1 7.5 
 </code></pre></div></div>
 
-<p>Since comparison operators (e.g. <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">==</code>) evaluate to logical vectors, we can also
+<p>Since comparison operators (e.g. <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">==</code>) evaluate to logical vectors, we can also
 use them to succinctly subset vectors: the following statement gives
 the same result as the previous one.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">7</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  c   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  c   e 
 7.1 7.5 
 </code></pre></div></div>
 
-<p>Breaking it down, this statement first evaluates <code class="highlighter-rouge">x&gt;7</code>, generating
-a logical vector <code class="highlighter-rouge">c(FALSE, FALSE, TRUE, FALSE, TRUE)</code>, and then
-selects the elements of <code class="highlighter-rouge">x</code> corresponding to the <code class="highlighter-rouge">TRUE</code> values.</p>
+<p>Breaking it down, this statement first evaluates <code class="language-plaintext highlighter-rouge">x&gt;7</code>, generating
+a logical vector <code class="language-plaintext highlighter-rouge">c(FALSE, FALSE, TRUE, FALSE, TRUE)</code>, and then
+selects the elements of <code class="language-plaintext highlighter-rouge">x</code> corresponding to the <code class="language-plaintext highlighter-rouge">TRUE</code> values.</p>
 
-<p>We can use <code class="highlighter-rouge">==</code> to mimic the previous method of indexing by name
-(remember you have to use <code class="highlighter-rouge">==</code> rather than <code class="highlighter-rouge">=</code> for comparisons):</p>
+<p>We can use <code class="language-plaintext highlighter-rouge">==</code> to mimic the previous method of indexing by name
+(remember you have to use <code class="language-plaintext highlighter-rouge">==</code> rather than <code class="language-plaintext highlighter-rouge">=</code> for comparisons):</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"a"</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a 
 5.4 
 </code></pre></div></div>
 
@@ -572,29 +572,29 @@ located in Asia <strong>or</strong> Europe <strong>and</strong> have life expect
 range. Several operations for combining logical vectors exist in R:</p>
 
   <ul>
-    <li><code class="highlighter-rouge">&amp;</code>, the “logical AND” operator: returns <code class="highlighter-rouge">TRUE</code> if both the left and right
-are <code class="highlighter-rouge">TRUE</code>.</li>
-    <li><code class="highlighter-rouge">|</code>, the “logical OR” operator: returns <code class="highlighter-rouge">TRUE</code>, if either the left or right
-(or both) are <code class="highlighter-rouge">TRUE</code>.</li>
+    <li><code class="language-plaintext highlighter-rouge">&amp;</code>, the “logical AND” operator: returns <code class="language-plaintext highlighter-rouge">TRUE</code> if both the left and right
+are <code class="language-plaintext highlighter-rouge">TRUE</code>.</li>
+    <li><code class="language-plaintext highlighter-rouge">|</code>, the “logical OR” operator: returns <code class="language-plaintext highlighter-rouge">TRUE</code>, if either the left or right
+(or both) are <code class="language-plaintext highlighter-rouge">TRUE</code>.</li>
   </ul>
 
-  <p>You may sometimes see <code class="highlighter-rouge">&amp;&amp;</code> and <code class="highlighter-rouge">||</code> instead of <code class="highlighter-rouge">&amp;</code> and <code class="highlighter-rouge">|</code>. These two-character operators
+  <p>You may sometimes see <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> and <code class="language-plaintext highlighter-rouge">||</code> instead of <code class="language-plaintext highlighter-rouge">&amp;</code> and <code class="language-plaintext highlighter-rouge">|</code>. These two-character operators
 only look at the first element of each vector and ignore the
 remaining elements. In general you should not use the two-character
 operators in data analysis; save them
 for programming, i.e. deciding whether to execute a statement.</p>
 
   <ul>
-    <li><code class="highlighter-rouge">!</code>, the “logical NOT” operator: converts <code class="highlighter-rouge">TRUE</code> to <code class="highlighter-rouge">FALSE</code> and <code class="highlighter-rouge">FALSE</code> to
-<code class="highlighter-rouge">TRUE</code>. It can negate a single logical condition (eg <code class="highlighter-rouge">!TRUE</code> becomes
-<code class="highlighter-rouge">FALSE</code>), or a whole vector of conditions(eg <code class="highlighter-rouge">!c(TRUE, FALSE)</code> becomes
-<code class="highlighter-rouge">c(FALSE, TRUE)</code>).</li>
+    <li><code class="language-plaintext highlighter-rouge">!</code>, the “logical NOT” operator: converts <code class="language-plaintext highlighter-rouge">TRUE</code> to <code class="language-plaintext highlighter-rouge">FALSE</code> and <code class="language-plaintext highlighter-rouge">FALSE</code> to
+<code class="language-plaintext highlighter-rouge">TRUE</code>. It can negate a single logical condition (eg <code class="language-plaintext highlighter-rouge">!TRUE</code> becomes
+<code class="language-plaintext highlighter-rouge">FALSE</code>), or a whole vector of conditions(eg <code class="language-plaintext highlighter-rouge">!c(TRUE, FALSE)</code> becomes
+<code class="language-plaintext highlighter-rouge">c(FALSE, TRUE)</code>).</li>
   </ul>
 
   <p>Additionally, you can compare the elements within a single vector using the
-<code class="highlighter-rouge">all</code> function (which returns <code class="highlighter-rouge">TRUE</code> if every element of the vector is <code class="highlighter-rouge">TRUE</code>)
-and the <code class="highlighter-rouge">any</code> function (which returns <code class="highlighter-rouge">TRUE</code> if one or more elements of the
-vector are <code class="highlighter-rouge">TRUE</code>).</p>
+<code class="language-plaintext highlighter-rouge">all</code> function (which returns <code class="language-plaintext highlighter-rouge">TRUE</code> if every element of the vector is <code class="language-plaintext highlighter-rouge">TRUE</code>)
+and the <code class="language-plaintext highlighter-rouge">any</code> function (which returns <code class="language-plaintext highlighter-rouge">TRUE</code> if one or more elements of the
+vector are <code class="language-plaintext highlighter-rouge">TRUE</code>).</p>
 </blockquote>
 
 <blockquote class="challenge">
@@ -607,7 +607,7 @@ vector are <code class="highlighter-rouge">TRUE</code>).</p>
 </span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   c   d   e 
 5.4 6.2 7.1 4.8 7.5 
 </code></pre></div>  </div>
 
@@ -620,7 +620,7 @@ vector are <code class="highlighter-rouge">TRUE</code>).</p>
 </span><span class="n">print</span><span class="p">(</span><span class="n">x_subset</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   d 
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  a   b   d 
 5.4 6.2 4.8 
 </code></pre></div>    </div>
   </blockquote>
@@ -638,28 +638,28 @@ must be unique.) Consider these examples:</p>
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1 2 3
 </code></pre></div>  </div>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">)</span><span class="w">
 </span><span class="n">x</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a a a 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a a a 
 1 2 3 
 </code></pre></div>  </div>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span><span class="w">  </span><span class="c1"># only returns first value</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a 
 1 
 </code></pre></div>  </div>
 
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'a'</span><span class="p">]</span><span class="w">  </span><span class="c1"># returns all three values</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a a a 
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a a a 
 1 2 3 
 </code></pre></div>  </div>
 </blockquote>
@@ -668,7 +668,7 @@ must be unique.) Consider these examples:</p>
   <h2 id="tip-getting-help-for-operators">Tip: Getting help for operators</h2>
 
   <p>Remember you can search for help on operators by wrapping them in quotes:
-<code class="highlighter-rouge">help("%in%")</code> or <code class="highlighter-rouge">?"%in%"</code>.</p>
+<code class="language-plaintext highlighter-rouge">help("%in%")</code> or <code class="language-plaintext highlighter-rouge">?"%in%"</code>.</p>
 
 </blockquote>
 
@@ -680,34 +680,34 @@ must be unique.) Consider these examples:</p>
 </span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="s2">"a"</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in -"a": invalid argument to unary operator
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in -"a": invalid argument to unary operator
 </code></pre></div></div>
 
-<p>However, we can use the <code class="highlighter-rouge">!=</code> (not-equals) operator to construct a logical vector that will do what we want:</p>
+<p>However, we can use the <code class="language-plaintext highlighter-rouge">!=</code> (not-equals) operator to construct a logical vector that will do what we want:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"a"</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d   e 
 6.2 7.1 4.8 7.5 
 </code></pre></div></div>
 
-<p>Skipping multiple named indices is a little bit harder still. Suppose we want to drop the <code class="highlighter-rouge">"a"</code> and <code class="highlighter-rouge">"c"</code> elements, so we try this:</p>
+<p>Skipping multiple named indices is a little bit harder still. Suppose we want to drop the <code class="language-plaintext highlighter-rouge">"a"</code> and <code class="language-plaintext highlighter-rouge">"c"</code> elements, so we try this:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length
 </code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   c   d   e 
 6.2 7.1 4.8 7.5 
 </code></pre></div></div>
 
-<p>R did <em>something</em>, but it gave us a warning that we ought to pay attention to - and it apparently <em>gave us the wrong answer</em> (the <code class="highlighter-rouge">"c"</code> element is still included in the vector)!</p>
+<p>R did <em>something</em>, but it gave us a warning that we ought to pay attention to - and it apparently <em>gave us the wrong answer</em> (the <code class="language-plaintext highlighter-rouge">"c"</code> element is still included in the vector)!</p>
 
-<p>So what does <code class="highlighter-rouge">!=</code> actually do in this case? That’s an excellent question.</p>
+<p>So what does <code class="language-plaintext highlighter-rouge">!=</code> actually do in this case? That’s an excellent question.</p>
 
 <h3 id="recycling">Recycling</h3>
 
@@ -716,15 +716,15 @@ shorter object length
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning in names(x) != c("a", "c"): longer object length is not a multiple of
 shorter object length
 </code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE
 </code></pre></div></div>
 
-<p>Why does R give <code class="highlighter-rouge">TRUE</code> as the third element of this vector, when <code class="highlighter-rouge">names(x)[3] != "c"</code> is obviously false?
-When you use <code class="highlighter-rouge">!=</code>, R tries to compare each element
+<p>Why does R give <code class="language-plaintext highlighter-rouge">TRUE</code> as the third element of this vector, when <code class="language-plaintext highlighter-rouge">names(x)[3] != "c"</code> is obviously false?
+When you use <code class="language-plaintext highlighter-rouge">!=</code>, R tries to compare each element
 of the left argument with the corresponding element of its right
 argument. What happens when you compare vectors of different lengths?</p>
 
@@ -734,16 +734,16 @@ argument. What happens when you compare vectors of different lengths?</p>
 
 <p><img src="../fig/06-rmd-inequality.2.png" alt="Inequality testing: results of recycling" /></p>
 
-<p>In this case R <strong>repeats</strong> <code class="highlighter-rouge">c("a", "c")</code> as many times as necessary to match <code class="highlighter-rouge">names(x)</code>, i.e. we get <code class="highlighter-rouge">c("a","c","a","c","a")</code>. Since the recycled <code class="highlighter-rouge">"a"</code>
-doesn’t match the third element of <code class="highlighter-rouge">names(x)</code>, the value of <code class="highlighter-rouge">!=</code> is <code class="highlighter-rouge">TRUE</code>.
-Because in this case the longer vector length (5) isn’t a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and <code class="highlighter-rouge">names(x)</code> had contained six elements, R would <em>silently</em> have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!</p>
+<p>In this case R <strong>repeats</strong> <code class="language-plaintext highlighter-rouge">c("a", "c")</code> as many times as necessary to match <code class="language-plaintext highlighter-rouge">names(x)</code>, i.e. we get <code class="language-plaintext highlighter-rouge">c("a","c","a","c","a")</code>. Since the recycled <code class="language-plaintext highlighter-rouge">"a"</code>
+doesn’t match the third element of <code class="language-plaintext highlighter-rouge">names(x)</code>, the value of <code class="language-plaintext highlighter-rouge">!=</code> is <code class="language-plaintext highlighter-rouge">TRUE</code>.
+Because in this case the longer vector length (5) isn’t a multiple of the shorter vector length (2), R printed a warning message. If we had been unlucky and <code class="language-plaintext highlighter-rouge">names(x)</code> had contained six elements, R would <em>silently</em> have done the wrong thing (i.e., not what we intended it to do). This recycling rule can can introduce hard-to-find and subtle bugs!</p>
 
-<p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) it to use the <code class="highlighter-rouge">%in%</code> operator. The <code class="highlighter-rouge">%in%</code> operator goes through each element of its left argument, in this case the names of <code class="highlighter-rouge">x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code class="highlighter-rouge">!</code> operator to change “in” to “not in”:</p>
+<p>The way to get R to do what we really want (match <em>each</em> element of the left argument with <em>all</em> of the elements of the right argument) it to use the <code class="language-plaintext highlighter-rouge">%in%</code> operator. The <code class="language-plaintext highlighter-rouge">%in%</code> operator goes through each element of its left argument, in this case the names of <code class="language-plaintext highlighter-rouge">x</code>, and asks, “Does this element occur in the second argument?”. Here, since we want to <em>exclude</em> values, we also need a <code class="language-plaintext highlighter-rouge">!</code> operator to change “in” to “not in”:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">[</span><span class="o">!</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   d   e 
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  b   d   e 
 6.2 4.8 7.5 
 </code></pre></div></div>
 
@@ -752,10 +752,10 @@ Because in this case the longer vector length (5) isn’t a multiple of the shor
 
   <p>Selecting elements of a vector that match any of a list of components
 is a very common data analysis task. For example, the gapminder data set
-contains <code class="highlighter-rouge">country</code> and <code class="highlighter-rouge">continent</code> variables, but no information between
+contains <code class="language-plaintext highlighter-rouge">country</code> and <code class="language-plaintext highlighter-rouge">continent</code> variables, but no information between
 these two scales. Suppose we want to pull out information from southeast
 Asia: how do we set up an operation to produce a logical vector that
-is <code class="highlighter-rouge">TRUE</code> for all of the countries in southeast Asia and <code class="highlighter-rouge">FALSE</code> otherwise?</p>
+is <code class="language-plaintext highlighter-rouge">TRUE</code> for all of the countries in southeast Asia and <code class="language-plaintext highlighter-rouge">FALSE</code> otherwise?</p>
 
   <p>Suppose you have these data:</p>
 
@@ -768,30 +768,30 @@ is <code class="highlighter-rouge">TRUE</code> for all of the countries in south
 </span><span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">country</span><span class="p">))</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p>There’s a wrong way (using only <code class="highlighter-rouge">==</code>), which will give you a warning;
-a clunky way (using the logical operators <code class="highlighter-rouge">==</code> and <code class="highlighter-rouge">|</code>); and
-an elegant way (using <code class="highlighter-rouge">%in%</code>). See whether you can come up with all three
+  <p>There’s a wrong way (using only <code class="language-plaintext highlighter-rouge">==</code>), which will give you a warning;
+a clunky way (using the logical operators <code class="language-plaintext highlighter-rouge">==</code> and <code class="language-plaintext highlighter-rouge">|</code>); and
+an elegant way (using <code class="language-plaintext highlighter-rouge">%in%</code>). See whether you can come up with all three
 and explain how they (don’t) work.</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-3">Solution to challenge 3</h2>
 
     <ul>
-      <li>The <strong>wrong</strong> way to do this problem is <code class="highlighter-rouge">countries==seAsia</code>. This
-gives a warning (<code class="highlighter-rouge">"In countries == seAsia : longer object length is not a multiple of shorter object length"</code>) and the wrong answer (a vector of all
-<code class="highlighter-rouge">FALSE</code> values), because none of the recycled values of <code class="highlighter-rouge">seAsia</code> happen
-to line up correctly with matching values in <code class="highlighter-rouge">country</code>.</li>
+      <li>The <strong>wrong</strong> way to do this problem is <code class="language-plaintext highlighter-rouge">countries==seAsia</code>. This
+gives a warning (<code class="language-plaintext highlighter-rouge">"In countries == seAsia : longer object length is not a multiple of shorter object length"</code>) and the wrong answer (a vector of all
+<code class="language-plaintext highlighter-rouge">FALSE</code> values), because none of the recycled values of <code class="language-plaintext highlighter-rouge">seAsia</code> happen
+to line up correctly with matching values in <code class="language-plaintext highlighter-rouge">country</code>.</li>
       <li>The <strong>clunky</strong> (but technically correct) way to do this problem is</li>
     </ul>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">(</span><span class="n">countries</span><span class="o">==</span><span class="s2">"Myanmar"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">countries</span><span class="o">==</span><span class="s2">"Thailand"</span><span class="w"> </span><span class="o">|</span><span class="w">
  </span><span class="n">countries</span><span class="o">==</span><span class="s2">"Cambodia"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">countries</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Vietnam"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">countries</span><span class="o">==</span><span class="s2">"Laos"</span><span class="p">)</span><span class="w">
 </span></code></pre></div>    </div>
-    <p>(or <code class="highlighter-rouge">countries==seAsia[1] | countries==seAsia[2] | ...</code>). This
+    <p>(or <code class="language-plaintext highlighter-rouge">countries==seAsia[1] | countries==seAsia[2] | ...</code>). This
 gives the correct values, but hopefully you can see how awkward it
 is (what if we wanted to select countries from a much longer list?).</p>
     <ul>
-      <li>The best way to do this problem is <code class="highlighter-rouge">countries %in% seAsia</code>, which
+      <li>The best way to do this problem is <code class="language-plaintext highlighter-rouge">countries %in% seAsia</code>, which
 is both correct and easy to type (and read).</li>
     </ul>
   </blockquote>
@@ -805,12 +805,12 @@ or undefined data.</p>
 <p>There are a number of special functions you can use to filter out this data:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">is.na</code> will return all positions in a vector, matrix, or data.frame
-containing <code class="highlighter-rouge">NA</code> (or <code class="highlighter-rouge">NaN</code>)</li>
-  <li>likewise, <code class="highlighter-rouge">is.nan</code>, and <code class="highlighter-rouge">is.infinite</code> will do the same for <code class="highlighter-rouge">NaN</code> and <code class="highlighter-rouge">Inf</code>.</li>
-  <li><code class="highlighter-rouge">is.finite</code> will return all positions in a vector, matrix, or data.frame
-that do not contain <code class="highlighter-rouge">NA</code>, <code class="highlighter-rouge">NaN</code> or <code class="highlighter-rouge">Inf</code>.</li>
-  <li><code class="highlighter-rouge">na.omit</code> will filter out all missing values from a vector</li>
+  <li><code class="language-plaintext highlighter-rouge">is.na</code> will return all positions in a vector, matrix, or data.frame
+containing <code class="language-plaintext highlighter-rouge">NA</code> (or <code class="language-plaintext highlighter-rouge">NaN</code>)</li>
+  <li>likewise, <code class="language-plaintext highlighter-rouge">is.nan</code>, and <code class="language-plaintext highlighter-rouge">is.infinite</code> will do the same for <code class="language-plaintext highlighter-rouge">NaN</code> and <code class="language-plaintext highlighter-rouge">Inf</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">is.finite</code> will return all positions in a vector, matrix, or data.frame
+that do not contain <code class="language-plaintext highlighter-rouge">NA</code>, <code class="language-plaintext highlighter-rouge">NaN</code> or <code class="language-plaintext highlighter-rouge">Inf</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">na.omit</code> will filter out all missing values from a vector</li>
 </ul>
 
 <h2 id="factor-subsetting">Factor subsetting</h2>
@@ -824,21 +824,21 @@ do we subset the other data structures?</p>
 </span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"a"</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a
 Levels: a b c d
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] b c c
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] b c c
 Levels: a b c d
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a b
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a b
 Levels: a b c d
 </code></pre></div></div>
 
@@ -848,13 +848,13 @@ even if no more of that category exists in the factor:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">[</span><span class="m">-3</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a c c d
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] a a c c d
 Levels: a b c d
 </code></pre></div></div>
 
 <h2 id="matrix-subsetting">Matrix subsetting</h2>
 
-<p>Matrices are also subsetted using the <code class="highlighter-rouge">[</code> function. In this case
+<p>Matrices are also subsetted using the <code class="language-plaintext highlighter-rouge">[</code> function. In this case
 it takes two arguments: the first applying to the rows, the second
 to its columns:</p>
 
@@ -863,7 +863,7 @@ to its columns:</p>
 </span><span class="n">m</span><span class="p">[</span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            [,1]       [,2]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            [,1]       [,2]
 [1,]  1.12493092 -0.8356286
 [2,] -0.04493361  1.5952808
 </code></pre></div></div>
@@ -874,7 +874,7 @@ rows or columns respectively:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            [,1]        [,2]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            [,1]        [,2]
 [1,] -0.62124058  0.82122120
 [2,] -2.21469989  0.59390132
 [3,]  1.12493092  0.91897737
@@ -889,16 +889,16 @@ to a vector:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">[</span><span class="m">3</span><span class="p">,]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -0.8356286  0.5757814  1.1249309  0.9189774
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] -0.8356286  0.5757814  1.1249309  0.9189774
 </code></pre></div></div>
 
 <p>If you want to keep the output as a matrix, you need to specify a <em>third</em> argument;
-<code class="highlighter-rouge">drop = FALSE</code>:</p>
+<code class="language-plaintext highlighter-rouge">drop = FALSE</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           [,1]      [,2]     [,3]      [,4]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           [,1]      [,2]     [,3]      [,4]
 [1,] -0.8356286 0.5757814 1.124931 0.9189774
 </code></pre></div></div>
 
@@ -908,13 +908,13 @@ R will throw an error:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">6</span><span class="p">)]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in m[, c(3, 6)]: subscript out of bounds
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in m[, c(3, 6)]: subscript out of bounds
 </code></pre></div></div>
 
 <blockquote class="callout">
   <h2 id="tip-higher-dimensional-arrays">Tip: Higher dimensional arrays</h2>
 
-  <p>when dealing with multi-dimensional arrays, each argument to <code class="highlighter-rouge">[</code>
+  <p>when dealing with multi-dimensional arrays, each argument to <code class="language-plaintext highlighter-rouge">[</code>
 corresponds to a dimension. For example, a 3D array, the first three
 arguments correspond to the rows, columns, and depth dimension.</p>
 
@@ -926,7 +926,7 @@ also subset using only one argument:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0.3295078
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0.3295078
 </code></pre></div></div>
 
 <p>This usually isn’t useful, and often confusing to read. However it is useful to note that matrices
@@ -936,17 +936,17 @@ vector are arranged column-wise:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3]
 [1,]    1    3    5
 [2,]    2    4    6
 </code></pre></div></div>
 
-<p>If you wish to populate the matrix by row, use <code class="highlighter-rouge">byrow=TRUE</code>:</p>
+<p>If you wish to populate the matrix by row, use <code class="language-plaintext highlighter-rouge">byrow=TRUE</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3]
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3]
 [1,]    1    2    3
 [2,]    4    5    6
 </code></pre></div></div>
@@ -963,7 +963,7 @@ instead of their row and column indices.</p>
 </span><span class="n">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3] [,4] [,5] [,6]
+  <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     [,1] [,2] [,3] [,4] [,5] [,6]
 [1,]    1    4    7   10   13   16
 [2,]    2    5    8   11   14   17
 [3,]    3    6    9   12   15   18
@@ -973,13 +973,13 @@ instead of their row and column indices.</p>
     <li>Which of the following commands will extract the values 11 and 14?</li>
   </ol>
 
-  <p>A. <code class="highlighter-rouge">m[2,4,2,5]</code></p>
+  <p>A. <code class="language-plaintext highlighter-rouge">m[2,4,2,5]</code></p>
 
-  <p>B. <code class="highlighter-rouge">m[2:5]</code></p>
+  <p>B. <code class="language-plaintext highlighter-rouge">m[2:5]</code></p>
 
-  <p>C. <code class="highlighter-rouge">m[4:5,2]</code></p>
+  <p>C. <code class="language-plaintext highlighter-rouge">m[4:5,2]</code></p>
 
-  <p>D. <code class="highlighter-rouge">m[2,c(4,5)]</code></p>
+  <p>D. <code class="language-plaintext highlighter-rouge">m[2,c(4,5)]</code></p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-4">Solution to challenge 4</h2>
@@ -991,23 +991,23 @@ instead of their row and column indices.</p>
 <h2 id="list-subsetting">List subsetting</h2>
 
 <p>Now we’ll introduce some new subsetting operators. There are three functions
-used to subset lists. We’ve already seen these when learning about atomic vectors and matrices:  <code class="highlighter-rouge">[</code>, <code class="highlighter-rouge">[[</code>, and <code class="highlighter-rouge">$</code>.</p>
+used to subset lists. We’ve already seen these when learning about atomic vectors and matrices:  <code class="language-plaintext highlighter-rouge">[</code>, <code class="language-plaintext highlighter-rouge">[[</code>, and <code class="language-plaintext highlighter-rouge">$</code>.</p>
 
-<p>Using <code class="highlighter-rouge">[</code> will always return a list. If you want to <em>subset</em> a list, but not
-<em>extract</em> an element, then you will likely use <code class="highlighter-rouge">[</code>.</p>
+<p>Using <code class="language-plaintext highlighter-rouge">[</code> will always return a list. If you want to <em>subset</em> a list, but not
+<em>extract</em> an element, then you will likely use <code class="language-plaintext highlighter-rouge">[</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Software Carpentry"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">(</span><span class="n">iris</span><span class="p">))</span><span class="w">
 </span><span class="n">xlist</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a
 [1] "Software Carpentry"
 </code></pre></div></div>
 
 <p>This returns a <em>list with one element</em>.</p>
 
 <p>We can subset elements of a list exactly the same way as atomic
-vectors using <code class="highlighter-rouge">[</code>. Comparison operations however won’t work as
+vectors using <code class="language-plaintext highlighter-rouge">[</code>. Comparison operations however won’t work as
 they’re not recursive, they will try to condition on the data structures
 in each element of the list, not the individual elements within those
 data structures.</p>
@@ -1015,7 +1015,7 @@ data structures.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a
 [1] "Software Carpentry"
 
 $b
@@ -1023,12 +1023,12 @@ $b
 </code></pre></div></div>
 
 <p>To extract individual elements of a list, you need to use the double-square
-bracket function: <code class="highlighter-rouge">[[</code>.</p>
+bracket function: <code class="language-plaintext highlighter-rouge">[[</code>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Software Carpentry"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Software Carpentry"
 </code></pre></div></div>
 
 <p>Notice that now the result is a vector, not a list.</p>
@@ -1038,7 +1038,7 @@ bracket function: <code class="highlighter-rouge">[[</code>.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in xlist[[1:2]]: subscript out of bounds
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in xlist[[1:2]]: subscript out of bounds
 </code></pre></div></div>
 
 <p>Nor use it to skip elements:</p>
@@ -1046,7 +1046,7 @@ bracket function: <code class="highlighter-rouge">[[</code>.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="m">-1</span><span class="p">]]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in xlist[[-1]]: attempt to select more than one element in get1index &lt;real&gt;
+<div class="language-plaintext error highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error in xlist[[-1]]: attempt to select more than one element in get1index &lt;real&gt;
 </code></pre></div></div>
 
 <p>But you can use names to both subset and extract elements:</p>
@@ -1054,15 +1054,15 @@ bracket function: <code class="highlighter-rouge">[[</code>.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="s2">"a"</span><span class="p">]]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Software Carpentry"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Software Carpentry"
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">$</code> function is a shorthand way for extracting elements by name:</p>
+<p>The <code class="language-plaintext highlighter-rouge">$</code> function is a shorthand way for extracting elements by name:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="o">$</span><span class="n">data</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
 2          4.9         3.0          1.4         0.2  setosa
 3          4.7         3.2          1.3         0.2  setosa
@@ -1087,19 +1087,19 @@ Hint: the number 2 is contained within the “b” item in the list.</p>
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="o">$</span><span class="n">b</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">2</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
 </code></pre></div>    </div>
 
     <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xlist</span><span class="p">[[</span><span class="s2">"b"</span><span class="p">]][</span><span class="m">2</span><span class="p">]</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
+    <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 2
 </code></pre></div>    </div>
   </blockquote>
 </blockquote>
@@ -1111,7 +1111,7 @@ Hint: the number 2 is contained within the “b” item in the list.</p>
   <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mod</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">aov</span><span class="p">(</span><span class="n">pop</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">lifeExp</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">gapminder</span><span class="p">)</span><span class="w">
 </span></code></pre></div>  </div>
 
-  <p>Extract the residual degrees of freedom (hint: <code class="highlighter-rouge">attributes()</code> will help you)</p>
+  <p>Extract the residual degrees of freedom (hint: <code class="language-plaintext highlighter-rouge">attributes()</code> will help you)</p>
 
   <blockquote class="solution">
     <h2 id="solution-to-challenge-6">Solution to challenge 6</h2>
@@ -1129,13 +1129,13 @@ Hint: the number 2 is contained within the “b” item in the list.</p>
 <p>Remember the data frames are lists underneath the hood, so similar rules
 apply. However they are also two dimensional objects:</p>
 
-<p><code class="highlighter-rouge">[</code> with one argument will act the same way as for lists, where each list
+<p><code class="language-plaintext highlighter-rouge">[</code> with one argument will act the same way as for lists, where each list
 element corresponds to a column. The resulting object will be a data frame:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="m">3</span><span class="p">])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       pop
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       pop
 1  8425333
 2  9240934
 3 10267083
@@ -1144,28 +1144,28 @@ element corresponds to a column. The resulting object will be a data frame:</p>
 6 14880372
 </code></pre></div></div>
 
-<p>Similarly, <code class="highlighter-rouge">[[</code> will act to extract <em>a single column</em>:</p>
+<p>Similarly, <code class="language-plaintext highlighter-rouge">[[</code> will act to extract <em>a single column</em>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[[</span><span class="s2">"lifeExp"</span><span class="p">]])</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 28.801 30.332 31.997 34.020 36.088 38.438
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 28.801 30.332 31.997 34.020 36.088 38.438
 </code></pre></div></div>
 
-<p>And <code class="highlighter-rouge">$</code> provides a convenient shorthand to extract columns by name:</p>
+<p>And <code class="language-plaintext highlighter-rouge">$</code> provides a convenient shorthand to extract columns by name:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">gapminder</span><span class="o">$</span><span class="n">year</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1952 1957 1962 1967 1972 1977
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 1952 1957 1962 1967 1972 1977
 </code></pre></div></div>
 
-<p>With two arguments, <code class="highlighter-rouge">[</code> behaves the same way as for matrices:</p>
+<p>With two arguments, <code class="language-plaintext highlighter-rouge">[</code> behaves the same way as for matrices:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
 1 Afghanistan 1952  8425333      Asia  28.801  779.4453
 2 Afghanistan 1957  9240934      Asia  30.332  820.8530
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007
@@ -1177,12 +1177,12 @@ the elements are mixed types):</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="p">[</span><span class="m">3</span><span class="p">,]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      country year      pop continent lifeExp gdpPercap
 3 Afghanistan 1962 10267083      Asia  31.997  853.1007
 </code></pre></div></div>
 
 <p>But for a single column the result will be a vector (this can
-be changed with the third argument, <code class="highlighter-rouge">drop = FALSE</code>).</p>
+be changed with the third argument, <code class="language-plaintext highlighter-rouge">drop = FALSE</code>).</p>
 
 <blockquote class="challenge">
   <h2 id="challenge-7">Challenge 7</h2>
@@ -1210,7 +1210,7 @@ be changed with the third argument, <code class="highlighter-rouge">drop = FALSE
     </li>
     <li>
       <p>Extract the first row, and the fourth and fifth columns
-  (<code class="highlighter-rouge">continent</code> and <code class="highlighter-rouge">lifeExp</code>).</p>
+  (<code class="language-plaintext highlighter-rouge">continent</code> and <code class="language-plaintext highlighter-rouge">lifeExp</code>).</p>
 
       <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gapminder</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w">
 </span></code></pre></div>      </div>
@@ -1253,7 +1253,7 @@ and 2007</p>
       </li>
       <li>
         <p>Extract the first row, and the fourth and fifth columns
-  (<code class="highlighter-rouge">continent</code> and <code class="highlighter-rouge">lifeExp</code>).</p>
+  (<code class="language-plaintext highlighter-rouge">continent</code> and <code class="language-plaintext highlighter-rouge">lifeExp</code>).</p>
 
         <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># gapminder[1, 4, 5]</span><span class="w">
 </span><span class="n">gapminder</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)]</span><span class="w">
@@ -1277,10 +1277,10 @@ and 2007</p>
 
   <ol>
     <li>
-      <p>Why does <code class="highlighter-rouge">gapminder[1:20]</code> return an error? How does it differ from <code class="highlighter-rouge">gapminder[1:20, ]</code>?</p>
+      <p>Why does <code class="language-plaintext highlighter-rouge">gapminder[1:20]</code> return an error? How does it differ from <code class="language-plaintext highlighter-rouge">gapminder[1:20, ]</code>?</p>
     </li>
     <li>
-      <p>Create a new <code class="highlighter-rouge">data.frame</code> called <code class="highlighter-rouge">gapminder_small</code> that only contains rows 1 through 9
+      <p>Create a new <code class="language-plaintext highlighter-rouge">data.frame</code> called <code class="language-plaintext highlighter-rouge">gapminder_small</code> that only contains rows 1 through 9
 and 19 through 23. You can do this in one or two steps.</p>
     </li>
   </ol>
@@ -1290,7 +1290,7 @@ and 19 through 23. You can do this in one or two steps.</p>
 
     <ol>
       <li>
-        <p><code class="highlighter-rouge">gapminder</code> is a data.frame so needs to be subsetted on two dimensions. <code class="highlighter-rouge">gapminder[1:20, ]</code> subsets the data to give the first 20 rows and all columns.</p>
+        <p><code class="language-plaintext highlighter-rouge">gapminder</code> is a data.frame so needs to be subsetted on two dimensions. <code class="language-plaintext highlighter-rouge">gapminder[1:20, ]</code> subsets the data to give the first 20 rows and all columns.</p>
       </li>
       <li></li>
     </ol>
@@ -1308,13 +1308,13 @@ and 19 through 23. You can do this in one or two steps.</p>
     <li><p>Indexing in R starts at 1, not 0.</p>
 </li>
     
-    <li><p>Access individual values by location using <code class="highlighter-rouge">[]</code>.</p>
+    <li><p>Access individual values by location using <code class="language-plaintext highlighter-rouge">[]</code>.</p>
 </li>
     
-    <li><p>Access slices of data using <code class="highlighter-rouge">[low:high]</code>.</p>
+    <li><p>Access slices of data using <code class="language-plaintext highlighter-rouge">[low:high]</code>.</p>
 </li>
     
-    <li><p>Access arbitrary sets of data using <code class="highlighter-rouge">[c(...)]</code>.</p>
+    <li><p>Access arbitrary sets of data using <code class="language-plaintext highlighter-rouge">[c(...)]</code>.</p>
 </li>
     
     <li><p>Use logical operations and logical vectors to access subsets of data.</p>

@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -294,7 +294,7 @@ and explore the <a href="../reference.html#argument">arguments</a> that allow yo
 
 <h3 id="read-a-csv-and-explore-the-arguments">Read a .csv and Explore the Arguments</h3>
 
-<p>Let’s start by opening a .csv file containing information on the speeds at which cars of different colors were clocked in 45 mph zones in the four-corners states (<code class="highlighter-rouge">CarSpeeds.csv</code>). We will use the built in <code class="highlighter-rouge">read.csv(...)</code> <a href="../reference.html#function-call">function call</a>, which reads the data in as a data frame, and assign the data frame to a variable (using <code class="highlighter-rouge">&lt;-</code>) so that it is stored in R’s memory. Then we will explore some of the basic arguments that can be supplied to the function.</p>
+<p>Let’s start by opening a .csv file containing information on the speeds at which cars of different colors were clocked in 45 mph zones in the four-corners states (<code class="language-plaintext highlighter-rouge">CarSpeeds.csv</code>). We will use the built in <code class="language-plaintext highlighter-rouge">read.csv(...)</code> <a href="../reference.html#function-call">function call</a>, which reads the data in as a data frame, and assign the data frame to a variable (using <code class="language-plaintext highlighter-rouge">&lt;-</code>) so that it is stored in R’s memory. Then we will explore some of the basic arguments that can be supplied to the function.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># First, set your working directory (see episode 'Analyzing Patient Data' for more</span><span class="w">
 </span><span class="c1"># info)</span><span class="w">
@@ -306,7 +306,7 @@ and explore the <a href="../reference.html#argument">arguments</a> that allow yo
 </span><span class="n">head</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
 1  Blue    32 NewMexico
 2   Red    45   Arizona
 3  Blue    35  Colorado
@@ -318,24 +318,24 @@ and explore the <a href="../reference.html#argument">arguments</a> that allow yo
 <blockquote class="callout">
   <h2 id="changing-delimiters">Changing Delimiters</h2>
 
-  <p>The default delimiter of the <code class="highlighter-rouge">read.csv()</code> function is a comma, but you can
+  <p>The default delimiter of the <code class="language-plaintext highlighter-rouge">read.csv()</code> function is a comma, but you can
 use other delimiters by supplying the ‘sep’ argument to the function
-(e.g., typing <code class="highlighter-rouge">sep = ';'</code> allows a semi-colon separated file to be correctly
-imported - see <code class="highlighter-rouge">?read.csv()</code> for more information on this and other options for
+(e.g., typing <code class="language-plaintext highlighter-rouge">sep = ';'</code> allows a semi-colon separated file to be correctly
+imported - see <code class="language-plaintext highlighter-rouge">?read.csv()</code> for more information on this and other options for
 working with different file types).</p>
 </blockquote>
 
 <p>The call above will import the data, but we have not taken advantage of several handy arguments that can be helpful in loading the data in the format we want. Let’s explore some of these arguments.</p>
 
-<h3 id="the-header-argument">The <code class="highlighter-rouge">header</code> Argument</h3>
+<h3 id="the-header-argument">The <code class="language-plaintext highlighter-rouge">header</code> Argument</h3>
 
-<p>The default for <code class="highlighter-rouge">read.csv(...)</code> is to set the <code class="highlighter-rouge">header</code> argument to <code class="highlighter-rouge">TRUE</code>. This means that the first row of values in the .csv is set as header information (column names). If your data set does not have a header, set the <code class="highlighter-rouge">header</code> argument to <code class="highlighter-rouge">FALSE</code>:</p>
+<p>The default for <code class="language-plaintext highlighter-rouge">read.csv(...)</code> is to set the <code class="language-plaintext highlighter-rouge">header</code> argument to <code class="language-plaintext highlighter-rouge">TRUE</code>. This means that the first row of values in the .csv is set as header information (column names). If your data set does not have a header, set the <code class="language-plaintext highlighter-rouge">header</code> argument to <code class="language-plaintext highlighter-rouge">FALSE</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The first row of the data without setting the header argument:</span><span class="w">
 </span><span class="n">carSpeeds</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
 1  Blue    32 NewMexico
 </code></pre></div></div>
 
@@ -345,15 +345,15 @@ working with different file types).</p>
 </span><span class="n">carSpeeds</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     V1    V2    V3
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     V1    V2    V3
 1 Color Speed State
 </code></pre></div></div>
 
 <p>Clearly this is not the desired behavior for this data set, but it may be useful if you have a dataset without headers.</p>
 
-<h3 id="the-stringsasfactors-argument">The <code class="highlighter-rouge">stringsAsFactors</code> Argument</h3>
+<h3 id="the-stringsasfactors-argument">The <code class="language-plaintext highlighter-rouge">stringsAsFactors</code> Argument</h3>
 
-<p>This is perhaps the most important argument in <code class="highlighter-rouge">read.csv()</code>, particularly if you are working with categorical data. This is because the default behavior of R is to convert character <a href="../reference.html#string">string</a>s into factors, which may make it difficult to do such things as replace values. For example, let’s say we find out that the data collector was color blind, and accidentally recorded green cars as being blue. In order to correct the data set, let’s replace ‘Blue’ with ‘Green’ in the <code class="highlighter-rouge">$Color</code> column:</p>
+<p>This is perhaps the most important argument in <code class="language-plaintext highlighter-rouge">read.csv()</code>, particularly if you are working with categorical data. This is because the default behavior of R is to convert character <a href="../reference.html#string">string</a>s into factors, which may make it difficult to do such things as replace values. For example, let’s say we find out that the data collector was color blind, and accidentally recorded green cars as being blue. In order to correct the data set, let’s replace ‘Blue’ with ‘Green’ in the <code class="language-plaintext highlighter-rouge">$Color</code> column:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Here we will use R's `ifelse` function, in which we provide the test phrase,</span><span class="w">
 </span><span class="c1"># the outcome if the result of the test is 'TRUE', and the outcome if the</span><span class="w">
@@ -367,7 +367,7 @@ working with different file types).</p>
 </span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">Color</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" "1"     "Green" "5"     "4"     "Green" "Green" "2"     "5"    
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" "1"     "Green" "5"     "4"     "Green" "Green" "2"     "5"    
  [10] "4"     "4"     "5"     "Green" "Green" "2"     "4"     "Green" "Green"
  [19] "5"     "Green" "Green" "Green" "4"     "Green" "4"     "4"     "4"    
  [28] "4"     "5"     "Green" "4"     "5"     "2"     "4"     "2"     "2"    
@@ -386,29 +386,29 @@ color was turned into a number (as a character string, given the quote marks bef
 and after). This is because the colors of the cars were loaded as factors, and the
 factor level was reported following replacement.</p>
 
-<p>To see the internal structure, we can use another function, <code class="highlighter-rouge">str()</code>. In this case,
+<p>To see the internal structure, we can use another function, <code class="language-plaintext highlighter-rouge">str()</code>. In this case,
 the dataframe’s internal structure includes the format of each column, which is what
-we are interested in. <code class="highlighter-rouge">str()</code> will be reviewed a little more in the lesson
+we are interested in. <code class="language-plaintext highlighter-rouge">str()</code> will be reviewed a little more in the lesson
 <a href="../13-supp-data-structures/">Data Types and Structures</a>.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
  $ Color: chr  "Green" "1" "Green" "5" ...
  $ Speed: int  32 45 35 34 25 41 34 29 31 26 ...
  $ State: Factor w/ 4 levels "Arizona","Colorado",..: 3 1 2 1 1 1 3 2 1 2 ...
 </code></pre></div></div>
 
-<p>We can see that the <code class="highlighter-rouge">$Color</code> and <code class="highlighter-rouge">$State</code> columns are factors and <code class="highlighter-rouge">$Speed</code> is a numeric column.</p>
+<p>We can see that the <code class="language-plaintext highlighter-rouge">$Color</code> and <code class="language-plaintext highlighter-rouge">$State</code> columns are factors and <code class="language-plaintext highlighter-rouge">$Speed</code> is a numeric column.</p>
 
-<p>Now, let’s load the dataset using <code class="highlighter-rouge">stringsAsFactors=FALSE</code>, and see what happens when we try to replace ‘Blue’ with ‘Green’ in the <code class="highlighter-rouge">$Color</code> column:</p>
+<p>Now, let’s load the dataset using <code class="language-plaintext highlighter-rouge">stringsAsFactors=FALSE</code>, and see what happens when we try to replace ‘Blue’ with ‘Green’ in the <code class="language-plaintext highlighter-rouge">$Color</code> column:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carSpeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/car-speeds.csv'</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span><span class="n">str</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
  $ Color: chr  "Blue" " Red" "Blue" "White" ...
  $ Speed: int  32 45 35 34 25 41 34 29 31 26 ...
  $ State: chr  "NewMexico" "Arizona" "Colorado" "Arizona" ...
@@ -418,7 +418,7 @@ we are interested in. <code class="highlighter-rouge">str()</code> will be revie
 </span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">Color</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" " Red"  "Green" "White" "Red"   "Green" "Green" "Black" "White"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" " Red"  "Green" "White" "Red"   "Green" "Green" "Black" "White"
  [10] "Red"   "Red"   "White" "Green" "Green" "Black" "Red"   "Green" "Green"
  [19] "White" "Green" "Green" "Green" "Red"   "Green" "Red"   "Red"   "Red"  
  [28] "Red"   "White" "Green" "Red"   "White" "Black" "Red"   "Black" "Black"
@@ -434,21 +434,21 @@ we are interested in. <code class="highlighter-rouge">str()</code> will be revie
 
 <p>That’s better! And we can see how the data now is read as character instead of factor.</p>
 
-<h3 id="the-asis-argument">The <code class="highlighter-rouge">as.is</code> Argument</h3>
+<h3 id="the-asis-argument">The <code class="language-plaintext highlighter-rouge">as.is</code> Argument</h3>
 
-<p>This is an extension of the <code class="highlighter-rouge">stringsAsFactors</code> argument, but gives you control over individual columns. For example, if we want the colors of cars imported as strings, but we want the names of the states imported as factors, we would load the data set as:</p>
+<p>This is an extension of the <code class="language-plaintext highlighter-rouge">stringsAsFactors</code> argument, but gives you control over individual columns. For example, if we want the colors of cars imported as strings, but we want the names of the states imported as factors, we would load the data set as:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carSpeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/car-speeds.csv'</span><span class="p">,</span><span class="w"> </span><span class="n">as.is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
 
 </span><span class="c1"># Note, the 1 applies as.is to the first column only</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Now we can see that if we try to replace ‘Blue’ with ‘Green’ in the <code class="highlighter-rouge">$Color</code> column everything looks fine, while trying to replace ‘Arizona’ with ‘Ohio’ in the <code class="highlighter-rouge">$State</code> column returns the factor numbers for the names of states that we haven’t replaced:</p>
+<p>Now we can see that if we try to replace ‘Blue’ with ‘Green’ in the <code class="language-plaintext highlighter-rouge">$Color</code> column everything looks fine, while trying to replace ‘Arizona’ with ‘Ohio’ in the <code class="language-plaintext highlighter-rouge">$State</code> column returns the factor numbers for the names of states that we haven’t replaced:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'data.frame':	100 obs. of  3 variables:
  $ Color: chr  "Blue" " Red" "Blue" "White" ...
  $ Speed: int  32 45 35 34 25 41 34 29 31 26 ...
  $ State: Factor w/ 4 levels "Arizona","Colorado",..: 3 1 2 1 1 1 3 2 1 2 ...
@@ -458,7 +458,7 @@ we are interested in. <code class="highlighter-rouge">str()</code> will be revie
 </span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">Color</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" " Red"  "Green" "White" "Red"   "Green" "Green" "Black" "White"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "Green" " Red"  "Green" "White" "Red"   "Green" "Green" "Black" "White"
  [10] "Red"   "Red"   "White" "Green" "Green" "Black" "Red"   "Green" "Green"
  [19] "White" "Green" "Green" "Green" "Red"   "Green" "Red"   "Red"   "Red"  
  [28] "Red"   "White" "Green" "Red"   "White" "Black" "Red"   "Black" "Black"
@@ -476,7 +476,7 @@ we are interested in. <code class="highlighter-rouge">str()</code> will be revie
 </span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">State</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "3"    "Ohio" "2"    "Ohio" "Ohio" "Ohio" "3"    "2"    "Ohio" "2"   
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  [1] "3"    "Ohio" "2"    "Ohio" "Ohio" "Ohio" "3"    "2"    "Ohio" "2"   
  [11] "4"    "4"    "4"    "4"    "4"    "3"    "Ohio" "3"    "Ohio" "4"   
  [21] "4"    "4"    "3"    "2"    "2"    "3"    "2"    "4"    "2"    "4"   
  [31] "3"    "2"    "2"    "4"    "2"    "2"    "3"    "Ohio" "4"    "2"   
@@ -487,14 +487,14 @@ we are interested in. <code class="highlighter-rouge">str()</code> will be revie
  [81] "4"    "2"    "2"    "Ohio" "Ohio" "Ohio" "4"    "Ohio" "4"    "4"   
  [91] "4"    "Ohio" "Ohio" "3"    "2"    "2"    "4"    "3"    "Ohio" "4"   
 </code></pre></div></div>
-<p>We can see that <code class="highlighter-rouge">$Color</code> column is a character while <code class="highlighter-rouge">$State</code> is a factor.</p>
+<p>We can see that <code class="language-plaintext highlighter-rouge">$Color</code> column is a character while <code class="language-plaintext highlighter-rouge">$State</code> is a factor.</p>
 
 <blockquote class="challenge">
   <h2 id="updating-values-in-a-factor">Updating Values in a Factor</h2>
 
   <p>Suppose we want to keep the colors of cars as factors for some other operations we want to perform.
-Write code for replacing ‘Blue’ with ‘Green’ in the <code class="highlighter-rouge">$Color</code> column of the cars dataset
-without importing the data with <code class="highlighter-rouge">stringsAsFactors=FALSE</code>.</p>
+Write code for replacing ‘Blue’ with ‘Green’ in the <code class="language-plaintext highlighter-rouge">$Color</code> column of the cars dataset
+without importing the data with <code class="language-plaintext highlighter-rouge">stringsAsFactors=FALSE</code>.</p>
 
   <blockquote class="solution">
     <h2 id="solution">Solution</h2>
@@ -510,9 +510,9 @@ without importing the data with <code class="highlighter-rouge">stringsAsFactors
   </blockquote>
 </blockquote>
 
-<h3 id="the-stripwhite-argument">The <code class="highlighter-rouge">strip.white</code> Argument</h3>
+<h3 id="the-stripwhite-argument">The <code class="language-plaintext highlighter-rouge">strip.white</code> Argument</h3>
 
-<p>It is not uncommon for mistakes to have been made when the data were recorded, for example a space (whitespace) may have been inserted before a data value. By default this whitespace will be kept in the R environment, such that ‘\ Red’ will be recognized as a different value than ‘Red’. In order to avoid this type of error, use the <code class="highlighter-rouge">strip.white</code> argument. Let’s see how this works by checking for the unique values in the <code class="highlighter-rouge">$Color</code> column of our dataset:</p>
+<p>It is not uncommon for mistakes to have been made when the data were recorded, for example a space (whitespace) may have been inserted before a data value. By default this whitespace will be kept in the R environment, such that ‘\ Red’ will be recognized as a different value than ‘Red’. In order to avoid this type of error, use the <code class="language-plaintext highlighter-rouge">strip.white</code> argument. Let’s see how this works by checking for the unique values in the <code class="language-plaintext highlighter-rouge">$Color</code> column of our dataset:</p>
 
 <p>Here, the data recorder added a space before the color of the car in one of the cells:</p>
 
@@ -520,13 +520,13 @@ without importing the data with <code class="highlighter-rouge">stringsAsFactors
 </span><span class="n">unique</span><span class="p">(</span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">Color</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] Green  Red  White Red   Black
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] Green  Red  White Red   Black
 Levels:  Red Black Green Red White
 </code></pre></div></div>
 
 <p>Oops, we see two values for red cars.</p>
 
-<p>Let’s try again, this time importing the data using the <code class="highlighter-rouge">strip.white</code> argument. NOTE - this argument must be accompanied by the <code class="highlighter-rouge">sep</code> argument, by which we indicate the type of delimiter in the file (the comma for most .csv files)</p>
+<p>Let’s try again, this time importing the data using the <code class="language-plaintext highlighter-rouge">strip.white</code> argument. NOTE - this argument must be accompanied by the <code class="language-plaintext highlighter-rouge">sep</code> argument, by which we indicate the type of delimiter in the file (the comma for most .csv files)</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carSpeeds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="w">
   </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/car-speeds.csv'</span><span class="p">,</span><span class="w">
@@ -538,14 +538,14 @@ Levels:  Red Black Green Red White
 </span><span class="n">unique</span><span class="p">(</span><span class="n">carSpeeds</span><span class="o">$</span><span class="n">Color</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Blue"  "Red"   "White" "Black"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] "Blue"  "Red"   "White" "Black"
 </code></pre></div></div>
 
 <p>That’s better!</p>
 
 <h3 id="write-a-new-csv-and-explore-the-arguments">Write a New .csv and Explore the Arguments</h3>
 
-<p>After altering our cars dataset by replacing ‘Blue’ with ‘Green’ in the <code class="highlighter-rouge">$Color</code> column, we now want to save the output. There are several arguments for the <code class="highlighter-rouge">write.csv(...)</code> <a href="../reference.html#function-call">function call</a>, a few of which are particularly important for how the data are exported.  Let’s explore these now.</p>
+<p>After altering our cars dataset by replacing ‘Blue’ with ‘Green’ in the <code class="language-plaintext highlighter-rouge">$Color</code> column, we now want to save the output. There are several arguments for the <code class="language-plaintext highlighter-rouge">write.csv(...)</code> <a href="../reference.html#function-call">function call</a>, a few of which are particularly important for how the data are exported.  Let’s explore these now.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Export the data. The write.csv() function requires a minimum of two</span><span class="w">
 </span><span class="c1"># arguments, the data to be saved and the name of the output file.</span><span class="w">
@@ -557,9 +557,9 @@ Levels:  Red Black Green Red White
 
 <p><img src="../fig/01-supp-csv-with-row-nums.png" alt="csv written without row.names argument" /></p>
 
-<h3 id="the-rownames-argument">The <code class="highlighter-rouge">row.names</code> Argument</h3>
+<h3 id="the-rownames-argument">The <code class="language-plaintext highlighter-rouge">row.names</code> Argument</h3>
 
-<p>This argument allows us to set the names of the rows in the output data file. R’s default for this argument is <code class="highlighter-rouge">TRUE</code>, and since it does not know what else to name the rows for the cars data set, it resorts to using row numbers. To correct this, we can set <code class="highlighter-rouge">row.names</code> to <code class="highlighter-rouge">FALSE</code>:</p>
+<p>This argument allows us to set the names of the rows in the output data file. R’s default for this argument is <code class="language-plaintext highlighter-rouge">TRUE</code>, and since it does not know what else to name the rows for the cars data set, it resorts to using row numbers. To correct this, we can set <code class="language-plaintext highlighter-rouge">row.names</code> to <code class="language-plaintext highlighter-rouge">FALSE</code>:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.csv</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/car-speeds-cleaned.csv'</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -571,15 +571,15 @@ Levels:  Red Black Green Red White
 <blockquote class="callout">
   <h2 id="setting-column-names">Setting Column Names</h2>
 
-  <p>There is also a <code class="highlighter-rouge">col.names</code> argument, which can be used to set the column
+  <p>There is also a <code class="language-plaintext highlighter-rouge">col.names</code> argument, which can be used to set the column
 names for a data set without headers. If the data set already has headers
-(e.g., we used the <code class="highlighter-rouge">headers = TRUE</code> argument when importing the data) then a
-<code class="highlighter-rouge">col.names</code> argument will be ignored.</p>
+(e.g., we used the <code class="language-plaintext highlighter-rouge">headers = TRUE</code> argument when importing the data) then a
+<code class="language-plaintext highlighter-rouge">col.names</code> argument will be ignored.</p>
 </blockquote>
 
-<h3 id="the-na-argument">The <code class="highlighter-rouge">na</code> Argument</h3>
+<h3 id="the-na-argument">The <code class="language-plaintext highlighter-rouge">na</code> Argument</h3>
 
-<p>There are times when we want to specify certain values for <code class="highlighter-rouge">NA</code>s in the data set (e.g., we are going to pass the data to a program that only accepts -9999 as a nodata value). In this case, we want to set the <code class="highlighter-rouge">NA</code> value of our output file to the desired value, using the na argument. Let’s see how this works:</p>
+<p>There are times when we want to specify certain values for <code class="language-plaintext highlighter-rouge">NA</code>s in the data set (e.g., we are going to pass the data to a program that only accepts -9999 as a nodata value). In this case, we want to set the <code class="language-plaintext highlighter-rouge">NA</code> value of our output file to the desired value, using the na argument. Let’s see how this works:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># First, replace the speed in the 3rd row with NA, by using an index (square</span><span class="w">
 </span><span class="c1"># brackets to indicate the position of the value we want to replace)</span><span class="w">
@@ -587,7 +587,7 @@ names for a data set without headers. If the data set already has headers
 </span><span class="n">head</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Color Speed     State
 1  Blue    32 NewMexico
 2   Red    45   Arizona
 3  Blue    NA  Colorado
@@ -599,7 +599,7 @@ names for a data set without headers. If the data set already has headers
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.csv</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'data/car-speeds-cleaned.csv'</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Now we’ll set <code class="highlighter-rouge">NA</code> to -9999 when we write the new .csv file:</p>
+<p>Now we’ll set <code class="language-plaintext highlighter-rouge">NA</code> to -9999 when we write the new .csv file:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Note - the na argument requires a string input</span><span class="w">
 </span><span class="n">write.csv</span><span class="p">(</span><span class="n">carSpeeds</span><span class="p">,</span><span class="w">
@@ -618,16 +618,16 @@ names for a data set without headers. If the data set already has headers
   <h2>Key Points</h2>
   <ul>
     
-    <li><p>Import data from a .csv file using the  <code class="highlighter-rouge">read.csv(...)</code> function.</p>
+    <li><p>Import data from a .csv file using the  <code class="language-plaintext highlighter-rouge">read.csv(...)</code> function.</p>
 </li>
     
-    <li><p>Understand some of the key arguments available for importing the data properly, including <code class="highlighter-rouge">header</code>, <code class="highlighter-rouge">stringsAsFactors</code>, <code class="highlighter-rouge">as.is</code>, and <code class="highlighter-rouge">strip.white</code>.</p>
+    <li><p>Understand some of the key arguments available for importing the data properly, including <code class="language-plaintext highlighter-rouge">header</code>, <code class="language-plaintext highlighter-rouge">stringsAsFactors</code>, <code class="language-plaintext highlighter-rouge">as.is</code>, and <code class="language-plaintext highlighter-rouge">strip.white</code>.</p>
 </li>
     
-    <li><p>Write data to a new .csv file using the <code class="highlighter-rouge">write.csv(...)</code> function</p>
+    <li><p>Write data to a new .csv file using the <code class="language-plaintext highlighter-rouge">write.csv(...)</code> function</p>
 </li>
     
-    <li><p>Understand some of the key arguments available for exporting the data properly, such as <code class="highlighter-rouge">row.names</code>, <code class="highlighter-rouge">col.names</code>, and <code class="highlighter-rouge">na</code>.</p>
+    <li><p>Understand some of the key arguments available for exporting the data properly, such as <code class="language-plaintext highlighter-rouge">row.names</code>, <code class="language-plaintext highlighter-rouge">col.names</code>, and <code class="language-plaintext highlighter-rouge">na</code>.</p>
 </li>
     
   </ul>

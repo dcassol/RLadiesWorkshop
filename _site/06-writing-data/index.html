@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -281,8 +281,8 @@
 
 <h2 id="saving-plots">Saving plots</h2>
 
-<p>You have already seen how to save the most recent plot you create in <code class="highlighter-rouge">ggplot2</code>,
-using the command <code class="highlighter-rouge">ggsave</code>. As a refresher:</p>
+<p>You have already seen how to save the most recent plot you create in <code class="language-plaintext highlighter-rouge">ggplot2</code>,
+using the command <code class="language-plaintext highlighter-rouge">ggsave</code>. As a refresher:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggsave</span><span class="p">(</span><span class="s2">"My_most_recent_plot.pdf"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
@@ -299,7 +299,7 @@ each subset, and you want to save each plot, but obviously can’t stop
 the loop to click ‘Export’ for each one.</p>
 
 <p>In this case you can use a more flexible approach. The function
-<code class="highlighter-rouge">pdf</code> creates a new pdf device. You can control the size and resolution
+<code class="language-plaintext highlighter-rouge">pdf</code> creates a new pdf device. You can control the size and resolution
 using the arguments to this function.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pdf</span><span class="p">(</span><span class="s2">"Life_Exp_vs_time.pdf"</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w">
@@ -318,7 +318,7 @@ using the arguments to this function.</p>
   <h2 id="challenge-1">Challenge 1</h2>
 
   <p>Rewrite your ‘pdf’ command to print a second
-page in the pdf, showing a facet plot (hint: use <code class="highlighter-rouge">facet_grid</code>)
+page in the pdf, showing a facet plot (hint: use <code class="language-plaintext highlighter-rouge">facet_grid</code>)
 of the same data with one panel per continent.</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-1">Solution to challenge 1</h2>
@@ -334,15 +334,15 @@ of the same data with one panel per continent.</p>
   </blockquote>
 </blockquote>
 
-<p>The commands <code class="highlighter-rouge">jpeg</code>, <code class="highlighter-rouge">png</code> etc. are used similarly to produce
+<p>The commands <code class="language-plaintext highlighter-rouge">jpeg</code>, <code class="language-plaintext highlighter-rouge">png</code> etc. are used similarly to produce
 documents in different formats.</p>
 
 <h2 id="writing-data">Writing data</h2>
 
 <p>At some point, you’ll also want to write out data from R.</p>
 
-<p>We can use the <code class="highlighter-rouge">write.table</code> function for this, which is
-very similar to <code class="highlighter-rouge">read.table</code> from before.</p>
+<p>We can use the <code class="language-plaintext highlighter-rouge">write.table</code> function for this, which is
+very similar to <code class="language-plaintext highlighter-rouge">read.table</code> from before.</p>
 
 <p>Let’s create a data-cleaning script, for this analysis, we
 only want to focus on the gapminder data for Australia:</p>
@@ -361,7 +361,7 @@ OK:</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="w"> </span><span class="n">cleaned</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">gapminder</span><span class="o">-</span><span class="n">aus.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"country","year","pop","continent","lifeExp","gdpPercap"
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"country","year","pop","continent","lifeExp","gdpPercap"
 "61","Australia",1952,8691212,"Oceania",69.12,10039.59564
 "62","Australia",1957,9712569,"Oceania",70.33,10949.64959
 "63","Australia",1962,10794968,"Oceania",70.93,12217.22686
@@ -401,7 +401,7 @@ column names.</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="w"> </span><span class="n">cleaned</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">gapminder</span><span class="o">-</span><span class="n">aus.csv</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country,year,pop,continent,lifeExp,gdpPercap
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country,year,pop,continent,lifeExp,gdpPercap
 Australia,1952,8691212,Oceania,69.12,10039.59564
 Australia,1957,9712569,Oceania,70.33,10949.64959
 Australia,1962,10794968,Oceania,70.93,12217.22686
@@ -422,7 +422,7 @@ Australia,1992,17481977,Oceania,77.56,23424.76683
 data to include only data points collected since 1990.</p>
 
   <p>Use this script to write out the new subset to a file
-in the <code class="highlighter-rouge">cleaned-data/</code> directory.</p>
+in the <code class="language-plaintext highlighter-rouge">cleaned-data/</code> directory.</p>
   <blockquote class="solution">
     <h2 id="solution-to-challenge-2">Solution to challenge 2</h2>
 
@@ -444,7 +444,7 @@ in the <code class="highlighter-rouge">cleaned-data/</code> directory.</p>
     <li><p>Save plots from RStudio using the ‘Export’ button.</p>
 </li>
     
-    <li><p>Use <code class="highlighter-rouge">write.table</code> to save tabular data.</p>
+    <li><p>Use <code class="language-plaintext highlighter-rouge">write.table</code> to save tabular data.</p>
 </li>
     
   </ul>

@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2020-02-26 14:13:40 -0800">
+    <meta http-equiv="last-modified" content="2020-02-26 14:14:38 -0800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -308,7 +308,7 @@ If you want to reuse code later or want others to be able to use your code, you 
 
 <h3 id="description-file">DESCRIPTION file</h3>
 
-<div class="source highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package: Package name
+<div class="language-plaintext source highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package: Package name
 Title: Brief package description
 Description: Longer package description
 Version: Version number(major.minor.patch)
@@ -351,14 +351,14 @@ Suggestion: organize in a logical manner so that you know which file holds which
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>We will use the <a href="https://cran.r-project.org/package=devtools"><code class="highlighter-rouge">devtools</code></a> and <a href="https://cran.r-project.org/package=roxygen2"><code class="highlighter-rouge">roxygen2</code></a> packages, which make creating packages in R relatively simple. Both can be installed from CRAN like this:</p>
+<p>We will use the <a href="https://cran.r-project.org/package=devtools"><code class="language-plaintext highlighter-rouge">devtools</code></a> and <a href="https://cran.r-project.org/package=roxygen2"><code class="language-plaintext highlighter-rouge">roxygen2</code></a> packages, which make creating packages in R relatively simple. Both can be installed from CRAN like this:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">,</span><span class="w"> </span><span class="s2">"roxygen2"</span><span class="p">))</span><span class="w">  </span><span class="c1"># installations can be `c`ombined</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="s2">"roxygen2"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Set your working directory, and then use the <code class="highlighter-rouge">create</code> function to start making your package.
+<p>Set your working directory, and then use the <code class="language-plaintext highlighter-rouge">create</code> function to start making your package.
 Keep the name simple and unique.</p>
 <ul>
   <li>package_to_convert_temperatures_between_kelvin_fahrenheit_and_celsius (BAD)</li>
@@ -387,9 +387,9 @@ Place each function into a separate R script and add documentation like this:</p
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">roxygen2</code> package reads lines that begin with <code class="highlighter-rouge">#'</code> as comments to create the documentation for your package.
-Descriptive tags are preceded with the <code class="highlighter-rouge">@</code> symbol. For example, <code class="highlighter-rouge">@param</code> has information about the input parameters for the function.
-Now, we will use <code class="highlighter-rouge">roxygen2</code> to convert our documentation to the standard R format.</p>
+<p>The <code class="language-plaintext highlighter-rouge">roxygen2</code> package reads lines that begin with <code class="language-plaintext highlighter-rouge">#'</code> as comments to create the documentation for your package.
+Descriptive tags are preceded with the <code class="language-plaintext highlighter-rouge">@</code> symbol. For example, <code class="language-plaintext highlighter-rouge">@param</code> has information about the input parameters for the function.
+Now, we will use <code class="language-plaintext highlighter-rouge">roxygen2</code> to convert our documentation to the standard R format.</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setwd</span><span class="p">(</span><span class="s2">"./tempConvert"</span><span class="p">)</span><span class="w">
 </span><span class="n">document</span><span class="p">()</span><span class="w">
@@ -420,19 +420,19 @@ The /man directory has a .Rd file for each .R file with properly formatted docum
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="m">-273.15</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fahrenheit_to_kelvin</span><span class="p">(</span><span class="m">-459.67</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1] 0
 </code></pre></div></div>
 
 <blockquote class="challenge">
@@ -440,7 +440,7 @@ The /man directory has a .Rd file for each .R file with properly formatted docum
 
   <ol>
     <li>Create some new functions for your tempConvert package to convert from Celsius to Fahrenheit or from Kelvin to Celsius or Fahrenheit.</li>
-    <li>Create a package for our <code class="highlighter-rouge">analyze</code> function so that it will be easy to load when more data arrives.</li>
+    <li>Create a package for our <code class="language-plaintext highlighter-rouge">analyze</code> function so that it will be easy to load when more data arrives.</li>
   </ol>
 
   <blockquote class="solution">
