@@ -453,7 +453,7 @@ function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE,
     }
     else all.names
 }
-<bytecode: 0x559fad1c4af8>
+<bytecode: 0x55725e63da98>
 <environment: namespace:base>
 ~~~
 {: .output}
@@ -767,12 +767,12 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] knitr_1.28              requirements_0.0.0.9000 remotes_2.1.0          
+[1] knitr_1.28              requirements_0.0.0.9000 remotes_2.1.1          
 
 loaded via a namespace (and not attached):
  [1] compiler_4.0.0  magrittr_1.5    htmltools_0.4.0 tools_4.0.0    
- [5] yaml_2.2.1      Rcpp_1.0.3      stringi_1.4.5   rmarkdown_2.1  
- [9] stringr_1.4.0   xfun_0.12       digest_0.6.24   rlang_0.4.4    
+ [5] yaml_2.2.1      Rcpp_1.0.3      stringi_1.4.6   rmarkdown_2.1  
+ [9] stringr_1.4.0   xfun_0.12       digest_0.6.25   rlang_0.4.4    
 [13] evaluate_0.14  
 ~~~
 {: .output}
