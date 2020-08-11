@@ -133,18 +133,18 @@ carSpeeds$Color
 
 
 ~~~
-  [1] "Green" "1"     "Green" "5"     "4"     "Green" "Green" "2"     "5"    
- [10] "4"     "4"     "5"     "Green" "Green" "2"     "4"     "Green" "Green"
- [19] "5"     "Green" "Green" "Green" "4"     "Green" "4"     "4"     "4"    
- [28] "4"     "5"     "Green" "4"     "5"     "2"     "4"     "2"     "2"    
- [37] "Green" "4"     "2"     "4"     "2"     "2"     "4"     "4"     "5"    
- [46] "2"     "Green" "4"     "4"     "2"     "2"     "4"     "5"     "4"    
- [55] "Green" "Green" "2"     "Green" "5"     "2"     "4"     "Green" "Green"
- [64] "5"     "2"     "4"     "4"     "2"     "Green" "5"     "Green" "4"    
- [73] "5"     "5"     "Green" "Green" "Green" "Green" "Green" "5"     "2"    
- [82] "Green" "5"     "2"     "2"     "4"     "4"     "5"     "5"     "5"    
- [91] "5"     "4"     "4"     "4"     "5"     "2"     "5"     "2"     "2"    
-[100] "5"    
+  [1] "Green" " Red"  "Green" "White" "Red"   "Green" "Green" "Black" "White"
+ [10] "Red"   "Red"   "White" "Green" "Green" "Black" "Red"   "Green" "Green"
+ [19] "White" "Green" "Green" "Green" "Red"   "Green" "Red"   "Red"   "Red"  
+ [28] "Red"   "White" "Green" "Red"   "White" "Black" "Red"   "Black" "Black"
+ [37] "Green" "Red"   "Black" "Red"   "Black" "Black" "Red"   "Red"   "White"
+ [46] "Black" "Green" "Red"   "Red"   "Black" "Black" "Red"   "White" "Red"  
+ [55] "Green" "Green" "Black" "Green" "White" "Black" "Red"   "Green" "Green"
+ [64] "White" "Black" "Red"   "Red"   "Black" "Green" "White" "Green" "Red"  
+ [73] "White" "White" "Green" "Green" "Green" "Green" "Green" "White" "Black"
+ [82] "Green" "White" "Black" "Black" "Red"   "Red"   "White" "White" "White"
+ [91] "White" "Red"   "Red"   "Red"   "White" "Black" "White" "Black" "Black"
+[100] "White"
 ~~~
 {: .output}
 
@@ -168,9 +168,9 @@ str(carSpeeds)
 
 ~~~
 'data.frame':	100 obs. of  3 variables:
- $ Color: chr  "Green" "1" "Green" "5" ...
+ $ Color: chr  "Green" " Red" "Green" "White" ...
  $ Speed: int  32 45 35 34 25 41 34 29 31 26 ...
- $ State: Factor w/ 4 levels "Arizona","Colorado",..: 3 1 2 1 1 1 3 2 1 2 ...
+ $ State: chr  "NewMexico" "Arizona" "Colorado" "Arizona" ...
 ~~~
 {: .output}
 

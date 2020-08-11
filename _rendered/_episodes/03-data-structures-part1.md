@@ -105,8 +105,7 @@ cats$coat
 
 
 ~~~
-[1] calico black  tabby 
-Levels: black calico tabby
+[1] "calico" "black"  "tabby" 
 ~~~
 {: .output}
 
@@ -151,16 +150,9 @@ cats$weight + cats$coat
 
 
 ~~~
-Warning in Ops.factor(cats$weight, cats$coat): '+' not meaningful for factors
+Error in cats$weight + cats$coat: non-numeric argument to binary operator
 ~~~
 {: .error}
-
-
-
-~~~
-[1] NA NA NA
-~~~
-{: .output}
 
 Understanding what happened here is key to successfully analyzing data in R.
 
@@ -292,7 +284,7 @@ typeof(cats$weight)
 
 
 ~~~
-[1] "integer"
+[1] "character"
 ~~~
 {: .output}
 
@@ -308,16 +300,9 @@ cats$weight + 2
 
 
 ~~~
-Warning in Ops.factor(cats$weight, 2): '+' not meaningful for factors
+Error in cats$weight + 2: non-numeric argument to binary operator
 ~~~
 {: .error}
-
-
-
-~~~
-[1] NA NA NA NA
-~~~
-{: .output}
 
 What happened? When R reads a csv file into one of these tables, it insists that
 everything in a column be the same basic type; if it can't understand
@@ -1362,7 +1347,7 @@ class(matrix_example)
 
 
 ~~~
-[1] "matrix"
+[1] "matrix" "array" 
 ~~~
 {: .output}
 

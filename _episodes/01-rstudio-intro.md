@@ -453,7 +453,7 @@ function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE,
     }
     else all.names
 }
-<bytecode: 0x55a2e5a83af8>
+<bytecode: 0x555c1009c730>
 <environment: namespace:base>
 ~~~
 {: .output}
@@ -747,13 +747,13 @@ sessionInfo()
 
 
 ~~~
-R Under development (unstable) (2019-12-19 r77606)
+R version 4.0.2 (2020-06-22)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Pop!_OS 19.04
+Running under: Ubuntu 20.04.1 LTS
 
 Matrix products: default
-BLAS:   /usr/local/lib/R/lib/libRblas.so
-LAPACK: /usr/local/lib/R/lib/libRlapack.so
+BLAS:   /usr/bin/lib/R/lib/libRblas.so
+LAPACK: /usr/bin/lib/R/lib/libRlapack.so
 
 locale:
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -767,13 +767,12 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] knitr_1.28              requirements_0.0.0.9000 remotes_2.1.1          
+[1] knitr_1.29              requirements_0.0.0.9000 remotes_2.2.0          
 
 loaded via a namespace (and not attached):
- [1] compiler_4.0.0  magrittr_1.5    htmltools_0.4.0 tools_4.0.0    
- [5] yaml_2.2.1      Rcpp_1.0.3      stringi_1.4.6   rmarkdown_2.1  
- [9] stringr_1.4.0   xfun_0.12       digest_0.6.25   rlang_0.4.4    
-[13] evaluate_0.14  
+ [1] compiler_4.0.2  magrittr_1.5    htmltools_0.5.0 tools_4.0.2    
+ [5] yaml_2.2.1      stringi_1.4.6   rmarkdown_2.3   stringr_1.4.0  
+ [9] xfun_0.16       digest_0.6.25   rlang_0.4.7     evaluate_0.14  
 ~~~
 {: .output}
 
